@@ -1,3 +1,4 @@
+import FormLogin from "./components/form_login";
 import Header from "./components/header";
 
 export default function Home() {
@@ -6,9 +7,7 @@ export default function Home() {
       <Header />
       <h1>algo demais</h1>
       <main>
-        <form action="">
-          <input type="text" value="algo muito demais" />
-        </form>
+        <FormLogin />
       </main>
     </div>
   );
