@@ -10,6 +10,10 @@ export default function Home() {
         inventore eos at quisquam blanditiis ut libero rem. Explicabo, sequi
         nihil.
       </p>
+
+      <form action="">
+        <input type="text" name="" id="" />
+      </form>
     </div>
   );
 }
