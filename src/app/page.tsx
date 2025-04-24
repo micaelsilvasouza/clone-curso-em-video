@@ -4,11 +4,9 @@ import Header from "./components/header";
 export default function Home() {
   return 
   (<div>
-    <h1>algo demais</h1>
+    <Header />
     <main>
-      <form action="">
-        <input type="text" value="algo muito demais"/>
-      </form>
+      <FormLogin />
     </main>
   </div>);
 }
