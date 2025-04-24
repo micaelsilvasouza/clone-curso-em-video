@@ -14,6 +14,8 @@ export default function Home() {
       <form action="">
         <input type="text" name="" id="" />
         <button>Qualquer coisa</button>
+
+        <h1>Hey</h1>
       </form>
     </div>
   );
