@@ -10,14 +10,10 @@ export default function Home() {
       </nav>
     </header>
     <h1>algo demais</h1>
-<<<<<<< HEAD
     <main>
       <form action="">
-        <input type="text" value="algo muito demais"/>
+        <input type="text" value="algo muito demais" />
       </form>
     </main>
-  </div>);
-=======
   </div>;
->>>>>>> Header
 }
