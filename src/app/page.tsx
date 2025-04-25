@@ -1,14 +1,9 @@
+import Header from "./components/header";
+
 export default function Home() {
   return (
     <div>
-      <header>
-        <nav>
-          <ul>
-            <li>HOme</li>
-            <li>Contatos</li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <h1>algo demais</h1>
       <main>
         <form action="">
