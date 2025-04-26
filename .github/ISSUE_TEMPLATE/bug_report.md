@@ -1,9 +1,10 @@
 ---
-name: 🐛 Bug Report
+name: "\U0001F41B Bug Report"
 about: Reportar um erro ou comportamento inesperado
 title: "[BUG] "
 labels: bug
-assignees: ""
+assignees: ''
+
 ---
 
 ## 🐞 Descrição do Bug
