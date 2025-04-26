@@ -1,0 +1,10 @@
+.conteiner_form{
+    background-color: white;
+    color: black;
+    min-width: 250px;
+    max-width: 300px;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #01299994;
+}
