@@ -1,3 +1,7 @@
+import FormLogin from "../components/form_login";
+import Img from "../components/layout/img";
+import styles from "./styles.module.css"
+
 export default function Login() {
   return (
     <div>
