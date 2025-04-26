@@ -1,17 +1,29 @@
 import styles from "./styles.module.css";
 
-import img from "/imgs/logoBlue.png";
+import Img from "../layout/img";
+
+import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className={styles.h1}>
-      <img src="/imgs/logoBlue.png" alt="Imagem da logo Curso em Vídeo" />
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        <Img img={"logoWhite.png"} alt="Imagem da logo Curso em Vídeo" />
+      </div>
       <nav>
         <ul>
-          <li>Curso</li>
-          <li>Sobre</li>
-          <li>Login</li>
-          <li>Cadastre-se</li>
+          <li>
+            <Link href="/cursos">Cursos</Link>
+          </li>
+          <li>
+            <Link href="/sobre">Sobre</Link>
+          </li>
+          <li>
+            <Link href="/login">Login</Link>
+          </li>
+          <li>
+            <Link href="/cadastre-se">Cadastre-se</Link>
+          </li>
         </ul>
       </nav>
     </header>
