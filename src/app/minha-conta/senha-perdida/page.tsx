@@ -1,4 +1,4 @@
-export default function LostPassword() {
+export default function SenhaPerdida() {
   return (
     <div>
       <h1>Senha perdida</h1>
