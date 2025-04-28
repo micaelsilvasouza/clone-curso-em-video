@@ -1,13 +1,13 @@
-import Img from "../components/layout/img"
+import Img from "../components/layout/img";
 import FormCadastreSe from "../components/forms/form_cadastre_se";
-import styles from "./styles.module.css"
+import styles from "./styles.module.css";
 
 export default function Cadastre_se() {
   return (
     <main>
       <section className={styles.conteiner_form}>
-        <div style={{width: "200px"}}>
-          <Img img="logoBlue.png" alt="Logo azul do curso em video"/>
+        <div style={{ width: "200px" }}>
+          <Img img="logoBlue.png" alt="Logo azul do curso em video" />
         </div>
         <FormCadastreSe />
       </section>

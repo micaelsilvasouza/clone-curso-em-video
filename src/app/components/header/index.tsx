@@ -22,7 +22,7 @@ export default function Header() {
             <Link href="/login">Login</Link>
           </li>
           <li>
-            <Link href="/cadastre-se">Cadastre-se</Link>
+            <Link href="/matricula-gratis">Cadastre-se</Link>
           </li>
         </ul>
       </nav>
