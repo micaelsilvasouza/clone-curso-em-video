@@ -1,4 +1,4 @@
-import FormLogin from "../components/form_login";
+import FormLogin from "../components/forms/form_login";
 import Img from "../components/layout/img";
 import styles from "./styles.module.css"
 

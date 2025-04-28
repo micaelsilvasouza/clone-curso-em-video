@@ -25,7 +25,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100dvh;
+  min-height: 100dvh;
 
   font-family: "Poppins", sans-serif;
 }
