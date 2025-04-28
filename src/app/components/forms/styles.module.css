@@ -1,0 +1,18 @@
+.form{
+    margin: 10px;
+}
+
+.form h1{
+    color: #104ed3;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+.form a{
+    color: black;
+}
+
+.form a:hover{
+    text-decoration: underline;
+}
