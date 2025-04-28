@@ -1,7 +1,15 @@
+"use client";
+
 import Img from "../components/layout/img";
 import Link from "next/link";
 
-export default function Cursos() {
+export default async function Cursos() {
+  const data = await fetch(
+    "https://micaelsilvasouza.github.io/vtubers/json/vtubers.json"
+  );
+
+  console.log(data);
+
   return (
     <section className="text-black bg-white ml-5 mr-5 max-w-7xl">
       <section className="inforCurso bg-[url(/image/fundoBackground-cursos.jpg)] bg-center bg-current">
