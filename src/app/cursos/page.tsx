@@ -1,14 +1,22 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import Img from "../components/layout/img";
 import Link from "next/link";
 
-export default async function Cursos() {
-  const data = await fetch(
-    "https://micaelsilvasouza.github.io/vtubers/json/vtubers.json"
-  );
+export default function Cursos() {
+  const [data, setData] = useState(null);
 
-  console.log(data);
+  useEffect(() => {
+    fetch("https://filipe520.github.io/Carrossel-de-Cidades/json/db.json")
+      .then((res) => res.json())
+      .then((obj) => {
+        console.log(obj); // Veja o formato dos dados no console
+        setData(obj);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <section className="text-black bg-white ml-5 mr-5 max-w-7xl">
@@ -40,32 +48,39 @@ export default async function Cursos() {
           </p>
         </div>
       </section>
-
       <section className="cards py-5">
-        <div className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-50 w-[350px]">
-          <div className="w-full">
-            <Link href="/cursos/curso-ingles-modulo-03">
-              <Img img="curso_ingles.jpg" alt="imagem do Curso de inglês" />
-            </Link>
-          </div>
-          <div className="px-6 py-4">
-            <Link href="/cursos/curso-ingles-modulo-03">
-              <h2 className="font-bold text-xl mb-2 text-black">Título</h2>
-            </Link>
-            <p className="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div className="px-6 pt-4 pb-2">
-            <Link href="/cursos/curso-ingles-modulo-03">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Veja mais
-              </span>
-            </Link>
-          </div>
-        </div>
+        {/* Exemplo de uso dos dados */}
+        {data &&
+          data.courses?.map((json) => (
+            <div
+              key={1}
+              className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-50 w-[350px] mb-4"
+            >
+              <div className="w-full">
+                <Link href={`/cursos/"detalhes"`}>
+                  <Img
+                    img={"curso_ingles.jpg"}
+                    alt={`Imagem do curso "Curso"}`}
+                  />
+                </Link>
+              </div>
+              <div className="px-6 py-4">
+                <Link href={`/cursos/"detalhes"}`}>
+                  <h2 className="font-bold text-xl mb-2 text-black">
+                    {json.title}
+                  </h2>
+                </Link>
+                <p className="text-gray-700 text-base">{json.paragraph}</p>
+              </div>
+              <div className="px-6 pt-4 pb-2">
+                <Link href={`/cursos/"detalhes"}`}>
+                  <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    Veja mais
+                  </span>
+                </Link>
+              </div>
+            </div>
+          ))}
       </section>
     </section>
   );
