@@ -1,6 +1,7 @@
 "use client"
 
 import  { useState } from "react"
+import { useRouter } from "next/navigation"
 import Input from "../../layout/input"
 import Button from "../../layout/button"
 import styles from "../styles.module.css"
@@ -12,13 +13,33 @@ export default function FormCadastreSe(){
     const [cemail, setCEmail] = useState("")
     const [password, setPassword] = useState("")
     const [cpassword, setCPassword] = useState("")
+    const router = useRouter()
 
     const validate = ()=>{
         const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-        
-        if(!regexEmail.test(email) && email != cemail){
-            alert("Email invalido ou não correspondente")
+
+        if(name == ""){
+            alert("Nome não informado")
+            return
         }
+
+        if(lastname == ""){
+            alert("Sobrenome não informado")
+            return
+        }
+        
+        if(email == "" || !regexEmail.test(email) || email != cemail){
+            alert("Email invalido ou não correspondentes")
+            return
+        }
+        
+        if(password.length < 8 || password != cpassword){
+            alert("Senha fraca ou não correspondentes")
+            return
+        }
+
+
+        router.push("/login")
     }
 
     return (
