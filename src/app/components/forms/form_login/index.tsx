@@ -4,27 +4,29 @@ import Link from "next/link";
 import Button from "../../layout/button";
 import Input from "../../layout/input";
 import styles from "../styles.module.css";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
 export default function FormLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const validation = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (!emailRegex.test(email)) {
       alert("Email possuir formato invalido");
-    } else {
-      alert("Email OK");
+      return;
     }
 
     if (password.length < 8) {
       alert("Senha no formato inválido");
-    } else {
-      alert("Senha OK");
+      return;
     }
+
+    router.push("/users");
   };
 
   return (
