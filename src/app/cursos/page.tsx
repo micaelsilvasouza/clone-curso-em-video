@@ -2,12 +2,14 @@ import Img from "../components/layout/img";
 import Link from "next/link";
 
 export default async function Cursos() {
-  const db = await fetch("https://filipe520.github.io/Carrossel-de-Cidades/json/db.json")
-  const data = await db.json()
+  const db = await fetch(
+    "https://filipe520.github.io/Carrossel-de-Cidades/json/db.json"
+  );
+  const data = await db.json();
 
   return (
     <section className="text-black bg-white ml-5 mr-5 max-w-7xl">
-      <section className="inforCurso bg-[url(/image/fundoBackground-cursos.jpg)] bg-center bg-current">
+      <section className="inforCurso bg-[url(/image/BannerPaginaCima.jpg)] bg-center bg-current">
         <div className="py-5">
           <h1 className="text-5xl font-bold py-2">Cursos</h1>
         </div>
@@ -38,7 +40,7 @@ export default async function Cursos() {
       <section className="cards py-5">
         {/* Exemplo de uso dos dados */}
         {data &&
-          data.courses?.map((json : {title: string, paragraph: string}) => (
+          data.courses?.map((json: { title: string; paragraph: string }) => (
             <div
               key={data.courses.indexOf(json)}
               className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-50 w-[350px] mb-4"
