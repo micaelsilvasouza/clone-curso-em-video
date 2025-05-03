@@ -26,7 +26,7 @@ export default function FormLogin() {
       return;
     }
 
-    router.push("/users");
+    router.push("/minha-conta");
   };
 
   return (
