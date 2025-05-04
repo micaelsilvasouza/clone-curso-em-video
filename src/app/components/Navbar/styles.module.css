@@ -1,0 +1,13 @@
+.Navbar {
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #f2fafc;
+}
+
+.Navbar .logo {
+  width: clamp(130px, 50vw, 170px);
+}
