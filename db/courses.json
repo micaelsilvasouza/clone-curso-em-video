@@ -1,0 +1,362 @@
+[
+    {
+        "id": "a5ff23ejoAA32qw",
+        "slug": "seguranca-da-informacao-modulo-04-20-horas/",
+        "title": "Segurança da Informação: Módulo 04 [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/2024/05/seg-info-mod04-300x300.png",
+        "description": "Neste módulo do curso de Segurança da Informação, você vai explorar medidas práticas e fundamentais para proteger seus dados e dispositivos de ameaças cibernéticas. O conteúdo abrange desde o cuidado na instalação de aplicativos até a criação e gerenciamento de backups, passando por técnicas de proteção ao clicar em links suspeitos e cuidados com contas administrativas.",
+        "videos": [
+            {
+                "id": "G46aeeR5f01Rabc",
+                "title":"Apresentação",
+                "video": "https://www.youtube.com/embed/qeKiqLL4W8k?si=7ED4N3rEb9T3_h_j"
+            },
+            {
+                "id": "G46aeeR5f01Rdef",
+                "title":"Códigos Maliciosos (Parte 1)",
+                "video": "https://www.youtube.com/embed/Bo5Z5YV1eL8?si=lT3MSeuRZjlsK1TD"
+            },
+            {
+                "id": "G46aeeR5f01Rhij",
+                "title":"Códigos Maliciosos (parte 2)",
+                "video": "https://www.youtube.com/embed/NPwmn0DrS8Q?si=A-DW0dSqafd4xTgS"
+            }
+        ]
+    },
+    {
+        "id": "a5ff23ejoAA3210",
+        "slug": "curso-pratico-de-seo-modulo-02",
+        "title": "Curso Gratuito de SEO: Módulo 02 – Domine a criação de conteúdos otimizados [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/2022/06/seo.png",
+        "description": "Após entender as bases do SEO no módulo 01, chegou a hora de dar o próximo passo em sua jornada de aprendizado. O módulo 02 do curso gratuito de SEO mergulha de cabeça na criação de conteúdos otimizados, explorando técnicas e ferramentas que transformam páginas e artigos comuns em poderosas estratégias para atrair o público certo e melhorar o ranqueamento nos mecanismos de busca. Neste módulo, você irá se aprofundar no processo de planejamento, estruturação e publicação de conteúdos que conversam tanto com o algoritmo do Google quanto com as necessidades do público. Prepare-se para aprender na prática como aplicar SEO em páginas, artigos e produtos, garantindo resultados reais.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3211",
+        "slug": "curso-de-ingles-para-iniciantes-modulo-02-beginners-completo",
+        "title": "Curso de Inglês para Iniciantes – Módulo 02: Beginners – Completo [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/2023/09/ingles-mod02-300x300.png",
+        "description": "No Módulo 02 do nosso curso de Inglês para Iniciantes (nível A1), vamos seguir avançando de forma prática e divertida rumo à sua fluência! Neste módulo, você vai aprender a se expressar com mais segurança em situações cotidianas, expandindo seu vocabulário, aperfeiçoando a gramática e dominando expressões úteis para conversas reais.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3212",
+        "slug": "seguranca-da-informacao-modulo-03-0-horas",
+        "title": "Segurança da Informação: Módulo 03 [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/seg-info-mod03-circle-4d59d00634eadefc03cbf4053d2fb2ee-5d48cb37edbef.png",
+        "description": "Neste módulo do curso gratuito de Segurança da Informação, você vai explorar dois temas fundamentais para qualquer profissional da área: redes e backups. Estes assuntos são essenciais para proteger e gerenciar dados, prevenindo a perda de informações e mantendo a integridade e a disponibilidade dos sistemas. A cada aula, vamos aprofundar o entendimento sobre o funcionamento das redes e sobre as melhores práticas para a realização de backups eficientes.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3213",
+        "slug": "curso-de-ingles-para-iniciantes-modulo-03-beginners-completo",
+        "title": "Curso de Inglês para Iniciantes – Módulo 03: Beginners – Completo [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/ingles-mod03-circle-017a075aeff62e2c4ad234f662f319d2-5d48cb37edbef.png",
+        "description": "No Módulo 03 do nosso Curso de Inglês gratuito, você vai dar um passo importante rumo à fluência! Neste módulo, você aprenderá técnicas práticas e eficazes para ampliar seu vocabulário, melhorar a fluência na fala e fortalecer sua compreensão auditiva. Tudo isso com a metodologia dinâmica e acessível que é marca registrada do Curso em Vídeo.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3214",
+        "slug": "curso-html5-e-css3-modulo-5-de-5-40-horas",
+        "title": "Curso HTML5 e CSS3: Módulo 5 de 5 [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/htmlcss-mod5-circle-9e7a443b8eb86ed502aa016fcbee93ed-5d48cb37edbef.jpg",
+        "description": "No Módulo 05 do nosso curso gratuito de HTML5 + CSS3, você vai mergulhar em técnicas mais avançadas de estilização, essenciais para criar layouts modernos, dinâmicos e totalmente responsivos. Se você quer elevar o nível dos seus projetos e impressionar com visuais profissionais, este é o módulo certo pra você!",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3215",
+        "slug": "curso-gratis-de-inteligencia-artificial",
+        "title": "Curso Grátis de Inteligência Artificial [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/WhatsApp-Image-2024-08-19-at-11.46.43-circle-33cff90e4f79dc99157fe08ff479573e-5d48cb37edbef.jpeg",
+        "description": "Este curso gratuito de Inteligência Artificial é uma oportunidade única para qualquer pessoa – seja iniciante ou profissional de tecnologia – aprender a usar IA de maneira prática e estratégica. Criado pelo Curso em Vídeo com o apoio da FIAP, Hostnet e Estudonauta, ele oferece uma formação completa para quem deseja utilizar a inteligência artificial no trabalho, nos estudos ou até para tarefas cotidianas.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3216",
+        "slug": "curso-de-algoritmo",
+        "title": "Algoritmo [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/algoritmos-circle-cbeb3e4b5b7b763c5c83ac7e40d488b3-5d48cb37edbef.jpg",
+        "description": "Hoje em dia, algoritmos computacionais estão presentes em quase tudo na nossa vida. Além dos tradicionais computadores e notebooks, muitos estão totalmente acostumados com o uso de aplicativos para smartphones e tablets, TVs inteligentes podem executar programas personalizados e até mesmo outros aparelhos que usamos no nosso dia-a-dia. O Curso de Algoritmo é a base necessária para quem quer aprender em linguagens famosas do mercado, como C, Java, PHP e muitas outras. Inscreva-se no curso agora mesmo e aprenda as técnicas básicas para a construção de programas para dispositivos eletrônicos.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3217",
+        "slug": "java-basico",
+        "title": "Java Básico [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/java-circle-b822cf9eecb6ee361af377441eec54b0-5d48cb37edbef.jpg",
+        "description": "Java é uma das linguagens de programação mais consolidadas do mundo — robusta, multiplataforma e orientada a objetos, ela está presente em aplicações bancárias, sistemas corporativos, dispositivos móveis e muito mais. Se você já tem uma boa base em algoritmos e lógica de programação, este curso gratuito com o professor Gustavo Guanabara é o próximo passo ideal na sua jornada como programador.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3218",
+        "slug": "java-poo",
+        "title": "Java POO [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/poo-java-circle-9342dd242d4e1f7c60844dd4680ed065-5d48cb37edbef.jpg",
+        "description": "A linguagem Java é uma das mais populares e utilizadas no mundo da programação, especialmente no desenvolvimento de aplicações robustas, seguras e multiplataforma. E quando o assunto é Programação Orientada a Objetos (POO), o Java brilha ainda mais, por ser uma linguagem que adota os princípios da orientação a objetos desde sua criação.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3219",
+        "slug": "word",
+        "title": "Word [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/word-circle-abebf95ed2080afc7595a5752a5317c5-5d48cb37edbef.jpg",
+        "description": "O Microsoft Word é um dos editores de texto mais utilizados no mundo, presente no cotidiano de estudantes, profissionais e empresas. Parte integrante do pacote Office, essa ferramenta poderosa vai muito além da digitação simples: com recursos avançados, ela permite criar documentos elegantes, bem estruturados e prontos para serem compartilhados ou impressos com qualidade profissional.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3220",
+        "slug": "photoshop",
+        "title": "Photoshop [20 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/photoshop-circle-a86bb8d60a1d726d4396083508961867-5d48cb37edbef.jpg",
+        "description": "O Adobe Photoshop é uma das ferramentas mais completas e utilizadas do mundo quando se fala em edição e manipulação de imagens. Com ele, é possível corrigir imperfeições, realçar detalhes e transformar completamente uma foto com poucos cliques. Ideal para profissionais criativos, designers, fotógrafos e também para quem deseja explorar seu lado artístico, o Photoshop abre um universo de possibilidades — e é isso que você vai descobrir neste curso gratuito!.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3221",
+        "slug": "excel",
+        "title": "Excel [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/excel-circle-ab24c544c0247d1e2ae8d288606f4da5-5d48cb37edbef.jpg",
+        "description": "O Curso de Excel do Curso em Vídeo é a porta de entrada perfeita para quem quer dominar uma das ferramentas mais utilizadas em escritórios, escolas, empresas e até no dia a dia pessoal. Começamos com uma breve viagem no tempo para entender como surgiu o Excel e como ele se tornou um dos softwares mais importantes da Microsoft, presente em milhões de computadores ao redor do mundo.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3222",
+        "slug": "mysql",
+        "title": "MySQL [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/bancodedados-sql-circle-a3b0ef882f3e3b318474c2362caf754b-5d48cb37edbef.jpg",
+        "description": "Neste curso completo e gratuito de MySQL, você vai entender desde os conceitos básicos até operações mais avançadas no gerenciamento de bancos de dados relacionais. Começamos explicando o que é um banco de dados e sua importância no armazenamento e organização de informações em sistemas modernos, passando pela instalação das ferramentas WAMP e XAMPP para preparar o ambiente de desenvolvimento ideal.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3223",
+        "slug": "marketing-digital",
+        "title": "Marketing Digital [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/marketing-digital-circle-5cc8cde956ffd2c0dbe837fcdbec511e-5d48cb37edbef.jpg",
+        "description": "No cenário atual da tecnologia, dominar apenas as ferramentas de programação não é mais suficiente. Pensando nisso, o Curso em Vídeo apresenta o Curso de Marketing Digital, uma formação especialmente desenvolvida para profissionais e estudantes da área de TI que desejam transformar ideias em soluções reais, impactantes e, principalmente, bem posicionadas no mercado.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3224",
+        "slug": "bases-numericas",
+        "title": "Bases Numéricas [20 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/bases-numericas-circle-6d7075d6b30ad706a814a46ec27a81f1-5d48cb37edbef.jpg",
+        "description": "Se você quer entender como os computadores pensam e processam informações, este curso é o ponto de partida ideal! No Curso de Bases Numéricas do Curso em Vídeo, você vai aprender, de forma gratuita e acessível, os conceitos fundamentais dos sistemas numéricos utilizados na informática, desde os princípios da notação posicional até as técnicas de conversão entre diferentes bases numéricas.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3225",
+        "slug": "hardware",
+        "title": "Hardware [20 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/hardware-circle-9caecb645f87b09036b9fc81e3867ab7-5d48cb37edbef.jpg",
+        "description": "Neste curso inovador, o professor Gustavo Guanabara, conhecido por sua linguagem acessível e abordagem pedagógica clara, se une ao especialista Alfredo Cahe, profissional com vasta experiência em redes e infraestrutura, para oferecer um conteúdo diferenciado: a montagem real de um computador do zero, pensada para o ambiente de desenvolvimento.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3226",
+        "slug": "python-3-mundo-1",
+        "title": "Python 3 – Mundo 1 [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/Python3%E2%80%93Mundo1-circle-fe9ce6bfeaf0ec1069476ff395ea189a-5d48cb37edbef.png",
+        "description": "O curso gratuito “Python 3 – Mundo 1” é o ponto de partida perfeito para quem deseja entrar no universo da programação e começar uma jornada em uma das linguagens mais populares do mundo. Este curso foi pensado para ser acessível a qualquer pessoa, independentemente de conhecimento prévio em programação. A ideia principal é apresentar Python de forma prática e envolvente, facilitando o aprendizado mesmo para aqueles que nunca tiveram contato com a área de TI.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3227",
+        "slug": "python-3-mundo-2",
+        "title": "Python 3 – Mundo 2 [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/Python3%E2%80%93Mundo2-circle-a64ea178823d89b8510e5f90ccfa644e-5d48cb37edbef.png",
+        "description": "O curso gratuito “Python 3 – Mundo 2” é a continuação do seu aprendizado em Python e aprofunda o conhecimento sobre as estruturas de repetição e controle de fluxo. Neste módulo, você vai explorar conceitos fundamentais para qualquer linguagem de programação, como if, else, for e while. Esses comandos são essenciais para criar programas mais robustos, eficientes e dinâmicos, permitindo a criação de soluções que vão muito além do básico.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3228",
+        "slug": "python-3-mundo-3",
+        "title": "Python 3 – Mundo 3 [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/Python3%E2%80%93Mundo3-circle-f17d45114895df37bfaf3bf9c8091b3f-5d48cb37edbef.png",
+        "description": "Aprender Python é mais do que aprender uma linguagem de programação, é abrir portas para o mundo da tecnologia utilizada por gigantes como Google, YouTube e Globo. E no curso gratuito “Python 3 – Mundo 3“, você entra em uma nova fase desse aprendizado, explorando as estruturas de dados fundamentais que são essenciais para dominar qualquer linguagem de programação.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3229",
+        "slug": "linux",
+        "title": "Linux [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/linux-circle-239a45e13c9d63422c0dfa081606d74a-5d48cb37edbef.jpg",
+        "description": "O Linux é um sistema operacional robusto e altamente versátil, assim como o Windows e o macOS, mas com características únicas que o tornam distinto. Enquanto sistemas como os da Microsoft e Apple são fechados, o Linux se destaca por ser livre e de código aberto, ou seja, Open Source. Isso significa que qualquer pessoa pode estudar, modificar e distribuir o código do Linux, o que resulta em uma diversidade impressionante de distribuições, como Debian, Ubuntu, Mint, Fedora, CentOS, entre outras, cada uma com suas particularidades e áreas de aplicação.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3230",
+        "slug": "redes-de-computadores",
+        "title": "Redes de Computadores [20 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/redes-circle-c1d845e6cca6189bd00a699a6a6c4ffd-5d48cb37edbef.jpg",
+        "description": "Bem-vindo ao curso de Redes de Computadores do Curso em Vídeo. Este curso foi desenvolvido para ensinar, de forma prática e objetiva, como redes de computadores funcionam no dia a dia, com foco em resolver problemas reais que você encontra em sua casa, no trabalho ou até mesmo em ambientes corporativos.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3231",
+        "slug": "javascript",
+        "title": "Javascript [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/javascript-circle-dc92b56e539139ec2bf42ebf8393803c-5d48cb37edbef.jpg",
+        "description": "Você quer aprender a programar e não sabe por onde começar? Ou já tentou dar os primeiros passos na programação, mas ficou perdido ao escolher uma linguagem? O Curso em Vídeo tem a solução perfeita para você: um curso completo, gratuito e 100% online de JavaScript, uma das linguagens mais populares e utilizadas no mundo!",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3232",
+        "slug": "raspberry-pi-basico",
+        "title": "Raspberry Pi Básico [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/raspberrypi-circle-ca2f0223535c04b8b5fe59c71f8306a4-5d48cb37edbef.jpg",
+        "description": "Já imaginou ter um computador completo na palma da sua mão? Com o Raspberry Pi, isso é possível! Esse pequeno dispositivo é um Single Board Computer (SBC), ou seja, um computador funcional em uma única placa, capaz de rodar diversos sistemas operacionais, executar programas e até mesmo controlar componentes eletrônicos.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3233",
+        "slug": "wordpress-2019-profissional-com-gutenberg",
+        "title": "WordPress Módulo 1 – Criando um site do zero [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/wordpress-md01-circle-3685d1e8de8efca756a066abe1425e22-5d48cb37edbef.png",
+        "description": "O curso gratuito “WordPress: Criando um Site do Zero” é a oportunidade perfeita para quem deseja aprender a desenvolver sites profissionais com o WordPress, mesmo sem nenhum conhecimento prévio. Com um conteúdo atualizado e focado nas melhores práticas, este curso é ideal para empreendedores, freelancers, estudantes de marketing digital e desenvolvedores iniciantes que buscam criar sites de alta qualidade, funcionais e totalmente responsivos.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3234",
+        "slug": "wordpress-modulo-2-seguranca-performance-e-recursos-avancados",
+        "title": "WordPress Módulo 2 – Segurança, performance e recursos avançados [40 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/wordpress-md02-circle-f720b37bfb027ec5830c3aa85de7855b-5d48cb37edbef.png",
+        "description": "O curso gratuito “WordPress: Segurança, Performance e Recursos Avançados” é o próximo passo para quem já domina o básico do WordPress e quer levar suas habilidades a um novo nível. Ideal para desenvolvedores, designers, freelancers e empreendedores digitais que buscam criar sites mais rápidos, seguros e otimizados, este curso foca em técnicas e ferramentas que vão além do trivial. Com lições práticas, atualizadas e totalmente gratuitas, você aprenderá a tornar seu site WordPress profissional mais robusto e eficiente.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3235",
+        "slug": "curso-loja-online",
+        "title": "WordPress + WooCommerce: Como criar uma loja virtual de sucesso – Curso gratuito",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/wordpress-md03-circle-1e0e8aaa99d91d0c78a15b9a2b46de18-5d48cb37edbef.png",
+        "description": "Você já imaginou criar sua própria loja virtual e começar a vender seus produtos ou serviços online? O curso gratuito WordPress + WooCommerce foi desenvolvido para te ensinar a transformar o WordPress, o CMS mais popular do mundo, em uma plataforma poderosa de e-commerce com o uso do WooCommerce.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3236",
+        "slug": "adequando-sites-e-lojas-virtuais-em-wordpress-a-lgpd",
+        "title": "Adequando sites e lojas virtuais em WordPress à LGPD – Curso gratuito [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/wordpress-e-lgpd-md04-circle-ddfd9104235e835ffa555f5b79d0fb07-5d48cb37edbef.png",
+        "description": "A LGPD (Lei Geral de Proteção de Dados) chegou para transformar a forma como sites e lojas virtuais lidam com informações pessoais de seus usuários. Neste curso gratuito, você aprenderá tudo o que precisa para adequar seus projetos em WordPress e WooCommerce às exigências legais da LGPD, garantindo segurança, transparência e conformidade.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3237",
+        "slug": "mautic",
+        "title": "Automação de marketing com Mautic: Como transformar sua estratégia de marketing digital [20 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/mautic-circle-b52301ec890023f9a7e93c6a1e3f9a3a-5d48cb37edbef.png",
+        "description": "Aprenda a automatizar, segmentar e personalizar suas campanhas de marketing digital com o Mautic, uma ferramenta poderosa e gratuita para automação de marketing. Este curso gratuito foi desenvolvido para quem deseja dominar a automação, desde a instalação do Mautic até a criação de campanhas eficientes e integradas. Seja você um empreendedor, gestor de marketing ou curioso sobre o tema, este treinamento fornecerá as bases e as estratégias necessárias para transformar sua comunicação com clientes.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3238",
+        "slug": "curso-de-git-e-github",
+        "title": "Git e GitHub [20 Horas]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/git-1-circle-b469e86e38ebb09f48ca09dbba863ca9-5d48cb37edbef.png",
+        "description": "Se você quer aprender Git e GitHub de forma simples, prática e eficiente, esse curso é para você! Seja para trabalhar em equipe, versionar seus projetos ou publicar seus códigos de forma profissional, dominar essas duas ferramentas é essencial para qualquer pessoa que deseje atuar no mundo do desenvolvimento de software.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3239",
+        "slug": "como-anunciar-na-internet",
+        "title": "Como anunciar na Internet",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/anunciar-internet2-circle-acb30eaaadcfd3d56803cd8bf0e0c941-5d48cb37edbef.jpg",
+        "description": "Aprenda, de forma prática e direta, como criar campanhas de anúncios eficientes que geram resultados reais para o seu negócio. Este curso gratuito sobre como anunciar na internet é ideal para quem deseja dominar as principais plataformas de publicidade digital, como Google Ads e Facebook Ads, além de explorar métodos criativos para promover produtos e serviços na web.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3240",
+        "slug": "curso-pratico-de-seo-modulo-01",
+        "title": "Curso Gratuito de SEO: Módulo 01 – Transforme seu site em um campeão de buscas [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/seo-circle-661460378e82396c16548e977187321e-5d48cb37edbef.png",
+        "description": "Você já sonhou em ver o seu site no topo dos resultados de busca do Google? Então, você está no lugar certo. O curso gratuito de SEO foi criado para quem deseja aprender do zero as principais técnicas, estratégias e ferramentas para melhorar o ranqueamento de sites de forma eficiente, profissional e ética.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3241",
+        "slug": "html5-css3-modulo1",
+        "title": "Curso HTML5 e CSS3: módulo 1 de 5 [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/htmlcss-vip-mod1-circle-c2e334d18a407d8cdfd1701f0e163c77-5d48cb37edbef.jpg",
+        "description": "Seja muito bem-vindo ao Módulo 01 do Curso de HTML5 e CSS3 do Curso em Vídeo! Neste primeiro passo da sua jornada no mundo do desenvolvimento web, você vai construir uma base sólida, compreendendo os conceitos essenciais que sustentam a criação de sites modernos e bem estruturados.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3242",
+        "slug": "curso-html5-e-css3-modulo-2-de-5-40-horas",
+        "title": "Curso HTML5 e CSS3: módulo 2 de 5 [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/htmlcss-vip-mod2-circle-ef2946bd7fd520aece28c6864a81de73-5d48cb37edbef.jpg",
+        "description": "No Módulo 02 do curso de HTML5 e CSS3 do Curso em Vídeo, você vai mergulhar ainda mais fundo no universo da criação de sites, aprendendo a construir páginas web com apelo visual, organização eficiente e foco na experiência do usuário. Aqui, o conteúdo vai muito além do código – você aprenderá a pensar como um verdadeiro designer front-end!",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3243",
+        "slug": "curso-html5-e-css3-modulo-3-de-5-40-horas",
+        "title": "Curso HTML5 e CSS3: módulo 3 de 5 [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/htmlcss-vip-mod3-circle-d07a875ba9f97813ea2ed22a2bf455c9-5d48cb37edbef.jpg",
+        "description": "No Módulo 03 do curso de HTML5 e CSS3 do Curso em Vídeo, você vai dar um passo importante na sua jornada como desenvolvedor web: levar seus projetos para a internet e aprimorar o visual dos seus sites com técnicas mais avançadas de CSS. Este é o momento em que seus conhecimentos começam a se transformar em projetos reais, com cara de site profissional!",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3244",
+        "slug": "curso-html5-e-css3-modulo-4-de-5-40-horas",
+        "title": "Curso HTML5 e CSS3: módulo 4 de 5 [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/htmlcss-mod4-circle-7c313386869bd8f235a63c2f9bb1313f-5d48cb37edbef.jpg",
+        "description": "Chegou a hora de dar um passo importante no seu aprendizado! No Módulo 04 do Curso de HTML5 e CSS3 do Curso em Vídeo, você vai aprofundar seus conhecimentos e dominar recursos fundamentais para criar páginas web mais completas, funcionais e preparadas para qualquer tipo de tela.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3245",
+        "slug": "seguranca-da-informacao-modulo-00",
+        "title": "Segurança da Informação: Módulo 00 [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/seg-info-mod00-circle-91538fd1e619223a7269d6ecf7a73930-5d48cb37edbef.png",
+        "description": "Este curso é a introdução ideal para quem deseja entender a fundo os conceitos fundamentais de segurança da informação. Criado a partir de uma demanda crescente por proteção online e inspirado em eventos reais, o curso utiliza como base a cartilha CERT.br do NIC.br e é complementado com exemplos práticos para ilustrar os conceitos teóricos. Com uma linguagem acessível, esse módulo inicial prepara tanto profissionais quanto leigos para os desafios da segurança digital no cotidiano.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3246",
+        "slug": "seguranca-da-informacao-modulo-01-20-horas",
+        "title": "Segurança da Informação: Módulo 01 [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/seg-info-mod01-circle-02fe143572188ecdd6ba6b33d5c719ea-5d48cb37edbef.png",
+        "description": "Neste módulo do curso “Segurança da Informação”, vamos explorar os principais conceitos sobre segurança digital em redes sociais. Hoje, mais do que nunca, as redes sociais são um ambiente complexo, repleto de interações que podem expor nossas informações pessoais de formas que nem sempre percebemos. Saber como essas plataformas operam, quais dados coletam e como proteger suas informações é essencial para evitar problemas de privacidade e segurança.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3247",
+        "slug": "seguranca-da-informacao-modulo-02-20-horas",
+        "title": "Segurança da Informação: Módulo 02 [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/seg-info-mod02-circle-7a388753e4b3e2cfcda2891b40dfef96-5d48cb37edbef.png",
+        "description": "No módulo 02 do curso gratuito de Segurança da Informação, mergulhamos em questões profundas e práticas relacionadas à privacidade e exposição de dados pessoais na era digital. Através de exemplos concretos e discussões bem-humoradas, o curso explora a complexidade da privacidade online e os desafios de proteger informações pessoais em um ambiente digital cada vez mais monitorado e interconectado.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3248",
+        "slug": "curso-pratico-de-redes-de-computadores-e-internet-20-horas",
+        "title": "Curso Prático de Redes de Computadores e Internet [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/redes-internet-circle-416576a0358f958c51f7cab042625857-5d48cb37edbef.png",
+        "description": "Se você quer aprender redes de computadores de verdade, com foco total na prática e nas necessidades do mercado, este é o curso ideal! O Curso Prático de Redes de Computadores e Internet do Curso em Vídeo foi desenvolvido para quem deseja dominar, passo a passo, a configuração, instalação e manutenção de redes, tanto em ambientes domésticos quanto corporativos.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3249",
+        "slug": "curso-de-enderecamento-ipv4-20-horas",
+        "title": "Curso de Endereçamento IPv4 [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/IPv4-circle-e6d266f3dd063051ace66c42d8722b1b-5d48cb37edbef.png",
+        "description": "O Curso de Endereçamento IPv4 do Curso em Vídeo é a escolha perfeita para quem deseja dominar um dos pilares fundamentais da área de redes de computadores. De forma 100% gratuita e com certificado, você vai aprender, passo a passo, como funciona o Internet Protocol versão 4 (IPv4), a base do tráfego de dados na internet e em redes locais.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3250",
+        "slug": "curso-de-php-moderno-modulo-01",
+        "title": "Curso de PHP Moderno: Módulo 01 [40 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/php-moderno1-circle-fc3e7477a5ad373ac169b092a7493ef1-5d48cb37edbef.png",
+        "description": "Aprender PHP é essencial para qualquer desenvolvedor web que busca criar aplicações dinâmicas e funcionais. O “Curso Gratuito de PHP Moderno” foi projetado para quebrar preconceitos e mitos que envolvem essa linguagem, oferecendo uma abordagem atualizada, prática e com foco nas versões mais recentes. Esse curso vai te proporcionar uma formação sólida e completa, mesmo que você seja um iniciante em programação.",
+        "videos": []
+    },
+    {
+        "id": "a5ff23ejoAA3251",
+        "slug": "curso-de-ingles-para-iniciantes-modulo-1-beginners-gratis-e-completo",
+        "title": "Curso de Inglês para Iniciantes – Módulo 01: Beginners – Grátis e Completo [20 HORAS]",
+        "image": "https://www.cursoemvideo.com/wp-content/uploads/bb-plugin/cache/ingles-mod01-circle-114a5715791cc9adcc7d170184e8e30e-5d48cb37edbef.png",
+        "description": "Neste curso de inglês para iniciantes, você terá uma introdução completa e gratuita ao idioma, com foco em quem está começando do zero ou deseja reforçar suas bases. O curso é ideal para aqueles que querem aprender de forma estruturada, sem promessas milagrosas de fluência rápida, mas com métodos eficientes e muito bem planejados. O Módulo 01, chamado “Beginners”, oferece mais de 20 aulas detalhadas para ajudá-lo a desenvolver as habilidades essenciais de comunicação e a familiaridade com o vocabulário básico em inglês.",
+        "videos": []
+    }
+]
