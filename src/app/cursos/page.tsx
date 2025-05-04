@@ -1,9 +1,10 @@
 import Img from "../components/layout/img";
+//import Image from "next/image";
 import Link from "next/link";
 
 export default async function Cursos() {
   const db = await fetch(
-    "https://filipe520.github.io/Carrossel-de-Cidades/json/db.json"
+    "https://micaelsilvasouza.github.io/clone-curso-em-video/db/courses.json"
   );
   const data = await db.json();
 
@@ -38,18 +39,17 @@ export default async function Cursos() {
         </div>
       </section>
       <section className="cards py-5">
-        {/* Exemplo de uso dos dados */}
-        {data &&
-          data.courses?.map((json: { title: string; paragraph: string }) => (
+        {
+          data.map((json:{id: string, slug: string,image: string, title: string, description: string}) => (
             <div
-              key={data.courses.indexOf(json)}
+              key={json.id}
               className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-50 w-[350px] mb-4"
             >
               <div className="w-full">
                 <Link href={`/cursos/"detalhes"`}>
                   <Img
-                    img={"curso_ingles.jpg"}
-                    alt={`Imagem do curso "Curso"}`}
+                    img={json.image}
+                    alt={json.slug}
                   />
                 </Link>
               </div>
@@ -59,7 +59,7 @@ export default async function Cursos() {
                     {json.title}
                   </h2>
                 </Link>
-                <p className="text-gray-700 text-base">{json.paragraph}</p>
+                <p className="text-gray-700 text-base">{json.description.slice(0, 101) + "[...]"}</p>
               </div>
               <div className="px-6 pt-4 pb-2">
                 <Link href={`/cursos/"detalhes"}`}>
@@ -69,7 +69,8 @@ export default async function Cursos() {
                 </Link>
               </div>
             </div>
-          ))}
+          ))
+        }
       </section>
     </section>
   );

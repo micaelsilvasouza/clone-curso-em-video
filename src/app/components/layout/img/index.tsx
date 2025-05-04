@@ -9,7 +9,7 @@ export default function Img({ img, alt }: imgProps) {
   return (
     <>
       <Image
-        src={`/image/${img}`}
+        src={/https:\/\//.test(img) ? img : `/image/${img}`}
         alt={alt}
         layout="responsive"
         width={500}
