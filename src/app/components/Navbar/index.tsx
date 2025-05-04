@@ -61,7 +61,7 @@ export default function Navbar() {
 
       {/* Links estão responsivo */}
       <ul
-        className={`pointer-events-auto
+        className={` md:pointer-events-auto
           ${menuClass}
           ${isOpen ? "opacity-100 w-80" : "opacity-0 md:opacity-100"}
         `}
@@ -69,28 +69,28 @@ export default function Navbar() {
       >
         <li
           className={`${
-            isOpen ? "pointer-events-auto" : "pointer-events-none"
+            isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
           }`}
         >
           <Link href="/cursos">Cursos</Link>
         </li>
         <li
           className={`${
-            isOpen ? "pointer-events-auto" : "pointer-events-none"
+            isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
           }`}
         >
           <Link href="/sobre">Sobre</Link>
         </li>
         <li
           className={`${
-            isOpen ? "pointer-events-auto" : "pointer-events-none"
+            isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
           }`}
         >
           <Link href="/login">Login</Link>
         </li>
         <li
           className={`${
-            isOpen ? "pointer-events-auto" : "pointer-events-none"
+            isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
           }`}
         >
           <Link href="/cadastre-se">Cadastre-se</Link>
