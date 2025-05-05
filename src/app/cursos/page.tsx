@@ -19,7 +19,7 @@ export default async function Cursos() {
               className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-50 w-[350px] mb-4"
             >
               <div className="w-full">
-                <Link href={`/cursos/"detalhes"`}>
+                <Link href={`/cursos/${json.slug}`}>
                   <Img
                     img={json.image}
                     alt={json.slug}
@@ -27,7 +27,7 @@ export default async function Cursos() {
                 </Link>
               </div>
               <div className="px-6 py-4">
-                <Link href={`/cursos/"detalhes"}`}>
+                <Link href={`/cursos/${json.slug}`}>
                   <h2 className="font-bold text-xl mb-2 text-black">
                     {json.title}
                   </h2>
