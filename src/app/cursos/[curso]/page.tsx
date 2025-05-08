@@ -1,28 +1,55 @@
 import { notFound } from "next/navigation"
 import BannerCourse from "@/app/components/BannerCourse"
+import LinkClassVideo from "@/app/components/LinkClassVideo"
 
 export default async function Page({
   params,
 }: {
   params: Promise<{ curso: string }>
 }) {
+
+  //buscando dados do curso
   const { curso } = await params
-  const data = await fetch("https://micaelsilvasouza.github.io/clone-curso-em-video/db/courses.json")
+  let data = await fetch("https://micaelsilvasouza.github.io/clone-curso-em-video/db/courses.json")
   const cursos = await data.json()
 
-  const dados = cursos.filter((element: {slug: string}) => {
+  const course = cursos.filter((element: {slug: string}) => {
     return element.slug == curso
   })[0]
 
-  if(dados == undefined){
+  //verificando se o curso está cadastrado
+  if(course == undefined){
     notFound()
   }
+  
+  //buscando videos relacionados aos cursos
+  data = await fetch("https://micaelsilvasouza.github.io/clone-curso-em-video/db/videos.json")
+  const videos = (await data.json()).filter((element: {course: string})=>element.course == course.id)
+
+  //ordenando os videos de acordo com a propriedade order
+  videos.sort((a:{order: number}, b:{order: number})=>{
+    if(a.order > b.order){
+        return 1
+    }
+
+    if(a.order == b.order){
+        return 0
+    }
+
+    return -1
+})
 
   return (
     <main>
-      <BannerCourse title={dados.title} image={dados.image} slug={dados.slug}/>
+      <BannerCourse title={course.title} image={course.image} slug={course.slug}/>
       <section className="pt-[30px]">
-        <p className="p-5 text-xl text-indigo-900 w-8/10 max-w-180 m-auto">{dados.description}</p>
+        <p className="p-5 text-xl text-indigo-900 w-8/10 max-w-180 m-auto">{course.description}</p>
+      </section>
+      <section className="pt-[30px]">
+        <h1>Aulas</h1>
+        {videos.map((element: {title: string, slug: string}) => (
+          <LinkClassVideo key={element.slug} title={element.title} courseslug={course.slug} videoslug={element.slug}/>
+        ))}
       </section>
     </main>
   )

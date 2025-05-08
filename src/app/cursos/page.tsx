@@ -3,17 +3,17 @@ import Img from "../components/layout/img";
 import Link from "next/link";
 
 export default async function Cursos() {
-  const db = await fetch(
+  const data = await fetch(
     "https://micaelsilvasouza.github.io/clone-curso-em-video/db/courses.json"
   );
-  const data = await db.json();
+  const courses = await data.json();
 
   return (
     <section className="text-black bg-white ml-5 mr-5 max-w-7xl">
       <BannerPaginaCima dirname="Cursos"/>
       <section className="cards py-5">
         {
-          data.map((json:{id: string, slug: string,image: string, title: string, description: string}) => (
+          courses.map((json:{id: string, slug: string,image: string, title: string, description: string}) => (
             <div
               key={json.id}
               className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-50 w-[350px] mb-4"
