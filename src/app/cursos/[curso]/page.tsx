@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import Img from "../../components/layout/img"
+import BannerCourse from "@/app/components/BannerCourse"
 
 export default async function Page({
   params,
@@ -19,10 +19,11 @@ export default async function Page({
   }
 
   return (
-    <div className="text-black">
-      <h1>{dados.title}</h1>
-      <Img img={dados.image} alt={dados.slug}/>
-      <p>{dados.description}</p>
-    </div>
+    <main>
+      <BannerCourse title={dados.title} image={dados.image} slug={dados.slug}/>
+      <section className="pt-[30px]">
+        <p className="p-5 text-xl text-indigo-900 w-8/10 max-w-180 m-auto">{dados.description}</p>
+      </section>
+    </main>
   )
 }
