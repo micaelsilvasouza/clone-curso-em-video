@@ -1,27 +1,11 @@
 [
     {
         "id": "a5ff23ejoAA32qw",
-        "slug": "seguranca-da-informacao-modulo-04-20-horas/",
+        "slug": "seguranca-da-informacao-modulo-04-20-horas",
         "title": "Segurança da Informação: Módulo 04 [20 HORAS]",
         "image": "https://www.cursoemvideo.com/wp-content/uploads/2024/05/seg-info-mod04-300x300.png",
         "description": "Neste módulo do curso de Segurança da Informação, você vai explorar medidas práticas e fundamentais para proteger seus dados e dispositivos de ameaças cibernéticas. O conteúdo abrange desde o cuidado na instalação de aplicativos até a criação e gerenciamento de backups, passando por técnicas de proteção ao clicar em links suspeitos e cuidados com contas administrativas.",
-        "videos": [
-            {
-                "id": "G46aeeR5f01Rabc",
-                "title":"Apresentação",
-                "video": "https://www.youtube.com/embed/qeKiqLL4W8k?si=7ED4N3rEb9T3_h_j"
-            },
-            {
-                "id": "G46aeeR5f01Rdef",
-                "title":"Códigos Maliciosos (Parte 1)",
-                "video": "https://www.youtube.com/embed/Bo5Z5YV1eL8?si=lT3MSeuRZjlsK1TD"
-            },
-            {
-                "id": "G46aeeR5f01Rhij",
-                "title":"Códigos Maliciosos (parte 2)",
-                "video": "https://www.youtube.com/embed/NPwmn0DrS8Q?si=A-DW0dSqafd4xTgS"
-            }
-        ]
+        "videos": []
     },
     {
         "id": "a5ff23ejoAA3210",

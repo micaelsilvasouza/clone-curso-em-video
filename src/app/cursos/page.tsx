@@ -1,52 +1,25 @@
+import BannerPaginaCima from "../components/BannerPaginaCima";
 import Img from "../components/layout/img";
-//import Image from "next/image";
 import Link from "next/link";
 
 export default async function Cursos() {
-  const db = await fetch(
+  const data = await fetch(
     "https://micaelsilvasouza.github.io/clone-curso-em-video/db/courses.json"
   );
-  const data = await db.json();
+  const courses = await data.json();
 
   return (
     <section className="text-black bg-white ml-5 mr-5 max-w-7xl">
-      <section className="inforCurso bg-[url(/image/BannerPaginaCima.jpg)] bg-center bg-current">
-        <div className="py-5">
-          <h1 className="text-5xl font-bold py-2">Cursos</h1>
-        </div>
-        <div className="py-5">
-          <nav>
-            <ul className="flex gap-2">
-              <li>
-                <Link href="/" className="text-blue-500">
-                  Início
-                </Link>
-              </li>
-              <div>&rarr;</div>
-              <li>
-                <Link href="/cursos" className="text-gray-600">
-                  Cursos
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="py-5">
-          <p>
-            Seja um apoiador do Curso em Vídeo, remova os anúncios do site,
-            tenha créditos para emissão de certificados e outros benefícios
-          </p>
-        </div>
-      </section>
+      <BannerPaginaCima dirname="Cursos"/>
       <section className="cards py-5">
         {
-          data.map((json:{id: string, slug: string,image: string, title: string, description: string}) => (
+          courses.map((json:{id: string, slug: string,image: string, title: string, description: string}) => (
             <div
               key={json.id}
               className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-50 w-[350px] mb-4"
             >
               <div className="w-full">
-                <Link href={`/cursos/"detalhes"`}>
+                <Link href={`/cursos/${json.slug}`}>
                   <Img
                     img={json.image}
                     alt={json.slug}
@@ -54,7 +27,7 @@ export default async function Cursos() {
                 </Link>
               </div>
               <div className="px-6 py-4">
-                <Link href={`/cursos/"detalhes"}`}>
+                <Link href={`/cursos/${json.slug}`}>
                   <h2 className="font-bold text-xl mb-2 text-black">
                     {json.title}
                   </h2>
@@ -62,7 +35,7 @@ export default async function Cursos() {
                 <p className="text-gray-700 text-base">{json.description.slice(0, 101) + "[...]"}</p>
               </div>
               <div className="px-6 pt-4 pb-2">
-                <Link href={`/cursos/"detalhes"}`}>
+                <Link href={`/cursos/${json.slug}`}>
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     Veja mais
                   </span>

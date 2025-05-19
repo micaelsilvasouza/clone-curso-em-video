@@ -2,6 +2,10 @@
 
 @import "tailwindcss";
 
+@theme {
+  --color-indigo-900: #261c3f;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,8 +21,8 @@
 }
 
 body {
-  background: #f2fafc;
-  color: var(--foreground);
+  background: #ffffff;
+  color: #261c3f;
   font-family: Arial, Helvetica, sans-serif;
 
   background-position: center center;
