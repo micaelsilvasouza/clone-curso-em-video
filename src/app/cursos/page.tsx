@@ -9,8 +9,9 @@ export default async function Cursos() {
   const courses = await data.json();
 
   return (
+    <>
+    <BannerPaginaCima dirname="Cursos"/>
     <section className="text-black bg-white ml-5 mr-5 max-w-7xl">
-      <BannerPaginaCima dirname="Cursos"/>
       <section className="cards py-5">
         {
           courses.map((json:{id: string, slug: string,image: string, title: string, description: string}) => (
@@ -46,5 +47,6 @@ export default async function Cursos() {
         }
       </section>
     </section>
+    </>
   );
 }

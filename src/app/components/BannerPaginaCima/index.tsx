@@ -1,6 +1,6 @@
 export default function BannerPaginaCima({dirname}:{dirname: string}) {
   return (
-    <section className="bg-blue-50 text-black bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-center">
+    <section className="bg-blue-50 text-black bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-center p-5">
       <h1 className="text-5xl font-semibold text-blue-950">{dirname}</h1>
 
       <div className="my-10">

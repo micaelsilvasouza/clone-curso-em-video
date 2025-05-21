@@ -3,7 +3,7 @@ import BlocoAcesso from "../components/BlocoAcesso";
 
 export default function MyAccount() {
   return (
-    <main className="bg-[#F2FAFC] container">
+    <main>
       <BannerPaginaCima dirname="Minha conta"/>
 
       <div className="grid [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))] gap-8 mt-4">
