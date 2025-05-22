@@ -1,0 +1,18 @@
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+
+    --bg-header-open: #f2fafc;
+}
+
+@theme {
+    --color-indigo-900: #261c3f;
+    --color-sky-10: #f2fafc;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}

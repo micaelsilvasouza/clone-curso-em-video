@@ -1,4 +1,4 @@
-import BannerPaginaCima from "../components/BannerPaginaCima";
+import BannerPaginaCima from "../components/BannerRotaHeader";
 import Img from "../components/layout/img";
 import Link from "next/link";
 
@@ -10,10 +10,16 @@ export default async function Cursos() {
 
   return (
     <section className="text-black bg-white ml-5 mr-5 max-w-7xl">
-      <BannerPaginaCima dirname="Cursos"/>
+      <BannerPaginaCima nomeRota="Cursos" />
       <section className="cards py-5">
-        {
-          courses.map((json:{id: string, slug: string,image: string, title: string, description: string}) => (
+        {courses.map(
+          (json: {
+            id: string;
+            slug: string;
+            image: string;
+            title: string;
+            description: string;
+          }) => (
             <div
               key={json.id}
               className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-50 w-[350px] mb-4"
@@ -23,6 +29,8 @@ export default async function Cursos() {
                   <Img
                     img={json.image}
                     alt={json.slug}
+                    width={100}
+                    height={100}
                   />
                 </Link>
               </div>
@@ -32,7 +40,9 @@ export default async function Cursos() {
                     {json.title}
                   </h2>
                 </Link>
-                <p className="text-gray-700 text-base">{json.description.slice(0, 101) + "[...]"}</p>
+                <p className="text-gray-700 text-base">
+                  {json.description.slice(0, 101) + "[...]"}
+                </p>
               </div>
               <div className="px-6 pt-4 pb-2">
                 <Link href={`/cursos/${json.slug}`}>
@@ -42,8 +52,8 @@ export default async function Cursos() {
                 </Link>
               </div>
             </div>
-          ))
-        }
+          )
+        )}
       </section>
     </section>
   );
