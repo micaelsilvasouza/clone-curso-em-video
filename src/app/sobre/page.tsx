@@ -11,7 +11,7 @@ export default function Sobre() {
       <BannerRotaHeader nomeRota="Sobre" />
 
       {/* Sobre o Guanabara */}
-      <section className="flex flex-col p-5">
+      <section className="flex max-md:flex-col p-5">
         {/* Parte da Img */}
         <article className="flex flex-col p-5 flex-1">
           <div className="flex justify-center">
@@ -74,11 +74,11 @@ export default function Sobre() {
 
       {/* total de alunos */}
       <section className="bg-cyan-400 px-2 flex flex-col items-center justify-center">
-        <article className="h-[80dvh] flex flex-col items-center justify-center">
+        <article className="py-20 flex flex-col items-center justify-center">
           <h2 className="text-white text-2xl text-center font-semibold mb-20 md:text-3xl">
             Números do Curso em Vídeo
           </h2>
-          <section className=" w-full grid grid-rows-2 md:grid-cols-2 items-center justify-items-center gap-2">
+          <section className=" w-full grid grid-rows-2 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-1 items-center justify-items-center gap-2">
             <div className=" bg-white p-5 rounded-lg w-full">
               <h3 className="text-center text-3xl font-semibold">
                 + 2 milhões
