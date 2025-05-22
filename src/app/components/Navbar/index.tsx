@@ -8,6 +8,7 @@ import Img from "../layout/img";
 import BotaoScroll from "./mobile/BotaoScrol";
 import MenuHamburgue from "./mobile/MenuHamburgue";
 import XdoMenuAberto from "./mobile/XdoMenuAberto";
+import Links from "./links";
 
 // Lib next
 import Link from "next/link";
@@ -15,19 +16,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
-  // Estilo da tag ul
-  const menuClass = `
-          md:flex md:relative md:h-0 md:pt-0 md:flex-row
-          flex flex-col
-          absolute top-0 left-0
-          h-dvh
-          p-4 pt-20
-          gap-6
-          z-10
-          transition-transform duration-3000 ease-in-out
-          text-base font-semibold text-blue-950
-          `;
-
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -55,46 +43,38 @@ export default function Navbar() {
         } md:opacity-100`}
       >
         <Link href="/">
-          <Img img={"logoBlue.png"} alt="Imagem da logo Curso em Vídeo" />
+          <Img
+            img={"logoBlue.png"}
+            alt="Imagem da logo Curso em Vídeo"
+            width={145}
+            height={145}
+          />
         </Link>
       </div>
 
       {/* Links estão responsivo */}
       <ul
-        className={` md:pointer-events-auto
-          ${menuClass}
-          ${isOpen ? "opacity-100 w-80" : "opacity-0 md:opacity-100"}
+        className={`
+          md:pointer-events-auto
+          md:flex md:relative md:pt-0 md:flex-row
+          flex flex-col items-center
+          absolute top-0 left-0
+          gap-6
+          z-10
+          md:h-0
+          transition-transform duration-3000 ease-in-out
+          text-base font-base text-blue-950
+          p-0
+          ${
+            isOpen
+              ? "opacity-100 w-80 p-4 pt-20 h-dvh items-start"
+              : "opacity-0 md:opacity-100"
+          }
         `}
         style={{ backgroundColor: "var(--bg-header-open)" }}
       >
-        <li
-          className={`${
-            isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
-          }`}
-        >
-          <Link href="/cursos">Cursos</Link>
-        </li>
-        <li
-          className={`${
-            isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
-          }`}
-        >
-          <Link href="/sobre">Sobre</Link>
-        </li>
-        <li
-          className={`${
-            isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
-          }`}
-        >
-          <Link href="/login">Login</Link>
-        </li>
-        <li
-          className={`${
-            isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
-          }`}
-        >
-          <Link href="/cadastre-se">Cadastre-se</Link>
-        </li>
+        {/* Links */}
+        <Links isOpen={isOpen} />
       </ul>
 
       {/* Menu Mobile */}

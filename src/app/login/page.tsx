@@ -8,7 +8,12 @@ export default function Login() {
       <main>
         <section className={styles.conteiner_form}>
           <div style={{ width: "200px" }}>
-            <Img img="logoBlue.png" alt="logo azul do curso em video" />
+            <Img
+              img="logoBlue.png"
+              alt="logo azul do curso em video"
+              width={200}
+              height={200}
+            />
           </div>
           <FormLogin />
         </section>
