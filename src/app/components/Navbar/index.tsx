@@ -15,7 +15,20 @@ import Link from "next/link";
 // Lib react
 import { useState, useEffect } from "react";
 
-export default function Navbar() {
+// Type NavBar
+interface ProprNavBar {
+  style?: string;
+  styleHamburguer: string;
+  logo: string;
+  styleLinks: string;
+}
+
+export default function Navbar({
+  style,
+  logo = "logoBlue.png",
+  styleHamburguer,
+  styleLinks = "text-blue-950",
+}: ProprNavBar) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -35,7 +48,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className={styles.Navbar}>
+    <nav className={`${styles.Navbar} ${style}`}>
       {/* Logo */}
       <div
         className={`${styles.logo} ${
@@ -44,10 +57,10 @@ export default function Navbar() {
       >
         <Link href="/">
           <Img
-            img={"logoBlue.png"}
+            img={logo}
             alt="Imagem da logo Curso em Vídeo"
-            width={145}
-            height={145}
+            width={150}
+            height={150}
           />
         </Link>
       </div>
@@ -63,7 +76,7 @@ export default function Navbar() {
           z-10
           md:h-0
           transition-transform duration-3000 ease-in-out
-          text-base font-base text-blue-950
+          text-base font-base ${styleLinks}
           p-0
           ${
             isOpen
@@ -82,6 +95,7 @@ export default function Navbar() {
         isOpen={isOpen}
         isScrolled={isScrolled}
         setIsOpen={setIsOpen}
+        stylesBar={styleHamburguer}
       />
       <XdoMenuAberto
         isOpen={isOpen}

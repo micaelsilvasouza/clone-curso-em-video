@@ -1,39 +1,61 @@
 import Link from "next/link";
+
+// Icons
 import { CiUser } from "react-icons/ci";
+import { LuBook } from "react-icons/lu";
+import { ImInfo } from "react-icons/im";
+import { PiUserList } from "react-icons/pi";
 
 export default function Links({ isOpen }: { isOpen: boolean }) {
   return (
     <>
       <li
         className={`${
-          isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
+          isOpen
+            ? "pointer-events-auto text-blue-950"
+            : "md:[500px]:pointer-events-none"
         } flex gap-1`}
       >
-        <Link href="/cursos">Cursos</Link>
+        <Link href="/cursos" className="flex items-center gap-1">
+          <LuBook />
+          Cursos
+        </Link>
       </li>
       <li
         className={`${
-          isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
+          isOpen
+            ? "pointer-events-auto text-blue-950"
+            : "md:[500px]:pointer-events-none"
         } flex gap-1`}
       >
-        <Link href="/sobre">Sobre</Link>
+        <Link href="/sobre" className="flex items-center gap-1">
+          <ImInfo />
+          Sobre
+        </Link>
       </li>
       <li
         className={`${
-          isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
+          isOpen
+            ? "pointer-events-auto text-blue-950"
+            : "md:[500px]:pointer-events-none"
         }`}
       >
         <Link href="/login" className="flex items-center gap-1">
-          <CiUser />
+          <CiUser size={20} />
           Login
         </Link>
       </li>
       <li
         className={`${
-          isOpen ? "pointer-events-auto" : "md:[500px]:pointer-events-none"
+          isOpen
+            ? "pointer-events-auto text-blue-950"
+            : "md:[500px]:pointer-events-none"
         } flex gap-1`}
       >
-        <Link href="/cadastre-se">Cadastre-se</Link>
+        <Link href="/cadastre-se" className="flex items-center gap-1">
+          <PiUserList size={25} />
+          Cadastre-se
+        </Link>
       </li>
     </>
   );
