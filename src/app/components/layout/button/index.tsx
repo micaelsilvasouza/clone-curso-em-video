@@ -1,5 +1,3 @@
-import styles from "./styles.module.css";
-
 interface ButtonProp {
   title: string;
   clickFunction: () => void;
@@ -8,7 +6,7 @@ interface ButtonProp {
 export default function Button({ title, clickFunction }: ButtonProp) {
   return (
     <button
-      className={styles.button_form}
+      className={`bg-blue-600 text-white active:text-black/50 p-3 rounded-4xl active:bg-blue-500 mb-5`}
       type="button"
       onClick={clickFunction} // Passando a função diretamente
     >

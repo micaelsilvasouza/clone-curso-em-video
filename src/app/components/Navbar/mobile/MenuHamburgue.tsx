@@ -1,12 +1,14 @@
 type PropHamburguer = {
   isOpen: boolean;
   isScrolled: boolean;
+  stylesBar?: string;
   setIsOpen: (param: boolean) => void;
 };
 
 export default function MenuHamburgue({
   isOpen,
   isScrolled,
+  stylesBar = "bg-blue-950",
   setIsOpen,
 }: PropHamburguer) {
   return (
@@ -21,19 +23,19 @@ export default function MenuHamburgue({
         aria-label="Abrindo Navbar"
       >
         <span
-          className={`absolute left-0 top-1/2 w-7 h-[3px]  bg-blue-950 transform transition duration-300  ${
+          className={`absolute left-0 top-1/2 w-7 h-[3px] rounded-4xl ${stylesBar}  transform transition duration-300  ${
             isOpen ? "rotate-45 h-1" : "-translate-y-2"
           }`}
         />
 
         <span
-          className={`absolute left-0 top-1/2 w-7 h-[3px] bg-blue-950 transition duration-300  ${
+          className={`absolute left-0 top-1/2 w-7 h-[3px] rounded-4xl ${stylesBar} transition duration-300  ${
             isOpen ? "opacity-0" : "opacity-100"
           }`}
         />
 
         <span
-          className={`absolute left-0 top-1/2 w-7 h-[3px]  bg-blue-950 transform transition duration-300  ${
+          className={`absolute left-0 top-1/2 w-7 h-[3px] rounded-4xl ${stylesBar}  transform transition duration-300  ${
             isOpen ? "-rotate-45 h-1" : "translate-y-2"
           }`}
         />

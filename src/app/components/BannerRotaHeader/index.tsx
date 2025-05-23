@@ -1,9 +1,15 @@
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import Navbar from "../Navbar";
 
 export default function BannerRotaHeader({ nomeRota }: { nomeRota: string }) {
   return (
     <section className="bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-right p-5 pb-10">
-      <h1 className="text-[30px]  font-semibold text-blue text-indigo-950">
+      <Navbar
+        logo="logoBlue.png"
+        styleLinks="text-black"
+        styleHamburguer="bg-black"
+      />
+      <h1 className="text-[30px]  font-semibold text-blue text-indigo-950 pt-10">
         {nomeRota}
       </h1>
       <div className="mt-2 mb-7">
