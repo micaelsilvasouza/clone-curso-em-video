@@ -4,7 +4,7 @@
 import styles from "./styles.module.css";
 
 // componente
-import Img from "../layout/img";
+import Img_custon from "@/app/components/img_custon";
 import BotaoScroll from "./mobile/BotaoScrol";
 import MenuHamburgue from "./mobile/MenuHamburgue";
 import XdoMenuAberto from "./mobile/XdoMenuAberto";
@@ -56,7 +56,7 @@ export default function Navbar({
         } md:opacity-100`}
       >
         <Link href="/">
-          <Img
+          <Img_custon
             img={logo}
             alt="Imagem da logo Curso em Vídeo"
             width={150}

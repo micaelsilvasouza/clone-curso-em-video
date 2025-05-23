@@ -1,5 +1,5 @@
 // Componentes
-import Img from "../layout/img";
+import Img_custon from "@/app/components/img_custon";
 
 // Lib NextJS
 import Link from "next/link";
@@ -18,7 +18,7 @@ export default function Carteirinha() {
                 bg-black/70
             "
     >
-      <Img
+      <Img_custon
         img="https://www.cursoemvideo.com/wp-content/uploads/2023/06/FEC-logo-branco.png"
         alt="FEC-logo-branco"
         width={300}

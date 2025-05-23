@@ -8,7 +8,13 @@ interface imgProps {
   className?: string;
 }
 
-export default function Img({ className, img, alt, width, height }: imgProps) {
+export default function Img_custon({
+  className,
+  img,
+  alt,
+  width,
+  height,
+}: imgProps) {
   return (
     <>
       <Image

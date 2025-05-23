@@ -1,13 +1,16 @@
 "use client";
 
+// React Icons
 import { FaCheck } from "react-icons/fa6";
 
+// Lib React/Next
 import Link from "next/link";
-import Button from "../../layout/button";
-import Input from "../../layout/input";
 import { useRouter } from "next/navigation";
-
 import { useState } from "react";
+
+// Componentes
+import Button from "../button_form";
+import InputForm from "../input_form";
 
 export default function FormLogin() {
   const [email, setEmail] = useState("");
@@ -34,14 +37,14 @@ export default function FormLogin() {
     <form className={``} action="">
       <h1 className="text-3xl text-indigo-900 font-semibold py-5">Entrar</h1>
       <section className="flex flex-col gap-5">
-        <Input
+        <InputForm
           name={"email"}
           label="Email"
           placeholder={"Digite seu melhor e-mail..."}
           type={"email"}
           changeFunction={setEmail}
         />
-        <Input
+        <InputForm
           name={"password"}
           label="Senha"
           placeholder={"Digite sua senha..."}

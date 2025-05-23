@@ -1,5 +1,5 @@
 // Componentes
-import Img from "../layout/img";
+import Img_custon from "@/app/components/img_custon";
 
 // Lib NextJS
 import Link from "next/link";
@@ -20,7 +20,7 @@ export default function Estudonauta() {
     bg-black/70
 "
     >
-      <Img
+      <Img_custon
         img="https://www.cursoemvideo.com/wp-content/uploads/2019/08/logo-01.png"
         alt="Estudounauta-logo-branco"
         width={300}

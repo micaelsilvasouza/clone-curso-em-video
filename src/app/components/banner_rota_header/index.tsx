@@ -1,5 +1,5 @@
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import Navbar from "../Navbar";
+import Navbar from "../layout/header_pastas/Navbar";
 
 export default function BannerRotaHeader({ nomeRota }: { nomeRota: string }) {
   return (

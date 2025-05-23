@@ -1,5 +1,5 @@
 // Componentes
-import Img from "../layout/img";
+import Img_custon from "@/app/components/img_custon";
 
 // Lib NextJS
 import Link from "next/link";
@@ -24,7 +24,7 @@ export default function ApoioInstitucional() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <Img_custon
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-hostnet.png"
               alt="logo-hostnet"
               width={300}
@@ -36,7 +36,7 @@ export default function ApoioInstitucional() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <Img_custon
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-estudonauta.png"
               alt="logo-estudonauta"
               width={300}
@@ -48,7 +48,7 @@ export default function ApoioInstitucional() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <Img_custon
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-recode.png"
               alt="logo-recode"
               width={300}
@@ -60,7 +60,7 @@ export default function ApoioInstitucional() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <Img_custon
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/Asus.png"
               alt="logo-asus"
               width={300}
@@ -72,7 +72,7 @@ export default function ApoioInstitucional() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <Img_custon
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/FEC-logo.png"
               alt="logo-fec"
               width={300}
@@ -81,7 +81,7 @@ export default function ApoioInstitucional() {
           </Link>
         </section>
       </section>
-      <section className="w-full flex items-center md:justify-end justify-center mt-20 md:mt-5">
+      <section className="w-full flex items-center  md:justify-end justify-center mt-20 md:mt-5">
         <button className="text-black/70 border border-black/70 text-sm p-2 rounded-sm uppercase cursor-pointer hover:text-black hover:bg-black/10 transition ease-in">
           seja um apoiador institucional
         </button>

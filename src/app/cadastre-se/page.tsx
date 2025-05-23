@@ -1,5 +1,5 @@
-import Img from "../components/layout/img";
-import FormCadastreSe from "../components/forms/form_cadastre_se";
+import Img_custon from "../components/img_custon";
+import FormCadastreSe from "../components/form_pastas/form_cadastre_se";
 import styles from "./styles.module.css";
 
 export default function Cadastre_se() {
@@ -7,7 +7,7 @@ export default function Cadastre_se() {
     <main>
       <section className={styles.conteiner_form}>
         <div style={{ width: "200px" }}>
-          <Img
+          <Img_custon
             img="logoBlue.png"
             alt="Logo azul do curso em video"
             width={100}

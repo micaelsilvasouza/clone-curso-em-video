@@ -1,8 +1,8 @@
 // Componentes
-import Carteirinha from "../footerCarteirinha";
-import Estudonauta from "../footerEstudonauta";
-import ApoioInstitucional from "../footerApoioInstitucional";
-import RedesSociais from "../footerRedesSociais";
+import Carteirinha from "../footer_carteirinha";
+import Estudonauta from "../footer_estudonauta";
+import ApoioInstitucional from "../footer_apoio_institucional";
+import RedesSociais from "../footer_redes_sociais";
 
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
         {/* banner Estudonauta  */}
         <Estudonauta />
       </section>
-      <section className="lg:w-[1200px] mx-auto">
+      <section className="min-xl:w-[1200px] mx-auto">
         {/* Apoio Institucional */}
         <ApoioInstitucional />
 
