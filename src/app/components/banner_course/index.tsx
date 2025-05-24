@@ -17,7 +17,7 @@ export default function BannerCourse({ title, image, slug }: PropBannerCourse) {
       />
       <h1 className="pl-4 md:col-span-3">
         <span className="block text-lg text-[#1c0051]">Curso de</span>
-        <span className="block text-6xl font-semibold text-[#1c0051]">
+        <span className="block text-4xl font-semibold text-[#1c0051]">
           {title}
         </span>
       </h1>
