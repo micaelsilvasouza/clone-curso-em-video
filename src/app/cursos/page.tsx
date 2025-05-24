@@ -56,6 +56,5 @@ export default async function Cursos() {
         </section>
       </article>
     </section>
-    </>
   );
 }
