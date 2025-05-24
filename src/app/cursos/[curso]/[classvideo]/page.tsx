@@ -1,23 +1,31 @@
-import { notFound } from "next/navigation"
-import IframeVideo from "@/app/components/IframeVideo"
+import { notFound } from "next/navigation";
+import IframeVideo from "@/app/components/components_video/IframeVideo";
 
-export default async function ClassVideo({params}: {params: Promise<{classvideo: string}>}){
-    const {classvideo} = await params
-    const data = await fetch("https://micaelsilvasouza.github.io/clone-curso-em-video/db/videos.json")
-    const videos = await data.json()
+export default async function ClassVideo({
+  params,
+}: {
+  params: Promise<{ classvideo: string }>;
+}) {
+  const { classvideo } = await params;
+  const data = await fetch(
+    "https://micaelsilvasouza.github.io/clone-curso-em-video/db/videos.json"
+  );
+  const videos = await data.json();
 
-    const video = videos.filter((element: {slug: string})=>element.slug == classvideo)[0]
+  const video = videos.filter(
+    (element: { slug: string }) => element.slug == classvideo
+  )[0];
 
-    if(video == undefined){
-        notFound()
-    }
+  if (video == undefined) {
+    notFound();
+  }
 
-    return (
-        <main>
-            <h1>{video.title}</h1>
-            <div>
-                <IframeVideo src={video.video} />
-            </div>
-        </main>
-    )
+  return (
+    <main>
+      <h1>{video.title}</h1>
+      <div>
+        <IframeVideo src={video.video} />
+      </div>
+    </main>
+  );
 }

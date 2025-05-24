@@ -1,4 +1,4 @@
-import Img from "../layout/img";
+import Img_custon from "../img_custon";
 
 interface PropBannerCourse {
   title: string;
@@ -10,7 +10,7 @@ export default function BannerCourse({ title, image, slug }: PropBannerCourse) {
   return (
     <div className="grid justify-items-center p-8 pt-[120px] bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-center md:justify-items-start md:grid-cols-4">
       <div className="size-[200px] md:size-50 md:row-span-2">
-        <Img
+        <Img_custon
           className="rounded-full"
           img={image}
           alt={slug}
@@ -25,7 +25,7 @@ export default function BannerCourse({ title, image, slug }: PropBannerCourse) {
         </span>
       </h1>
       <div className="size-30 p-4">
-        <Img
+        <Img_custon
           img="https://www.cursoemvideo.com/wp-content/uploads/2019/08/Ativo-8.png"
           alt="Curso gratis"
           width={100}

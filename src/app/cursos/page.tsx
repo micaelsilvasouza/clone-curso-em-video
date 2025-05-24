@@ -1,6 +1,6 @@
 // Componentes
-import BannerPaginaCima from "../components/BannerRotaHeader";
-import Img from "../components/layout/img";
+import BannerPaginaCima from "../components/banner_rota_header";
+import Img_custon from "../components/img_custon";
 
 // Lib Next
 import Link from "next/link";
@@ -14,8 +14,8 @@ export default async function Cursos() {
   return (
     <section className="text-black">
       <BannerPaginaCima nomeRota="Cursos" />
-      <article className="">
-        <section className="p-5 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 justify-center">
+      <article className="flex items-center justify-center">
+        <section className="p-5 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 justify-center max-w-[1500px]">
           {courses.map(
             (json: {
               id: string;
@@ -30,12 +30,7 @@ export default async function Cursos() {
               >
                 <div className="w-full">
                   <Link href={`/cursos/${json.slug}`}>
-                    <Img
-                      img={json.image}
-                      alt={json.slug}
-                      width={500}
-                      height={500}
-                    />
+                    <Img_custon img={json.image} alt={json.slug} width={500} />
                   </Link>
                 </div>
                 <div className="px-6 py-4">

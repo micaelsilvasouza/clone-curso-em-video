@@ -1,9 +1,12 @@
 "use client";
 
+// Lib React/Next
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Input from "../../layout/input";
-import Button from "../../layout/button";
+
+// Componentes
+import InputForm from "./InputForm";
+import Button from "./Button";
 
 export default function FormCadastreSe() {
   const [name, setNome] = useState("");
@@ -42,39 +45,45 @@ export default function FormCadastreSe() {
 
   return (
     <form className={``} action="">
-      <Input
+      <InputForm
         name="firstname"
-        title="Nome"
+        label="Nome"
+        placeholder="Digite seu primeiro nome..."
         type="text"
         changeFunction={setNome}
       />
-      <Input
+      <InputForm
         name="lastname"
-        title="Sobrenome"
+        label="Sobrenome"
+        placeholder="Digite seu sobre nome..."
         type="text"
         changeFunction={setLastNome}
       />
-      <Input
+      <InputForm
         name="email"
-        title="E-mail"
+        label="E-mail"
+        placeholder="Digite seu melhor e-mail..."
         type="email"
         changeFunction={setEmail}
       />
-      <Input
+      <InputForm
         name="confirm-email"
-        title="Confirme seu e-mail"
+        label="Confirme seu e-mail"
+        placeholder="Confirme seu e-mail..."
         type="email"
         changeFunction={setCEmail}
       />
-      <Input
+      <InputForm
         name="passoword"
-        title="Senha"
+        label="Senha"
+        placeholder="Digite sua senha."
         type="password"
         changeFunction={setPassword}
       />
-      <Input
+      <InputForm
         name="confirm-password"
-        title="Confirmar sua senha"
+        label="Confirmar sua senha."
+        placeholder="Digite novamente sua senha."
         type="password"
         changeFunction={setCPassword}
       />

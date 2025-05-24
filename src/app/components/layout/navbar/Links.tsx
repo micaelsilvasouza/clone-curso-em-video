@@ -16,7 +16,10 @@ export default function Links({ isOpen }: { isOpen: boolean }) {
             : "md:[500px]:pointer-events-none"
         } flex gap-1`}
       >
-        <Link href="/cursos" className="flex items-center gap-1">
+        <Link
+          href="/cursos"
+          className="flex items-center gap-1 hover:border-b hover:border-sky-600 border-b border-transparent transition ease-in"
+        >
           <LuBook />
           Cursos
         </Link>
@@ -28,7 +31,10 @@ export default function Links({ isOpen }: { isOpen: boolean }) {
             : "md:[500px]:pointer-events-none"
         } flex gap-1`}
       >
-        <Link href="/sobre" className="flex items-center gap-1">
+        <Link
+          href="/sobre"
+          className="flex items-center gap-1 hover:border-b hover:border-sky-600 border-b border-transparent transition ease-in"
+        >
           <ImInfo />
           Sobre
         </Link>
@@ -40,7 +46,10 @@ export default function Links({ isOpen }: { isOpen: boolean }) {
             : "md:[500px]:pointer-events-none"
         }`}
       >
-        <Link href="/login" className="flex items-center gap-1">
+        <Link
+          href="/login"
+          className="flex items-center gap-1 hover:border-b hover:border-sky-600 border-b border-transparent transition ease-in"
+        >
           <CiUser size={20} />
           Login
         </Link>
@@ -52,7 +61,16 @@ export default function Links({ isOpen }: { isOpen: boolean }) {
             : "md:[500px]:pointer-events-none"
         } flex gap-1`}
       >
-        <Link href="/cadastre-se" className="flex items-center gap-1">
+        <Link
+          href="/cadastre-se"
+          className="
+          flex items-center 
+          gap-1 
+          hover:border-b hover:border-sky-600 
+          border-b border-transparent 
+          transition ease-in
+          "
+        >
           <PiUserList size={25} />
           Cadastre-se
         </Link>
