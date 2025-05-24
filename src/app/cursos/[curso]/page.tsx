@@ -25,7 +25,7 @@ export default async function Page({
 
   //buscando videos relacionados aos cursos
   data = await fetch(
-    "https://micaelsilvasouza.github.io/clone-curso-em-video/db/videos.json"
+    "https://filipe520.github.io/api-cursoEmVideo/db/videos.json"
   );
   const videos = (await data.json()).filter(
     (element: { course: string }) => element.course == course.id
