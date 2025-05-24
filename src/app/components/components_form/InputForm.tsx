@@ -7,7 +7,7 @@ interface InputProp {
   changeFunction: (value: string) => void;
 }
 
-export default function Input({
+export default function InputForm({
   name,
   label,
   placeholder,

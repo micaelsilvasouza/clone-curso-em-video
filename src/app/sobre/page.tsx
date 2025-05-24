@@ -1,6 +1,6 @@
 // Componentes
-import BannerRotaHeader from "../components/BannerRotaHeader";
-import Img from "../components/layout/img";
+import BannerRotaHeader from "../components/banner_rota_header";
+import Img_custon from "../components/img_custon";
 
 // Lib Next
 import Link from "next/link";
@@ -15,11 +15,10 @@ export default function Sobre() {
         {/* Parte da Img */}
         <article className="flex flex-col p-5 flex-1">
           <div className="flex justify-center">
-            <Img
+            <Img_custon
               img="man-laptop2.jpg"
               alt="imagem do Gustavo Guanabara"
               width={300}
-              height={500}
               className="rounded-2xl"
             />
           </div>
@@ -111,8 +110,6 @@ export default function Sobre() {
           </section>
         </article>
       </section>
-
-      {/* Carteirinha estudantil */}
     </section>
   );
 }

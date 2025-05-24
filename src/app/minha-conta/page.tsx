@@ -1,5 +1,5 @@
-import BannerRotaHeader from "../components/BannerRotaHeader";
-import BlocoAcesso from "../components/BlocoAcesso";
+import BannerRotaHeader from "../components/banner_rota_header";
+import BlocoAcesso from "../components/bloco_acesso";
 
 export default function MyAccount() {
   return (
