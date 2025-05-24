@@ -14,8 +14,8 @@ export default async function Cursos() {
   return (
     <section className="text-black">
       <BannerPaginaCima nomeRota="Cursos" />
-      <article className="">
-        <section className="p-5 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 justify-center">
+      <article className="flex items-center justify-center">
+        <section className="p-5 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 justify-center max-w-[1500px]">
           {courses.map(
             (json: {
               id: string;
