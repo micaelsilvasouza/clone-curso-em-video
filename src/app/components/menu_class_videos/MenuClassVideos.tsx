@@ -22,25 +22,8 @@ export default function MenuClassVideos({videos, course}: PropsMenuClassVideos){
             {/* Passando a alteraçaõ de estado para o componente filho */}
             <HeaderMenuClassVideos quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
            
-            {
-            /*
-                Tentei fazer a transição de altura, mas não funcionou
-
-                tentei fazer usando o tailwind assim como está agora
-
-                tentei fazer com css normal passando dentro do style 
-                    [ style={{transitionDuration: ".3s"}} ]
-
-                tentei fazer também a alteração da altura dentro do style dentro do style
-                    [ style={{transitionDuration: ".3s"}, hieght: isopening ? "fit-content" : "0px"} } ]
-                
-                Em todos os caso a alterção de altura ocorre corretamente, mas a transição não acontece
-
-                pode ser bug no meu pc também
-            */
-            }
-
-            <section className={`duration-1000 px-10 overflow-hidden ${isopening ? "h-fit" : "h-0"}`} >
+            
+            <section className={`duration-800 px-10  ${isopening ? "h-125 overflow-y-scroll" : "h-0 overflow-hidden"}`} >
                 {videos.map((video: PropsVideoClass)=>(
                     <LinkClassVideo key={video.slug} title={video.title} slug={video.slug} course={course}/>
                 ))}
