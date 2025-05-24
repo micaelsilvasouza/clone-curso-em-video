@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
 
 // Importações dos componetes
-import Footer from "./components/layout/footer_pastas/footer";
+import Footer from "./components/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

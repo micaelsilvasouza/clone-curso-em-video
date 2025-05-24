@@ -19,7 +19,6 @@ export default function Sobre() {
               img="man-laptop2.jpg"
               alt="imagem do Gustavo Guanabara"
               width={300}
-              height={500}
               className="rounded-2xl"
             />
           </div>

@@ -24,7 +24,6 @@ export default function Estudonauta() {
         img="https://www.cursoemvideo.com/wp-content/uploads/2019/08/logo-01.png"
         alt="Estudounauta-logo-branco"
         width={300}
-        height={300}
       />
       <div className="text-center text-white p-5 my-5">
         <p className="text-sm bg-[#ffffff45] p-2 rounded-sm">

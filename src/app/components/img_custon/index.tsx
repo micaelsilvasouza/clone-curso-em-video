@@ -4,17 +4,10 @@ interface imgProps {
   img: string;
   alt: string;
   width: number;
-  height: number;
   className?: string;
 }
 
-export default function Img_custon({
-  className,
-  img,
-  alt,
-  width,
-  height,
-}: imgProps) {
+export default function Img_custon({ className, img, alt, width }: imgProps) {
   return (
     <>
       <Image
@@ -22,7 +15,7 @@ export default function Img_custon({
         src={/https:\/\//.test(img) ? img : `/image/${img}`}
         alt={alt}
         width={width}
-        height={height}
+        height={width}
       />
     </>
   );

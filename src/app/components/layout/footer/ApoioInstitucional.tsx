@@ -28,7 +28,6 @@ export default function ApoioInstitucional() {
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-hostnet.png"
               alt="logo-hostnet"
               width={300}
-              height={300}
             />
           </Link>
           <Link
@@ -40,7 +39,6 @@ export default function ApoioInstitucional() {
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-estudonauta.png"
               alt="logo-estudonauta"
               width={300}
-              height={300}
             />
           </Link>
           <Link
@@ -52,7 +50,6 @@ export default function ApoioInstitucional() {
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-recode.png"
               alt="logo-recode"
               width={300}
-              height={300}
             />
           </Link>
           <Link
@@ -64,7 +61,6 @@ export default function ApoioInstitucional() {
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/Asus.png"
               alt="logo-asus"
               width={300}
-              height={300}
             />
           </Link>
           <Link
@@ -76,7 +72,6 @@ export default function ApoioInstitucional() {
               img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/FEC-logo.png"
               alt="logo-fec"
               width={300}
-              height={300}
             />
           </Link>
         </section>

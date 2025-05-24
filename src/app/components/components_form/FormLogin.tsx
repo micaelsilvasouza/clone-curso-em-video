@@ -9,8 +9,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 // Componentes
-import Button from "../button_form";
-import InputForm from "../input_form";
+import Button from "./Button";
+import InputForm from "./InputForm";
 
 export default function FormLogin() {
   const [email, setEmail] = useState("");

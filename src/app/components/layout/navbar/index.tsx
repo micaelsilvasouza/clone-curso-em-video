@@ -1,14 +1,11 @@
 "use client";
 
-// Styles modulo para algo espercífico
-import styles from "./styles.module.css";
-
 // componente
 import Img_custon from "@/app/components/img_custon";
-import BotaoScroll from "./mobile/BotaoScrol";
+import BotaoScroll from "./BotaoScroll";
 import MenuHamburgue from "./mobile/MenuHamburgue";
 import XdoMenuAberto from "./mobile/XdoMenuAberto";
-import Links from "./links";
+import Links from "./Links";
 
 // Lib next
 import Link from "next/link";
@@ -48,10 +45,10 @@ export default function Navbar({
   }, [isOpen]);
 
   return (
-    <nav className={`${styles.Navbar} ${style}`}>
+    <nav className={`${style} p-5 flex items-center justify-between`}>
       {/* Logo */}
       <div
-        className={`${styles.logo} ${
+        className={`${
           isOpen ? "opacity-0" : "opacity-100 z-20"
         } md:opacity-100`}
       >
@@ -60,7 +57,6 @@ export default function Navbar({
             img={logo}
             alt="Imagem da logo Curso em Vídeo"
             width={150}
-            height={150}
           />
         </Link>
       </div>

@@ -1,8 +1,8 @@
 // Componentes
-import Carteirinha from "../footer_carteirinha";
-import Estudonauta from "../footer_estudonauta";
-import ApoioInstitucional from "../footer_apoio_institucional";
-import RedesSociais from "../footer_redes_sociais";
+import Carteirinha from "./Carteirinha";
+import Estudonauta from "./Estudonauta";
+import ApoioInstitucional from "./ApoioInstitucional";
+import RedesSociais from "./RedesSociais";
 
 export default function Footer() {
   return (

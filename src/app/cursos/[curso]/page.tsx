@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import BannerCourse from "@/app/components/banner_course";
-import LinkClassVideo from "@/app/components/videos_pastas/link_class_video";
+import LinkClassVideo from "@/app/components/components_video/LinkClassVideo";
 
 export default async function Page({
   params,

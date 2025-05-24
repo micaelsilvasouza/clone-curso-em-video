@@ -22,7 +22,6 @@ export default function Carteirinha() {
         img="https://www.cursoemvideo.com/wp-content/uploads/2023/06/FEC-logo-branco.png"
         alt="FEC-logo-branco"
         width={300}
-        height={300}
       />
       <div className="text-center text-white p-5 my-5 border-r border-l border-white">
         <h1 className="text-2xl font-bold mb-2">

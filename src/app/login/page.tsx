@@ -1,7 +1,7 @@
 // Importações dos componentes
-import FormLogin from "../components/form_pastas/form_login";
+import FormLogin from "../components/components_form/FormLogin";
 import Img_custon from "../components/img_custon";
-import Navbar from "../components/layout/header_pastas/Navbar";
+import Navbar from "../components/layout/navbar";
 
 export default function Login() {
   return (
@@ -21,7 +21,6 @@ export default function Login() {
               img="logoBlue.png"
               alt="logo azul do curso em video"
               width={200}
-              height={200}
             />
           </div>
           <FormLogin />

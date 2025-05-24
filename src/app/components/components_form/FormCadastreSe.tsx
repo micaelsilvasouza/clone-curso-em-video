@@ -5,8 +5,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 // Componentes
-import InputForm from "../input_form";
-import Button from "../button_form";
+import InputForm from "./InputForm";
+import Button from "./Button";
 
 export default function FormCadastreSe() {
   const [name, setNome] = useState("");

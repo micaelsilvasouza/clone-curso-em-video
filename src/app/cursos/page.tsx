@@ -30,12 +30,7 @@ export default async function Cursos() {
               >
                 <div className="w-full">
                   <Link href={`/cursos/${json.slug}`}>
-                    <Img_custon
-                      img={json.image}
-                      alt={json.slug}
-                      width={500}
-                      height={500}
-                    />
+                    <Img_custon img={json.image} alt={json.slug} width={500} />
                   </Link>
                 </div>
                 <div className="px-6 py-4">
