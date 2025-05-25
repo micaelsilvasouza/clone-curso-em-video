@@ -25,9 +25,9 @@ export default function ApoioInstitucional() {
             rel="noopener noreferrer"
           >
             <Img_custon
-              img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-hostnet.png"
+              img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/footer/apoiador-hostnet.png"
               alt="logo-hostnet"
-              width={300}
+              width={200}
             />
           </Link>
           <Link
@@ -36,9 +36,9 @@ export default function ApoioInstitucional() {
             rel="noopener noreferrer"
           >
             <Img_custon
-              img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-estudonauta.png"
+              img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/footer/apoiador-estudonauta.png"
               alt="logo-estudonauta"
-              width={300}
+              width={200}
             />
           </Link>
           <Link
@@ -47,9 +47,9 @@ export default function ApoioInstitucional() {
             rel="noopener noreferrer"
           >
             <Img_custon
-              img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-recode.png"
+              img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/footer/apoiador-recode.png"
               alt="logo-recode"
-              width={300}
+              width={200}
             />
           </Link>
           <Link
@@ -58,9 +58,9 @@ export default function ApoioInstitucional() {
             rel="noopener noreferrer"
           >
             <Img_custon
-              img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/Asus.png"
+              img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/footer/Asus.png"
               alt="logo-asus"
-              width={300}
+              width={150}
             />
           </Link>
           <Link
@@ -69,9 +69,9 @@ export default function ApoioInstitucional() {
             rel="noopener noreferrer"
           >
             <Img_custon
-              img="https://www.cursoemvideo.com/wp-content/uploads/2019/07/FEC-logo.png"
+              img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/footer/FEC-logo.png"
               alt="logo-fec"
-              width={300}
+              width={150}
             />
           </Link>
         </section>

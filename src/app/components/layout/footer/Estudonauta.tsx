@@ -21,7 +21,7 @@ export default function Estudonauta() {
 "
     >
       <Img_custon
-        img="https://www.cursoemvideo.com/wp-content/uploads/2019/08/logo-01.png"
+        img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/footer/logo-01.png"
         alt="Estudounauta-logo-branco"
         width={300}
       />
@@ -34,23 +34,26 @@ export default function Estudonauta() {
           conhecimentos com o Estudonauta!
         </p>
       </div>
-      <Link
-        href="https://www.estudonauta.com.br"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="
-           bg-white text-[#1c0051]
-             font-semibold
-             w-fit
-             p-3
-             rounded-2xl
-             shrink-0
-        
-           hover:bg-[#ffffff45]
-                    "
+      <button
+        className=" bg-white
+                      text-[#1c0051] hover:text-indigo-400
+                      font-semibold
+                      w-fit
+                      p-3
+                      rounded-xl
+                      shrink-0
+                      transition ease-in
+                      border hover:border-white
+                      hover:bg-[#ffffff45]"
       >
-        Conhecer
-      </Link>
+        <Link
+          href="https://www.estudonauta.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Conhecer
+        </Link>
+      </button>
     </section>
   );
 }

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import BannerCourse from "@/app/components/banner_course";
-import MenuClassVideos from "@/app/components/menu_class_videos";
+import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos";
 
 export default async function Page({
   params,
@@ -10,7 +10,7 @@ export default async function Page({
   //buscando dados do curso
   const { curso } = await params;
   let data = await fetch(
-    "https://micaelsilvasouza.github.io/clone-curso-em-video/db/courses.json"
+    "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
   );
   const cursos = await data.json();
 
@@ -56,7 +56,7 @@ export default async function Page({
           {course.description}
         </p>
       </section>
-      <MenuClassVideos videos={videos} course={course.slug}/>
+      <MenuClassVideos videos={videos} course={course.slug} />
     </main>
   );
 }

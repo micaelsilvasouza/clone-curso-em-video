@@ -4,14 +4,12 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'www.cursoemvideo.com',
-        port: '',
-        pathname: '/wp-content/**',
-        search: '',
+        protocol: "https",
+        hostname: "filipe520.github.io",
+        pathname: "/**",
       },
     ],
-  }
+  },
 };
 
 export default nextConfig;

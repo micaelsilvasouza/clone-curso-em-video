@@ -21,12 +21,14 @@ export default function BannerCourse({ title, image, slug }: PropBannerCourse) {
           {title}
         </span>
       </h1>
+      <div className="size-30 p-4">
         <Img_custon
           className="w-30 h-20 p-4"
-          img="https://www.cursoemvideo.com/wp-content/uploads/2019/08/Ativo-8.png"
+          img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/imagens%20aleatoria/gratis.png"
           alt="Curso gratis"
           width={100}
         />
+      </div>
     </div>
   );
 }
