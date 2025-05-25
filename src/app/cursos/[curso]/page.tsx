@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import BannerCourse from "@/app/components/banner_course";
-import LinkClassVideo from "@/app/components/components_video/LinkClassVideo";
+import MenuClassVideos from "@/app/components/menu_class_videos";
 
 export default async function Page({
   params,
@@ -56,17 +56,7 @@ export default async function Page({
           {course.description}
         </p>
       </section>
-      <section className="pt-[30px]">
-        <h1>Aulas</h1>
-        {videos.map((element: { title: string; slug: string }) => (
-          <LinkClassVideo
-            key={element.slug}
-            title={element.title}
-            courseslug={course.slug}
-            videoslug={element.slug}
-          />
-        ))}
-      </section>
+      <MenuClassVideos videos={videos} course={course.slug}/>
     </main>
   );
 }
