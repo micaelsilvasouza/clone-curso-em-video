@@ -10,7 +10,7 @@ export default async function Page({
   //buscando dados do curso
   const { curso } = await params;
   let data = await fetch(
-    "https://micaelsilvasouza.github.io/clone-curso-em-video/db/courses.json"
+    "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
   );
   const cursos = await data.json();
 

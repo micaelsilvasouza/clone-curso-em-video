@@ -15,7 +15,6 @@ export default function BannerCourse({ title, image, slug }: PropBannerCourse) {
           img={image}
           alt={slug}
           width={100}
-          height={100}
         />
       </div>
       <h1 className="pl-4 md:col-span-3">
@@ -26,10 +25,9 @@ export default function BannerCourse({ title, image, slug }: PropBannerCourse) {
       </h1>
       <div className="size-30 p-4">
         <Img_custon
-          img="https://www.cursoemvideo.com/wp-content/uploads/2019/08/Ativo-8.png"
+          img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/imagens%20aleatoria/gratis.png"
           alt="Curso gratis"
           width={100}
-          height={100}
         />
       </div>
     </div>
