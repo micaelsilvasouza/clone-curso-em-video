@@ -8,7 +8,7 @@ export default async function ClassVideo({
 }) {
   const { classvideo } = await params;
   const data = await fetch(
-    "https://micaelsilvasouza.github.io/clone-curso-em-video/db/videos.json"
+    "https://filipe520.github.io/api-cursoEmVideo/db/videos.json"
   );
   const videos = await data.json();
 
