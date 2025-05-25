@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import IframeVideo from "@/app/components/components_video/IframeVideo";
+import IframeVideo from "@/app/components/menu_class_videos/IframeVideo";
 
 export default async function ClassVideo({
   params,

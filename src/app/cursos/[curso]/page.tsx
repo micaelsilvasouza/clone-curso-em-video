@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import BannerCourse from "@/app/components/banner_course";
-import MenuClassVideos from "@/app/components/menu_class_videos";
+import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos";
 
 export default async function Page({
   params,
@@ -56,7 +56,7 @@ export default async function Page({
           {course.description}
         </p>
       </section>
-      <MenuClassVideos videos={videos} course={course.slug}/>
+      <MenuClassVideos videos={videos} course={course.slug} />
     </main>
   );
 }
