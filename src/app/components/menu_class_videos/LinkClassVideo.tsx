@@ -12,7 +12,7 @@ export function LinkClassVideo({title, slug, course}:PropsLinkClassVideo){
             <span className="shrink-0 size-7 border-3 border-gray-300 rounded-full">
                 {/* Parte circular */}
             </span>
-            <Link href={`/cursos/${course}/${slug}`}>{title}</Link>
+            <Link href={`/cursos/${course}/${slug}`} className="hover:underline">{title}</Link>
         </div>
     )
 }
