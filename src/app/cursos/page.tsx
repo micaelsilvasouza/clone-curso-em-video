@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default async function Cursos() {
   const data = await fetch(
-    "https://micaelsilvasouza.github.io/clone-curso-em-video/db/courses.json"
+    "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
   );
   const courses = await data.json();
 

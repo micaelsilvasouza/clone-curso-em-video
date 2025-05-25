@@ -19,7 +19,7 @@ export default function Carteirinha() {
             "
     >
       <Img_custon
-        img="https://www.cursoemvideo.com/wp-content/uploads/2023/06/FEC-logo-branco.png"
+        img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/footer/FEC-logo-branco.png"
         alt="FEC-logo-branco"
         width={300}
       />
@@ -32,24 +32,26 @@ export default function Carteirinha() {
           shows e estádios. Válido em todo o território nacional.
         </p>
       </div>
-      <Link
-        href="https://www.souestudante.tech/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="
-                    bg-white
-                    text-[#1c0051]
-                    font-semibold
-                    w-fit
-                    p-3
-                    rounded-2xl
-                    shrink-0
-    
-                    hover:bg-[#ffffff45]
-                "
+      <button
+        className=" bg-white
+                      text-[#1c0051] hover:text-indigo-400
+                      font-semibold
+                      w-fit
+                      p-3
+                      rounded-xl
+                      shrink-0
+                      transition ease-in
+                      border hover:border-white
+                      hover:bg-[#ffffff45]"
       >
-        Solicitar Agora
-      </Link>
+        <Link
+          href="https://www.souestudante.tech/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Solicitar Agora
+        </Link>
+      </button>
     </section>
   );
 }
