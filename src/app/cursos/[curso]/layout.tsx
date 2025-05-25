@@ -1,7 +1,14 @@
-export default function RootLayout({
+import Navbar from "@/app/components/layout/navbar";
+
+export default function CursoLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <>
+    <Navbar />
+    {children}
+    </>
+  );
 }
