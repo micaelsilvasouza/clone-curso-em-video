@@ -39,13 +39,25 @@ export default function Navbar({
 
     window.addEventListener("scroll", mudancaDoScroll);
 
+    // Quando Clicar no Body fechar o Navbar
+    const ul = document.getElementById("navbarLinks");
+
+    const handleBodyClick = (event: MouseEvent) => {
+      if (isOpen && ul && !ul.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    ul?.addEventListener("click", () => setIsOpen(true));
+    document.body.addEventListener("click", handleBodyClick);
+
     return () => {
+      if (ul) {
+        ul.removeEventListener("click", handleBodyClick);
+      }
       window.removeEventListener("scroll", mudancaDoScroll);
     };
   }, [isOpen]);
-
-  // Quando Clicar no Body fechar o Navbar
-  const body = document.body
 
   return (
     <nav className={`${style} p-5 flex items-center justify-between`}>
@@ -66,6 +78,7 @@ export default function Navbar({
 
       {/* Links estão responsivo */}
       <ul
+        id="navbarLinks"
         className={`
           md:pointer-events-auto
           md:flex md:relative md:pt-0 md:flex-row
@@ -79,9 +92,7 @@ export default function Navbar({
           p-0
           ${
             isOpen
-              ? `opacity-100 w-80 
-              ${isOpen ? body.addEventListener('click', () =>  )} : "oi"
-               p-4 pt-20 h-dvh items-start`
+              ? "opacity-100 w-80 p-4 pt-20 h-dvh items-start"
               : "opacity-0 md:opacity-100"
           }
         `}
