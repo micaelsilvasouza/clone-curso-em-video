@@ -15,15 +15,15 @@ import { useState, useEffect } from "react";
 // Type NavBar
 interface ProprNavBar {
   style?: string;
-  styleHamburguer: string;
-  logo: string;
-  styleLinks: string;
+  styleHamburguer?: string;
+  logo?: string;
+  styleLinks?: string;
 }
 
 export default function Navbar({
-  style,
+  style = "bg-sky-50 text-black",
   logo = "logoBlue.png",
-  styleHamburguer,
+  styleHamburguer = "bg-black",
   styleLinks = "text-blue-950",
 }: ProprNavBar) {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,22 @@ export default function Navbar({
 
     window.addEventListener("scroll", mudancaDoScroll);
 
+    // Quando Clicar no Body fechar o Navbar
+    const ul = document.getElementById("navbarLinks");
+
+    const handleBodyClick = (event: MouseEvent) => {
+      if (isOpen && ul && !ul.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    ul?.addEventListener("click", () => setIsOpen(true));
+    document.body.addEventListener("click", handleBodyClick);
+
     return () => {
+      if (ul) {
+        ul.removeEventListener("click", handleBodyClick);
+      }
       window.removeEventListener("scroll", mudancaDoScroll);
     };
   }, [isOpen]);
@@ -56,13 +71,14 @@ export default function Navbar({
           <Img_custon
             img={logo}
             alt="Imagem da logo Curso em Vídeo"
-            width={150}
+            width={140}
           />
         </Link>
       </div>
 
       {/* Links estão responsivo */}
       <ul
+        id="navbarLinks"
         className={`
           md:pointer-events-auto
           md:flex md:relative md:pt-0 md:flex-row

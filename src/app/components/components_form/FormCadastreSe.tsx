@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import InputForm from "./InputForm";
 import Button from "./Button";
 
-export default function FormCadastreSe() {
+export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [name, setNome] = useState("");
   const [lastname, setLastNome] = useState("");
   const [email, setEmail] = useState("");
@@ -44,50 +44,54 @@ export default function FormCadastreSe() {
   };
 
   return (
-    <form className={``} action="">
+    <form className={stylesForm} action="">
       <InputForm
         name="firstname"
-        label="Nome"
-        placeholder="Digite seu primeiro nome..."
+        label="Nome *"
+        placeholder="Digite o nome que usará no certificado"
         type="text"
         changeFunction={setNome}
       />
       <InputForm
         name="lastname"
-        label="Sobrenome"
-        placeholder="Digite seu sobre nome..."
+        label="Sobrenome *"
+        placeholder="Digite o sobrenome que usará no certificado"
         type="text"
         changeFunction={setLastNome}
       />
       <InputForm
         name="email"
-        label="E-mail"
+        label="E-mail *"
         placeholder="Digite seu melhor e-mail..."
         type="email"
         changeFunction={setEmail}
       />
       <InputForm
         name="confirm-email"
-        label="Confirme seu e-mail"
+        label="Confirme seu e-mail *"
         placeholder="Confirme seu e-mail..."
         type="email"
         changeFunction={setCEmail}
       />
       <InputForm
         name="passoword"
-        label="Senha"
-        placeholder="Digite sua senha."
+        label="Senha *"
+        placeholder="Digite a senha."
         type="password"
         changeFunction={setPassword}
       />
       <InputForm
         name="confirm-password"
-        label="Confirmar sua senha."
+        label="Confirme a senha. *"
         placeholder="Digite novamente sua senha."
         type="password"
         changeFunction={setCPassword}
       />
-      <Button title="Cadastrar-se" clickFunction={validate} />
+      <Button
+        title="Registrar Gratuitamente"
+        styles="bg-blue-800 text-white py-4 mt-3"
+        clickFunction={validate}
+      />
     </form>
   );
 }
