@@ -15,15 +15,15 @@ import { useState, useEffect } from "react";
 // Type NavBar
 interface ProprNavBar {
   style?: string;
-  styleHamburguer: string;
-  logo: string;
-  styleLinks: string;
+  styleHamburguer?: string;
+  logo?: string;
+  styleLinks?: string;
 }
 
 export default function Navbar({
-  style,
+  style = "bg-sky-50 text-black",
   logo = "logoBlue.png",
-  styleHamburguer,
+  styleHamburguer = "bg-black",
   styleLinks = "text-blue-950",
 }: ProprNavBar) {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +44,9 @@ export default function Navbar({
     };
   }, [isOpen]);
 
+  // Quando Clicar no Body fechar o Navbar
+  const body = document.body
+
   return (
     <nav className={`${style} p-5 flex items-center justify-between`}>
       {/* Logo */}
@@ -56,7 +59,7 @@ export default function Navbar({
           <Img_custon
             img={logo}
             alt="Imagem da logo Curso em Vídeo"
-            width={150}
+            width={140}
           />
         </Link>
       </div>
@@ -76,7 +79,9 @@ export default function Navbar({
           p-0
           ${
             isOpen
-              ? "opacity-100 w-80 p-4 pt-20 h-dvh items-start"
+              ? `opacity-100 w-80 
+              ${isOpen ? body.addEventListener('click', () =>  )} : "oi"
+               p-4 pt-20 h-dvh items-start`
               : "opacity-0 md:opacity-100"
           }
         `}

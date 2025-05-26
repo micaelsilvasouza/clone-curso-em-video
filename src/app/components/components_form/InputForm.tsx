@@ -17,7 +17,7 @@ export default function InputForm({
 }: InputProp) {
   return (
     <div className="flex flex-col">
-      <label htmlFor={name} className="text-sm">
+      <label htmlFor={name} className={`text-sm text-gray-600 py-1`}>
         {label}
       </label>
       <input
