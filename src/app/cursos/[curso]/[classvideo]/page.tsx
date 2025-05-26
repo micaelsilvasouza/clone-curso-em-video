@@ -10,15 +10,20 @@ export default async function ClassVideo({
   const data = await fetch(
     "https://filipe520.github.io/api-cursoEmVideo/db/videos.json"
   );
-  const videos = await data.json();
+  const class_videos = await data.json();
+  let video: {title: string, video: string} = {title: "", video: ""}
 
-  const video = videos.filter(
-    (element: { slug: string }) => element.slug == classvideo
-  )[0];
+  const couservideo = class_videos.map((element: { slug: string, title: string, video: string }) => {
+    if(element.slug == classvideo){
+      video = element
+    }
+  })
 
-  if (video == undefined) {
+  if (couservideo.lenght == 0 || video.title == "" || video.video == "") {
     notFound();
   }
+
+  console.log(video, couservideo)
 
   return (
     <main>
