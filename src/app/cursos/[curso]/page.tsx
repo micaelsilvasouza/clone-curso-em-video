@@ -56,7 +56,7 @@ export default async function Page({
           {course.description}
         </p>
       </section>
-      <MenuClassVideos videos={videos} course={course.slug} />
+      <MenuClassVideos videos={videos} courseslug={course.slug} coursetitle={course.title} />
     </main>
   );
 }

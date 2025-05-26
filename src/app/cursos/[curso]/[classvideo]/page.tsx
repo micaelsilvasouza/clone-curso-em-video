@@ -48,7 +48,7 @@ export default async function ClassVideo({
   return (
     <main>
       <h1>{video.title}</h1>
-      <MenuClassVideos videos={coursevideos} course={course.slug}/>
+      <MenuClassVideos videos={coursevideos} courseslug={course.slug} coursetitle={course.title} />
       <div>
         <IframeVideo src={video.video} />
       </div>
