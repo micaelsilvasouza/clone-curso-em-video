@@ -30,7 +30,7 @@ A gente acredita que conhecimento bom é conhecimento compartilhado 💙
 - [Filipe520](https://github.com/Filipe520)  
 - [micaelsilvasouza](https://github.com/mic)
 
-✨ *Com gratidão ao professor [Gustavo Guanabara](https://github.com/guanabara), por ensinar com tanta dedicação e inspirar milhares de devs pelo Brasil afora!*
+✨ *Com gratidão ao professor [Gustavo Guanabara](https://github.com/gustavoguanabara), por ensinar com tanta dedicação e inspirar milhares de devs pelo Brasil afora!*
 
 ## 🤖 Redes Sociais - Filipe520
 
