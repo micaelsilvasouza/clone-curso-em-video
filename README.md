@@ -1,7 +1,9 @@
 # 🎓 Curso em Vídeo — Aprender programação nunca foi tão fácil (e de graça!)
 
 Fala dev! 👋  
-Esse aqui é o repositório do **Curso em Vídeo**, um projeto feito com carinho por dois amigos apaixonados por tecnologia e educação. A ideia é simples: ensinar programação de um jeito fácil, direto ao ponto e **100% gratuito**.
+Esse aqui é o repositório do ** clone do Curso em Vídeo**, um projeto feito com carinho por dois amigos apaixonados por tecnologia e educação. A ideia é simples: ensinar programação de um jeito fácil, direto ao ponto e **100% gratuito**.
+
+Ah, e claro: tudo isso é inspirado no incrível trabalho do **professor Gustavo Guanabara**, que faz um trabalho sensacional com o ensino de tecnologia no Brasil. 👏
 
 ## 💻 O que você vai encontrar por aqui?
 
@@ -15,11 +17,11 @@ Esse aqui é o repositório do **Curso em Vídeo**, um projeto feito com carinho
 Porque todo mundo merece a chance de aprender, crescer e entrar no mundo da programação — sem precisar gastar rios de dinheiro com isso.  
 A gente acredita que conhecimento bom é conhecimento compartilhado 💙
 
-## 🌐 Acesse a plataforma original:
+## Acesse a plataforma original:
 
 👉 [www.cursoemvideo.com](https://www.cursoemvideo.com)
 
-## 🧪 Veja o clone que estamos desenvolvendo:
+## Veja o clone que estamos desenvolvendo:
 
 🔗 [clone-curso-em-video.vercel.app](https://clone-curso-em-video.vercel.app)
 
@@ -27,3 +29,20 @@ A gente acredita que conhecimento bom é conhecimento compartilhado 💙
 
 - [Filipe520](https://github.com/Filipe520)  
 - [micaelsilvasouza](https://github.com/mic)
+
+✨ *Com gratidão ao professor [Gustavo Guanabara](https://github.com/guanabara), por ensinar com tanta dedicação e inspirar milhares de devs pelo Brasil afora!*
+
+## 🤖 Redes Sociais - Filipe520
+
+[![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Filipe520)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)]([https://www.instagram.com/seuusuario](https://www.instagram.com/filipealves520/))
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=facebook&logoColor=white)]([https://www.facebook.com/seuusuario](https://www.facebook.com/FilipeA520/))
+[![X](https://img.shields.io/badge/X-%231DA1F2.svg?style=for-the-badge&logo=x&logoColor=white)]([https://x.com/seuusuario](https://x.com/FilipeAlve89789))
+
+## 🤖 Redes Sociais - Micael
+
+[![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Filipe520)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/seuusuario)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/seuusuario)
+[![X](https://img.shields.io/badge/X-%231DA1F2.svg?style=for-the-badge&logo=x&logoColor=white)](https://x.com/seuusuario)
+
