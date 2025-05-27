@@ -1,42 +1,28 @@
-# Next.js Project
+# 🎓 Curso em Vídeo — Aprender programação nunca foi tão fácil (e de graça!)
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Fala dev! 👋  
+Esse aqui é o repositório do **Curso em Vídeo**, um projeto feito com carinho por dois amigos apaixonados por tecnologia e educação. A ideia é simples: ensinar programação de um jeito fácil, direto ao ponto e **100% gratuito**.
 
-## Getting Started
+## 💻 O que você vai encontrar por aqui?
 
-To start the development server, run one of the following commands:
+- Cursos em vídeo pra você aprender no seu ritmo  
+- Exercícios e projetos pra botar a mão no código  
+- Conteúdo pensado tanto pra quem tá começando quanto pra quem já manda bem  
+- Tudo sem pagar nada (é sério!)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Por que estamos fazendo isso?
 
-Then, open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+Porque todo mundo merece a chance de aprender, crescer e entrar no mundo da programação — sem precisar gastar rios de dinheiro com isso.  
+A gente acredita que conhecimento bom é conhecimento compartilhado 💙
 
-You can begin editing the project by modifying the `app/page.tsx` file. Changes will be reflected automatically.
+## 🌐 Acesse a plataforma original:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to optimize and load [Geist](https://vercel.com/font), a font family by Vercel.
+👉 [www.cursoemvideo.com](https://www.cursoemvideo.com)
 
-## Learn More
+## 🧪 Veja o clone que estamos desenvolvendo:
 
-Explore the following resources to learn more about Next.js:
+🔗 [clone-curso-em-video.vercel.app](https://clone-curso-em-video.vercel.app)
 
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - Interactive Next.js tutorial.
+## 🛠️ Bora codar?
 
-Visit the [Next.js GitHub repository](https://github.com/vercel/next.js) to provide feedback or contribute to the project.
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is through the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), created by the Next.js team.
-
-For more details, check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
-
-## Live Demo
-
-Access the live project at [https://clone-curso-em-video.vercel.app/](https://clone-curso-em-video.vercel.app/).
+Se curtir, compartilha com alguém que também quer aprender! E se quiser colaborar, é só abrir uma issue ou mandar um pull request. 😉
