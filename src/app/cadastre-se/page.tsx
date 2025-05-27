@@ -15,6 +15,7 @@ export default function Cadastre_se() {
         mensagem="Registro feito com sucesso"
         mensagemDetalhada="Suas alterações foram salvas e seu perfil está ativo."
         tipo="sucesso"
+        ativo={true}
       />
       <div className="">
         <section className="pt-3">

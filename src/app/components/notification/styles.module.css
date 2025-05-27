@@ -1,0 +1,27 @@
+@keyframes mensagem {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mensagem {
+    width: 300px;
+    padding: 1em;
+    border: 1px solid var(--border-02);
+    text-align: center;
+    margin-bottom: 2em;
+    border-radius: 5px;
+
+    animation: mensagem 0.5s ease-in-out;
+}
