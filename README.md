@@ -1,42 +1,49 @@
-# Next.js Project
+# 🎓 Curso em Vídeo — Aprender programação nunca foi tão fácil (e de graça!)
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Fala dev! 👋  
+Esse aqui é o repositório do ** clone do Curso em Vídeo**, um projeto feito com carinho por dois amigos apaixonados por tecnologia e educação. A ideia é simples: ensinar programação de um jeito fácil, direto ao ponto e **100% gratuito**.
 
-## Getting Started
+Ah, e claro: tudo isso é inspirado no incrível trabalho do **professor Gustavo Guanabara**, que faz um trabalho sensacional com o ensino de tecnologia no Brasil. 👏
 
-To start the development server, run one of the following commands:
+## 💻 O que você vai encontrar por aqui?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Cursos em vídeo pra você aprender no seu ritmo  
+- Exercícios e projetos pra botar a mão no código  
+- Conteúdo pensado tanto pra quem tá começando quanto pra quem já manda bem  
+- Tudo sem pagar nada (é sério!)
 
-Then, open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+## 🚀 Por que estamos fazendo isso?
 
-You can begin editing the project by modifying the `app/page.tsx` file. Changes will be reflected automatically.
+Porque todo mundo merece a chance de aprender, crescer e entrar no mundo da programação — sem precisar gastar rios de dinheiro com isso.  
+A gente acredita que conhecimento bom é conhecimento compartilhado 💙
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to optimize and load [Geist](https://vercel.com/font), a font family by Vercel.
+## Acesse a plataforma original:
 
-## Learn More
+👉 [www.cursoemvideo.com](https://www.cursoemvideo.com)
 
-Explore the following resources to learn more about Next.js:
+## Veja o clone que estamos desenvolvendo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - Interactive Next.js tutorial.
+🔗 [clone-curso-em-video.vercel.app](https://clone-curso-em-video.vercel.app)
 
-Visit the [Next.js GitHub repository](https://github.com/vercel/next.js) to provide feedback or contribute to the project.
+## 👨‍💻 Feito por
 
-## Deploy on Vercel
+- [Filipe520](https://github.com/Filipe520)  
+- [micaelsilvasouza](https://github.com/mic)
 
-The easiest way to deploy your Next.js app is through the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), created by the Next.js team.
+✨ *Com gratidão ao professor [Gustavo Guanabara](https://github.com/gustavoguanabara), por ensinar com tanta dedicação e inspirar milhares de devs pelo Brasil afora!*
 
-For more details, check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
+## Redes Sociais - Filipe520
 
-## Live Demo
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/filipe-alves-3130672b7/?originalSubdomain=br)
+[![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Filipe520)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/filipealves520/)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/FilipeA520/)
+[![X](https://img.shields.io/badge/X-%231DA1F2.svg?style=for-the-badge&logo=x&logoColor=white)](https://x.com/FilipeAlve89789)
 
-Access the live project at [https://clone-curso-em-video.vercel.app/](https://clone-curso-em-video.vercel.app/).
+## Redes Sociais - Micael
+
+[![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Filipe520)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/seuusuario)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/seuusuario)
+[![X](https://img.shields.io/badge/X-%231DA1F2.svg?style=for-the-badge&logo=x&logoColor=white)](https://x.com/seuusuario)
+
