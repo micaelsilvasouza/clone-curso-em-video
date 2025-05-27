@@ -32,14 +32,15 @@ A gente acredita que conhecimento bom é conhecimento compartilhado 💙
 
 ✨ *Com gratidão ao professor [Gustavo Guanabara](https://github.com/gustavoguanabara), por ensinar com tanta dedicação e inspirar milhares de devs pelo Brasil afora!*
 
-## 🤖 Redes Sociais - Filipe520
+## Redes Sociais - Filipe520
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/filipe-alves-3130672b7/?originalSubdomain=br)
 [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Filipe520)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/filipealves520/)
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/FilipeA520/)
 [![X](https://img.shields.io/badge/X-%231DA1F2.svg?style=for-the-badge&logo=x&logoColor=white)](https://x.com/FilipeAlve89789)
 
-## 🤖 Redes Sociais - Micael
+## Redes Sociais - Micael
 
 [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Filipe520)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/seuusuario)
