@@ -24,9 +24,6 @@ interface NotificacaoFlutuanteProps {
     | "Houve um erro ao salvar suas alterações."
     | "Por favor, verifique os dados inseridos.";
   tipo: "sucesso" | "erro" | "aviso";
-  onClose?: () => void;
-  isOpen?: boolean;
-  duration?: number;
   iconNotification?: React.ReactNode;
   icone?: React.ReactNode;
   ativo?: boolean;
@@ -37,10 +34,7 @@ export default function NotificacaoFlutuante({
   mensagemDetalhada,
   tipo,
   ativo,
-}: // onClose,
-// isOpen = true,
-// duration = 3000,
-NotificacaoFlutuanteProps) {
+}: NotificacaoFlutuanteProps) {
   const [visivel, setVisivel] = useState(true);
 
   useEffect(() => {
