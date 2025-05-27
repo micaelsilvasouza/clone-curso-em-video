@@ -23,6 +23,7 @@ A gente acredita que conhecimento bom é conhecimento compartilhado 💙
 
 🔗 [clone-curso-em-video.vercel.app](https://clone-curso-em-video.vercel.app)
 
-## 🛠️ Bora codar?
+## 👨‍💻 Feito por
 
-Se curtir, compartilha com alguém que também quer aprender! E se quiser colaborar, é só abrir uma issue ou mandar um pull request. 😉
+- [Filipe520](https://github.com/Filipe520)  
+- [micaelsilvasouza](https://github.com/mic)
