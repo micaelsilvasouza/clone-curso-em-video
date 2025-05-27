@@ -35,9 +35,9 @@ A gente acredita que conhecimento bom é conhecimento compartilhado 💙
 ## 🤖 Redes Sociais - Filipe520
 
 [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Filipe520)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)]([https://www.instagram.com/seuusuario](https://www.instagram.com/filipealves520/))
-[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=facebook&logoColor=white)]([https://www.facebook.com/seuusuario](https://www.facebook.com/FilipeA520/))
-[![X](https://img.shields.io/badge/X-%231DA1F2.svg?style=for-the-badge&logo=x&logoColor=white)]([https://x.com/seuusuario](https://x.com/FilipeAlve89789))
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/filipealves520/)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/FilipeA520/)
+[![X](https://img.shields.io/badge/X-%231DA1F2.svg?style=for-the-badge&logo=x&logoColor=white)](https://x.com/FilipeAlve89789)
 
 ## 🤖 Redes Sociais - Micael
 
