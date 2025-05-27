@@ -15,16 +15,18 @@ interface PropsMenuClassVideos{
     coursetitle: string
 }
 
+const type: "leftright" | "topbottom" = "leftright"
+
 export default function MenuClassVideos({videos, courseslug, coursetitle}: PropsMenuClassVideos){
     const [isopening, setIsOpening] = useState(true)
 
     return (
         <section className="my-10 mx-auto w-9/10 max-w-[800px] border-2 border-gray-300 rounded-xl">
             {/* Passando a alteraçaõ de estado para o componente filho */}
-            <HeaderMenuClassVideos course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
+            <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
            
             
-            <section className={`duration-800 px-10  ${isopening ? "h-125 overflow-y-scroll" : "h-0 overflow-hidden"}`} >
+            <section className={`duration-800 px-10  ${isopening && type == "topbottom" ? "h-125 overflow-y-scroll" : "h-0 overflow-hidden"}`} >
                 {videos.map((video: PropsVideoClass)=>(
                     <LinkClassVideo key={video.slug} title={video.title} slug={video.slug} course={courseslug}/>
                 ))}
