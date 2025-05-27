@@ -1,6 +1,8 @@
 // Componentes
 import Img_custon from "../components/img_custon";
 import FormCadastreSe from "../components/components_form/FormCadastreSe";
+import NotificacaoFlutuante from "../components/notification/NotificacaoFlutuante";
+
 // import Navbar from "../components/layout/navbar";
 
 // Lib NextJS
@@ -9,6 +11,12 @@ import Link from "next/link";
 export default function Cadastre_se() {
   return (
     <main className="min-sm:my-10 max-md:my-3 min-w-[350px] max-w-[600px] bg-white text-black mx-auto p-5  md:rounded-2xl min-sm:h-dvh">
+      <NotificacaoFlutuante
+        mensagem="Registro feito com sucesso"
+        mensagemDetalhada="Suas alterações foram salvas e seu perfil está ativo."
+        tipo="sucesso"
+        ativo={true}
+      />
       <div className="">
         <section className="pt-3">
           <Link href="/">
