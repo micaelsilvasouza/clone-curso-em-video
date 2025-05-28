@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
+
 import IframeVideo from "@/app/components/menu_class_videos/IframeVideo";
 import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos";
+import Link from "next/link";
 
 export default async function ClassVideo({
   params,
@@ -28,7 +30,7 @@ export default async function ClassVideo({
 
   const class_videos = await datavideo.json(); //videos
 
-  let video: { title: string; video: string } = { title: "", video: "" }; //armazena o video
+  let video: { title: string; video: string, slug: string } = { title: "", video: "", slug: "" }; //armazena o video
   const coursevideos: { slug: string; title: string }[] = []; //armazena os videos do mesmo curso
 
   //filtrando videos que pertençam ao mesmo curso e encontrando dados do video
@@ -53,17 +55,26 @@ export default async function ClassVideo({
     notFound();
   }
 
+  const videoindex = coursevideos.indexOf(video)
+  const preveiw = (videoindex - 1) >= 0 ? `/cursos/${course.slug}/${coursevideos.at(videoindex - 1)?.slug}` : `/cursos/${course.slug}`
+  const next = `/cursos/${course.slug}/${coursevideos.at(videoindex + 1)?.slug}` 
+
   return (
-    <main>
+    <main className="relative">
       <h1>{video.title}</h1>
       <MenuClassVideos
+        type="leftright"
         videos={coursevideos}
         courseslug={course.slug}
         coursetitle={course.title}
       />
-      <div>
+      <section>
         <IframeVideo src={video.video} />
-      </div>
+      </section>
+      <section>
+        <Link href={preveiw}>Anterior</Link>
+        <Link href={next}>Próximo</Link>
+      </section>
     </main>
   );
 }
