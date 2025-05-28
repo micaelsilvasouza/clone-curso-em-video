@@ -4,7 +4,7 @@ interface ButtonProp {
   clickFunction: () => void;
 }
 
-export default function Button({
+export default function ButtonForm({
   title,
   styles = "bg-blue-600 text-white",
   clickFunction,

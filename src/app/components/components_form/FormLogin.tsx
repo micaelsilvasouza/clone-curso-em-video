@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 // Componentes
-import Button from "./Button";
+import Button from "./ButtonForm";
 import InputForm from "./InputForm";
 
 export default function FormLogin() {
