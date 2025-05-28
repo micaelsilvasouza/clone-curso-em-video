@@ -28,7 +28,7 @@ export default function HeaderMenuClassVideos({ type, course, quantity, isopenin
                 (type == "leftright") && //Menu que vai da esquerda para a direita
                 <span className="absolute button-1 -right-5 text-blue-800" onClick={()=>{setIsOpening(!isopening)}}>
                     {
-                        isopening ? <FaAngleRight/> : <FaAngleLeft/> 
+                        isopening ? <FaAngleLeft/> : <FaAngleRight/>
                     }
                 </span>
             }

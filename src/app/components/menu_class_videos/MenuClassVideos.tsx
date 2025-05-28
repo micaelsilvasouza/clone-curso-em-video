@@ -21,12 +21,25 @@ export default function MenuClassVideos({videos, courseslug, coursetitle}: Props
     const [isopening, setIsOpening] = useState(true)
 
     return (
-        <section className="my-10 mx-auto w-9/10 max-w-[800px] border-2 border-gray-300 rounded-xl">
+        <section className={`
+            bg-white
+            my-10 mx-auto 
+            border-2 border-gray-300 
+            rounded-xl
+            duration-800
+            w-9/10 max-w-[800px]
+            ${type == "leftright"? (isopening ? "fixed top-0 left-0" : "absolute top-0 -left-9/10") : ""}  
+        `}>
             {/* Passando a alteraçaõ de estado para o componente filho */}
             <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
            
             
-            <section className={`duration-800 px-10  ${isopening && type == "topbottom" ? "h-125 overflow-y-scroll" : "h-0 overflow-hidden"}`} >
+            <section className={`
+                duration-800 px-10  
+                ${ //Se o tipo for que abre para baixo, ele aplica o teste de abertura
+                    type == "topbottom" ? (isopening ? "h-125 overflow-y-scroll" : "h-0 overflow-hidden") : ""
+                }`} 
+            >
                 {videos.map((video: PropsVideoClass)=>(
                     <LinkClassVideo key={video.slug} title={video.title} slug={video.slug} course={courseslug}/>
                 ))}
