@@ -8,6 +8,7 @@
 @theme {
     --color-indigo-900: #261c3f;
     --color-sky-10: #f2fafc;
+    --color-sky-20: #d7f8f9;
 }
 
 @media (prefers-color-scheme: dark) {

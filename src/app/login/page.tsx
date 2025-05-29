@@ -11,6 +11,7 @@ export default function Login() {
         logo="logoWhite.png"
         styleHamburguer="bg-white"
         styleLinks="text-white"
+        styleBotao_1="bg-white text-black"
       />
       <main className="md:h-full flex px-5 pt-40 max-[500px]:pt-10">
         <section
