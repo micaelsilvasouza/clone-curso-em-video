@@ -10,13 +10,12 @@ import HeaderMenuClassVideos from "./HeaderMenuClassVideos"
 interface PropsVideoClass {title: string, slug: string}
 
 interface PropsMenuClassVideos{
-    type: "leftright" | "topbottom" ,
     videos: PropsVideoClass[],
     courseslug: string,
     coursetitle: string
 }
 
-export default function MenuClassVideos({type, videos, courseslug, coursetitle}: PropsMenuClassVideos){
+export default function MenuClassVideos({videos, courseslug, coursetitle}: PropsMenuClassVideos){
     const [isopening, setIsOpening] = useState(true)
 
     return (
@@ -25,23 +24,16 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
             flex-col
             bg-white
             duration-800
-            w-9/10
-            
-            ${
-                type == "leftright" ? 
-                "h-full absolute max-w-[300px]" 
-                + (isopening ? "top-0 left-0" : "top-0 -left-9/10 sm:-left-[300px]") : 
-                "max-w-[800px] my-10 mx-auto rounded-xl border-2 border-gray-300"
-            }  
-        `}>
+            w-9/10 max-w-[800px] my-10 mx-auto rounded-xl border-2 border-gray-300`}>
+
             {/* Passando a alteraçaõ de estado para o componente filho */}
-            <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
+            <HeaderMenuClassVideos course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
            
             
             <section className={`
                 duration-800 px-10  
                 ${ //Se o tipo for que abre para baixo, ele aplica o teste de abertura
-                    type == "topbottom" ? (isopening ? "h-125 overflow-y-scroll" : "h-0 overflow-hidden") : "overflow-y-scroll"
+                    isopening ? "h-125 overflow-y-scroll" : "h-0 overflow-hidden"
                 }`} 
             >
                 {videos.map((video: PropsVideoClass)=>(
