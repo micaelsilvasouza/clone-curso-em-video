@@ -1,4 +1,4 @@
-import Navbar from "@/app/components/layout/navbar_backup";
+import Navbar from "@/app/components/layout/navbar";
 
 export default function CursoLayout({
   children,

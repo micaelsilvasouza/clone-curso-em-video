@@ -1,7 +1,7 @@
 // Importações dos componentes
 import FormLogin from "../components/components_form/FormLogin";
 import Img_custon from "../components/img_custon";
-import Navbar from "../components/layout/navbar_backup";
+import Navbar from "../components/layout/navbar";
 
 export default function Login() {
   return (

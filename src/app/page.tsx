@@ -1,5 +1,5 @@
 // Componentes
-import Navbar from "./components/layout/navbar_backup";
+import Navbar from "./components/layout/navbar";
 import Img_custon from "./components/img_custon";
 import ComentarioAlunos from "./components/carrosel/ComentarioAlunos";
 
