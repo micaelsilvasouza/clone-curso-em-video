@@ -7,21 +7,22 @@ import TotalAlunos from "../components/total_alunos/TotalAlunos";
 
 // Lib Next
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Sobre() {
   const [scroolContado, setScroolContado] = useState(false);
+  useEffect(() => {
+    const mudancaScroll = () => {
+      if (window.innerWidth < 500) {
+        setScroolContado(window.scrollY > 1000);
+      }
+      if (window.innerWidth >= 500) {
+        setScroolContado(window.scrollY > 300);
+      }
+    };
 
-  const mudancaScroll = () => {
-    if (window.innerWidth < 500) {
-      setScroolContado(window.scrollY > 1000);
-    }
-    if (window.innerWidth > 500) {
-      setScroolContado(window.scrollY > 300);
-    }
-  };
-
-  window.addEventListener("scroll", mudancaScroll);
+    window.addEventListener("scroll", mudancaScroll);
+  }, []);
 
   return (
     <section className="">
