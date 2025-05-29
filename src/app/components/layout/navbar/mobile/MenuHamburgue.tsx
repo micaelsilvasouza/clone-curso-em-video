@@ -14,8 +14,8 @@ export default function MenuHamburgue({
   return (
     <>
       <button
-        className={`fixed right-0 w-6 h-6 z-20 cursor-pointer md:hidden ${
-          isOpen ? " mx-10 opacity-0 pointer-events-none" : "-translate-x-full"
+        className={`fixed right-0 mr-3 w-6 h-6 z-20 cursor-pointer md:hidden ${
+          isOpen ? " mx-20 opacity-0 pointer-events-none" : "-translate-x-full"
         } transition-all duration-300 ${
           isScrolled ? " transition-all duration-300 hidden" : "block"
         }`}

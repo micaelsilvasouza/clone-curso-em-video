@@ -71,7 +71,7 @@ export default function Navbar({
           <Img_custon
             img={logo}
             alt="Imagem da logo Curso em Vídeo"
-            width={140}
+            width={150}
           />
         </Link>
       </div>
