@@ -1,7 +1,7 @@
 // Importações dos componentes
 import FormLogin from "../components/components_form/FormLogin";
 import Img_custon from "../components/img_custon";
-import Navbar from "../components/layout/navbar";
+import Navbar from "../components/layout/navbar_backup";
 
 export default function Login() {
   return (
@@ -11,6 +11,7 @@ export default function Login() {
         logo="logoWhite.png"
         styleHamburguer="bg-white"
         styleLinks="text-white"
+        styleBotao_1="bg-white text-black"
       />
       <main className="md:h-full flex px-5 pt-40 max-[500px]:pt-10">
         <section

@@ -1,5 +1,5 @@
 // Componentes
-import Navbar from "./components/layout/navbar";
+import Navbar from "./components/layout/navbar_backup";
 import Img_custon from "./components/img_custon";
 import ComentarioAlunos from "./components/carrosel/ComentarioAlunos";
 
@@ -21,6 +21,7 @@ export default function Home() {
           logo="logoWhite.png"
           styleHamburguer="bg-white"
           styleLinks="text-white"
+          styleBotao_1="bg-white"
         />
         <div className="flex max-md:w-full h-full lg:w-[1300px] mx-auto max-md:flex-col">
           <div className="w-full pl-6 flex-1 flex flex-col md:justify-end md:mb-10 h-[662px]">

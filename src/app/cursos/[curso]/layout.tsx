@@ -1,4 +1,4 @@
-import Navbar from "@/app/components/layout/navbar";
+import Navbar from "@/app/components/layout/navbar_backup";
 
 export default function CursoLayout({
   children,
@@ -7,8 +7,8 @@ export default function CursoLayout({
 }>) {
   return (
     <>
-    <Navbar />
-    {children}
+      <Navbar />
+      {children}
     </>
   );
 }

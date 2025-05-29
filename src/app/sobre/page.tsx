@@ -96,7 +96,7 @@ export default function Sobre() {
             Números do Curso em Vídeo
           </h2>
           <section className=" w-full grid grid-rows-2 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-1 items-center justify-items-center gap-2">
-            <div className=" bg-white p-5 rounded-lg w-full">
+            <div className=" bg-white p-10 rounded-lg w-full">
               <h3 className="text-center text-3xl font-semibold">
                 {scroolContado && (
                   <TotalAlunos ativo={true} totAlunos={2000000} />
@@ -130,7 +130,7 @@ export default function Sobre() {
               </p>
             </div>
 
-            <div className="bg-white p-5 rounded-lg w-full">
+            <div className="bg-white p-3 rounded-lg w-full">
               <h3 className="text-center text-3xl font-semibold">
                 {scroolContado && (
                   <TotalAlunos ativo={true} totAlunos={26000} />
