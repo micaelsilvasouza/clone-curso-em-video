@@ -1,17 +1,34 @@
+"use client";
+
 // Componentes
 import BannerRotaHeader from "../components/banner_rota_header";
 import Img_custon from "../components/img_custon";
+import TotalAlunos from "../components/total_alunos/TotalAlunos";
 
 // Lib Next
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Sobre() {
+  const [scroolContado, setScroolContado] = useState(false);
+
+  const mudancaScroll = () => {
+    if (window.innerWidth < 500) {
+      setScroolContado(window.scrollY > 1000);
+    }
+    if (window.innerWidth > 500) {
+      setScroolContado(window.scrollY > 300);
+    }
+  };
+
+  window.addEventListener("scroll", mudancaScroll);
+
   return (
     <section className="">
       <BannerRotaHeader nomeRota="Sobre" />
 
       {/* Sobre o Guanabara */}
-      <section className="flex max-md:flex-col p-5">
+      <section className="flex max-md:flex-col p-5 max-w-[1200px] mx-auto">
         {/* Parte da Img */}
         <article className="flex flex-col p-5 flex-1">
           <div className="flex justify-center">
@@ -72,7 +89,7 @@ export default function Sobre() {
       </section>
 
       {/* total de alunos */}
-      <section className="bg-cyan-400 px-2 flex flex-col items-center justify-center">
+      <section className="bg-cyan-800 px-2 mt-10 flex flex-col items-center justify-center">
         <article className="py-20 flex flex-col items-center justify-center">
           <h2 className="text-white text-2xl text-center font-semibold mb-20 md:text-3xl">
             Números do Curso em Vídeo
@@ -80,7 +97,9 @@ export default function Sobre() {
           <section className=" w-full grid grid-rows-2 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-1 items-center justify-items-center gap-2">
             <div className=" bg-white p-5 rounded-lg w-full">
               <h3 className="text-center text-3xl font-semibold">
-                + 2 milhões
+                {scroolContado && (
+                  <TotalAlunos ativo={true} totAlunos={2000000} />
+                )}
               </h3>
               <p className="text-black/80 text-center mt-5">
                 Alunos inscritos no YouTube
@@ -88,21 +107,34 @@ export default function Sobre() {
             </div>
 
             <div className="bg-white p-5 rounded-lg w-full">
-              <h3 className="text-center text-3xl font-semibold">+ 700 mil</h3>
+              <h3 className="text-center text-3xl font-semibold">
+                {" "}
+                {scroolContado && (
+                  <TotalAlunos ativo={true} totAlunos={700000} />
+                )}
+              </h3>
               <p className="text-black/80 text-center mt-5">
                 Alunos cadastrados e ativos no site
               </p>
             </div>
 
             <div className="bg-white p-5 rounded-lg w-full">
-              <h3 className="text-center text-3xl font-semibold">+ 210 mil</h3>
+              <h3 className="text-center text-3xl font-semibold">
+                {scroolContado && (
+                  <TotalAlunos ativo={true} totAlunos={210000} />
+                )}
+              </h3>
               <p className="text-black/80 text-center mt-5">
                 Seguidores no Instagram
               </p>
             </div>
 
             <div className="bg-white p-5 rounded-lg w-full">
-              <h3 className="text-center text-3xl font-semibold">+ 26 mil</h3>
+              <h3 className="text-center text-3xl font-semibold">
+                {scroolContado && (
+                  <TotalAlunos ativo={true} totAlunos={26000} />
+                )}
+              </h3>
               <p className="text-black/80 text-center mt-5">
                 Seguidores no TikTok
               </p>
