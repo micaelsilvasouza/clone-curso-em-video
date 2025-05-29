@@ -103,7 +103,7 @@ export default function Home() {
               className={`my-15 w-80 bg-white py-3 px-10 rounded-3xl text-blue-700 font-bold border border-blue-700 shadow  ${asap.className}
                  hover:bg-blue-700 hover:text-white hover:border-sky-600
                  focus:bg-blue-700 focus:text-white
-
+                  active:opacity-50
                   transition ease-in`}
             >
               Quero ser um Apoiador!
