@@ -7,8 +7,8 @@ export default function CursoLayout({
 }>) {
   return (
     <>
-    <Navbar />
-    {children}
+      <Navbar />
+      {children}
     </>
   );
 }
