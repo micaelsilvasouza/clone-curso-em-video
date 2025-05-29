@@ -24,15 +24,14 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
             flex
             flex-col
             bg-white
-            border-2 border-gray-300 
-            rounded-xl
             duration-800
-            w-9/10 
+            w-9/10
             
             ${
                 type == "leftright" ? 
-                "h-full absolute " + (isopening ? "top-0 left-0" : "top-0 -left-9/10") : 
-                "max-w-[800px] my-10 mx-auto"
+                "h-full absolute max-w-[300px]" 
+                + (isopening ? "top-0 left-0" : "top-0 -left-9/10 sm:-left-[300px]") : 
+                "max-w-[800px] my-10 mx-auto rounded-xl border-2 border-gray-300"
             }  
         `}>
             {/* Passando a alteraçaõ de estado para o componente filho */}

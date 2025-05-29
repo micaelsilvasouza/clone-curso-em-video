@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import IframeVideo from "@/app/components/menu_class_videos/IframeVideo";
+import IframeVideo from "@/app/components/iframe_video";
 import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos";
 import Link from "next/link";
 
@@ -61,19 +61,36 @@ export default async function ClassVideo({
 
   return (
     <main className="relative">
-      <h1>{video.title}</h1>
-      <MenuClassVideos
-        type="leftright"
-        videos={coursevideos}
-        courseslug={course.slug}
-        coursetitle={course.title}
-      />
-      <section>
-        <IframeVideo src={video.video} />
-      </section>
-      <section>
-        <Link href={preveiw}>Anterior</Link>
-        <Link href={next}>Próximo</Link>
+        <MenuClassVideos
+          type="leftright"
+          videos={coursevideos}
+          courseslug={course.slug}
+          coursetitle={course.title}
+        />
+      <section className="py-10">
+        <h1 className="text-center text-3xl font-bold">{video.title}</h1>
+
+        <div className="py-1 text-center">
+          <Link 
+            href={`/cursos/${course.slug}`} 
+            className="text-blue-800 underline"
+          >
+            {course.title}
+          </Link>
+        </div>
+
+        <div 
+          className="my-10 px-10 mx-auto w-full max-w-[800px] max-h-[405px]" 
+          style={{height: "calc((100dvw * 315 / 560) - 45px)"}}
+        >
+          <IframeVideo src={video.video} />
+        </div>
+
+
+        <div className="flex justify-center gap-5">
+          <Link href={preveiw} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Anterior</Link>
+          <Link href={next} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Próximo</Link>
+        </div>
       </section>
     </main>
   );
