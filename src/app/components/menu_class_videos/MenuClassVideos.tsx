@@ -10,15 +10,16 @@ import HeaderMenuClassVideos from "./HeaderMenuClassVideos"
 interface PropsVideoClass {title: string, slug: string}
 
 interface PropsMenuClassVideos{
+    type: "vertical" | "horizontal"
     videos: PropsVideoClass[],
     courseslug: string,
     coursetitle: string
 }
 
-export default function MenuClassVideos({videos, courseslug, coursetitle}: PropsMenuClassVideos){
+export default function MenuClassVideos({type, videos, courseslug, coursetitle}: PropsMenuClassVideos){
     const [isopening, setIsOpening] = useState(true)
-
-    return (
+    if(type == "vertical){
+      return (
         <section className={`
             flex
             flex-col
@@ -41,5 +42,14 @@ export default function MenuClassVideos({videos, courseslug, coursetitle}: Props
                 ))}
             </section>
         </section>
-    )
+      )
+    }
+    
+    if(type == "horizontal"){
+        return (
+            <section >
+                menu horizontal.
+            </section>
+        )
+    }  
 }
