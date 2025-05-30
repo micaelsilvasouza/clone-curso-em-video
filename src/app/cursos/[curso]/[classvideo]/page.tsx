@@ -62,7 +62,7 @@ export default async function ClassVideo({
   return (
     <main className="relative">
         <MenuClassVideos
-          type="leftright"
+          type="horizontal"
           videos={coursevideos}
           courseslug={course.slug}
           coursetitle={course.title}
