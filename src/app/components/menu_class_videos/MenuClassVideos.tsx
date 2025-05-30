@@ -18,7 +18,7 @@ interface PropsMenuClassVideos{
 
 export default function MenuClassVideos({type, videos, courseslug, coursetitle}: PropsMenuClassVideos){
     const [isopening, setIsOpening] = useState(true)
-    if(type == "vertical){
+    if(type == "vertical"){
       return (
         <section className={`
             flex
