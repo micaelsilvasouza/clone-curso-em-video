@@ -1,7 +1,17 @@
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import Navbar from "../layout/navbar";
 
-export default function BannerRotaHeader({ nomeRota }: { nomeRota: string }) {
+import { Asap } from "next/font/google";
+const asap = Asap({ subsets: ["latin"] });
+
+import { Roboto } from "next/font/google";
+const roboto = Roboto({ subsets: ["latin"] });
+interface Prop {
+  titulo?: string;
+  nomeRota?: string;
+}
+
+export default function BannerRotaHeader({ titulo, nomeRota }: Prop) {
   return (
     <section className="bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-right p-5 pb-10">
       <Navbar
@@ -9,16 +19,18 @@ export default function BannerRotaHeader({ nomeRota }: { nomeRota: string }) {
         styleLinks="text-black"
         styleHamburguer="bg-black"
       />
-      <h1 className="text-[30px]  font-semibold text-blue text-indigo-950 pt-10">
-        {nomeRota}
+      <h1
+        className={`md:text-4xl max-md:text-3xl text-blue text-indigo-900 pt-10 font-bold ${roboto.className}`}
+      >
+        {titulo || nomeRota}
       </h1>
       <div className="mt-2 mb-7">
-        <ul className="flex gap-1 text-[.9em] items-center">
+        <ul className={`flex gap-1 text-[.9em] items-center ${asap.className}`}>
           <li className="text-indigo-700 cursor-pointer active:opacity-70">
             Início
           </li>
           <MdOutlineKeyboardDoubleArrowRight />
-          <li className="text-gray-600 cursor-pointer active:opacity-70">
+          <li className={`text-gray-600 cursor-pointer active:opacity-70`}>
             {nomeRota}
           </li>
         </ul>
@@ -26,7 +38,7 @@ export default function BannerRotaHeader({ nomeRota }: { nomeRota: string }) {
 
       <div className="bg-amber-400"></div>
 
-      <p className="text-indigo-600 leading-6 text-sm">
+      <p className={`text-indigo-600 leading-6 text-base ${asap.className}`}>
         Seja um apoiador do <strong>Curso em Vídeo</strong>, remova os anúncios
         do site, tenha créditos para emissão de certificados e outros{" "}
         <strong>benefícios</strong>

@@ -97,39 +97,49 @@ export default function Navbar({
       )}
 
       {/* Navbar Mobile */}
-      {isOpen && (
-        <ul
-          id="navbarLinks"
-          className={`opacity-100 w-80 p-4 pt-20 h-dvh items-start flex
-      flex-col absolute top-0 left-0 gap-7 z-10
-      transition-transform duration-3000 ease-in-out text-base font-base 
-      ${styleLinks}
-      p-0`}
-          style={{ backgroundColor: "var(--bg-header-open)" }}
-        >
-          <Links isOpen={isOpen} />
-
-          {/* Botão customizado */}
-          <BotaoCuston
-            styleDiv="flex flex-col"
-            isOpen={isOpen}
-            styleBotao_1="w-full text-black"
-            styleBotao_2={styleBotao_2}
+      <div className="md:hidden h-30 flex items-center">
+        <Link href="/">
+          <Img_custon
+            img={`${logo}`}
+            alt="Imagem da logo do Curso em Vídeo"
+            width={150}
           />
-        </ul>
-      )}
-      {/* Menu Mobile */}
-      <MenuHamburgue
-        isOpen={isOpen}
-        isScrolled={isScrolled}
-        setIsOpen={setIsOpen}
-        stylesBar={styleHamburguer}
-      />
-      <XdoMenuAberto
-        isOpen={isOpen}
-        isScrolled={isScrolled}
-        setIsOpen={setIsOpen}
-      />
+        </Link>
+
+        {isOpen && (
+          <ul
+            id="navbarLinks"
+            className={`opacity-100 w-80 p-4 pt-20 h-dvh items-start flex
+        flex-col absolute top-0 left-0 gap-7 z-10
+        transition-transform duration-3000 ease-in-out text-base font-base 
+        ${styleLinks}
+        p-0`}
+            style={{ backgroundColor: "var(--bg-header-open)" }}
+          >
+            <Links isOpen={isOpen} />
+
+            {/* Botão customizado */}
+            <BotaoCuston
+              styleDiv="flex flex-col"
+              isOpen={isOpen}
+              styleBotao_1="w-full text-black"
+              styleBotao_2={styleBotao_2}
+            />
+          </ul>
+        )}
+        {/* Menu Mobile */}
+        <MenuHamburgue
+          isOpen={isOpen}
+          isScrolled={isScrolled}
+          setIsOpen={setIsOpen}
+          stylesBar={styleHamburguer}
+        />
+        <XdoMenuAberto
+          isOpen={isOpen}
+          isScrolled={isScrolled}
+          setIsOpen={setIsOpen}
+        />
+      </div>
       {/* Botão para direcionar o scrol para cima */}
       <BotaoScroll isScrolled={isScrolled} />
     </nav>
