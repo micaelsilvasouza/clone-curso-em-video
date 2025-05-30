@@ -17,7 +17,7 @@ import { useState, useEffect } from "react";
 interface ProprNavBar {
   style?: string;
   styleHamburguer?: string;
-  logo?: string;
+  logo?: "logoBlue.png" | "logoWhite.png";
   styleLinks?: string;
   styleBotao_1?: string;
   styleBotao_2?: string;
@@ -25,7 +25,7 @@ interface ProprNavBar {
 
 export default function Navbar({
   style = "bg-sky-50 text-black",
-  logo = "logoBlue.png",
+  logo,
   styleHamburguer = "bg-black",
   styleLinks = "text-blue-950",
   styleBotao_1,
@@ -65,17 +65,17 @@ export default function Navbar({
   }, [isOpen]);
 
   return (
-    <nav className="p-5">
+    <nav className="">
       {/* NavBar Desktop */}
       {!isOpen && (
         <div
-          className={`${style} p-5 flex items-center justify-between max-md:hidden`}
+          className={`${style} flex items-center justify-between max-md:hidden p-10`}
         >
           {/* Logo */}
           <div>
             <Link href="/">
               <Img_custon
-                img={logo}
+                img={`${logo}`}
                 alt="Imagem da logo Curso em Vídeo"
                 width={150}
               />

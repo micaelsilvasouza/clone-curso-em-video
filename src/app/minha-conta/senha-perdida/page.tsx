@@ -1,6 +1,9 @@
+import Navbar from "@/app/components/layout/navbar";
+
 export default function SenhaPerdida() {
   return (
-    <div>
+    <main>
+      <Navbar logo="logoBlue.png" />
       <h1>Senha perdida</h1>
 
       <p>
@@ -9,6 +12,6 @@ export default function SenhaPerdida() {
         cum, temporibus harum libero fugit laboriosam ex ipsum, exercitationem
         sit blanditiis quis.
       </p>
-    </div>
+    </main>
   );
 }
