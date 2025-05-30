@@ -28,7 +28,7 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
             w-9/10 max-w-[800px] my-10 mx-auto rounded-xl border-2 border-gray-300`}>
 
             {/* Passando a alteraçaõ de estado para o componente filho */}
-            <HeaderMenuClassVideos course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
+            <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
            
             
             <section className={`
