@@ -48,7 +48,12 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
     if(type == "horizontal"){
         return (
             <section >
-                menu horizontal.
+                <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
+                <section>
+                    {videos.map((video: PropsVideoClass)=>(
+                        <LinkClassVideo key={video.slug} title={video.title} slug={video.slug} course={courseslug}/>
+                    ))}
+                </section>
             </section>
         )
     }  
