@@ -60,14 +60,14 @@ export default async function ClassVideo({
   const next = `/cursos/${course.slug}/${coursevideos.at(videoindex + 1)?.slug}` 
 
   return (
-    <main className="relative">
+    <main className="relative flex items-center">
         <MenuClassVideos
           type="horizontal"
           videos={coursevideos}
           courseslug={course.slug}
           coursetitle={course.title}
         />
-      <section className="py-10">
+      <section className="grow py-10">
         <h1 className="text-center text-3xl font-bold">{video.title}</h1>
 
         <div className="py-1 text-center">
