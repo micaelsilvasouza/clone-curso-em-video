@@ -14,8 +14,9 @@ export default function HeaderMenuClassVideos({type, course, quantity, isopening
         <section className="bg-blue-800 text-white text-lg font-bold p-10 rounded-t-xl relative">
             <p className="px-10 py-2"><LuBook className="inline align-middle"/> {course}</p>
             <p className="px-10 py-2">0% Completo | 0 / {quantity} steps</p>
+
             { type == "vertical" &&
-            <span className="absolute bottom-1 right-2" onClick={()=>{setIsOpening(!isopening)}}>
+            <span className="cursor-pointer absolute bottom-1 right-2" onClick={()=>{setIsOpening(!isopening)}}>
                 {
                     isopening ? <FaAngleUp /> : <FaAngleDown />
                 }
@@ -23,7 +24,7 @@ export default function HeaderMenuClassVideos({type, course, quantity, isopening
             }
 
             { type == "horizontal" &&
-                <span>
+                <span className="cursor-pointer text-blue-800 absolute top-10 -right-5" onClick={()=>{setIsOpening(!isopening)}}>
                     {
                         isopening ? <FaAngleLeft/> : <FaAngleRight/>
                     }
