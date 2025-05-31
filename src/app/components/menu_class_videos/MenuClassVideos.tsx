@@ -55,7 +55,7 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
               h-fit
               ${ isopening ? "w-[30dvw]" : "w-0"}
             `}>
-              <section className={`absolute top-0 right-0 bg-white`}>
+              <section className={`absolute top-0 right-0 w-[30dvw] bg-white`}>
                 <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
                 <section className={`h-125 py-10 overflow-y-scroll`}>
                     {videos.map((video: PropsVideoClass)=>(
