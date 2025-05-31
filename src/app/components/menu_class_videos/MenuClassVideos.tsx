@@ -56,7 +56,7 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
             `}>
               <section className={`absolute top-0 right-0 bg-white`}>
                 <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
-                <section>
+                <section className={`h-125 py-10 overflow-y-scroll`}>
                     {videos.map((video: PropsVideoClass)=>(
                         <LinkClassVideo key={video.slug} title={video.title} slug={video.slug} course={courseslug}/>
                     ))}
