@@ -52,7 +52,7 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
               duration-800
               ${isopening ? "w-[30dvw]" : "w-0"}
             `}>
-              <section className={`absolute top-0 right-0`}>
+              <section className={`absolute top-0 right-0 bg-white`}>
                 <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
                 <section>
                     {videos.map((video: PropsVideoClass)=>(
