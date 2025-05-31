@@ -52,12 +52,12 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
             <section className={`
               relative 
               duration-800
-              h-fit
+              min-h-[70dvh]
               ${ isopening ? "w-[30dvw]" : "w-0"}
             `}>
-              <section className={`absolute top-0 right-0 w-[30dvw] bg-white`}>
+              <section className={`flex flex-col absolute top-0 right-0 w-[30dvw] h-full bg-white`}>
                 <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
-                <section className={`h-125 py-10 overflow-y-scroll`}>
+                <section className={`py-10 overflow-y-scroll`}>
                     {videos.map((video: PropsVideoClass)=>(
                         <LinkClassVideo key={video.slug} title={video.title} slug={video.slug} course={courseslug}/>
                     ))}
