@@ -24,7 +24,7 @@ export default function HeaderMenuClassVideos({type, course, quantity, isopening
             }
 
             { type == "horizontal" &&
-                <span className="cursor-pointer absolute top-10 -right-5" onClick={()=>{setIsOpening(!isopening)}}>
+                <span className="cursor-pointer text-blue-800 absolute top-10 -right-5" onClick={()=>{setIsOpening(!isopening)}}>
                     {
                         isopening ? <FaAngleLeft/> : <FaAngleRight/>
                     }
