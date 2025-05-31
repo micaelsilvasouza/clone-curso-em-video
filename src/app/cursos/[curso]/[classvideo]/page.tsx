@@ -60,7 +60,7 @@ export default async function ClassVideo({
   const next = `/cursos/${course.slug}/${coursevideos.at(videoindex + 1)?.slug}` 
 
   return (
-    <main className="relative flex items-center">
+    <main className="bg-sky-100 relative flex items-center">
         <MenuClassVideos
           type="horizontal"
           videos={coursevideos}
