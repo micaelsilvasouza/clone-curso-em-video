@@ -52,6 +52,7 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
             <section className={`
               relative 
               duration-800
+              h-[100dvh]
               ${ isopening ? "w-[30dvw]" : "w-0"}
             `}>
               <section className={`absolute top-0 right-0 bg-white`}>
