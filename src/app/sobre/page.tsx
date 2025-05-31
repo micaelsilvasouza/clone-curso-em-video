@@ -26,7 +26,7 @@ export default function Sobre() {
 
   return (
     <section className="">
-      <BannerRotaHeader nomeRota="Sobre" />
+      <BannerRotaHeader nomeRota="Sobre nós" />
 
       {/* Sobre o Guanabara */}
       <section className="flex max-md:flex-col p-5 max-w-[1200px] mx-auto">
