@@ -67,7 +67,8 @@ export default async function ClassVideo({
           courseslug={course.slug}
           coursetitle={course.title}
         />
-      <section className="grow py-10">
+      <section className={`rounded-xl w-[70dvw] grow flex justify-center items-center`}>
+       <section className="w-fit h-fit rounded-xl shadow-lg bg-white p-5">
         <h1 className="text-center text-3xl font-bold">{video.title}</h1>
 
         <div className="py-1 text-center">
@@ -80,7 +81,8 @@ export default async function ClassVideo({
         </div>
 
         <div 
-          className="w-[560px] h-[315px"
+          className="w-[65dvw]" 
+          style={{height: "calc(60dvw * 16 / 9)"}}
         >
           <IframeVideo src={video.video} />
         </div>
@@ -90,6 +92,7 @@ export default async function ClassVideo({
           <Link href={preveiw} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Anterior</Link>
           <Link href={next} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Próximo</Link>
         </div>
+       </section>
       </section>
     </main>
   );
