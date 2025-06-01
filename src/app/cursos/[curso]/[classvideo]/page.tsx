@@ -81,7 +81,7 @@ export default async function ClassVideo({
         </div>
 
         <div 
-          className="w-[50dvw] my-5" 
+          className="w-[90dvw] md:w-[50dvw] my-5 mx-auto" 
           style={{height: "calc(50dvw * 9 / 16)"}}
         >
           <IframeVideo src={video.video} />
