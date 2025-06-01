@@ -44,20 +44,16 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
                         <LinkClassVideo key={video.slug} title={video.title} slug={video.slug} course={courseslug}/>
                     ))}
                 </section>
-                <p onClick={()=>{setIsOpening(!isopening)}} className="text-center text-blue-800 text-xl uppercase p-5">{
+                <p onClick={()=>{setIsOpening(!isopening)}} className="text-center text-blue-800 text-base p-5">{
                     isopening ? 
                     <>
-                    <span>
                         Recolher
-                    </span>
-                    <FaAngleUp/>
+                        <FaAngleUp className="block m-auto"/>
                     </>
                     : 
                     <>
-                    <span>
-                        Espandir
-                    </span>
-                    <FaAngleDown/>
+                        Expandir
+                        <FaAngleDown className="block m-auto"/>
                     </>
                 }</p>
             </section>
