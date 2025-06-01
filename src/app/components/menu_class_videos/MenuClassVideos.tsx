@@ -46,19 +46,19 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
                 </section>
                 <p onClick={()=>{setIsOpening(!isopening)}} className="text-center text-blue-800 text-xl uppercase p-5">{
                     isopening ? 
-                    
+                    <>
                     <span>
-                        <FaAngleUp/>
                         Recolher
                     </span>
-                    
+                    <FaAngleUp/>
+                    </>
                     : 
-                    
+                    <>
                     <span>
-                        <FaAngleDown/>
                         Espandir
                     </span>
-                    
+                    <FaAngleDown/>
+                    </>
                 }</p>
             </section>
         )
