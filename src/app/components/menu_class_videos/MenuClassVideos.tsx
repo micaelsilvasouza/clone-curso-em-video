@@ -7,6 +7,8 @@ import { useState } from "react"
 import { LinkClassVideo } from "./LinkClassVideo"
 import HeaderMenuClassVideos from "./HeaderMenuClassVideos"
 
+import { FaAngleDown, FaAngleUp } from "react-icons/fa"
+
 interface PropsVideoClass {title: string, slug: string}
 
 interface PropsMenuClassVideos{
@@ -43,7 +45,20 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
                     ))}
                 </section>
                 <p onClick={()=>{setIsopening(!isopening)}} className="text-center text-blue-800 text-xl uppercase p-5">{
-                    isopening ? "Recolher" : "Espandir"
+                    isopening ? 
+                    
+                    <span>
+                        <FaAngleUp/>
+                        Recolher
+                    </span>
+                    
+                    : 
+                    
+                    <span>
+                        <FaAngleDown/>
+                        Espandir
+                    </span>
+                    
                 }</p>
             </section>
         )
