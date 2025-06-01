@@ -44,7 +44,7 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
                         <LinkClassVideo key={video.slug} title={video.title} slug={video.slug} course={courseslug}/>
                     ))}
                 </section>
-                <p onClick={()=>{setIsopening(!isopening)}} className="text-center text-blue-800 text-xl uppercase p-5">{
+                <p onClick={()=>{setIsOpening(!isopening)}} className="text-center text-blue-800 text-xl uppercase p-5">{
                     isopening ? 
                     
                     <span>
