@@ -64,11 +64,11 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
         console.log("horizontal")
         return (
             <section className={`
-              absolute left-[-50dvw] w-[50dvw]
-              sm:relative sm:left-0 sm:w-[30dvw]
+              absolute
+              sm:relative
               duration-800
               min-h-[100dvh]
-              ${ isopening ? "left-0 sm:w-[30dvw]" : "left-[-50dvw] sm:w-0"}
+              ${ isopening ? "w-[30dvw]" : "w-0"}
             `}>
               <section className={`flex flex-col absolute top-0 right-0 w-[30dvw] h-full bg-white`}>
                 <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
