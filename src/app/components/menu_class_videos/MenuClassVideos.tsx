@@ -64,10 +64,8 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
         console.log("horizontal")
         return (
             <section className={`
-              absolute
-              left-[-50dvw]
-              sm:relative 
-              sm:left-0
+              absolute left-[-50dvw] w-[50dvw]
+              sm:relative sm:left-0 sm:w-[30dvw]
               duration-800
               min-h-[100dvh]
               ${ isopening ? "left-0 sm:w-[30dvw]" : "left-50dvw sm:w-0"}
