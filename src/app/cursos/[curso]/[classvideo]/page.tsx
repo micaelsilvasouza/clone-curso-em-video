@@ -60,14 +60,15 @@ export default async function ClassVideo({
   const next = `/cursos/${course.slug}/${coursevideos.at(videoindex + 1)?.slug}` 
 
   return (
-    <main className="bg-sky-100 min-h-[70dvh] relative flex items-center">
+    <main className="bg-sky-100 min-h-[100dvh] relative flex items-center">
         <MenuClassVideos
           type="horizontal"
           videos={coursevideos}
           courseslug={course.slug}
           coursetitle={course.title}
         />
-      <section className="grow py-10">
+      <section className={`rounded-xl w-[70dvw] grow flex justify-center items-center`}>
+       <section className="w-fit h-fit rounded-xl shadow-lg bg-white p-5">
         <h1 className="text-center text-3xl font-bold">{video.title}</h1>
 
         <div className="py-1 text-center">
@@ -80,8 +81,8 @@ export default async function ClassVideo({
         </div>
 
         <div 
-          className="w-[65dvw]" 
-          style={{height: "calc((65dvw * 16 / 9) - 45px)"}}
+          className="w-[50dvw] my-5" 
+          style={{height: "calc(50dvw * 9 / 16)"}}
         >
           <IframeVideo src={video.video} />
         </div>
@@ -91,6 +92,7 @@ export default async function ClassVideo({
           <Link href={preveiw} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Anterior</Link>
           <Link href={next} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Próximo</Link>
         </div>
+       </section>
       </section>
     </main>
   );
