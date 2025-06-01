@@ -67,7 +67,7 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
               relative 
               duration-800
               min-h-[100dvh]
-              ${ isopening ? "w-[30dvw]" : "w-0"}
+              ${ isopening ? "w-[50dvw]" : "w-0"}
             `}>
               <section className={`flex flex-col absolute top-0 right-0 w-[30dvw] h-full bg-white`}>
                 <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
