@@ -3,7 +3,7 @@
 // Componentes
 import BannerRotaHeader from "../components/banner_rota_header";
 import Img_custon from "../components/img_custon";
-import TotalAlunos from "../components/total_alunos/TotalAlunos";
+import TotalAlunos from "../components/contado_alunos/TotalAlunos";
 
 // Lib Next
 import Link from "next/link";
@@ -26,7 +26,7 @@ export default function Sobre() {
 
   return (
     <section className="">
-      <BannerRotaHeader nomeRota="Sobre" />
+      <BannerRotaHeader nomeRota="Sobre nós" />
 
       {/* Sobre o Guanabara */}
       <section className="flex max-md:flex-col p-5 max-w-[1200px] mx-auto">
