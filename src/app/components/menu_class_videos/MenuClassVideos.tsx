@@ -35,7 +35,7 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
                
                 
                 <section className={`
-                    duration-800 px-10  
+                    duration-800 px-2 
                     ${ //Se o tipo for que abre para baixo, ele aplica o teste de abertura
                         isopening ? "h-125 overflow-y-scroll" : "h-0 overflow-hidden"
                     }`} 
