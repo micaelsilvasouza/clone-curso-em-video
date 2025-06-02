@@ -7,7 +7,11 @@ export default function CursoLayout({
 }>) {
   return (
     <>
-      <Navbar />
+      <Navbar
+        logo="logoBlue.png"
+        styleLinks="text-black"
+        styleHamburguer="bg-black"
+      />
       {children}
     </>
   );
