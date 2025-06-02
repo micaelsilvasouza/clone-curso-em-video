@@ -68,9 +68,9 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
               md:relative
               duration-800
               min-h-[100dvh]
-              ${ isopening ? "w-[90dvw]" : "w-0"}
+              ${ isopening ? "w-[90dvw] md:w-[50dvw]" : "w-0"}
             `}>
-              <section className={`flex flex-col absolute top-0 right-0 w-[90dvw] h-full bg-white rounded-xl`}>
+              <section className={`flex flex-col absolute top-0 right-0 w-[90dvw] md:w-[50dvw] h-full bg-white rounded-xl`}>
                 <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
                 <section className={`py-10 overflow-y-scroll`}>
                     {videos.map((video: PropsVideoClass)=>(
