@@ -112,7 +112,7 @@ export default function Navbar({
       <div className="md:hidden h-30 flex items-center">
         <Link href="/">
           <Img_custon
-            img={logo}
+            img={'logo'}
             alt="Imagem da logo do Curso em Vídeo"
             width={150}
           />
