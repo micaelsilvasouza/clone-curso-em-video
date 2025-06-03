@@ -17,7 +17,7 @@ export function BotaoCuston({
     <div className={`flex ${styleDiv} gap-5 ${isOpen ? "w-full" : ""}`}>
       <Link
         href="/cadastre-se"
-        className={`${styleBotao_1} text-center border border-sky-500 rounded-lg py-2 px-3 shadow text-sm hover:bg-blue-600 hover:text-white transition ease-in active:opacity-70 animate-pulse`}
+        className={`${styleBotao_1} text-center border border-sky-500 rounded-lg py-2 px-3 shadow text-sm hover:bg-gray-900 hover:text-white transition ease-in active:opacity-70 animate-pulse`}
       >
         inscreva-se
       </Link>

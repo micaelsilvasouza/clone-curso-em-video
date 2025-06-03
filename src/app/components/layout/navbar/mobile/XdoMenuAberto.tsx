@@ -1,25 +1,16 @@
 type PropX = {
-  isOpen: boolean;
   isScrolled: boolean;
-  setIsOpen: (param: boolean) => void;
+  isOpen: boolean;
 };
 
-export default function XdoMenuAberto({
-  isOpen,
-  isScrolled,
-  setIsOpen,
-}: PropX) {
+export default function XdoMenuAberto({ isScrolled, isOpen }: PropX) {
   return (
     <>
       <div
         className={`
           absolute top-0 left-0
            transition-opacity duration-300 ease-in z-5 bg-black/50 md:hidden
-          ${
-            isOpen
-              ? "opacity-100 h-full w-full"
-              : "opacity-0 pointer-events-none"
-          }
+          ${isOpen ? "opacity-100 h-full w-full" : "opacity-0 "}
            `}
       ></div>
 
@@ -27,7 +18,6 @@ export default function XdoMenuAberto({
         className={`fixed left-57 top-10 w-6 h-6 z-20 cursor-pointer md:hidden ${
           isOpen ? " ml-10 opacity-100" : "-translate-x-full opacity-0"
         } transition-all duration-300 ${isScrolled ? "hidden" : "block"}`}
-        onClick={() => setIsOpen(!isOpen)}
         aria-label="Abrindo Navbar"
       >
         {/* Linha 1 */}
