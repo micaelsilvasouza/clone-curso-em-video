@@ -1,4 +1,6 @@
-import { useState } from "react";
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 // CSS
 import styleModule from "./style.module.css";
@@ -29,8 +31,30 @@ export function Dropdown({
   Mais,
 }: Prop) {
   const [openDropdown, setOpenDropdown] = useState(false);
+
+  const refDropdown = useRef<HTMLDivElement>(null); // a referência do dropdown vai começar vazio
+
+  useEffect(() => {
+    // Ser clicar fora do dropdown ele vai fechar o dropdown
+    const handledDropdown = (event: MouseEvent) => {
+      if (
+        refDropdown.current &&
+        !refDropdown.current.contains(event.target as Node)
+      ) {
+        setOpenDropdown(false);
+      }
+    };
+
+    document.addEventListener("click", handledDropdown);
+
+    // Fazendo a limpeza do evento addEventListener
+    return () => {
+      document.removeEventListener("click", handledDropdown);
+    };
+  }, []);
+
   return (
-    <div className="z-10">
+    <div className="z-10" ref={refDropdown}>
       <button
         onClick={() => setOpenDropdown(!openDropdown)}
         className={`cursor-pointer border border-blue-600 w-full  transition ease-in hover:border-blue-500 rounded-lg ${hoverText} ${style} ${padding} ${styleBorde}`}
@@ -44,11 +68,10 @@ export function Dropdown({
           +
         </span>
       </button>
-
       <nav className={`${openDropdown ? "flex" : ""} relative`}>
         <ul
           className={`bg-sky-100 absolute border border-sky-500 mt-5 ${padding} w-65 flex flex-col justify-center items-start gap-2 rounded-sm shadow ${
-            openDropdown ? styleModule.dropdownOpen : "  opacity-0"
+            openDropdown ? styleModule.dropdownOpen : "opacity-0"
           }`}
         >
           {[

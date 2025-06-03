@@ -59,13 +59,14 @@ export default function Navbar({
         setIsOpen(false);
       }
     };
+
     document.body.addEventListener("click", handleBodyClick);
 
     // Cleanup: remove os listeners
     return () => {
       document.body.removeEventListener("click", handleBodyClick);
       window.removeEventListener("scroll", mudancaDoScroll);
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
