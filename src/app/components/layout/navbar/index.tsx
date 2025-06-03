@@ -37,17 +37,19 @@ export default function Navbar({
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [largura, setLargura] = useState(0);
+
+  // ser o largura da tela for maior ou igual a 768px vai fechar o navBar
   if (largura >= 768 && isOpen === true) {
     setIsOpen(!isOpen);
   }
   useEffect(() => {
-    // Função que pega a largura atual
+    // Função que pega a largura atual da tela
     const atualizarLargura = () => {
       setLargura(window.innerWidth);
     };
     // Chamar uma vez ao montar
     atualizarLargura();
-
+    // evento para ficar monitorando a tela
     window.addEventListener("resize", atualizarLargura);
 
     // Impede rolagem do body quando o menu estiver aberto
