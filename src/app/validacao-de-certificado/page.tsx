@@ -7,7 +7,7 @@ export default function ValidacaoDeCertificado(){
     <main>
       <BannerRotaHeader nomeRota="Validação de Certificado"/>
       <section className="text-center p-5">
-        <PiCertificateBold />
+        <PiCertificateBold size={40} className="block mx-auto my-5" />
         <p>Digite o código do certificado no formulário abaixo para verificar sua validade</p>
       </section>
     </main>
