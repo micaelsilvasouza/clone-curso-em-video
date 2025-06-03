@@ -26,7 +26,7 @@ export default function ValidacaoDeCertificado(){
          />
           <ButtonForm 
             title="Validar" 
-            clickFunction={()=>{}}
+            clickFunction={()=>{alert(code_certificate)}}
           />
         </div>
 
