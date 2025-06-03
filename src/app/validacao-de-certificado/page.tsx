@@ -11,13 +11,18 @@ export default function ValidacaoDeCertificado(){
       <section className="text-center p-5">
         <PiCertificate size={80} className="block mx-auto my-5" />
         <p>Digite o código do certificado no formulário abaixo para verificar sua validade</p>
-        <InputForm
+        <div>
+         <InputForm
           name="code"
           label="Código do Certificado"
           placeholder="Ex: 1a2e34f537"
           type="text"
           changeFunction={()=>{}}
-        />
+         />
+          <ButtonForm title="Validar" clickFunction={()=>{}}/>
+        </div>
+
+        
       </section>
     </main>
   )
