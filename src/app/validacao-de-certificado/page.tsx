@@ -9,7 +9,7 @@ import { PiCertificate } from "react-icons/pi"
 import { useState } from "react"
 
 export default function ValidacaoDeCertificado(){
-  const [code, setCode] = useState("")
+  const [code_certificate, setCodeCertificate] = useState("")
   return(
     <main>
       <BannerRotaHeader nomeRota="Validação de Certificado"/>
@@ -18,11 +18,11 @@ export default function ValidacaoDeCertificado(){
         <p>Digite o código do certificado no formulário abaixo para verificar sua validade</p>
         <div>
          <InputForm
-          name="code"
+          name="code-certificate"
           label="Código do Certificado"
           placeholder="Ex: 1a2e34f537"
           type="text"
-          changeFunction={setCode}
+          changeFunction={setCodeCertificate}
          />
           <ButtonForm 
             title="Validar" 
