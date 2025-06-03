@@ -151,7 +151,7 @@ export default function Navbar({
               />
             </Link>
             <ul className="flex flex-col gap-5">
-              <Links isOpen={isOpen} />
+              <Links isOpen={isOpen} corIcone="text-blue-700" />
               <Dropdown
                 padding="px-4 py-2"
                 style={"text-black/80"}
