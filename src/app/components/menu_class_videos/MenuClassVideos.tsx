@@ -19,7 +19,7 @@ interface PropsMenuClassVideos{
 }
 
 export default function MenuClassVideos({type, videos, courseslug, coursetitle}: PropsMenuClassVideos){
-    const [isopening, setIsOpening] = useState(true)
+    const [isopening, setIsOpening] = useState(false)
     if(type == "vertical"){
         console.log("vertical")
         return (
@@ -35,7 +35,7 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
                
                 
                 <section className={`
-                    duration-800 px-10  
+                    duration-800 px-2 
                     ${ //Se o tipo for que abre para baixo, ele aplica o teste de abertura
                         isopening ? "h-125 overflow-y-scroll" : "h-0 overflow-hidden"
                     }`} 
@@ -64,12 +64,13 @@ export default function MenuClassVideos({type, videos, courseslug, coursetitle}:
         console.log("horizontal")
         return (
             <section className={`
-              relative 
+              absolute
+              md:relative
               duration-800
               min-h-[100dvh]
-              ${ isopening ? "w-[30dvw]" : "w-0"}
+              ${ isopening ? "w-[90dvw] md:w-[50dvw]" : "w-0"}
             `}>
-              <section className={`flex flex-col absolute top-0 right-0 w-[30dvw] h-full bg-white`}>
+              <section className={`flex flex-col absolute top-0 right-0 w-[90dvw] md:w-[50dvw] h-full bg-white rounded-xl`}>
                 <HeaderMenuClassVideos type={type} course={coursetitle} quantity={videos.length} isopening={isopening} setIsOpening={setIsOpening}/>
                 <section className={`py-10 overflow-y-scroll`}>
                     {videos.map((video: PropsVideoClass)=>(
