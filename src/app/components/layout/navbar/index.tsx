@@ -65,6 +65,7 @@ export default function Navbar({
     return () => {
       document.body.removeEventListener("click", handleBodyClick);
       window.removeEventListener("scroll", mudancaDoScroll);
+      document.body.style.overflow = "auto"
     };
   }, [isOpen]);
 
