@@ -7,6 +7,7 @@ import MenuHamburgue from "./mobile/MenuHamburgue";
 import XdoMenuAberto from "./mobile/XdoMenuAberto";
 import Links from "./Links";
 import { BotaoCuston } from "./BotaoCuston";
+import { Dropdown } from "./Dropdown";
 
 // Lib next
 import Link from "next/link";
@@ -21,6 +22,7 @@ interface ProprNavBar {
   styleLinks?: string;
   styleBotao_1?: string;
   styleBotao_2?: string;
+  corIcone?: string;
 }
 
 export default function Navbar({
@@ -30,47 +32,47 @@ export default function Navbar({
   styleLinks = "text-blue-950",
   styleBotao_1,
   styleBotao_2,
+  corIcone = "text-blue-700",
 }: ProprNavBar) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    // Impede rolagem do body quando o menu estiver aberto
     document.body.style.overflow = isOpen ? "hidden" : "auto";
 
-    // Vai monitorar ser vai rola a barra de rolagem
+    // Atualiza o estado de scroll
     const mudancaDoScroll = () => {
-      setIsScrolled(window.scrollY > 0); // o scroll foi ativado?
+      setIsScrolled(window.scrollY > 0);
     };
-
     window.addEventListener("scroll", mudancaDoScroll);
 
-    // Quando Clicar no Body fechar o Navbar
-    const ul = document.getElementById("navbarLinks");
-
+    // Detecta clique fora do menu (navbarLinks)
     const handleBodyClick = (event: MouseEvent) => {
-      if (isOpen && ul && !ul.contains(event.target as Node)) {
+      const navbarLinks = document.getElementById("navbarLinks");
+
+      if (
+        isOpen &&
+        navbarLinks &&
+        !navbarLinks.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
-
-    ul?.addEventListener("click", () => setIsOpen(true));
     document.body.addEventListener("click", handleBodyClick);
 
+    // Cleanup: remove os listeners
     return () => {
-      if (ul) {
-        ul.removeEventListener("click", handleBodyClick);
-      }
+      document.body.removeEventListener("click", handleBodyClick);
       window.removeEventListener("scroll", mudancaDoScroll);
     };
   }, [isOpen]);
 
   return (
-    <nav className="">
+    <nav>
       {/* NavBar Desktop */}
       {!isOpen && (
-        <div
-          className={`${style} flex items-center justify-between max-md:hidden p-10`}
-        >
+        <div className={` flex items-center justify-between max-md:hidden `}>
           {/* Logo */}
           <div>
             <Link href="/">
@@ -82,8 +84,18 @@ export default function Navbar({
             </Link>
           </div>
 
-          <ul className={`flex gap-5 text-sm ${styleLinks}`}>
-            <Links isOpen={isOpen} />
+          <ul className={`flex gap-5 mx-5 text-sm ${styleLinks}`}>
+            <Links isOpen={isOpen} corIcone={corIcone} />
+
+            {/* Dropdown */}
+            <Dropdown
+              style={style}
+              padding="px-4 py-2"
+              links="text-black"
+              styleBorde="border-blue-700"
+              hoverText="hover:text-blue-700"
+              Mais="text-blue-700"
+            />
           </ul>
 
           {/* Botão customizado */}
@@ -100,24 +112,38 @@ export default function Navbar({
       <div className="md:hidden h-30 flex items-center">
         <Link href="/">
           <Img_custon
-            img={`${logo}`}
+            img="logoBlue.png"
             alt="Imagem da logo do Curso em Vídeo"
             width={150}
           />
         </Link>
-
         {isOpen && (
-          <ul
+          <div
             id="navbarLinks"
-            className={`opacity-100 w-80 p-4 pt-20 h-dvh items-start flex
-        flex-col absolute top-0 left-0 gap-7 z-10
-        transition-transform duration-3000 ease-in-out text-base font-base 
-        ${styleLinks}
-        p-0`}
+            className={`opacity-100 p-4 w-80 h-dvh items-start flex
+              flex-col justify-around absolute top-0 left-0 gap-7 z-10
+              transition-transform duration-3000 ease-in-out text-base font-base 
+              ${styleLinks}`}
             style={{ backgroundColor: "var(--bg-header-open)" }}
           >
-            <Links isOpen={isOpen} />
-
+            <Link href="/">
+              <Img_custon
+                img="logoBlue.png"
+                alt="Imagem da logo do Curso em Vídeo"
+                width={150}
+              />
+            </Link>
+            <ul className="flex flex-col gap-5">
+              <Links isOpen={isOpen} />
+              <Dropdown
+                padding="px-4 py-2"
+                style={"text-black/80"}
+                styleBorde="border-blue-700"
+                links="text-black"
+                hoverText="hover:text-blue-700"
+                Mais="text-sky-500"
+              />
+            </ul>
             {/* Botão customizado */}
             <BotaoCuston
               styleDiv="flex flex-col"
@@ -125,7 +151,7 @@ export default function Navbar({
               styleBotao_1="w-full text-black"
               styleBotao_2={styleBotao_2}
             />
-          </ul>
+          </div>
         )}
         {/* Menu Mobile */}
         <MenuHamburgue
@@ -134,11 +160,7 @@ export default function Navbar({
           setIsOpen={setIsOpen}
           stylesBar={styleHamburguer}
         />
-        <XdoMenuAberto
-          isOpen={isOpen}
-          isScrolled={isScrolled}
-          setIsOpen={setIsOpen}
-        />
+        <XdoMenuAberto isScrolled={isScrolled} isOpen={isOpen} />
       </div>
       {/* Botão para direcionar o scrol para cima */}
       <BotaoScroll isScrolled={isScrolled} />

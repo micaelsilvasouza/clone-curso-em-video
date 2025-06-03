@@ -12,19 +12,19 @@ const catamaran = Catamaran({ subsets: ["latin"] });
 const roboto = Roboto({ subsets: ["latin"] });
 const asap = Asap({ subsets: ["latin"] });
 
-export default function Home() {
+export default function App() {
   return (
     <main>
-      <section className="flex flex-col h-full bg-[url('https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/pagina_home/fundo08.jpg')] bg-cover bg-no-repeat bg-center ">
+      <section className="flex flex-col h-full bg-[url('https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/pagina_home/fundo08.jpg')] bg-[80%_0%] bg-cover bg-no-repeat bg-fixed px-6 pt-10">
         <Navbar
-          style="bg-transparent"
           logo="logoWhite.png"
           styleHamburguer="bg-white"
           styleLinks="text-white"
           styleBotao_1="bg-white"
+          corIcone="text-white"
         />
         <div className="flex max-md:w-full h-full lg:w-[1300px] mx-auto max-md:flex-col">
-          <div className="w-full pl-6 flex-1 flex flex-col md:justify-end md:mb-10 h-[662px]">
+          <div className="w-full  flex-1 flex flex-col md:justify-end md:mb-10 h-[662px]">
             <div className="w-full">
               <h1
                 className={`max-md:mt-7

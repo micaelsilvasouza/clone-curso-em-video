@@ -13,7 +13,7 @@ interface Prop {
 
 export default function BannerRotaHeader({ titulo, nomeRota }: Prop) {
   return (
-    <section className="bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-right p-5 pb-10">
+    <section className="bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-right md:p-10 px-5 pb-10">
       <Navbar
         logo="logoBlue.png"
         styleLinks="text-black"
