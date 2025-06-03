@@ -36,8 +36,20 @@ export default function Navbar({
 }: ProprNavBar) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const [largura, setLargura] = useState(0);
+  if (largura >= 768 && isOpen === true) {
+    setIsOpen(!isOpen);
+  }
   useEffect(() => {
+    // Função que pega a largura atual
+    const atualizarLargura = () => {
+      setLargura(window.innerWidth);
+    };
+    // Chamar uma vez ao montar
+    atualizarLargura();
+
+    window.addEventListener("resize", atualizarLargura);
+
     // Impede rolagem do body quando o menu estiver aberto
     document.body.style.overflow = isOpen ? "hidden" : "auto";
 
@@ -64,6 +76,7 @@ export default function Navbar({
 
     // Cleanup: remove os listeners
     return () => {
+      window.removeEventListener("resize", atualizarLargura);
       document.body.removeEventListener("click", handleBodyClick);
       window.removeEventListener("scroll", mudancaDoScroll);
       document.body.style.overflow = "auto";
