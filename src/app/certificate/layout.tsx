@@ -5,7 +5,6 @@ export default function CerticateLayout({
 }>) {
   return (
     <>
-      <h1>Kkkkk</h1>
       {children}
     </>
   );
