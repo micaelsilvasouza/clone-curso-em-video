@@ -1,8 +1,6 @@
 "use client"
 
 import BannerRotaHeader from "../components/banner_rota_header";
-import InputForm from "@/app/components/components_form/InputForm"
-import ButtonForm from "@/app/components/components_form/ButtonForm"
 
 import { PiCertificate } from "react-icons/pi"
 
