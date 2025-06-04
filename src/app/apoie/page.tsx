@@ -2,9 +2,8 @@ import BannerRotaHeader from "../components/banner_rota_header";
 import SejaApoiador from "../components/seja-apoiador";
 
 import Link from "next/link";
-
-import { Roboto, Asap, Catamaran } from "next/font/google";
-
+//Roboto amanhã colocar aqui
+import { Asap, Catamaran } from "next/font/google";
 const catamaran = Catamaran({ subsets: ["latin"] });
 // const roboto = Roboto({ subsets: ["latin"] });
 const asap = Asap({ subsets: ["latin"] });
