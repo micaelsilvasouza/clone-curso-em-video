@@ -13,14 +13,14 @@ interface Prop {
 
 export default function BannerRotaHeader({ titulo, nomeRota }: Prop) {
   return (
-    <section className="bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-right md:p-10 px-5 pb-10">
+    <section className="bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-right md:px-5 md:py-10 px-5 pb-10">
       <Navbar
         logo="logoBlue.png"
         styleLinks="text-black"
         styleHamburguer="bg-black"
       />
       <h1
-        className={`md:text-4xl max-md:text-3xl text-blue text-indigo-900 pt-10 font-bold ${roboto.className}`}
+        className={`md:text-5xl md:mt-16 max-md:text-3xl text-blue text-indigo-950 pt-10 font-bold ${roboto.className}`}
       >
         {titulo || nomeRota}
       </h1>
