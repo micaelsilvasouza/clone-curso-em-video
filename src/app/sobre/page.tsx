@@ -1,7 +1,7 @@
 export default function Sobre() {
   return (
     <div>
-      <h1>Chegou aqui no Sobre</h1>
+      <h1>teu cu arrombado</h1>
     </div>
   );
 }
