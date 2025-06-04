@@ -1,4 +1,4 @@
-export default function CursoLayout({
+export default function CerticateLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
