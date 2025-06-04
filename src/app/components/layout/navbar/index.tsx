@@ -36,8 +36,22 @@ export default function Navbar({
 }: ProprNavBar) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [largura, setLargura] = useState(0);
 
+  // ser o largura da tela for maior ou igual a 768px vai fechar o navBar
+  if (largura >= 768 && isOpen === true) {
+    setIsOpen(!isOpen);
+  }
   useEffect(() => {
+    // Função que pega a largura atual da tela
+    const atualizarLargura = () => {
+      setLargura(window.innerWidth);
+    };
+    // Chamar uma vez ao montar
+    atualizarLargura();
+    // evento para ficar monitorando a tela
+    window.addEventListener("resize", atualizarLargura);
+
     // Impede rolagem do body quando o menu estiver aberto
     document.body.style.overflow = isOpen ? "hidden" : "auto";
 
@@ -59,13 +73,15 @@ export default function Navbar({
         setIsOpen(false);
       }
     };
+
     document.body.addEventListener("click", handleBodyClick);
 
     // Cleanup: remove os listeners
     return () => {
+      window.removeEventListener("resize", atualizarLargura);
       document.body.removeEventListener("click", handleBodyClick);
       window.removeEventListener("scroll", mudancaDoScroll);
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
@@ -94,7 +110,7 @@ export default function Navbar({
               padding="px-4 py-2"
               links="text-black"
               styleBorde="border-blue-700"
-              hoverText="hover:text-blue-700"
+              hoverText="hover:text-white"
               Mais="text-blue-700"
             />
           </ul>
@@ -135,13 +151,13 @@ export default function Navbar({
               />
             </Link>
             <ul className="flex flex-col gap-5">
-              <Links isOpen={isOpen} />
+              <Links isOpen={isOpen} corIcone="text-blue-700" />
               <Dropdown
                 padding="px-4 py-2"
                 style={"text-black/80"}
                 styleBorde="border-blue-700"
                 links="text-black"
-                hoverText="hover:text-blue-700"
+                hoverText="hover:text-white"
                 Mais="text-sky-500"
               />
             </ul>
@@ -149,7 +165,7 @@ export default function Navbar({
             <BotaoCuston
               styleDiv="flex flex-col"
               isOpen={isOpen}
-              styleBotao_1="w-full text-black"
+              styleBotao_1="w-full text-black bg-white/70"
               styleBotao_2={styleBotao_2}
             />
           </div>
