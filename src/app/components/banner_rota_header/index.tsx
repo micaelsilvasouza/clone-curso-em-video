@@ -18,6 +18,7 @@ export default function BannerRotaHeader({ titulo, nomeRota }: Prop) {
         logo="logoBlue.png"
         styleLinks="text-black"
         styleHamburguer="bg-black"
+        styleBotao_1="bg-white border-blue-700"
       />
       <h1
         className={`md:text-5xl md:mt-16 max-md:text-3xl text-blue text-indigo-950 pt-10 font-bold ${roboto.className}`}

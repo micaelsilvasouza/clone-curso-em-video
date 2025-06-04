@@ -16,9 +16,9 @@ interface Prop {
   padding?: "px-4 py-2" | "p-10";
   styleBorde?: "border-white" | "border-blue-700" | "border-sky-500";
   hoverText?:
-    | "hover:text-blue-700"
     | "hover:text-blue-100"
-    | "hover:text-blue-700";
+    | "hover:text-blue-700"
+    | "hover:text-white";
   Mais?: "text-sky-500" | "text-black" | "text-white" | "text-blue-700";
 }
 
@@ -57,7 +57,7 @@ export function Dropdown({
     <div className="z-10" ref={refDropdown}>
       <button
         onClick={() => setOpenDropdown(!openDropdown)}
-        className={`cursor-pointer border border-blue-600 w-full  transition ease-in hover:border-blue-500 rounded-lg ${hoverText} ${style} ${padding} ${styleBorde}`}
+        className={`cursor-pointer bg-white/80 border border-blue-600 w-full  transition ease-in hover:bg-gray-800 hover:border-blue-500 rounded-lg ${hoverText} ${style} ${padding} ${styleBorde}`}
       >
         Veja{" "}
         <span
@@ -70,7 +70,7 @@ export function Dropdown({
       </button>
       <nav className={`${openDropdown ? "flex" : ""} relative`}>
         <ul
-          className={`bg-sky-100 absolute border border-sky-500 mt-5 ${padding} w-65 flex flex-col justify-center items-start gap-2 rounded-sm shadow ${
+          className={`bg-white/70 absolute border border-sky-500 mt-5 ${padding} w-65 flex flex-col justify-center items-start gap-2 rounded-sm shadow ${
             openDropdown ? styleModule.dropdownOpen : "opacity-0"
           }`}
         >
