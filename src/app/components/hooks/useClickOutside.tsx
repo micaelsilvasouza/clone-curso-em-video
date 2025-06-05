@@ -1,21 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-// Este hook detecta cliques fora de um elemento e dispara uma função.
+export function useClickOutside(callback: () => void) {
+  const ref = useRef<HTMLDivElement>(null);
 
-export function useClickOutside(
-  ref: React.RefObject<HTMLElement>,
-  onClickOutside: () => void,
-  active = true
-) {
-  return useEffect(() => {
-    const handleClick = (event: MouseEvent) => {
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        onClickOutside();
+        callback(); // Chama a função quando o clique for fora
       }
-    };
-    document.addEventListener("click", handleClick);
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("click", handleClick);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref, onClickOutside, active]);
+  }, [callback]);
+
+  return ref;
 }
