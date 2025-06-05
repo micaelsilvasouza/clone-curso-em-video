@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { Asap, Catamaran, Poppins } from "next/font/google";
 const catamaran = Catamaran({ subsets: ["latin"] });
-const poppins = Poppins({ weight: ["800"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["800"] });
 const asap = Asap({ subsets: ["latin"] });
 
 const ArrayCourses = [
