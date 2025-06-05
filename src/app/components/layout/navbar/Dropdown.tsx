@@ -70,7 +70,7 @@ export function Dropdown({
       </button>
       <nav className={`${openDropdown ? "flex" : ""} relative`}>
         <ul
-          className={`bg-white/70 absolute border border-sky-500 mt-5 ${padding} w-65 flex flex-col justify-center items-start gap-2 rounded-sm shadow ${
+          className={`bg-white absolute border border-sky-500 mt-5 ${padding} w-65 flex flex-col justify-center items-start gap-2 rounded-sm shadow ${
             openDropdown ? styleModule.dropdownOpen : "opacity-0"
           }`}
         >
