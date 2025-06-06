@@ -69,6 +69,8 @@ export default async function ClassVideo({
           styleHamburguer="bg-black"
         />
       </div>
+
+      <hr/>
       
       <div className="min-h-[100dvh] relative flex items-center">
           <MenuClassVideos
