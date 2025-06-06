@@ -6,19 +6,13 @@ import { useState, useRef, useEffect } from "react"
 
 export default function ValidacaoDeCertificado(){
   const [code, setCode] = useState("")
-  const iframe_ref = useRef(0)
-  const button_ref = useRef(0)
+  const iframe_ref = useRef(null)
 
-  useEffect(()=>{
-    alert("rederizado")
-    function validateCerticate(){
-      const iframe = iframe_ref.current
-      iframe.src = "https://certificate-exibition.netlify.app/?&code="+code
-    }
+  const validateCerticate = () => {
+    alert(iframe_ref)
+  }
 
-    button_ref.current.addEventListener("click", validateCerticate)
-  }, [])
- 
+
   return(
     <main>
       <BannerRotaHeader nomeRota="Validação de Certificado"/>
@@ -49,7 +43,7 @@ export default function ValidacaoDeCertificado(){
 
               <button 
                 className="py-2 px-4 text-sm bg-blue-700 text-white rounded-lg"
-                ref={button_ref}
+                onClick={validateCerticate}
               >
                 Validar Certificado
               </button>
