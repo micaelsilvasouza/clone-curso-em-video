@@ -15,6 +15,8 @@ export default function ValidacaoDeCertificado(){
       const iframe = iframe_ref.current
       iframe.src = "https://certificate-exibition.netlify.app/?&code="+code
     }
+
+    button_ref.current.addEventListener("click", validateCerticate)
   }, [])
  
   return(
@@ -47,7 +49,7 @@ export default function ValidacaoDeCertificado(){
 
               <button 
                 className="py-2 px-4 text-sm bg-blue-700 text-white rounded-lg"
-                onClick={validateCerticate}
+                ref={button_ref}
               >
                 Validar Certificado
               </button>
