@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import IframeVideo from "@/app/components/iframe_video";
 import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos";
+import Navbar from "@/app/components/layout/navbar";
 import Link from "next/link";
 
 export default async function ClassVideo({
@@ -60,39 +61,49 @@ export default async function ClassVideo({
   const next = `/cursos/${course.slug}/${coursevideos.at(videoindex + 1)?.slug}` 
 
   return (
-    <main className="bg-sky-100 min-h-[100dvh] relative flex items-center">
-        <MenuClassVideos
-          type="horizontal"
-          videos={coursevideos}
-          courseslug={course.slug}
-          coursetitle={course.title}
+    <main className="bg-sky-100 ">
+      <div className="p-5">
+        <Navbar
+          logo="logoBlue.png"
+          styleLinks="text-black"
+          styleHamburguer="bg-black"
         />
-      <section className={`grow flex justify-center items-center`}>
-       <section className="w-full h-fit rounded-xl shadow-lg bg-white py-5">
-        <h1 className="text-center text-3xl font-bold">{video.title}</h1>
-
-        <div className="py-1 text-center">
-          <Link 
-            href={`/cursos/${course.slug}`} 
-            className="text-blue-800 underline"
+      </div>
+      
+      <div className="min-h-[100dvh] relative flex items-center">
+          <MenuClassVideos
+            type="horizontal"
+            videos={coursevideos}
+            courseslug={course.slug}
+            coursetitle={course.title}
+          />
+        <section className={`grow flex justify-center items-center`}>
+         <section className="w-full h-fit rounded-xl shadow-lg bg-white py-5">
+          <h1 className="text-center text-3xl font-bold">{video.title}</h1>
+  
+          <div className="py-1 text-center">
+            <Link 
+              href={`/cursos/${course.slug}`} 
+              className="text-blue-800 underline"
+            >
+              {course.title}
+            </Link>
+          </div>
+  
+          <div 
+            className="aspect-video w-[98dvw] max-w-[800px] my-5 mx-auto"
           >
-            {course.title}
-          </Link>
-        </div>
-
-        <div 
-          className="aspect-video w-full max-w-[800px] my-5 mx-auto"
-        >
-          <IframeVideo src={video.video} />
-        </div>
-
-
-        <div className="flex justify-center gap-5">
-          <Link href={preveiw} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Anterior</Link>
-          <Link href={next} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Próximo</Link>
-        </div>
-       </section>
-      </section>
+            <IframeVideo src={video.video} />
+          </div>
+  
+  
+          <div className="flex justify-center gap-5">
+            <Link href={preveiw} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Anterior</Link>
+            <Link href={next} className="bg-blue-800 text-white text-bold p-2 rounded-xl">Próximo</Link>
+          </div>
+         </section>
+        </section>
+      </div>
     </main>
   );
 }
