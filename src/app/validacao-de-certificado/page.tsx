@@ -6,8 +6,8 @@ import { useState, useRef, useEffect } from "react"
 
 export default function ValidacaoDeCertificado(){
   const [code, setCode] = useState("")
-  const iframe_ref = useRef(null)
-  const button_ref = useRef(null)
+  const iframe_ref = useRef(0)
+  const button_ref = useRef(0)
 
   useEffect(()=>{
     alert("rederizado")
