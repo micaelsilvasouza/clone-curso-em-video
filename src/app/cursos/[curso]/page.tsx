@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import BannerCourse from "@/app/components/banner_course";
 import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos";
 
@@ -12,6 +12,12 @@ export default async function Page({
   let data = await fetch(
     "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
   );
+
+  if(data.status != 200){
+      redirect("/error/fetch-error")
+      return
+  }
+  
   const cursos = await data.json();
 
   const course = cursos.filter((element: { slug: string }) => {
