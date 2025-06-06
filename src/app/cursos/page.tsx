@@ -10,6 +10,8 @@ import CourseGrid from "../components/search_custon/CourseGrid";
 // Lib Next
 import { useEffect, useState } from "react";
 
+import { redirect } from 'next/navigation'
+
 export default function Cursos() {
   const [carregando, setCarregando] = useState(false);
   const [search, setSearch] = useState(false);
@@ -35,6 +37,13 @@ export default function Cursos() {
       const data = await fetch(
         "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
       );
+
+      if(data.status != 200){
+        redirect("/error")
+        return
+      }
+
+      
       setCourses(await data.json());
       setTimeout(() => {
         setCarregando(false);
