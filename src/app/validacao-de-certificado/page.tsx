@@ -14,19 +14,12 @@ export default function ValidacaoDeCertificado(){
     }
   }
 
-  const printCerticate = () => {
-    if(iframe_ref.current){
-      iframe_ref.current.src = "https://certificate-exibition.netlify.app/?&code=exemple"
-    }
-  }
-
-
   return(
     <main>
       <BannerRotaHeader nomeRota="Validação de Certificado"/>
-      <section className="text-center p-5">
+      <section className="flex items-center justify-center flex-col md:flex-row text-center p-5">
         <p>Digite o código do certificado no formulário abaixo para verificar sua validade</p>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 w-full">
               <label htmlFor="code" className="text-sm text-black/80">
                 Código do certificado{" "}
                 <span className="text-red-600">*</span>
@@ -55,14 +48,6 @@ export default function ValidacaoDeCertificado(){
             width="100%"
             height="100%"
           ></iframe>
-        </div>
-        <div>
-           <button 
-                className="py-2 px-4 text-sm bg-blue-700 text-white rounded-lg"
-                onClick={printCerticate}
-              >
-                Imprimir Certificado
-              </button>
         </div>
       </section>
     </main>
