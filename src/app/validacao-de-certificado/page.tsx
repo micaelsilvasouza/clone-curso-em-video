@@ -2,7 +2,7 @@
 
 import BannerRotaHeader from "../components/banner_rota_header";
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 
 export default function ValidacaoDeCertificado(){
   const [code, setCode] = useState("")
