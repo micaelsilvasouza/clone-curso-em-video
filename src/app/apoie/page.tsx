@@ -1,13 +1,17 @@
 import BannerRotaHeader from "../components/banner_rota_header";
 import SejaApoiador from "../components/seja-apoiador";
-import Img_custon from "../components/img_custon";
+import CardMensal from "../components/card_valores/CardMensal";
+import CardAnual from "../components/card_valores/CardAnual";
+import CardEstudonauta from "../components/card_valores/CardEstudonauta";
+
+import { FaQuestion } from "react-icons/fa6";
 
 import Link from "next/link";
 
-import { Asap, Catamaran, Poppins } from "next/font/google";
+import { Asap, Catamaran, Roboto } from "next/font/google";
 const catamaran = Catamaran({ subsets: ["latin"] });
-const poppins = Poppins({ subsets: ["latin"], weight: ["800"] });
 const asap = Asap({ subsets: ["latin"] });
+const roboto = Roboto({ subsets: ["latin"] });
 
 const ArrayCourses = [
   {
@@ -44,15 +48,14 @@ export default function Apoie() {
   return (
     <div>
       <BannerRotaHeader nomeRota="Assine" titulo="Assine" />
-      <div className="flex flex-col items-center justify-center px-1">
+      <div className="flex flex-col items-center justify-center">
         <div className="mx-5">
           <SejaApoiador />
         </div>
-        <section className="mb-10 md:px-5 px-3 max-h-[500px] w-full">
+        <section className="mb-10 md:px-5 max-h-[500px] w-full px-1">
           <iframe
             src="https://www.youtube.com/embed/nxL2w9eRun4?si=iF3QrX-4OBeriEO_"
             title="YouTube video player"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
@@ -119,59 +122,82 @@ export default function Apoie() {
             </div>
           </section>
         </article>
-        <section className="xl:w-[1200px] md:w-[800px]">
+        <section className="xl:w-[1200px]  md:mx-3">
           <div>
-            <Img_custon
+            {/* <Img_custon
               img="estudante.png"
               alt="imagem do aluno curso em vídeo"
               width={500}
               className="mx-auto"
-            />
+            /> */}
           </div>
+          <section className="grid lg:grid-cols-3 md:grid-cols-2 max-md:grid-cols-1 gap-3 mb-5 w-full items-center bg-[url(/image/estudante.png)] bg-no-repeat xl:bg-[50%_-0%] md:bg-[0%_-0%] md:pt-100 max-md:bg-[20%_-0%] max-md:pt-150">
+            {/* Card Mensal */}
+            <CardMensal />
+            {/* Card Anual */}
+            <CardAnual />
+            {/* Card Estudonauta */}
+            <CardEstudonauta />
+          </section>
+        </section>
 
-          <section className="flex max-md:flex-col gap-3 mb-20 px-5 w-full">
-            <div className="w-full h-[500px] rounded-2xl bg-blue-700">
-              <div>
-                <h3
-                  className={`${asap.className} uppercase text-3xl text-white font-bold`}
-                >
-                  Apoio Mensal
-                </h3>
-                <h4
-                  className={`${poppins.className} text-5xl text-white font-bold`}
-                >
-                  R$ 29
-                </h4>
-                <p className="text-yellow-700">Mínimo de 6 meses de adesão.</p>
-                <p className="text-yellow-700">
-                  Só poderá ser cancelado após término de 6 meses.
-                </p>
-              </div>
+        <section className="py-10">
+          <p>
+            Tem uma empresa? Seja um{" "}
+            <Link
+              href={"http://localhost:3000/seja-um-patrocinador"}
+              className="text-blue-700 font-medium"
+              target="_parent"
+              rel="internal"
+            >
+              Apoiador Institucional.
+            </Link>
+          </p>
+        </section>
 
-              <div>
-                <p>icone</p>
-                <h3>1 crédito</h3>
-                <h4>mensal para certificados</h4>
+        <section>
+          <h2
+            className={`${roboto.className} text-3xl text-black/90 py-10 text-center`}
+          >
+            Perguntas frequentes
+          </h2>
+
+          <section className="flex flex-col py-5">
+            {[
+              {
+                title: "É seguro colocar meus dados aqui?",
+                paragraph:
+                  "Sim! Nossa cobrança é feita através do PagSeguro ou PayPal, você escolhe em qual plataforma deseja pagar. Todos dados que trafegam do seu computador até os servidores estão criptografados pelo protocolo SSL (Secure Socket Layer) que funciona como camada de segurança para o HTTPS. Ficou confuso? Note que ao lado do endereço do site existe um pequeno cadeado que mostra que o site está seguro, pois possui certificado SSL válido, ativo e atualizado.",
+                paragraphTwo:
+                  "Sendo assim, dados como o seu CPF e o número do cartão de crédito não ficam sequer guardados no banco de dados do site. Eles apenas são requeridos pelas instituições financeiras para identificar cada pessoa.",
+              },
+              {
+                title: "Posso cancelar a qualquer momento?",
+                paragraph:
+                  "Sim! Nós não estamos aqui para tirar o seu dinheiro. Enquanto você puder ser nosso colaborador, seremos muito gratos. Mas se por acaso você quiser suspender suas contribuições, tudo será feito de maneira simples e rápida.",
+              },
+              {
+                title:
+                  "A ajuda agora é mensal, posso cancelar a qualquer momento?",
+                paragraph:
+                  "Sim! Nós não estamos aqui para tirar o seu dinheiro. Enquanto você puder ser nosso colaborador, seremos muito gratos. Mas se por acaso você quiser suspender suas contribuições, tudo será feito de maneira simples e rápida. Esse é mais um motivo por termos escolhido a plataforma do Apoie.me para gerenciar nossa campanha de apoiadores.",
+              },
+              {
+                title:
+                  "E agora com os cursos pagos, os cursos grátis vão parar?",
+                paragraph:
+                  "Não! O foco do Estudonauta é continuar ensinando tecnologia além do básico e abordar outras linguagens e tecnologias. É uma outra plataforma que será desenvolvida do zero e será construída com a ajuda dos nossos alunos testadores. Em breve, esperamos que todos possam experimentar algumas de nossas aulas e comprovar que a qualidade do CursoemVideo pode virar um negócio de sucesso no ramo da Educação. Se você se interessar, não deixe de participar da faixa de Beta Tester para já receber seu acesso e ver como estamos caprichando nas aulas.",
+              },
+            ].map((comentario, index) => (
+              <div key={index} className="flex flex-col">
+                <div className="flex items-center gap-2">
+                  <FaQuestion className="text-blue-600" />
+                  <h2>{comentario.title}</h2>
+                </div>
+                <p>{comentario.paragraph}</p>
+                {comentario.paragraphTwo && <p>{comentario.paragraphTwo}</p>}
               </div>
-              <div>
-                <p>icone</p>
-                <p>
-                  Sem anúncios. Navegue no Curso em Video sem anúncios no site
-                </p>
-                Presença no Hall da Fama <p>Nosso mais sincero agradecimento</p>{" "}
-                <p>
-                  Acesso à nossa Área de Recompensas, com vídeos no formato vlog
-                  exclusivos
-                </p>{" "}
-                <p>
-                  Aulas EXCLUSIVAS criadas apenas para meus alunos presenciais
-                  (Portugol Studio e Java)
-                </p>{" "}
-                <p>NÃO DÁ acesso ao Estudonauta Apoiar Agora!</p>
-              </div>
-            </div>
-            <div className="w-full h-[500px] rounded-2xl bg-red-600"></div>
-            <div className="w-full h-[500px] rounded-2xl bg-green-500"></div>
+            ))}
           </section>
         </section>
       </div>

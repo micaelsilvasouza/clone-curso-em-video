@@ -9,6 +9,10 @@
     --color-indigo-900: #261c3f;
     --color-sky-10: #f2fafc;
     --color-sky-20: #d7f8f9;
+    --color-blue-1000: rgb(24, 15, 150);
+    --color-blue-990: rgb(32, 47, 216);
+
+    --color-rose-750: rgb(255, 0, 78);
 }
 
 @media (prefers-color-scheme: dark) {
