@@ -10,11 +10,8 @@ export default function ValidacaoDeCertificado(){
 
   const validateCerticate = () => {
     if(iframe_ref.current){
-      alert(iframe_ref.current.textContent)
-    }else{
-      alert("GAME OVER")
+      iframe_ref.current.src = "https://certificate-exibition.netlify.app/?&code="+code
     }
-      
   }
 
 
