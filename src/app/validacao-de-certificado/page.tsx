@@ -42,7 +42,7 @@ export default function ValidacaoDeCertificado(){
 
               <button 
                 className="py-2 px-4 text-sm bg-blue-700 text-white rounded-lg"
-                onClick={validateCertificate}
+                onClick={validateCerticate}
               >
                 Validar Certificado
               </button>
