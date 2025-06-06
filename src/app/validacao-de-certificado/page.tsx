@@ -9,7 +9,7 @@ export default function ValidacaoDeCertificado(){
   const iframe_ref = useRef(null)
 
   const validateCerticate = () => {
-    alert(iframe_ref.current)
+    alert(iframe_ref.current.textContent)
   }
 
 
