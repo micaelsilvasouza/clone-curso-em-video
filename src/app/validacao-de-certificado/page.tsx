@@ -7,14 +7,15 @@ import { useState, useRef, useEffect } from "react"
 export default function ValidacaoDeCertificado(){
   const [code, setCode] = useState("")
   const iframe_ref = useRef(null)
+  const button_ref = useRef(null)
 
   useEffect(()=>{
     alert("rederizado")
     function validateCerticate(){
       const iframe = iframe_ref.current
       iframe.src = "https://certificate-exibition.netlify.app/?&code="+code
-   }
-  })
+    }
+  }, [])
  
   return(
     <main>
