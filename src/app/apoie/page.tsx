@@ -141,7 +141,7 @@ export default function Apoie() {
           </section>
         </section>
 
-        <section className="py-10">
+        <section className="py-10 text-center">
           <p>
             Tem uma empresa? Seja um{" "}
             <Link
@@ -189,13 +189,23 @@ export default function Apoie() {
                   "Não! O foco do Estudonauta é continuar ensinando tecnologia além do básico e abordar outras linguagens e tecnologias. É uma outra plataforma que será desenvolvida do zero e será construída com a ajuda dos nossos alunos testadores. Em breve, esperamos que todos possam experimentar algumas de nossas aulas e comprovar que a qualidade do CursoemVideo pode virar um negócio de sucesso no ramo da Educação. Se você se interessar, não deixe de participar da faixa de Beta Tester para já receber seu acesso e ver como estamos caprichando nas aulas.",
               },
             ].map((comentario, index) => (
-              <div key={index} className="flex flex-col">
-                <div className="flex items-center gap-2">
-                  <FaQuestion className="text-blue-600" />
-                  <h2>{comentario.title}</h2>
+              <div key={index} className="flex flex-col mx-5 max-w-[1000px]">
+                <div className="flex items-center gap-3 pl-3 py-5">
+                  <FaQuestion className="text-blue-800 text-3xl" />
+                  <h2
+                    className={`text-black/60 text-lg font-semibold ${catamaran.className}`}
+                  >
+                    {comentario.title}
+                  </h2>
                 </div>
-                <p>{comentario.paragraph}</p>
-                {comentario.paragraphTwo && <p>{comentario.paragraphTwo}</p>}
+                <p className={`leading-8 text-base py-3 ${asap.className}`}>
+                  {comentario.paragraph}
+                </p>
+                {comentario.paragraphTwo && (
+                  <p className={`py-10 leading-8 text-base ${asap.className}`}>
+                    {comentario.paragraphTwo}
+                  </p>
+                )}
               </div>
             ))}
           </section>
