@@ -2,8 +2,6 @@
 
 import BannerRotaHeader from "../components/banner_rota_header";
 
-import { PiCertificate } from "react-icons/pi"
-
 import { useState } from "react"
 
 export default function ValidacaoDeCertificado(){
@@ -12,7 +10,13 @@ export default function ValidacaoDeCertificado(){
     <main>
       <BannerRotaHeader nomeRota="Validação de Certificado"/>
       <section className="text-center p-5">
-        <PiCertificate size={80} className="block mx-auto my-5" />
+        <div className="aspect-1.25 w-full max-w-[1000px]">
+          <iframe 
+            src="https://certificate-exibition.netlify.app/?&code=exemple"
+            width="100%"
+            height="100%"
+          ></iframe>
+        </div>
         <p>Digite o código do certificado no formulário abaixo para verificar sua validade</p>
         <div className="flex flex-col gap-2">
               <label htmlFor="code" className="text-sm text-black/80">
