@@ -9,11 +9,12 @@ export default function ValidacaoDeCertificado(){
   const iframe_ref = useRef(null)
 
   useEffect(()=>{
+    alert("rederizado")
     function validateCerticate(){
       const iframe = iframe_ref.current
       iframe.src = "https://certificate-exibition.netlify.app/?&code="+code
    }
-  }, [])
+  })
  
   return(
     <main>
