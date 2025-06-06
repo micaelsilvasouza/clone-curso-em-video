@@ -9,7 +9,12 @@ export default function ValidacaoDeCertificado(){
   const iframe_ref = useRef<HTMLIFrameElement>(null)
 
   const validateCerticate = () => {
-    alert(iframe_ref.current.textContent)
+    if(iframe_ref.current){
+      alert(iframe_ref.current.textContent)
+    }else{
+      alert("GAME OVER")
+    }
+      
   }
 
 
