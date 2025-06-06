@@ -6,7 +6,7 @@ import { useState, useRef } from "react"
 
 export default function ValidacaoDeCertificado(){
   const [code, setCode] = useState("")
-  const iframe_ref = useRef<HTMLIframeElement>(null)
+  const iframe_ref = useRef<HTMLIFrameElement>(null)
 
   const validateCerticate = () => {
     alert(iframe_ref.current.textContent)
