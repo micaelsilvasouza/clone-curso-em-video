@@ -2,16 +2,23 @@
 
 import BannerRotaHeader from "../components/banner_rota_header";
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 export default function ValidacaoDeCertificado(){
   const [code, setCode] = useState("")
+  const iframe_ref = useRef(null)
+
+  const validateCerticate = () => {
+    alert("fumaça pro céu")
+  }
+ 
   return(
     <main>
       <BannerRotaHeader nomeRota="Validação de Certificado"/>
       <section className="text-center p-5">
         <div className="aspect-10/8 w-full max-w-[1000px]">
           <iframe 
+            ref={iframe_ref}
             src="https://certificate-exibition.netlify.app/?&code=exemple"
             width="100%"
             height="100%"
@@ -33,7 +40,10 @@ export default function ValidacaoDeCertificado(){
                 value={code}
               />
 
-              <button className="py-2 px-4 text-sm bg-blue-700 text-white rounded-lg">
+              <button 
+                className="py-2 px-4 text-sm bg-blue-700 text-white rounded-lg"
+                onClick={validateCertificate}
+              >
                 Validar Certificado
               </button>
          </div>
