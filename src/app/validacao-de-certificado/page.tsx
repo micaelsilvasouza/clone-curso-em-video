@@ -2,16 +2,18 @@
 
 import BannerRotaHeader from "../components/banner_rota_header";
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 
 export default function ValidacaoDeCertificado(){
   const [code, setCode] = useState("")
   const iframe_ref = useRef(null)
 
-  function validateCerticate(){
-    const iframe = iframe_ref.current
-    iframe.src = "https://certificate-exibition.netlify.app/?&code="+code
-  }
+  useEffect(()=>{
+    function validateCerticate(){
+      const iframe = iframe_ref.current
+      iframe.src = "https://certificate-exibition.netlify.app/?&code="+code
+   }
+  }, [])
  
   return(
     <main>
