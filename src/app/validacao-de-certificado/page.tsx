@@ -8,7 +8,7 @@ export default function ValidacaoDeCertificado(){
   const [code, setCode] = useState("")
   const iframe_ref = useRef(null)
 
-  const validateCerticate = () => {
+  function validateCerticate(){
     const iframe = iframe_ref.current
     iframe.src = "https://certificate-exibition.netlify.app/?&code="+code
   }
