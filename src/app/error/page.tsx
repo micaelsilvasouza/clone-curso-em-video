@@ -1,6 +1,7 @@
-import { type NextRequest } from "next/server"
+import { type NextRequest } from 'next/server'
+ 
 
-export default function ErrorPage(request: NextRequest){
+export function GET(request: NextRequest){
   const searchParams = request.nextUrl.searchParams
   const error = searchParams.get("error")
 
