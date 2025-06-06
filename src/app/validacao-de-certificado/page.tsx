@@ -16,7 +16,7 @@ export default function ValidacaoDeCertificado(){
 
   const printCerticate = () => {
     if(iframe_ref.current){
-      iframe_ref.current.contentWindow.print()
+      iframe_ref.current.src = "https://certificate-exibition.netlify.app/?&code=exemple"
     }
   }
 
