@@ -35,11 +35,11 @@ export default function Cursos() {
     setCarregando(true);
     const fetchCourses = async () => {
       const data = await fetch(
-        "https://filipe520.github.io/api-cursoEmVideo/db/courses.jsn"
+        "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
       );
 
       if(data.status != 200){
-        redirect("/error")
+        redirect("/error/fetch-error")
         return
       }
 
