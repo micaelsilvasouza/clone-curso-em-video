@@ -9,7 +9,8 @@ export default function ValidacaoDeCertificado(){
   const iframe_ref = useRef(null)
 
   const validateCerticate = () => {
-    alert("fumaça pro céu")
+    const iframe = iframe_ref.current
+    iframe.src = "https://certificate-exibition.netlify.app/?&code="+code
   }
  
   return(
