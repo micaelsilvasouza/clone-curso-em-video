@@ -10,12 +10,15 @@ interface PropBannerCourse {
 
 export default function BannerCourse({ title, image, slug }: PropBannerCourse) {
   return (
-    <div className="bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-center pt-5px">
-      <Navbar
-        logo="logoBlue.png"
-        styleLinks="text-black"
-        styleHamburguer="bg-black"
-      />
+    <div className="bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-center">
+      <div className="p-5">
+        <Navbar
+          logo="logoBlue.png"
+          styleLinks="text-black"
+          styleHamburguer="bg-black"
+        />
+      </div>
+      
       <div className="grid justify-items-center p-8 pt-[120px] md:justify-items-start md:grid-cols-4">
         <Img_custon
           className="size-[200px] md:size-50 md:row-span-2 rounded-full"
