@@ -10,7 +10,7 @@ export default function ValidacaoDeCertificado(){
     <main>
       <BannerRotaHeader nomeRota="Validação de Certificado"/>
       <section className="text-center p-5">
-        <div className="aspect-1.25 w-full max-w-[1000px]">
+        <div className="aspect-10/8 w-full max-w-[1000px]">
           <iframe 
             src="https://certificate-exibition.netlify.app/?&code=exemple"
             width="100%"
