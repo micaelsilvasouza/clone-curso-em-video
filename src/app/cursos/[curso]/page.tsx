@@ -13,6 +13,7 @@ export default async function Page({
     "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
   );
 
+  //Validando busca
   if(data.status != 200){
       redirect("/error/fetch-error")
       return
@@ -33,6 +34,13 @@ export default async function Page({
   data = await fetch(
     "https://filipe520.github.io/api-cursoEmVideo/db/videos.json"
   );
+
+  //Validando busca
+  if(data.status != 200){
+      redirect("/error/fetch-error")
+      return
+  }
+  
   const videos = (await data.json()).filter(
     (element: { course: string }) => element.course == course.id
   );
