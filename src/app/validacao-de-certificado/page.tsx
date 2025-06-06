@@ -18,7 +18,7 @@ export default function ValidacaoDeCertificado(){
     <main>
       <BannerRotaHeader nomeRota="Validação de Certificado"/>
       <section className="flex items-center justify-center flex-col md:flex-row text-center p-5">
-       <div className="w-full p-5">
+       <div className="w-full max-w-[800px] p-5">
         <p>Digite o código do certificado no formulário abaixo para verificar sua validade</p>
         <div className="flex flex-col gap-2">
               <label htmlFor="code" className="text-sm text-black/80">
