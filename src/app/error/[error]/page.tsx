@@ -2,7 +2,7 @@ export default async function ErrorPage({params,
 }: {
   params: Promise<{ error: string }>
 }){
-  const { error } = params
+  const { error } = await params
   
   return (
     <>
