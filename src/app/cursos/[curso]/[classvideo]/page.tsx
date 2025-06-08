@@ -38,7 +38,7 @@ export default async function ClassVideo({
 
   const class_videos = await datavideo.json(); //videos
 
-  let video: { title: string; video: string, slug: string } = { title: "", video: "", slug: "" }; //armazena o video
+  let video: { title: string; video: string, slug: string } = { title: "zafenate paneia", video: "", slug: "" }; //armazena o video
   const coursevideos: { slug: string; title: string }[] = []; //armazena os videos do mesmo curso
 
   //filtrando videos que pertençam ao mesmo curso e encontrando dados do video
@@ -59,7 +59,7 @@ export default async function ClassVideo({
     }
   );
 
-   console.log(coursevideos, video)
+   console.log(video, class_videos)
 
   if (coursevideos.length == 0 || video.title == "" || video.video == "") {
     notFound();
