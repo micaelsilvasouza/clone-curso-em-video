@@ -10,6 +10,7 @@ export default async function ErrorPage({params,
       <p>{error}</p>
       <p>Retorne para a pagina inicial e tente novamente mais tarde</p>
       <p>Descupe o incomodo</p>
+      <p>::--::</p>
     </>
   )
 }
