@@ -59,6 +59,8 @@ export default async function ClassVideo({
     }
   );
 
+   console.log(coursevideos, video)
+
   if (coursevideos.length == 0 || video.title == "" || video.video == "") {
     notFound();
   }
