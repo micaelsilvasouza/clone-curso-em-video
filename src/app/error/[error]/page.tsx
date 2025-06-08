@@ -6,6 +6,7 @@ export default async function ErrorPage({params,
   
   return (
     <>
+    kkkoookooo
       <h1>Ocorreu um error:</h1>
       <p>{error}</p>
     </>
