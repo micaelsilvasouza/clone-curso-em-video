@@ -5,7 +5,7 @@ import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos"
 import Navbar from "@/app/components/layout/navbar";
 import Link from "next/link";
 
-export const revalidate = 60 //revalidar os dados a cada 60 segundos
+//export const revalidate = 60 //revalidar os dados a cada 60 segundos
 
 export default async function ClassVideo({
   params,
