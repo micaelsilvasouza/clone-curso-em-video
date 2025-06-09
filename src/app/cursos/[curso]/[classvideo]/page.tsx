@@ -102,7 +102,7 @@ export default async function ClassVideo({
           </div>
   
           <div 
-            className="aspect-video w-[98%] max-w-[800px] my-5 mx-auto shadow-lg"
+            className="aspect-video w-full max-w-[800px] my-5 mx-auto shadow-lg"
           >
             <IframeVideo src={video.video} />
           </div>
