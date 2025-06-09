@@ -90,9 +90,9 @@ export default async function ClassVideo({
           />
         <section className={`grow flex justify-center items-center`}>
          <section className="w-full h-fit py-5">
-          <h1 className="text-center text-3xl font-bold">{video.title}</h1>
+          <h1 className="text-center w-full text-3xl font-bold">{video.title}</h1>
   
-          <div className="py-1 text-center">
+          <div className="py-1 w-full text-center">
             <Link 
               href={`/cursos/${course.slug}`} 
               className="text-blue-800 underline"
