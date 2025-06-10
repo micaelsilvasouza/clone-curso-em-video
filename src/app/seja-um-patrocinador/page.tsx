@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Img_custon from "../components/img_custon";
 import Navbar from "../components/layout/navbar";
 
@@ -33,6 +34,18 @@ export default function Apoie() {
           />
         </div>
       </section>  
+      <section>
+        <h1 className="text-center text-6xl/20 text-sky-400 font-bold py-20">Audiência segmentada na área de tecnologia da informação</h1>
+        <p className="text-center text-4xl px-20">O Curso em Vídeo é um dos maiores e mais reconhecidos projetos de educação em tecnologia no Brasil.</p>
+        <div className="pb-5">
+          <Img_custon
+            className="m-auto drop-shadow-xl"
+            alt="Boneco do Guanabara"
+            img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/imagens aleatoria/boneco-guana.png"
+            width={150}
+          />
+        </div>
+      </section>
     </main>
   );
 }
