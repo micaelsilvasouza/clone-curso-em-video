@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import Img_custon from "../components/img_custon";
 import Navbar from "../components/layout/navbar";
 
