@@ -5,7 +5,7 @@ import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos"
 import Navbar from "@/app/components/layout/navbar";
 import Link from "next/link";
 
-export const revalidate = 60 //revalidar os dados a cada 60 segundos
+//export const revalidate = 60 //revalidar os dados a cada 60 segundos
 
 export default async function ClassVideo({
   params,
@@ -90,9 +90,9 @@ export default async function ClassVideo({
           />
         <section className={`grow flex justify-center items-center`}>
          <section className="w-full h-fit py-5">
-          <h1 className="text-center text-3xl font-bold">{video.title}</h1>
+          <h1 className="text-center w-full text-3xl font-bold">{video.title}</h1>
   
-          <div className="py-1 text-center">
+          <div className="py-1 w-full text-center">
             <Link 
               href={`/cursos/${course.slug}`} 
               className="text-blue-800 underline"
@@ -102,7 +102,7 @@ export default async function ClassVideo({
           </div>
   
           <div 
-            className="aspect-video w-[98%] max-w-[800px] my-5 mx-auto shadow-lg"
+            className="aspect-video w-full max-w-[800px] my-5 mx-auto shadow-lg"
           >
             <IframeVideo src={video.video} />
           </div>
