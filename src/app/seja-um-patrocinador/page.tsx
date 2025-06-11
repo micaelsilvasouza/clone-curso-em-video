@@ -1,6 +1,6 @@
-
 import Img_custon from "../components/img_custon";
 import Navbar from "../components/layout/navbar";
+import CircleLoddingNumber from "../components/circle_lodding_numbers/";
 
 export default function Apoie() {
   return (
@@ -13,8 +13,8 @@ export default function Apoie() {
           styleBotao_1="bg-white"
           corIcone="text-white"
         />
-        <div className="flex items-center lg:items-end justify-center gap-10 flex-col lg:flex-row pt-10">
-          <div className="w-full max-w-[800px] lg:w-[50%] lg:max-w-[500px] text-center lg:text-start">
+        <div className="flex items-center lg:items-center justify-center gap-10 flex-col lg:flex-row pt-10">
+          <div className="w-full max-w-[800px] lg:w-[50%] lg:max-w-[800px] text-center lg:text-start">
             <h1>
               <span className="block p-2 text-sky-400 text-xl lg:text-4xl font-bold">Apoio Institucional</span>
               <span className="block p-2 text-white text-4xl lg:text-6xl font-bold">
@@ -27,24 +27,27 @@ export default function Apoie() {
             </p>
           </div>
           <Img_custon
-            className="w-full max-w-[500px]"
+            className="w-full max-w-[650px]"
             img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/pagina_home/guana6.png"
             alt="imagem do Gustavo Guanabara"
             width={500}
           />
         </div>
       </section>  
-      <section className="w-full max-w-[800px] m-auto">
-        <h1 className="text-center text-4xl/10 lg:text-6xl/20 text-sky-400 font-bold p-10">Audiência segmentada na área de tecnologia da informação</h1>
-        <p className="text-center text-2xl lg:text-4xl px-10">O Curso em Vídeo é um dos maiores e mais reconhecidos projetos de educação em tecnologia no Brasil.</p>
+      <section className="w-full max-w-[1000px] m-auto">
+        <h1 className="text-center text-3xl/10 lg:text-5xl/15 text-sky-400 font-bold p-10">Audiência segmentada na área de tecnologia da informação</h1>
+        <p className="text-center text-xl lg:text-3xl px-10">O Curso em Vídeo é um dos maiores e mais reconhecidos projetos de educação em tecnologia no Brasil.</p>
         <div className="pb-5">
           <Img_custon
-            className="m-auto drop-shadow-xl"
+            className="m-auto drop-shadow-[0px_0px_5px_#0000008c]"
             alt="Boneco do Guanabara"
             img="https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/imagens aleatoria/boneco-guana.png"
             width={150}
           />
         </div>
+      </section>
+      <section>
+        <CircleLoddingNumber />
       </section>
     </main>
   );

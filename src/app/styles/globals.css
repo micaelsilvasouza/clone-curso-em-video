@@ -14,3 +14,9 @@ body {
 
   font-family: "Poppins", sans-serif;
 }
+
+@keyframes circle-lodding {
+  to{
+    stroke-dashoffset: 0;
+  }
+}
