@@ -14,7 +14,7 @@ export default function Apoie() {
           corIcone="text-white"
         />
         <div className="flex items-center lg:items-end justify-center gap-10 flex-col lg:flex-row pt-10">
-          <div className="w-full lg:w-[50%] lg:max-w-[500px] text-center lg:text-start">
+          <div className="w-full max-w-[800px] lg:w-[50%] lg:max-w-[500px] text-center lg:text-start">
             <h1>
               <span className="block p-2 text-sky-400 text-xl lg:text-4xl font-bold">Apoio Institucional</span>
               <span className="block p-2 text-white text-4xl lg:text-6xl font-bold">
@@ -34,8 +34,8 @@ export default function Apoie() {
           />
         </div>
       </section>  
-      <section>
-        <h1 className="text-center text-4xl/10 lg:text-6xl/20 text-sky-400 font-bold px-10 py-20">Audiência segmentada na área de tecnologia da informação</h1>
+      <section className="w-full max-w-[800px] m-auto">
+        <h1 className="text-center text-4xl/10 lg:text-6xl/20 text-sky-400 font-bold p-10">Audiência segmentada na área de tecnologia da informação</h1>
         <p className="text-center text-2xl lg:text-4xl px-10">O Curso em Vídeo é um dos maiores e mais reconhecidos projetos de educação em tecnologia no Brasil.</p>
         <div className="pb-5">
           <Img_custon
