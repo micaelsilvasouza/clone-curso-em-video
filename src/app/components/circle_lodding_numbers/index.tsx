@@ -23,13 +23,13 @@ export default function ClircleLoddingNumber(){
         })
 
         //adicinando elemento para observação
-        observer.observe(conteiner.current)
+        observer.observe(document.querySelector("#conteiner"))
 
     }, [])
     
 
     return (
-        <div ref={conteiner}>
+        <div id="conteiner" ref={conteiner}>
             <CircleLodding animate={animate_state}/>
         </div>
     )
