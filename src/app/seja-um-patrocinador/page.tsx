@@ -35,8 +35,8 @@ export default function Apoie() {
         </div>
       </section>  
       <section>
-        <h1 className="text-center text-6xl/20 text-sky-400 font-bold py-20">Audiência segmentada na área de tecnologia da informação</h1>
-        <p className="text-center text-4xl px-20">O Curso em Vídeo é um dos maiores e mais reconhecidos projetos de educação em tecnologia no Brasil.</p>
+        <h1 className="text-center text-4xl/15 lg:text-6xl/20 text-sky-400 font-bold px-10 py-20">Audiência segmentada na área de tecnologia da informação</h1>
+        <p className="text-center text-2xl lg:text-4xl px-10">O Curso em Vídeo é um dos maiores e mais reconhecidos projetos de educação em tecnologia no Brasil.</p>
         <div className="pb-5">
           <Img_custon
             className="m-auto drop-shadow-xl"
