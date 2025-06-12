@@ -99,7 +99,7 @@ export default function Sobre() {
             <div className=" bg-white p-10 rounded-lg w-full">
               <h3 className="text-center text-3xl font-semibold">
                 {scroolContado && (
-                  <TotalAlunos ativo={true} totAlunos={2000000} />
+                  <TotalAlunos ativo={true} totAlunos={2510000} />
                 )}
               </h3>
               <p className="text-black/80 text-center mt-5">
