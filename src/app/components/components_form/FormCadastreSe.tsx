@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 // Componentes
 import InputForm from "./InputForm";
 import Button from "./ButtonForm";
+import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
 
 export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [name, setNome] = useState("");
@@ -15,18 +16,25 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [cemail, setCEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
+  const [notification, setNotification] = useState(false)
+  const [message, setMessage] = useState("")
+  const [messageType, setMessageType] = useState<"sucesso" | "erro" | "aviso">("sucesso")
   const router = useRouter();
 
   const validate = () => {
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (name == "") {
-      alert("Nome não informado");
+      setNotification(true);
+      setMessage("Nome não informado")
+      setMessageType("aviso")
       return;
     }
 
     if (lastname == "") {
-      alert("Sobrenome não informado");
+      setNotification(true)
+      setMessage("Sobrenome não informado");
+      setMessageType("aviso")
       return;
     }
 
@@ -44,7 +52,13 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   };
 
   return (
-    <form className={stylesForm} action="">
+    <form className={stylesForm}>
+      <NotificacaoFlutuante
+        mensagem={message}
+        tipo={messageType}
+        ativo={notification}
+        setAtivo={setNotification}
+      />
       <InputForm
         name="firstname"
         label="Nome *"
