@@ -10,6 +10,7 @@ interface PropsHeaderMenuClassVideos{
 }
 
 export default function HeaderMenuClassVideos({type, course, quantity, isopening, setIsOpening }:PropsHeaderMenuClassVideos){
+    console.log(typeof FaAngleRight)
     return (
         <section className={ `bg-blue-800 text-white font-bold relative 
             ${type == "vertical" ? "text-lg p-10 rounded-t-xl" : "p-2 text-base rounded-tr-xl"}`
