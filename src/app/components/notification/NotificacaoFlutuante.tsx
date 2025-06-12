@@ -9,24 +9,19 @@ import { IconeAviso } from "./avisos/iconeAviso";
 
 // Lib React
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 // styles css
 import styles from "./styles.module.css";
 
 interface NotificacaoFlutuanteProps {
-  mensagem:
-    | "Registro feito com sucesso"
-    | "Erro ao salvar"
-    | "Aviso importante";
-  mensagemDetalhada?:
-    | "Suas alterações foram salvas e seu perfil está ativo."
-    | "Houve um erro ao salvar suas alterações."
-    | "Por favor, verifique os dados inseridos.";
+  mensagem: string;
+  mensagemDetalhada?: string;
   tipo: "sucesso" | "erro" | "aviso";
   iconNotification?: React.ReactNode;
   icone?: React.ReactNode;
   ativo?: boolean;
+  setAtivo: (value: boolean)=>void
 }
 
 export default function NotificacaoFlutuante({
@@ -34,25 +29,22 @@ export default function NotificacaoFlutuante({
   mensagemDetalhada,
   tipo,
   ativo,
+  setAtivo
 }: NotificacaoFlutuanteProps) {
-  const [visivel, setVisivel] = useState(true);
 
   useEffect(() => {
     if (ativo) {
-      setVisivel(true);
       const timer = setTimeout(() => {
-        setVisivel(false);
+        setAtivo(false); //altera 
       }, 3000); // Duração de 3 segundos
 
       return () => clearTimeout(timer); // Limpa o timer ao desmontar
-    } else {
-      setVisivel(false);
     }
   }, [ativo]);
 
   return (
     // Verifica se a notificação está visível
-    visivel && (
+    ativo && (
       <section
         className={`bg-white
      border border-gray-700/10 p-4 rounded-lg shadow-lg 
