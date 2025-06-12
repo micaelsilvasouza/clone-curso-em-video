@@ -54,15 +54,24 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
       return;
     }
 
-    // router.push("/login");
-
     if (notification === false) {
       fetch("https://filipe520.github.io/api-cursoEmVideo/db/students.json")
         .then((res) => res.json())
         .then((data) => {
-          const search: { email: string } = data.filter(
+          const search: { email: string }[] = data.filter(
             (aluno: { email: string }) => aluno.email === email
           );
+          if (search.length <= 0) {
+            setNotification(true);
+            setMessage("Aluno cadastrado com SUCESSO!");
+            setMessageType("sucesso");
+
+            router.push("/login");
+          } else {
+            setNotification(true);
+            setMessage("E-mail de Aluno já cadastrado");
+            setMessageType("aviso");
+          }
         })
         .catch(() => {
           setNotification(true);
