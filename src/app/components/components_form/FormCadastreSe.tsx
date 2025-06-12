@@ -9,6 +9,8 @@ import InputForm from "./InputForm";
 import Button from "./ButtonForm";
 import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
 
+import Link from "next/link";
+
 export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [name, setNome] = useState("");
   const [lastname, setLastNome] = useState("");
@@ -131,11 +133,21 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
         type="password"
         changeFunction={setCPassword}
       />
-      <Button
-        title="Registrar Gratuitamente"
-        styles="bg-blue-800 text-white py-4 mt-3"
-        clickFunction={validate}
-      />
+      <div className="flex flex-col">
+        <Button
+          title="Registrar Gratuitamente"
+          styles="bg-blue-800 text-white py-4 mt-3"
+          clickFunction={validate}
+        />
+        <span className="mx-auto">
+          <Link
+            href={"/login"}
+            className="text-blue-700 pl-2 underline active:opacity-50"
+          >
+            Acesse sua conta
+          </Link>
+        </span>
+      </div>
     </form>
   );
 }
