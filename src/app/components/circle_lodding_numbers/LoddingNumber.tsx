@@ -10,13 +10,14 @@ interface PropsLoddingNumber{
 
 export default function LoddingNumber({total, increment, animate, suffix}:PropsLoddingNumber){
     const counter = useRef(0)
-    const [display, setDisplay] = useState("")
+    const [display, setDisplay] = useState("0")
     
     useEffect(()=>{
         //impede de executar após a renderização
         if(animate != "running"){
             return
         }
+
         const interval = setInterval(()=>{
             counter.current += increment
             setDisplay(counter.current.toFixed(1))
@@ -24,7 +25,7 @@ export default function LoddingNumber({total, increment, animate, suffix}:PropsL
             if(counter.current >= total){
                 clearInterval(interval)
             }
-        }, 2000 / total)
+        }, 2000 / (total / increment))
     }, [animate])
 
 

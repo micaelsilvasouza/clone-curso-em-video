@@ -5,6 +5,8 @@ import Navbar from "../components/layout/navbar";
 import CircleLoddingNumber from "../components/circle_lodding_numbers/";
 
 import { FaYoutube } from "react-icons/fa";
+import { BiWorld } from "react-icons/bi";
+
 
 
 export default function Apoie() {
@@ -52,7 +54,8 @@ export default function Apoie() {
         </div>
       </section>
       <section>
-        <CircleLoddingNumber name="Youtube" Icon={FaYoutube}/>
+        <CircleLoddingNumber name="Youtube" Icon={FaYoutube} total={2.5} increment={0.1}/>
+        <CircleLoddingNumber name="Site" Icon={BiWorld} total={1} increment={1}/>
       </section>
     </main>
   );
