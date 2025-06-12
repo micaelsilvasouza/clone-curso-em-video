@@ -16,7 +16,6 @@ import styles from "./styles.module.css";
 
 interface NotificacaoFlutuanteProps {
   mensagem: string;
-  mensagemDetalhada?: string;
   tipo: "sucesso" | "erro" | "aviso";
   iconNotification?: React.ReactNode;
   icone?: React.ReactNode;
@@ -26,7 +25,6 @@ interface NotificacaoFlutuanteProps {
 
 export default function NotificacaoFlutuante({
   mensagem,
-  mensagemDetalhada,
   tipo,
   ativo,
   setAtivo,
@@ -56,8 +54,8 @@ export default function NotificacaoFlutuante({
           {tipo === "aviso" && <IconeAviso tipo={tipo} />}
         </div>
         <div className="flex flex-col flex-10 gap-2">
-          <h2 className="text-sm font-semibold text-">{mensagem}</h2>
-          <p className="text-black/80 text-sm">{mensagemDetalhada}</p>
+          <h2 className="text-sm font-semibold text-">{tipo.toUpperCase()}</h2>
+          <p className="text-black/80 text-sm">{mensagem}</p>
         </div>
         <div className="flex flex-1 relative justify-center">
           <IoCloseOutline
