@@ -21,7 +21,7 @@ interface NotificacaoFlutuanteProps {
   iconNotification?: React.ReactNode;
   icone?: React.ReactNode;
   ativo?: boolean;
-  setAtivo: (value: boolean)=>void
+  setAtivo: (value: boolean) => void;
 }
 
 export default function NotificacaoFlutuante({
@@ -29,18 +29,17 @@ export default function NotificacaoFlutuante({
   mensagemDetalhada,
   tipo,
   ativo,
-  setAtivo
+  setAtivo,
 }: NotificacaoFlutuanteProps) {
-
   useEffect(() => {
     if (ativo) {
       const timer = setTimeout(() => {
-        setAtivo(false); //altera 
+        setAtivo(false); //altera
       }, 3000); // Duração de 3 segundos
 
       return () => clearTimeout(timer); // Limpa o timer ao desmontar
     }
-  }, [ativo]);
+  }, [setAtivo, ativo]);
 
   return (
     // Verifica se a notificação está visível
@@ -57,7 +56,7 @@ export default function NotificacaoFlutuante({
           {tipo === "aviso" && <IconeAviso tipo={tipo} />}
         </div>
         <div className="flex flex-col flex-10 gap-2">
-          <h2 className="text-sm font-semibold">{mensagem}</h2>
+          <h2 className="text-sm font-semibold text-">{mensagem}</h2>
           <p className="text-black/80 text-sm">{mensagemDetalhada}</p>
         </div>
         <div className="flex flex-1 relative justify-center">

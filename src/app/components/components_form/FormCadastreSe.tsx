@@ -16,9 +16,11 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [cemail, setCEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
-  const [notification, setNotification] = useState(false)
-  const [message, setMessage] = useState("")
-  const [messageType, setMessageType] = useState<"sucesso" | "erro" | "aviso">("sucesso")
+  const [notification, setNotification] = useState(false);
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState<"sucesso" | "erro" | "aviso">(
+    "sucesso"
+  );
   const router = useRouter();
 
   const validate = () => {
@@ -26,29 +28,48 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
 
     if (name == "") {
       setNotification(true);
-      setMessage("Nome não informado")
-      setMessageType("aviso")
+      setMessage("Nome não informado");
+      setMessageType("aviso");
       return;
     }
 
     if (lastname == "") {
-      setNotification(true)
+      setNotification(true);
       setMessage("Sobrenome não informado");
-      setMessageType("aviso")
+      setMessageType("aviso");
       return;
     }
 
     if (email == "" || !regexEmail.test(email) || email != cemail) {
-      alert("Email invalido ou não correspondentes");
+      setNotification(true);
+      setMessage("Email invalido ou não correspondentes");
+      setMessageType("aviso");
       return;
     }
 
     if (password.length < 8 || password != cpassword) {
-      alert("Senha fraca ou não correspondentes");
+      setNotification(true);
+      setMessage("Senha fraca ou não correspondentes");
+      setMessageType("aviso");
       return;
     }
 
-    router.push("/login");
+    // router.push("/login");
+
+    if (notification === false) {
+      fetch("https://filipe520.github.io/api-cursoEmVideo/db/students.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const search: { email: string } = data.filter(
+            (aluno: { email: string }) => aluno.email === email
+          );
+        })
+        .catch(() => {
+          setNotification(true);
+          setMessage("Ocorreu um erro ao buscar os aluno");
+          setMessageType("erro");
+        });
+    }
   };
 
   return (
