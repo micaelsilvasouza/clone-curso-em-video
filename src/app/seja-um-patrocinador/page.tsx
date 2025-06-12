@@ -1,6 +1,11 @@
+"use client"
+
 import Img_custon from "../components/img_custon";
 import Navbar from "../components/layout/navbar";
 import CircleLoddingNumber from "../components/circle_lodding_numbers/";
+
+import { FaYoutube } from "react-icons/fa";
+
 
 export default function Apoie() {
   return (
@@ -47,7 +52,7 @@ export default function Apoie() {
         </div>
       </section>
       <section>
-        <CircleLoddingNumber />
+        <CircleLoddingNumber name="Youtube" Icon={FaYoutube}/>
       </section>
     </main>
   );
