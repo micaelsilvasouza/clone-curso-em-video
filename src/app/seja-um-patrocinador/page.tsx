@@ -5,7 +5,7 @@ import Navbar from "../components/layout/navbar";
 import CircleLoddingNumber from "../components/circle_lodding_numbers/";
 import TextBox from "../components/patrocine_text_box";
 
-import { FaYoutube, FaInstagram, FaTiktok, FaGraduationCap } from "react-icons/fa";
+import { FaYoutube, FaInstagram, FaTiktok, FaGraduationCap, FaTachometerAlt, FaMedal } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 import { FiTarget } from "react-icons/fi";
 
@@ -62,10 +62,12 @@ export default function Apoie() {
           <CircleLoddingNumber name="Tiktok" Icon={FaTiktok } total={57} increment={1}/>
         </div>
       </section>
-      <section>
+      <section className="grid gap-10 md:grid-cols-2">
         {[
           {icon: FiTarget, title: "Segmentação do Público", paragraph: "O público do Curso em Vídeo é composto por estudantes e profissionais de TI que buscam aprender programação e aprimorar conhecimentos na área. Homens são a maioria e a faixa de idade predominante é de 18 a 44 anos."},
-          {icon: FaGraduationCap, title: "Experiência e Credibilidade", paragraph: "Gustavo Guanabara é referência em educação tecnológica no Brasil. Com mais de 30 anos de experiência e uma didática envolvente, transforma o aprendizado em TI em algo acessível e impactante para milhões de estudantes."}
+          {icon: FaGraduationCap, title: "Experiência e Credibilidade", paragraph: "Gustavo Guanabara é referência em educação tecnológica no Brasil. Com mais de 30 anos de experiência e uma didática envolvente, transforma o aprendizado em TI em algo acessível e impactante para milhões de estudantes."},
+          {icon: FaTachometerAlt, title: "Alcance Expressivo", paragraph: "O Curso em Vídeo está no YouTube, Instagram, TikTok e conta com uma plataforma EAD própria para alunos que buscam certificados e outros benefícios, acumulando milhões de seguidores e interações mensais com os alunos." },
+          {icon: FaMedal, title: "Qualidade do Conteúdo", paragraph: "Gustavo Guanabara é conhecido por sua abordagem descontraída e didática, o que torna os conteúdos mais acessíveis para iniciantes. O canal oferece uma ampla variedade de cursos que abrangem diferentes linguagens de programação." }
         ].map((box, id)=>(
           <TextBox key={id} Icon={box.icon} title={box.title} paragraph={box.paragraph}/>
         ))}
