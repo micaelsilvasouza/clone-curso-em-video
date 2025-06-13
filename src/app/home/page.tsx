@@ -1,4 +1,4 @@
-import { cookies } from "next/headers"
+ import { cookies } from "next/headers"
 
 
 export default async function Page(){
@@ -7,7 +7,7 @@ export default async function Page(){
   return (
     <>
     <h1>Usando cookies</h1>
-    <p>{cookie.get("token")}</p>
+    <p>{cookie.has("token") ? "token" : cookie.get("token")}</p>
     </>
   )
 }
