@@ -29,7 +29,7 @@ export default function ClircleLoddingNumber({name, Icon, total, increment, suff
                     observer.unobserve(entry.target)
                 }
             })
-        })
+        }, {threshold: 1 // Dispara quando está totalment visível})
     
         //adicinando elemento para observação
         observer.observe(conteiner.current)
