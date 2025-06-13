@@ -1,3 +1,13 @@
+"use client";
+
+import gsap from "gsap";
+
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import SplitText from "gsap/SplitText";
+
+gsap.registerPlugin(SplitText);
+
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import Navbar from "../layout/navbar";
 
@@ -12,6 +22,26 @@ interface Prop {
 }
 
 export default function BannerRotaHeader({ titulo, nomeRota }: Prop) {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useGSAP(() => {
+    const split = SplitText.create(titleRef.current, {
+      type: "chars, words, lines",
+      linesClass: "text-indigo-950",
+    });
+
+    gsap.from(split.chars, {
+      x: -100,
+      autoAlpha: 0,
+      yoyo: true,
+      opacity: 5,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+    });
+  }, []);
+
   return (
     <section className="bg-blue-50 bg-[url(/image/BannerPaginaCima.jpg)] bg-cover bg-no-repeat bg-right md:px-5 md:py-10 px-5 pb-10">
       <Navbar
@@ -22,6 +52,7 @@ export default function BannerRotaHeader({ titulo, nomeRota }: Prop) {
       />
       <h1
         className={`md:text-5xl md:mt-16 max-md:text-3xl text-blue text-indigo-950 pt-10 font-bold ${roboto.className}`}
+        ref={titleRef}
       >
         {titulo || nomeRota}
       </h1>

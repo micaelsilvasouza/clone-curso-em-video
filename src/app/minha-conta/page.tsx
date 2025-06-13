@@ -1,20 +1,43 @@
 import BannerRotaHeader from "../components/banner_rota_header";
 import BlocoAcesso from "../components/bloco_acesso";
+import { FaRegCirclePlay } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa6";
+import { IoHelpCircle } from "react-icons/io5";
+import { LuShoppingBasket } from "react-icons/lu";
+import { FaRegAddressCard } from "react-icons/fa";
+
+import Link from "next/link";
 
 export default function MyAccount() {
   return (
-    <main className="bg-[#F2FAFC] container">
+    <main className="bg-[#F2FAFC]">
       <BannerRotaHeader nomeRota="Minha conta" />
-
-      <div className="grid [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))] gap-8 mt-4">
-        <BlocoAcesso
-          name="Meus Cursos"
-          icon="M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z"
-        />
-        <BlocoAcesso
-          name="Comprar créditos para certificado"
-          icon="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
-        />
+      <div
+        className="
+      grid md:grid-cols-2 lg:grid-cols-3
+      max-w-[1240px] mx-auto
+      gap-8 mt-4 px-5 my-5"
+      >
+        {[
+          { name: "Meus Cursos", IconOrNumber: FaRegCirclePlay, rota: "#" },
+          {
+            name: "Comprar Crédito para Certificados",
+            IconOrNumber: FaPlus,
+            rota: "#",
+          },
+          {
+            name: "Créditos para Certificados Restantes",
+            IconOrNumber: 0,
+            rota: "#",
+          },
+          { name: "Ajuda", IconOrNumber: IoHelpCircle, rota: "#" },
+          { name: "Meus Perdidos", IconOrNumber: LuShoppingBasket, rota: "#" },
+          { name: "Cadastro", IconOrNumber: FaRegAddressCard },
+        ].map((card, index) => (
+          <Link key={index} href={`${card.rota}`} className=" w-full h-full">
+            <BlocoAcesso name={card.name} IconOrNumber={card.IconOrNumber} />
+          </Link>
+        ))}
       </div>
     </main>
   );
