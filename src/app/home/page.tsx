@@ -10,7 +10,7 @@ export default async function Page(){
   return (
     <>
     <h1>Usando cookies</h1>
-    <p>{a}</p>
+    <p>{a ? "token" : "kionko"}</p>
     </>
   )
 }
