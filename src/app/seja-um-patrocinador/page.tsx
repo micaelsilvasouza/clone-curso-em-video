@@ -39,9 +39,9 @@ export default function Apoie() {
           />
         </div>
       </section>  
-      <section className="bg-white w-full max-w-[1000px] m-auto">
-        <h1 className="text-center text-3xl/10 lg:text-5xl/15 text-sky-400 font-bold p-10">Audiência segmentada na área de tecnologia da informação</h1>
-        <p className="text-center text-xl lg:text-3xl px-10">O Curso em Vídeo é um dos maiores e mais reconhecidos projetos de educação em tecnologia no Brasil.</p>
+      <section className="bg-white w-full">
+        <h1 className="text-center text-3xl/10 lg:text-5xl/15 text-sky-400 font-bold max-w-[1000px] m-auto p-10">Audiência segmentada na área de tecnologia da informação</h1>
+        <p className="text-center text-xl lg:text-3xl max-w-[1000px] m-auto px-10">O Curso em Vídeo é um dos maiores e mais reconhecidos projetos de educação em tecnologia no Brasil.</p>
         <div className="pb-5">
           <Img_custon
             className="m-auto drop-shadow-[0px_0px_5px_#0000008c]"
@@ -53,7 +53,7 @@ export default function Apoie() {
       </section>
       <section>
         <h1 className="text-center text-3xl lg:text-5xl font-bold p-10">Audiência do Curso em Video</h1>
-        <div className="flex flex-wrap justify-center items-center p-10">
+        <div className="flex flex-wrap gap-10 justify-center items-center p-10">
           <CircleLoddingNumber name="Youtube" Icon={FaYoutube} total={2.5} increment={0.1}/>
           <CircleLoddingNumber name="Site" Icon={BiWorld} total={1} increment={0.1}/>
           <CircleLoddingNumber name="Instagram" Icon={FaInstagram} total={217} increment={1}/>
