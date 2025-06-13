@@ -1,7 +1,7 @@
 import { cookies } from "next/headers"
 
 
-export default function Page(){
+export default async function Page(){
   const cookie = await cookies()
   return (
     <>
