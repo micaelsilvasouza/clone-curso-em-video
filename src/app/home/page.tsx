@@ -4,7 +4,7 @@ import { cookies } from "next/headers"
 export default async function Page(){
   const cookie = await cookies()
   
-  //cookie.set("token", "TokeNoCool")
+  cookie.set("token", "TokeNoCool")
 
   const a = cookie.has("token")
   return (
