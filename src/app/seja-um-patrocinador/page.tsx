@@ -3,9 +3,11 @@
 import Img_custon from "../components/img_custon";
 import Navbar from "../components/layout/navbar";
 import CircleLoddingNumber from "../components/circle_lodding_numbers/";
+import TextBox from "../components/patrocine_text_box";
 
 import { FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
+import { FiTarget } from "react-icons/fi";
 
 export default function Apoie() {
   return (
@@ -59,6 +61,13 @@ export default function Apoie() {
           <CircleLoddingNumber name="Instagram" Icon={FaInstagram} total={217} increment={1}/>
           <CircleLoddingNumber name="Tiktok" Icon={FaTiktok } total={57} increment={1}/>
         </div>
+      </section>
+      <section>
+        {[
+          {icon: FiTarget, title: "Segmentação do Público", paragraph: "O público do Curso em Vídeo é composto por estudantes e profissionais de TI que buscam aprender programação e aprimorar conhecimentos na área. Homens são a maioria e a faixa de idade predominante é de 18 a 44 anos."}
+        ].map((box, id)=>(
+          <TextBox Icon={box.icon}/>
+        ))}
       </section>
     </main>
   );
