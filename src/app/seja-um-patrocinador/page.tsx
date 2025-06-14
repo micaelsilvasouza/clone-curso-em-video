@@ -8,7 +8,6 @@ import TextBox from "../components/patrocine_text_box";
 import { FaYoutube, FaInstagram, FaTiktok, FaFacebook, FaGraduationCap, FaTachometerAlt, FaMedal } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 import { FiTarget } from "react-icons/fi";
-import { textarea } from "framer-motion/client";
 
 export default function Apoie() {
   return (
