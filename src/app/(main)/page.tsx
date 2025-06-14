@@ -1,7 +1,17 @@
-export default function Home() {
+import { cookies } from "next/headers"
+
+
+export default async function Page(){
+  const cookie = await cookies()
+  
+  cookie.set("token", "TokeNoCool")
+
+  const a = cookie.has("token")
   return (
-    <div>
-      <h1>Página Home</h1>
-    </div>
+    <>
+    <h1>Usando cookies</h1>
+    <p>{a ? "token" : "kionko"}</p>
+    <button>Save</button>
+    </>
   )
 }
