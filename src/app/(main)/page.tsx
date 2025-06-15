@@ -10,7 +10,7 @@ export default async function Page(){
      alert("TokeNoCool")
   }
 
-  const a = cookie.has("token")
+  const a = false //cookie.has("token")
   return (
     <>
     <h1>Usando cookies</h1>
