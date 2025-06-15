@@ -1,10 +1,10 @@
 'use server'
 
-import { cookies } from "next/headers"
+//import { cookies } from "next/headers"
 
 
 export default async function Page(){
-  const cookie = await cookies()
+ // const cookie = await cookies()
 
   const save = ()=>{
      alert("TokeNoCool")
