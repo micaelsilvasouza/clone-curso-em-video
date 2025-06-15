@@ -1,10 +1,7 @@
 "use client"
-import { cookies } from "next/headers"
 
-export default async function Page(){
+export default function Page(){
   const cookie = await cookies()
-  
-  const a = cookie.has("token")
 
   const save = ()=>{
     alert("mapa")
@@ -13,8 +10,7 @@ export default async function Page(){
   return (
     <>
     <h1>Usando cookies</h1>
-    <p>{a ? "token" : "kionko"}</p>
-    <button onClick={save}>Save</button>
+    <button formAction={save}>Save</button>
     </>
   )
 }
