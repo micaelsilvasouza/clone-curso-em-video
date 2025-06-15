@@ -15,7 +15,7 @@ export default async function Page(){
     <>
     <h1>Usando cookies</h1>
     <p>{a ? "token" : "kionko"}</p>
-    <button onClick={save}>Save</button>
+    <button formAction={save}>Save</button>
     </>
   )
 }
