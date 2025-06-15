@@ -92,7 +92,7 @@ export default function Apoie() {
       </section>
 
       {/* Parte do formulário */}
-      <section className="bg-blue-700 m-5 p-5 rounded-4xl">
+      <section className="bg-blue-700 w-[98%] max-w-[800px] m-auto p-5 rounded-4xl">
         <h1 className="text-white text-4xl text-center font-bold py-5">
           <span>Seja um Patrocinador</span>
           <br/>
