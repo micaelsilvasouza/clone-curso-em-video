@@ -1,5 +1,5 @@
-import { cookies } from "next/headers"
 "use client"
+import { cookies } from "next/headers"
 
 export default async function Page(){
   const cookie = await cookies()
