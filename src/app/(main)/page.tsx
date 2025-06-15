@@ -1,5 +1,5 @@
 //import { cookies } from "next/headers"
-
+"use client"
 
 export default function Page(){
  // const cookie = await cookies()
