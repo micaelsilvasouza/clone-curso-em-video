@@ -7,7 +7,7 @@ export default async function Page(){
   const cookie = await cookies()
 
   const save = ()=>{
-     cookie.set("token", "TokeNoCool")
+     alert("token", "TokeNoCool")
   }
 
   const a = cookie.has("token")
