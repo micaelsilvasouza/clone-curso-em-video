@@ -1,7 +1,6 @@
 "use client"
 
 export default function Page(){
-  const cookie = await cookies()
 
   const save = ()=>{
     alert("mapa")
