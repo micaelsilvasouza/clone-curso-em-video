@@ -1,9 +1,10 @@
-//import { cookies } from "next/headers"
+import { cookies } from "next/headers"
 
 
 export default async function Page(){
-
-  const a = false //cookie.has("token")
+  const cookie = await cookies()
+  
+  const a = cookie.has("token")
   return (
     <>
     <h1>Usando cookies</h1>
