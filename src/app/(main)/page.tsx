@@ -1,5 +1,5 @@
 import {cookies} from "next/headers"
-import Btn from "@/componentes/Btn"
+import Btn from "../../componentes/Btn"
 
 export default async function Page(){
   const cookie = await cookies()
