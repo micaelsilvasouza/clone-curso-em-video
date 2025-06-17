@@ -1,5 +1,5 @@
 import {cookies} from "next/headers"
-import Btn from "@/componetes/Btn.tsx"
+import Btn from "@/componetes/Btn"
 
 export default async function Page(){
   const cookie = await cookies()
