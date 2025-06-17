@@ -5,5 +5,5 @@ export default async function Page(){
 
   const a = cookie.has("token")
 
-  return <h1>a ? "TRUE" : "FALSE"</h1>
+  return <h1>{a ? "TRUE" : "FALSE"}</h1>
 }
