@@ -1,5 +1,5 @@
 "use client"
 
 export default function Btn(){
-  return <button formAction={()=>alert("flocos")}></button>
+  return <button formAction={()=>alert("flocos")}>Click em min</button>
 }
