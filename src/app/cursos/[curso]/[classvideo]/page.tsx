@@ -15,59 +15,36 @@ export default async function ClassVideo({
   const { classvideo, curso } = await params;
 
   const datavideo = await fetch(
-    //buscando videos
-    "https://filipe520.github.io/api-cursoEmVideo/db/videos.json"
+    //buscando video
+    `https://backend-cursoemvideo.onrender.com/video/${classvideo}`
+  );
+
+  const datavideos = await fetch(
+    //buscando videos do curso
+    `https://backend-cursoemvideo.onrender.com/videos/${curso}`
   );
 
   const datacurso = await fetch(
-    //buscando cursos
-    "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
+    //buscando curso
+    `https://backend-cursoemvideo.onrender.com/course/${curso}`
   );
 
-  if(datavideo.status != 200 || datacurso.status != 200){
+  if(datavideo.status != 200 || datavideos.status != 200 || datacurso.status != 200){
     redirect("/error/fetch-error")
     return
   }
 
-  const cursos = await datacurso.json(); //cursos
+  const videos = await datavideos.json(); //videos do curso
+  const video = await datavideo.json(); //video
+  const course = await datacurso.json(); //video
 
-  const course = cursos.filter((element: { slug: string }) => {
-    //filtrando para encotrar o curso referente ao video
-    return element.slug == curso;
-  })[0];
-
-  const class_videos = await datavideo.json(); //videos
-
-  let video: { title: string; video: string, slug: string } = { title: "zafenate paneia", video: "", slug: "" }; //armazena o video
-  const coursevideos: { slug: string; title: string }[] = []; //armazena os videos do mesmo curso
-
-  //filtrando videos que pertençam ao mesmo curso e encontrando dados do video
-  class_videos.forEach(
-    (element: {
-      slug: string;
-      title: string;
-      video: string;
-      course: string;
-    }) => {
-      if (element.slug == classvideo) {
-        video = element;
-      }
-
-      if (element.course == course.id) {
-        coursevideos.push(element);
-      }
-    }
-  );
-
-   console.log(video, class_videos)
-
-  if (coursevideos.length == 0 || video.title == "" || video.video == "") {
+  if (videos == undefined || videos == null || videos.length == 0 || video == null || video == undefined || curso == undefined || curso == null) {
     notFound();
   }
 
-  const videoindex = coursevideos.indexOf(video)
-  const preveiw = (videoindex - 1) >= 0 ? `/cursos/${course.slug}/${coursevideos.at(videoindex - 1)?.slug}` : `/cursos/${course.slug}`
-  const next = `/cursos/${course.slug}/${coursevideos.at(videoindex + 1)?.slug}` 
+  const videoindex = video.order
+  const preveiw = (videoindex - 1) >= 0 ? `/cursos/${curso}/${videos.at(videoindex - 1).slug}` : `/cursos/${curso}`
+  const next = `/cursos/${curso}/${videos.at(videoindex + 1)?.slug}` 
 
   return (
     <main className="bg-sky-100 ">
@@ -84,7 +61,7 @@ export default async function ClassVideo({
       <div className="min-h-[100dvh] relative flex items-center">
           <MenuClassVideos
             type="horizontal"
-            videos={coursevideos}
+            videos={videos}
             courseslug={course.slug}
             coursetitle={course.title}
           />

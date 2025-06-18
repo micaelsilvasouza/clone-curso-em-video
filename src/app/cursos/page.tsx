@@ -35,7 +35,7 @@ export default function Cursos() {
     setCarregando(true);
     const fetchCourses = async () => {
       const data = await fetch(
-        "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
+        "https://backend-cursoemvideo.onrender.com/courses"
       );
 
       if(data.status != 200){

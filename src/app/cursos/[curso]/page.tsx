@@ -10,7 +10,7 @@ export default async function Page({
   //buscando dados do curso
   const { curso } = await params;
   let data = await fetch(
-    "https://filipe520.github.io/api-cursoEmVideo/db/courses.json"
+      `https://backend-cursoemvideo.onrender.com/course/${curso}`
   );
 
   //Validando busca
@@ -19,20 +19,16 @@ export default async function Page({
       return
   }
   
-  const cursos = await data.json();
-
-  const course = cursos.filter((element: { slug: string }) => {
-    return element.slug == curso;
-  })[0];
+  const course = await data.json();
 
   //verificando se o curso está cadastrado
-  if (course == undefined) {
+  if (course == undefined || course == null) {
     notFound();
   }
 
   //buscando videos relacionados aos cursos
   data = await fetch(
-    "https://filipe520.github.io/api-cursoEmVideo/db/videos.json"
+    `https://backend-cursoemvideo.onrender.com/videos/${curso}`
   );
 
   //Validando busca
@@ -41,9 +37,7 @@ export default async function Page({
       return
   }
   
-  const videos = (await data.json()).filter(
-    (element: { course: string }) => element.course == course.id
-  );
+  const videos = await data.json()
 
   //ordenando os videos de acordo com a propriedade order
   videos.sort((a: { order: number }, b: { order: number }) => {
