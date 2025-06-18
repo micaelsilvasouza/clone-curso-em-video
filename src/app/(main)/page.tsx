@@ -5,10 +5,16 @@ export default async function Page(){
   const cookie = await cookies()
 
   const a = cookie.has("token")
+  const b = cookie.getAll()
 
   return (
     <>
       <h1>{a ? "TRUE" : "FALSE"}</h1>
+      {b.map(c=>(
+        <p key={c.name}>
+          {c.name} : {c.value}
+        </p>
+      ))}
       <Btn/>
     </>
 )
