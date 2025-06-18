@@ -1,6 +1,7 @@
 export default async function Test(){
-  const men = await (await fetch("/rota")).json()
+  const data = await fetch("/rota")
+  const {message} = await data.json()
   return (
-    <h1>{men.message}</h1>
+    <h1>{message}</h1>
   )
 }
