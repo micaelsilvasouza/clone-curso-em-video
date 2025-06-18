@@ -1,5 +1,6 @@
-export default function Test(){
+export default async function Test(){
+  const men = (await fetch("/rota")).json()
   return (
-    <h1>Testando</h1>
+    <h1>{men.message}</h1>
   )
 }
