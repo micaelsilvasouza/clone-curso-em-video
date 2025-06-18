@@ -1,15 +1,21 @@
-"use client"
+import {cookies} from "next/headers"
+import Btn from "@/componetes/Btn"
 
-export default function Page(){
+export default async function Page(){
+  const cookie = await cookies()
+  console.log("getting")
+  const a = cookie.has("token")
+  const b = cookie.getAll()
 
-  const save = ()=>{
-    alert("mapa")
-  }
-  
   return (
     <>
-    <h1>Usando cookies</h1>
-    <button formAction={save}>Save</button>
+      <h1>{a ? "TRUE" : "FALSE"}</h1>
+      {b.map(c=>(
+        <p key={c.name}>
+          {c.name} : {c.value}
+        </p>
+      ))}
+      <Btn/>
     </>
-  )
+)
 }
