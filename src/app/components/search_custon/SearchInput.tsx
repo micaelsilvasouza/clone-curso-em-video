@@ -1,7 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { CiSearch } from "react-icons/ci";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 import { useClickOutside } from "../hooks/useClickOutside";
 
@@ -18,42 +20,32 @@ export default function SearchInput({
   clickSearch,
   setClickSearch,
 }: Props) {
-  const container = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const bordas = {
-    top: {
-      hidden: { width: 0 },
-      visible: { width: "100%", transition: { duration: 0.3 } },
-    },
-    right: {
-      hidden: { height: 0 },
-      visible: { height: "100%", transition: { duration: 0.3 } },
-    },
-    bottom: {
-      hidden: { width: 0 },
-      visible: { width: "100%", transition: { duration: 0.3 } },
-    },
-    left: {
-      hidden: { height: 0 },
-      visible: { height: "100%", transition: { duration: 0.3 } },
-    },
-  };
+  const topRef = useRef<HTMLSpanElement>(null);
+  const rightRef = useRef<HTMLSpanElement>(null);
+  const bottomRef = useRef<HTMLSpanElement>(null);
+  const leftRef = useRef<HTMLSpanElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const searchInput = useClickOutside(() => setClickSearch(false));
 
+  useGSAP(() => {
+    const show = clickSearch;
+    const duration = 0.3;
+
+    gsap.to(topRef.current, { width: show ? "100%" : 0, duration });
+    gsap.to(rightRef.current, { height: show ? "100%" : 0, duration });
+    gsap.to(bottomRef.current, { width: show ? "100%" : 0, duration });
+    gsap.to(leftRef.current, { height: show ? "100%" : 0, duration });
+
+    gsap.to(containerRef.current, {
+      opacity: show ? 1 : 0,
+      duration,
+      stagger: show ? 0.15 : 0,
+    });
+  }, [clickSearch]);
+
   return (
-    <motion.div
-      ref={searchInput}
-      className="relative w-80 mt-4 rounded-2xl"
-      initial="hidden"
-      animate={clickSearch ? "visible" : "hidden"}
-      variants={container}
-    >
+    <div ref={searchInput} className="relative w-80 mt-4 rounded-2xl">
       <div
         className={`flex items-center justify-center border-b ${
           clickSearch ? "border-transparent" : "border-blue-700/20"
@@ -70,7 +62,7 @@ export default function SearchInput({
           />
         </label>
 
-        <motion.input
+        <input
           type="text"
           id="idSearch"
           placeholder="Pesquisa..."
@@ -81,23 +73,25 @@ export default function SearchInput({
           value={busca}
         />
       </div>
-      {/* Bordas */}
-      <motion.span
-        className="absolute top-0 left-0 h-0.5 bg-blue-600 rounded-full"
-        variants={bordas.top}
-      />
-      <motion.span
-        className="absolute top-0 right-0 w-0.5 bg-blue-600 rounded-full"
-        variants={bordas.right}
-      />
-      <motion.span
-        className="absolute bottom-0 right-0 h-0.5 bg-blue-600 rounded-full"
-        variants={bordas.bottom}
-      />
-      <motion.span
-        className="absolute bottom-0 left-0 w-0.5 bg-blue-600 rounded-full"
-        variants={bordas.left}
-      />
-    </motion.div>
+      <div id="containerRef" ref={containerRef}>
+        {/* Bordas */}
+        <span
+          className="absolute top-0 left-0 h-0.5 bg-blue-600 rounded-full"
+          ref={topRef}
+        />
+        <span
+          className="absolute top-0 right-0 w-0.5 bg-blue-600 rounded-full"
+          ref={rightRef}
+        />
+        <span
+          className="absolute bottom-0 right-0 h-0.5 bg-blue-600 rounded-full"
+          ref={bottomRef}
+        />
+        <span
+          className="absolute bottom-0 left-0 w-0.5 bg-blue-600 rounded-full"
+          ref={leftRef}
+        />
+      </div>
+    </div>
   );
 }

@@ -10,7 +10,7 @@ import CourseGrid from "../components/search_custon/CourseGrid";
 // Lib Next
 import { useEffect, useState } from "react";
 
-import { redirect } from 'next/navigation'
+import { redirect } from "next/navigation";
 
 export default function Cursos() {
   const [carregando, setCarregando] = useState(false);
@@ -38,12 +38,11 @@ export default function Cursos() {
         "https://backend-cursoemvideo.onrender.com/courses"
       );
 
-      if(data.status != 200){
-        redirect("/error/fetch-error")
-        return
+      if (data.status != 200) {
+        redirect("/error/fetch-error");
+        return;
       }
 
-      
       setCourses(await data.json());
       setTimeout(() => {
         setCarregando(false);
@@ -84,7 +83,9 @@ export default function Cursos() {
               ? ""
               : filtrados.map((curso) => (
                   // Curso Card depois da pesquisa
-                  <CourseCard curso={curso} key={curso.id} />
+                  <div key={curso.id}>
+                    <CourseCard curso={curso} />
+                  </div>
                 ))}
           </section>
           {busca === "" && (

@@ -1,18 +1,8 @@
-"use client";
-
 // Componentes
 import Navbar from "./components/layout/navbar";
 import Img_custon from "./components/img_custon";
 import ComentarioAlunos from "./components/carrosel/ComentarioAlunos";
 import SejaApoiador from "./components/seja-apoiador";
-
-// Importação da Lib GSAP
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 // Lib Fonte do next
 import { Catamaran } from "next/font/google";
@@ -24,29 +14,6 @@ const roboto = Roboto({ subsets: ["latin"] });
 const asap = Asap({ subsets: ["latin"] });
 
 export default function App() {
-  // Referênciando os elementos que vão ser usado no GSAP
-  const titleOneRef = useRef<HTMLHeadingElement>(null);
-  const paragraphOneRef = useRef<HTMLParagraphElement>(null);
-
-  // Começando a animação
-  useGSAP(() => {
-    // Animação do primeiro Título
-    gsap.to(titleOneRef.current, {
-      ease: "power1.inOut",
-      opacity: 1,
-      y: 0,
-    });
-    // Animação do primeiro Paragrafo
-    gsap.fromTo(
-      paragraphOneRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, delay: 0.1, stagger: 0.1 }
-    );
-
-    // Adicionando efeito ScroolTrigger
-    // gsap.to(titleTwo.current, {});
-  }, []);
-
   return (
     <main>
       <section className="flex flex-col h-full bg-[url('https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/pagina_home/fundo08.jpg')] bg-[80%_0%] bg-cover bg-no-repeat bg-fixed px-6 pt-10">
@@ -61,24 +28,27 @@ export default function App() {
           <div className="w-full  flex-1 flex flex-col md:justify-end md:mb-10 h-[662px]">
             <div className="w-full">
               <h1
-                ref={titleOneRef}
-                className={`max-md:mt-7 pb-5
+                className={`max-md:mt-7
               text-6xl md:text-8xl lg:text-[110px] 
               text-cyan-400 font-[600] 
-              lg:mb-5 w-full opacity-0 ${roboto.className}`}
+              max-sm:leading-12 lg:leading-24 min-md:leading-20 max-md:leading-5
+              lg:mb-5 w-full ${roboto.className}`}
               >
-                Paixão por <br />{" "}
-                <span className="text-6xl md:text-8xl lg:text-[120px] text-white font-[600]">
-                  ensinar.
-                </span>
+                Paixão por
               </h1>
+              <h2
+                className={`${roboto.className} text-6xl md:text-8xl lg:text-[120px] text-white font-[600]
+              lg:mb-13 max-md:mb-0 
+              max-sm:leading-12 lg:leading-13 min-md:leading-20 max-md:leading-24 max-sm:mb-5`}
+              >
+                ensinar.
+              </h2>
             </div>
             <p
-              ref={paragraphOneRef}
               className={`${asap.className} text-white 
             max-w-100 lg:w-150  
             md:text-xl lg:text-2xl max-md:text-lg md:font-[400] 
-            md:mb-20 opacity-0`}
+            md:mb-20`}
             >
               Estude gratuitamente e aprenda <br></br> com conteúdo e
               professores de qualidade.
@@ -105,7 +75,7 @@ export default function App() {
             />
           </div>
 
-          <div className="flex-1 flex flex-col py-10 pl-10 ">
+          <div className="flex-1 flex flex-col py-10 pl-10">
             <h2
               className={`text-5xl  font-bold text-blue-950 leading-14 ${catamaran.className}`}
             >
