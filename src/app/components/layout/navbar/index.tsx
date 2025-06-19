@@ -9,10 +9,13 @@ import Links from "./Links";
 import { BotaoCuston } from "./BotaoCuston";
 import { Dropdown } from "./Dropdown";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 // Lib next
 import Link from "next/link";
 // Lib react
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Tipagem do NavBar
 interface ProprNavBar {
@@ -37,6 +40,7 @@ export default function Navbar({
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [largura, setLargura] = useState(0);
+  const logoRef = useRef<HTMLDivElement>(null);
 
   // ser o largura da tela for maior ou igual a 768px vai fechar o navBar
   if (largura >= 768 && isOpen === true) {
@@ -85,13 +89,17 @@ export default function Navbar({
     };
   }, [isOpen]);
 
+  useGSAP(() => {
+    gsap.fromTo(logoRef.current, { x: -200 }, { opacity: 1, x: 0 });
+  });
+
   return (
     <nav>
       {/* NavBar Desktop */}
       {!isOpen && (
         <div className={` flex items-center justify-between max-md:hidden `}>
           {/* Logo */}
-          <div>
+          <div ref={logoRef} className="opacity-0">
             <Link href="/">
               <Img_custon
                 img={`${logo}`}

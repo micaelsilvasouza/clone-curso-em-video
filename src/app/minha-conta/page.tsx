@@ -23,7 +23,7 @@ export default function MyAccount() {
           {
             name: "Comprar Crédito para Certificados",
             IconOrNumber: FaPlus,
-            rota: "#",
+            rota: "/apoie",
           },
           {
             name: "Créditos para Certificados Restantes",
@@ -32,7 +32,11 @@ export default function MyAccount() {
           },
           { name: "Ajuda", IconOrNumber: IoHelpCircle, rota: "#" },
           { name: "Meus Perdidos", IconOrNumber: LuShoppingBasket, rota: "#" },
-          { name: "Cadastro", IconOrNumber: FaRegAddressCard },
+          {
+            name: "Cadastro",
+            IconOrNumber: FaRegAddressCard,
+            rota: "minha-conta/edit-account",
+          },
         ].map((card, index) => (
           <Link key={index} href={`${card.rota}`} className=" w-full h-full">
             <BlocoAcesso name={card.name} IconOrNumber={card.IconOrNumber} />
