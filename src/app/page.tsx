@@ -10,6 +10,7 @@ import SejaApoiador from "./components/seja-apoiador";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,20 +24,27 @@ const roboto = Roboto({ subsets: ["latin"] });
 const asap = Asap({ subsets: ["latin"] });
 
 export default function App() {
+  // Referênciando os elementos que vão ser usado no GSAP
+  const titleOneRef = useRef<HTMLHeadingElement>(null);
+  const paragraphOneRef = useRef<HTMLParagraphElement>(null);
+
   // Começando a animação
   useGSAP(() => {
     // Animação do primeiro Título
-    gsap.to("#titleOne", {
+    gsap.to(titleOneRef.current, {
       ease: "power1.inOut",
       opacity: 1,
       y: 0,
     });
     // Animação do primeiro Paragrafo
     gsap.fromTo(
-      "#paragraphOne",
+      paragraphOneRef.current,
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, delay: 0.1, stagger: 0.1 }
     );
+
+    // Adicionando efeito ScroolTrigger
+    // gsap.to(titleTwo.current, {});
   }, []);
 
   return (
@@ -53,7 +61,7 @@ export default function App() {
           <div className="w-full  flex-1 flex flex-col md:justify-end md:mb-10 h-[662px]">
             <div className="w-full">
               <h1
-                id="titleOne"
+                ref={titleOneRef}
                 className={`max-md:mt-7 pb-5
               text-6xl md:text-8xl lg:text-[110px] 
               text-cyan-400 font-[600] 
@@ -66,7 +74,7 @@ export default function App() {
               </h1>
             </div>
             <p
-              id="paragraphOne"
+              ref={paragraphOneRef}
               className={`${asap.className} text-white 
             max-w-100 lg:w-150  
             md:text-xl lg:text-2xl max-md:text-lg md:font-[400] 
@@ -97,7 +105,7 @@ export default function App() {
             />
           </div>
 
-          <div className="flex-1 flex flex-col py-10 pl-10" id="titleTwo">
+          <div className="flex-1 flex flex-col py-10 pl-10 ">
             <h2
               className={`text-5xl  font-bold text-blue-950 leading-14 ${catamaran.className}`}
             >
