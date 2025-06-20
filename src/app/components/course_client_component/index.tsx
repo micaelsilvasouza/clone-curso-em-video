@@ -1,10 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-
-import LoadingCircleSpinner from "../search_custon/LoadingCircleSpinner";
 import SearchInput from "../search_custon/SearchInput";
 import CourseCard from "../search_custon/CourseCard";
 import CourseGrid from "../search_custon/CourseGrid";
