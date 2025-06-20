@@ -73,12 +73,12 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
             setMessageType("erro");
           }else{
             setMessageType("sucesso");
+            router.push("/login")
           }
           
           setNotification(true);
           setMessage(data.message);
 
-          router.push("/login")
         })
         .catch(() => {
           setNotification(true);

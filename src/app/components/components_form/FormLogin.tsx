@@ -13,6 +13,9 @@ import Button from "./ButtonForm";
 import InputForm from "./InputForm";
 import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
 
+//funções de cookie
+import {saveToken} from "@/actions/actions_cookies"
+
 export default function FormLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,26 +44,27 @@ export default function FormLogin() {
     }
 
     if(!notification){
-      fetch("https://filipe520.github.io/api-cursoEmVideo/db/students.json")
+      fetch("https://backend-cursoemvideo.onrender.com/user/login",{
+        method: "post",
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify({
+          email: email,
+          password: password
+        })
+      })
       .then(res=>res.json())
       .then(data=>{
-        const search: {email: string, senha: string}[] = data.filter((aluno: {email: string}) =>aluno.email == email)
-
-        if(search.length == 1){
-          //encaminha para minha conta
-          const aluno = search[0]
-          if(aluno.senha == password){
-            router.push("/minha-conta");
+        if(data.error){
+            setMessageType("erro");
           }else{
-            setMessage("Senha inválida");
-            setNotification(true);
-            setMessageType("aviso");  
+            setMessageType("sucesso");
+            saveToken(data.token)
+            router.push("/minha-conta")
           }
-        }else{
-          setMessage("Usuário não cadastrado");
+          
           setNotification(true);
-          setMessageType("aviso");
-        }
+          setMessage(data.message);
+        
       })
       .catch(()=>{
         setMessage("Falha ao buscar os dados do aluno!");
