@@ -1,7 +1,9 @@
+import {cookies} from "next/headers"
+
 export default async function Test(){
-  const data = await fetch("/rota")
-  const {message} = await data.json()
+  const cookie = await cookies()
+  const token = cookie.get("token")
   return (
-    <h1>{message}</h1>
+    <h1>{token?.value}</h1>
   )
 }
