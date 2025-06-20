@@ -1,6 +1,6 @@
 // Componentes
 import BannerPaginaCima from "../components/banner_rota_header";
-import {CursosClientComponent, Courses} from "../components/course_client_component"
+import {CursosClientComponent} from "../components/course_client_component"
 import { redirect } from "next/navigation";
 
 export default async function Cursos() {
