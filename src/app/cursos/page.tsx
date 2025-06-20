@@ -10,14 +10,12 @@ import CourseGrid from "../components/search_custon/CourseGrid";
 // Lib Next
 import { useEffect, useState } from "react";
 
-import { redirect } from 'next/navigation'
+import { redirect } from "next/navigation";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Cursos() {
-  const [carregando, setCarregando] = useState(false);
-  const [search, setSearch] = useState(false);
-  const [clickSearch, setClickSearch] = useState(false);
-  const [busca, setBusca] = useState("");
-
   type Courses = {
     id: string;
     slug: string;
@@ -25,9 +23,20 @@ export default function Cursos() {
     title: string;
     description: string;
   };
-
+  const [carregando, setCarregando] = useState(false);
+  const [search, setSearch] = useState(false);
+  const [clickSearch, setClickSearch] = useState(false);
+  const [busca, setBusca] = useState("");
   const [filtrados, setFiltrados] = useState<Courses[]>([]);
   const [courses, setCourses] = useState<Courses[]>([]);
+
+  useGSAP(() => {
+    courses.forEach((curso) => {
+      gsap.to("#" + curso.id, {
+        x: 100,
+      });
+    });
+  });
 
   // Fazendo a requisição mais estado do carregamento
   useEffect(() => {
@@ -38,17 +47,18 @@ export default function Cursos() {
         "https://backend-cursoemvideo.onrender.com/courses"
       );
 
-      if(data.status != 200){
-        redirect("/error/fetch-error")
-        return
+      if (data.status != 200) {
+        redirect("/error/fetch-error");
+        return;
       }
 
-      
       setCourses(await data.json());
+
       setTimeout(() => {
         setCarregando(false);
       }, 500);
     };
+
     fetchCourses();
   }, []);
 
@@ -84,14 +94,18 @@ export default function Cursos() {
               ? ""
               : filtrados.map((curso) => (
                   // Curso Card depois da pesquisa
-                  <CourseCard curso={curso} key={curso.id} />
+                  <div key={curso.id}>
+                    <CourseCard curso={curso} />
+                  </div>
                 ))}
           </section>
           {busca === "" && (
             <section className="p-5 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 justify-center max-w-[1500px]">
               {courses.map((courses) => (
                 // Curso GRID principal
-                <CourseGrid courses={courses} key={courses.id} />
+                <div key={courses.id}>
+                  <CourseGrid courses={courses} />
+                </div>
               ))}
             </section>
           )}
