@@ -57,23 +57,28 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
     }
 
     if (notification === false) {
-      fetch("https://filipe520.github.io/api-cursoEmVideo/db/students.json")
+      fetch("https://backend-cursoemvideo.onrender.com/user/register",{
+        method: "post",
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify({
+          name: name + " " + lastname,
+          email: email,
+          password: password
+        })
+      })
         .then((res) => res.json())
         .then((data) => {
-          const search: { email: string }[] = data.filter(
-            (aluno: { email: string }) => aluno.email === email
-          );
-          if (search.length <= 0) {
-            setNotification(true);
-            setMessage("Aluno cadastrado com SUCESSO!");
+          //caso ocorra erro no cadastramento
+          if(data.error){
+            setMessageType("erro");
+          }else{
             setMessageType("sucesso");
-
-            router.push("/login");
-          } else {
-            setNotification(true);
-            setMessage("E-mail de Aluno já cadastrado");
-            setMessageType("aviso");
           }
+          
+          setNotification(true);
+          setMessage(data.message);
+
+          router.push("/login")
         })
         .catch(() => {
           setNotification(true);
