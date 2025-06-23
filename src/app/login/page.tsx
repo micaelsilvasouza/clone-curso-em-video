@@ -5,7 +5,7 @@ import Navbar from "../components/layout/navbar";
 
 export default function Login() {
   return (
-    <div className="bg-[url(/image/login.jpg)] bg-no-repeat bg-[60%_80%] bg-cover h-dvh pl-5 pt-5">
+    <div className="bg-[url(/image/login.jpg)] bg-no-repeat bg-[60%_80%] bg-cover min-h-dvh pl-5 py-5">
       <Navbar
         style="bg-transparent text-white"
         logo="logoWhite.png"

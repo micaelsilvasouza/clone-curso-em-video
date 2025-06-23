@@ -10,6 +10,7 @@ import Button from "./ButtonForm";
 import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
 
 import Link from "next/link";
+import LoadingCircleSpinner from "../search_custon/LoadingCircleSpinner";
 
 export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [name, setNome] = useState("");
@@ -19,6 +20,7 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
   const [notification, setNotification] = useState(false);
+  const [islodding, setIslodding] = useState(false);
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState<"sucesso" | "erro" | "aviso">(
     "sucesso"
@@ -57,6 +59,7 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
     }
 
     if (notification === false) {
+      setIslodding(true)
       fetch("https://backend-cursoemvideo.onrender.com/user/register",{
         method: "post",
         headers: {"Content-type": "application/json"},
@@ -68,6 +71,7 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
       })
         .then((res) => res.json())
         .then((data) => {
+          setIslodding(false)
           //caso ocorra erro no cadastramento
           if(data.error){
             setMessageType("erro");
@@ -81,6 +85,7 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
 
         })
         .catch(() => {
+          setIslodding(false)
           setNotification(true);
           setMessage("Ocorreu um erro ao buscar os aluno");
           setMessageType("erro");
@@ -89,6 +94,10 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   };
 
   return (
+    <>
+    <div className={`bg-[#00000035] fixed top-0 left-0 w-full h-full z-100 ${islodding?"flex":"hidden"} items-center justify-center`}>
+      <LoadingCircleSpinner/> 
+    </div>
     <form className={stylesForm}>
       <NotificacaoFlutuante
         mensagem={message}
@@ -154,5 +163,6 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
         </span>
       </div>
     </form>
+    </>
   );
 }

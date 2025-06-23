@@ -12,6 +12,7 @@ import { useState } from "react";
 import Button from "./ButtonForm";
 import InputForm from "./InputForm";
 import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
+import LoadingCircleSpinner from "../search_custon/LoadingCircleSpinner";
 
 //funções de cookie
 import {saveToken} from "@/actions/actions_cookies"
@@ -20,6 +21,7 @@ export default function FormLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [notification, setNotification] = useState(false);
+  const [islodding, setIslodding] = useState(false);
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState<"sucesso" | "erro" | "aviso">(
     "sucesso"
@@ -44,6 +46,7 @@ export default function FormLogin() {
     }
 
     if(!notification){
+      setIslodding(true)
       fetch("https://backend-cursoemvideo.onrender.com/user/login",{
         method: "post",
         headers: {"Content-type": "application/json"},
@@ -54,6 +57,7 @@ export default function FormLogin() {
       })
       .then(res=>res.json())
       .then(data=>{
+        setIslodding(false)
         if(data.error){
             setMessageType("erro");
           }else{
@@ -67,6 +71,7 @@ export default function FormLogin() {
         
       })
       .catch(()=>{
+        setIslodding(false)
         setMessage("Falha ao buscar os dados do aluno!");
         setNotification(true);
         setMessageType("erro");
@@ -76,6 +81,10 @@ export default function FormLogin() {
   };
 
   return (
+    <>
+    <div className={`bg-[#00000035] fixed top-0 left-0 w-full h-full z-100 ${islodding?"flex":"hidden"} items-center justify-center`}>
+      <LoadingCircleSpinner/> 
+    </div>
     <form className={``}>
       {<NotificacaoFlutuante
         mensagem={message}
@@ -131,5 +140,6 @@ export default function FormLogin() {
         Esqueceu senha?
       </Link>
     </form>
+    </>
   );
 }

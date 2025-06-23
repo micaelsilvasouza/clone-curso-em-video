@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Cadastre_se() {
   return (
-    <main className="min-sm:my-10 max-md:my-3 min-w-[350px] max-w-[600px] bg-white text-black mx-auto p-5  md:rounded-2xl min-sm:h-dvh">
+    <main className="min-sm:my-10 max-md:my-3 min-w-[350px] max-w-[600px] bg-white text-black mx-auto p-5  md:rounded-2xl min-sm:min-h-dvh">
       <div className="">
         <section className="pt-3">
           <Link href="/">
