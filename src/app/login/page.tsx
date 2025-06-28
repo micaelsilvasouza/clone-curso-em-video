@@ -14,9 +14,7 @@ export default function Login() {
         styleBotao_1="bg-white text-black"
       />
       <main className="md:h-full flex px-5 pt-40 max-[500px]:pt-10">
-        <section
-          className={`bg-white px-5 py-10 rounded-3xl w-[500px] md:h-[500px]`}
-        >
+        <section className={`bg-white px-5 pb-5 pt-10 rounded-4xl w-[500px]`}>
           <div>
             <Img_custon
               img="logoBlue.png"
