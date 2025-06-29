@@ -18,7 +18,6 @@ import { useState } from "react";
 import Button from "./ButtonForm";
 import InputForm from "./InputForm";
 import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
-import LoadingCircleSpinner from "../search_custon/LoadingCircleSpinner";
 import Btn_Google from "./btn-google/Btn_Google";
 
 //funções de cookie
@@ -102,9 +101,7 @@ export default function FormLogin() {
         className={`bg-[#00000035] fixed top-0 left-0 w-full h-full z-100 ${
           islodding ? "flex" : "hidden"
         } items-center justify-center`}
-      >
-        <LoadingCircleSpinner />
-      </div>
+      ></div>
       <form className={``}>
         {
           <NotificacaoFlutuante
