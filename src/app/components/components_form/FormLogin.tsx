@@ -175,13 +175,15 @@ export default function FormLogin() {
             Cadastre-se
           </Link>
         </div>
-        <section className="flex items-center justify-center my-6">
-          <div className="h-px flex-1 bg-gradient-to-r from-black to-white/50" />
-          <span className="px-3 text-sm font-semibold text-gray-500">ou</span>
-          <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
-        </section>
-        <section className="pb-5">
-          <Btn_Google />
+        <section>
+          <div className="flex items-center justify-center my-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-black to-white/50" />
+            <span className="px-3 text-sm font-semibold text-gray-500">ou</span>
+            <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
+          </div>
+          <div className="pb-5">
+            <Btn_Google textBTN="Entrar com o Google" />
+          </div>
         </section>
       </form>
     </>
