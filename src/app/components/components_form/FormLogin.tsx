@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 import { Urbanist } from "next/font/google";
-const urbanist = Urbanist({ weight: "600" });
+const urbanist = Urbanist({ subsets: ["latin"], weight: "600" });
 
 // React Icons
 import { FaCheck } from "react-icons/fa6";
