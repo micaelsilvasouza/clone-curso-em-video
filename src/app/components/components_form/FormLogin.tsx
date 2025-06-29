@@ -33,6 +33,9 @@ export default function FormLogin() {
   const [messageType, setMessageType] = useState<"sucesso" | "erro" | "aviso">(
     "sucesso"
   );
+  const [animationBtn, setAnimationBtn] = useState(false);
+  console.log(animationBtn);
+
   const router = useRouter();
 
   const validation = () => {
@@ -68,11 +71,19 @@ export default function FormLogin() {
           if (data.error) {
             setMessageType("erro");
           } else {
-            setMessageType("sucesso");
-            saveToken(data.token);
-            router.push("/minha-conta");
+            // Ativa a ANIMAÇÃO do botão entrar
+            setAnimationBtn(true);
+            if (data.message) {
+              // vai esperar 3 segundo para efetua o LOGIN
+              setTimeout(() => {
+                setMessageType("sucesso");
+                saveToken(data.token);
+                router.push("/minha-conta");
+              }, 3000);
+            } else {
+              return;
+            }
           }
-
           setNotification(true);
           setMessage(data.message);
         })
@@ -108,7 +119,7 @@ export default function FormLogin() {
         >
           Faça Login
         </h1>
-        <section className="flex flex-col gap-5">
+        <section className="flex flex-col gap-5 relative">
           <InputForm
             name={"email"}
             label="E-mail"
@@ -152,7 +163,11 @@ export default function FormLogin() {
               </Link>
             </div>
           </section>
-          <Button title="Entrar" clickFunction={validation} />
+          <Button
+            title="Entrar"
+            clickFunction={validation}
+            animation={animationBtn}
+          />
         </section>
         <div className="flex gap-1 justify-center items-center p-5 ">
           <p className="text-gray-500 text-base">Não tem uma conta?</p>
@@ -168,7 +183,7 @@ export default function FormLogin() {
           <span className="px-3 text-sm font-semibold text-gray-500">ou</span>
           <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
         </section>
-        <section>
+        <section className="pb-5">
           <Btn_Google />
         </section>
       </form>
