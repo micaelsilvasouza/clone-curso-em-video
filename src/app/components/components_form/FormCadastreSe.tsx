@@ -11,6 +11,7 @@ import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
 
 import Link from "next/link";
 import LoadingCircleSpinner from "../search_custon/LoadingCircleSpinner";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import Btn_Google from "./btn-google/Btn_Google";
 
 
@@ -185,12 +186,14 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
             <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
           </div>
           <div className="pb-5">
-            <Btn_Google 
-              //textBTN="Registrar pelo Google" 
-              setNotification={setNotification}
-              setMessage={setMessage}
-              setMessageType={setMessageType}
-            />
+            <GoogleOAuthProvider clientId="593215396622-f6615g28imqq6m9c4943rvg5e11nmv6q.apps.googleusercontent.com">
+              <Btn_Google 
+                //textBTN="Entrar com o Google" 
+                setMessage={setMessage}  
+                setNotification={setNotification}
+                setMessageType={setMessageType}
+              />
+            </GoogleOAuthProvider>
           </div>
         </section>
       </form>
