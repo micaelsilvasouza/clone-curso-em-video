@@ -11,7 +11,7 @@ import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
 
 import Link from "next/link";
 import LoadingCircleSpinner from "../search_custon/LoadingCircleSpinner";
-import Btn_Google from "../components/components_form/btn-google/Btn_Google";
+import Btn_Google from "./btn-google/Btn_Google";
 
 
 export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
