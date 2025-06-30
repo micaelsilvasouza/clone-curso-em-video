@@ -1,7 +1,6 @@
 // Componentes
 import Img_custon from "../components/img_custon";
 import FormCadastreSe from "../components/components_form/FormCadastreSe";
-import Btn_Google from "../components/components_form/btn-google/Btn_Google";
 // import Navbar from "../components/layout/navbar";
 
 // Lib NextJS
