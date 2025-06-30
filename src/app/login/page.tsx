@@ -22,7 +22,7 @@ export default function Login() {
               alt="logo azul do curso em video"
               width={200}
             />
-          </div>
+          </div>        
           <FormLogin />
         </section>
       </main>
