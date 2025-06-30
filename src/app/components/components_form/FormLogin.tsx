@@ -22,6 +22,7 @@ import Btn_Google from "./btn-google/Btn_Google";
 
 //funções de cookie
 import { saveToken } from "@/actions/actions_cookies";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 export default function FormLogin() {
   const [email, setEmail] = useState("");
@@ -182,7 +183,14 @@ export default function FormLogin() {
             <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
           </div>
           <div className="pb-5">
-            <Btn_Google textBTN="Entrar com o Google" />
+            <GoogleOAuthProvider clientId="593215396622-f6615g28imqq6m9c4943rvg5e11nmv6q.apps.googleusercontent.com">
+              <Btn_Google 
+                //textBTN="Entrar com o Google" 
+                setMessage={setMessage}  
+                setNotification={setNotification}
+                setMessageType={setMessageType}
+              />
+            </GoogleOAuthProvider>
           </div>
         </section>
       </form>
