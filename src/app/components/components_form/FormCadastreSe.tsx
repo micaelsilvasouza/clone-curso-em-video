@@ -11,6 +11,8 @@ import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
 
 import Link from "next/link";
 import LoadingCircleSpinner from "../search_custon/LoadingCircleSpinner";
+import Btn_Google from "../components/components_form/btn-google/Btn_Google";
+
 
 export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [animationBtn, setAnimationBtn] = useState(false);
@@ -176,6 +178,21 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
             </Link>
           </span>
         </div>
+        <section>
+          <div className="flex items-center justify-center my-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-black to-white/50" />
+            <span className="px-3 text-sm font-semibold text-gray-500">ou</span>
+            <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
+          </div>
+          <div className="pb-5">
+            <Btn_Google 
+              //textBTN="Registrar pelo Google" 
+              setNotification={setNotification}
+              setMessage={setMessage}
+              setMessageType={setMessageType}
+            />
+          </div>
+        </section>
       </form>
     </>
   );
