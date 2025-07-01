@@ -52,8 +52,10 @@ export default function Btn_Google({ /*textBTN,*/ setMessage, setNotification, s
           onSuccess={login}
           text="signin"
           size="large"
-          shape="pill"
-          
+          shape="rectangular"
+          width={400}
+          use_fedcm_for_button={false}
+          use_fedcm_for_prompt={false}
         />
         
         {/* Para usar o bottão customizado precisa mudar no backend

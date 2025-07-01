@@ -185,7 +185,7 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
             <span className="px-3 text-sm font-semibold text-gray-500">ou</span>
             <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
           </div>
-          <div className="pb-5">
+          <div className="pb-5 flex items-center">
             <GoogleOAuthProvider clientId="593215396622-f6615g28imqq6m9c4943rvg5e11nmv6q.apps.googleusercontent.com">
               <Btn_Google 
                 //textBTN="Entrar com o Google" 
