@@ -64,9 +64,10 @@ export default function Curso() {
           <h1
             className={`md:text-3xl max-md:text-2xl text-gray-900/80  text-center pb-10 mx-10`}
           >
-            Curso de <span className={`${asap.className}`}>HTML5</span> &{" "}
-            <span className={`${asap.className}`}>CSS3</span>-{" "}
-            <span className={`${asap.className}`}>Módulo 1</span>
+            Curso de{" "}
+            <span className={`${asap.className} text-blue-500`}>HTML5</span> &{" "}
+            <span className={`${asap.className} text-blue-500`}>CSS3</span>-{" "}
+            <span className={`${asap.className} text-blue-500`}>Módulo 1</span>
           </h1>
         </div>
 

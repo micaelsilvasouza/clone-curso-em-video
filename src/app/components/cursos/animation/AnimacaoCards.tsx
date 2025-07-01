@@ -7,11 +7,10 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AnimacaoCards() {
-  const cards = gsap.utils.toArray(".cardCurso") as HTMLElement[];
-
   useGSAP(() => {
     const timeLine = document.querySelector(".timeLine") as HTMLElement;
     const alturaFinal = timeLine.scrollHeight;
+    const cards = gsap.utils.toArray(".cardCurso") as HTMLElement[];
 
     // Animação da linha do tempo
     gsap.fromTo(
@@ -24,7 +23,7 @@ export default function AnimacaoCards() {
           trigger: ".linha-tempo",
           start: "28% 60%",
           end: "bottom bottom",
-          markers: true,
+          // markers: true,
           scrub: true,
         },
         ease: "none",
@@ -39,11 +38,12 @@ export default function AnimacaoCards() {
         {
           opacity: 1,
           x: 0,
-          markers: true,
           scrollTrigger: {
+            markers: true,
             trigger: card,
-            start: "center center",
-            toggleActions: "play none none none",
+            start: "center 90%",
+            end: "bottom bottom",
+            toggleActions: "restart play none reverse",
           },
           duration: 0.6,
           delay: index * 0.1,
