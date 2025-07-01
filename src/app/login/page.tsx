@@ -2,8 +2,16 @@
 import FormLogin from "../components/components_form/FormLogin";
 import Img_custon from "../components/img_custon";
 import Navbar from "../components/layout/navbar";
+import {redirect} from "next/navigation"
+import {getDataWidhToken} from "@/actions/actions_cookies"
 
-export default function Login() {
+export default async function Login() {
+  const data = await getDataWidhToken()
+  
+  if(data != null && data != undefined){
+    redirect("/minha-conta")
+  }
+
   return (
     <div className="bg-[url(/image/login.jpg)] bg-no-repeat bg-[60%_80%] bg-cover min-h-dvh pl-5 py-5">
       <Navbar
