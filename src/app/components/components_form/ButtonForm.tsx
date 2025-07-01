@@ -22,7 +22,6 @@ export default function ButtonForm({
       x: "200%",
       duration: 3,
       repeat: -1,
-      repeatDelay: 1,
       ease: "power2.out",
       onRepeat: () => {
         gsap.set("#brilho", { x: "-100%" });
