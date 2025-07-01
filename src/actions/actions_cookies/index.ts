@@ -13,3 +13,19 @@ export async function saveToken(token:string){
     cookie.set("token", token, {expires: date})
 
 }
+
+export async function getDataWidhToken() {
+    const cookie = await cookies()
+
+    if(!cookie.has("token")){
+        return null
+    }
+
+    const data = await (await fetch("https://backend-cursoemvideo.onrender.com/user/validate/token", {
+      method: "post",
+      headers: {"Content-type": "application/json"},
+      body: JSON.stringify({token: cookie.get("token")?.value})
+    })).json()
+
+    return data.decoded
+}
