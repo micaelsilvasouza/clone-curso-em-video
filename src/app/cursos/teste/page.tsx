@@ -1,10 +1,10 @@
-"use client";
 // Importação dos componentes
 import Img_custon from "@/app/components/img_custon";
 import Navbar from "@/app/components/layout/navbar";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import MenuTextCursos from "@/app/components/menu_text_cursos";
+import AnimacaoCards from "@/app/components/cursos/animation/AnimacaoCards";
+
+// Lib react icons
 import { MdSmartDisplay } from "react-icons/md";
 
 // Importação das Fontes
@@ -12,45 +12,6 @@ import { Asap } from "next/font/google";
 const asap = Asap({ subsets: ["latin"], weight: ["600"] });
 
 export default function Curso() {
-  const lineRef = useRef<HTMLDivElement>(null);
-  const cardRes = useRef<HTMLElement[]>([]);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      lineRef.current,
-      { height: 0 },
-      {
-        height: "100%",
-        scrollTrigger: {
-          trigger: lineRef.current,
-          start: "top top+=200",
-          end: "bottom bottom",
-          scrub: true,
-        },
-        ease: "none",
-      }
-    );
-
-    // Anima os cards entrando em fade + slide
-    cardRes.current.map((card, index) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, x: 100 },
-        {
-          opacity: 1,
-          x: 0,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-          duration: 0.6,
-          delay: index * 0.1,
-        }
-      );
-    });
-  }, []);
-
   const array = [
     {
       img: "slag.png",
@@ -88,11 +49,12 @@ export default function Curso() {
     },
   ];
   return (
-    <>
+    <article className="relative">
       <Navbar logo="logoBlue.png" styleNavbar="mx-5  md:py-10" />
       {/* Área do vídeo do Curso */}
+      <AnimacaoCards />;
       <section className="flex justify-center">
-        <div className="bg-gray-950/90 h-130 w-full max-w-[1300px] text-white md:rounded-2xl flex flex-col items-center justify-center md:mx-5">
+        <div className="bg-gray-950/90 h-130 w-full max-w-[1300px] text-white md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
           <h2 className="text-2xl">Vídeo</h2>
           <h1 className="md:text-5xl max-md:text-2xl">Vídeo da aula da vez</h1>
         </div>
@@ -108,13 +70,11 @@ export default function Curso() {
           </h1>
         </div>
 
-        <section className="flex w-full">
+        <section className="flex w-full relative">
+          <MenuTextCursos />
           <div className="max-w-[1200px] mx-auto relative">
             {/* Timeline do curso ou Linha tempo*/}
-            <div
-              ref={lineRef}
-              className="absolute md:left-20 max-md:left-8 top-0 bottom-0 w-0.5 bg-gray-950 mt-30"
-            ></div>
+            <div className="timeLine absolute md:left-20 max-md:left-8 top-0 bottom-0 w-0.5 bg-gray-950 mt-30"></div>
 
             {/* Cards das aulas restantes */}
             <section className="md:ml-32 max-md:ml-10">
@@ -125,12 +85,7 @@ export default function Curso() {
                   <div className="absolute md:left-[73px] max-md:left-6 top-[120px] w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow"></div>
 
                   {/* Card de elemento */}
-                  <article
-                    className="bg-gray-800 text-white mx-5 flex gap-5 my-3 rounded-xl md:p-5 max-md:pb-10 max-md:pt-3 max-md:px-3 max-md:flex-col"
-                    ref={(el) => {
-                      cardRes.current[index] = el!;
-                    }}
-                  >
+                  <article className="cardCurso bg-gray-800 text-white mx-5 flex gap-5 my-3 rounded-xl md:p-5 max-md:pb-10 max-md:pt-3 max-md:px-3 max-md:flex-col">
                     {/* Sessão da image(slug)*/}
                     <div className="flex flex-1 items-center justify-around relative">
                       <MdSmartDisplay size={30} className="cursor-pointer" />
@@ -158,6 +113,6 @@ export default function Curso() {
           </div>
         </section>
       </article>
-    </>
+    </article>
   );
 }
