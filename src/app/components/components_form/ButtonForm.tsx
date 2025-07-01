@@ -20,7 +20,7 @@ export default function ButtonForm({
   useGSAP(() => {
     gsap.to("#brilho", {
       x: "200%",
-      duration: 10,
+      duration: 3,
       repeat: -1,
       repeatDelay: 1,
       ease: "power2.out",
