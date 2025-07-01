@@ -39,7 +39,7 @@ export default function AnimacaoCards() {
           opacity: 1,
           x: 0,
           scrollTrigger: {
-            markers: true,
+            // markers: true,
             trigger: card,
             start: "center 90%",
             end: "bottom bottom",
