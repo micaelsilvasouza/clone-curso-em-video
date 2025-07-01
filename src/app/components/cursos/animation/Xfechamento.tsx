@@ -19,24 +19,24 @@ export default function Xfechamento({ clickBook }: Props) {
       .fromTo(
         ".bar-01",
         { y: 0, opacity: 1 },
-        { y: 50, opacity: 0, duration: 0.3 }
+        { y: 50, opacity: 0, duration: 0.5, stagger: 0.5 }
       )
       .fromTo(
         ".bar-02",
         { y: 0, opacity: 1 },
-        { y: 50, opacity: 0, duration: 0.3 },
+        { y: 50, opacity: 0, duration: 1, stagger: 0.5 },
         "<"
       )
       .fromTo(
         ".bar-03",
         { y: 0, opacity: 1 },
-        { y: -50, opacity: 0, duration: 0.3 },
+        { y: -50, opacity: 0, duration: 1, stagger: 0.5 },
         "<"
       )
       .fromTo(
         ".bar-04",
         { y: 0, opacity: 1 },
-        { y: -50, opacity: 0, duration: 0.3 },
+        { y: -50, opacity: 0, duration: 0.5, stagger: 0.5 },
         "<"
       );
   }, []);
