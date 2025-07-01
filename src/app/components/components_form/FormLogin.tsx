@@ -33,8 +33,7 @@ export default function FormLogin() {
   const [messageType, setMessageType] = useState<"sucesso" | "erro" | "aviso">(
     "sucesso"
   );
-  const [animationBtn, setAnimationBtn] = useState(false);
-  console.log(animationBtn);
+  const [animationBtn, setAnimationBtn] = useState(true);
 
   const router = useRouter();
 
