@@ -44,7 +44,7 @@ export default function ButtonForm({
         id={animation ? "brilho" : ""}
         className={`${
           animation
-            ? "absolute inset-0 opacity-30 bg-gradient-to-r from-blue-900 to-transparent transform -translate-x-full"
+            ? "absolute inset-0 opacity-30 bg-gradient-to-r from-transparent via-white to-transparent transform -translate-x-full"
             : ""
         }`}
       ></span>
