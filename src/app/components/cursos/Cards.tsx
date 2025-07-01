@@ -23,7 +23,7 @@ export default function Cards({ card, key }: CardProp) {
       <div className="absolute md:left-[73px] max-md:left-6 top-[120px] w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow"></div>
 
       {/* Card de elemento */}
-      <article className="cardCurso bg-gray-800 text-white mx-5 flex gap-5 my-3 rounded-xl md:p-5 max-md:pb-10 max-md:pt-3 max-md:px-3 max-md:flex-col">
+      <article className="cardCurso will-change-opacity will-change-scroll bg-gray-800 text-white mx-5 flex gap-5 my-3 rounded-xl md:p-5 max-md:pb-10 max-md:pt-3 max-md:px-3 max-md:flex-col">
         {/* Sessão da image(slug)*/}
         <div className="flex flex-1 items-center justify-around relative">
           <MdSmartDisplay size={30} className="cursor-pointer" />
