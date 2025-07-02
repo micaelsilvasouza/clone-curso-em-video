@@ -12,17 +12,15 @@ export default function AnimacaoCards() {
   const [alturaMobile, setAlturaMobile] = useState(false);
 
   useGSAP(() => {
-    const timeLine = document.querySelector(".timeLine") as HTMLElement;
-    const alturaFinal = timeLine.scrollHeight;
     const cards = gsap.utils.toArray(".cardCurso") as HTMLElement[];
+    const timeLine = document.querySelector(".timeLine") as HTMLElement;
+
+    const alturaContainer = timeLine?.offsetHeight || 600;
+    const alturaFinal = alturaContainer * 0.9;
+    const mobile = alturaContainer * 1.5;
+
     if (window.innerWidth <= 501) {
       setAlturaMobile(!alturaMobile);
-    }
-
-    let n1 = 0;
-
-    if (alturaMobile) {
-      n1 = 2;
     }
 
     // Mobile
@@ -32,12 +30,12 @@ export default function AnimacaoCards() {
         ".timeLine",
         { height: 0 },
         {
-          height: `${alturaMobile ? alturaFinal * n1 : alturaFinal * 2}`,
+          height: mobile,
           scrollTrigger: {
             trigger: ".linha-tempo",
             start: "20% 100%",
             end: "bottom bottom",
-            markers: true,
+            // markers: true,
             scrub: true,
           },
           ease: "none",
@@ -52,12 +50,12 @@ export default function AnimacaoCards() {
         ".timeLine",
         { height: 0 },
         {
-          height: `${alturaMobile ? alturaFinal + n1 : alturaFinal * 2}`,
+          height: alturaFinal,
           scrollTrigger: {
             trigger: ".linha-tempo",
             start: "28% 60%",
             end: "bottom bottom",
-            markers: true,
+            // markers: true,
             scrub: true,
           },
           ease: "none",
@@ -76,8 +74,8 @@ export default function AnimacaoCards() {
           scrollTrigger: {
             // markers: true,
             trigger: card,
-            start: "10% 100%",
-            end: "bottom bottom",
+            start: "50% 100%",
+            end: "95% 95%",
             toggleActions: "restart play none reverse",
           },
           duration: 0.6,

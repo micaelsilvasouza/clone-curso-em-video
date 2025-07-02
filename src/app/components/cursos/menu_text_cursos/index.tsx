@@ -33,11 +33,12 @@ export default function MenuTextCursos() {
   return (
     <section
       id="info"
-      className={`absolute left-0 z-10 h-full w-5  bg-[210%_0%]  bg-no-repeat bg-gray-900 rounded-e-lg  transition-all ease-in duration-500 ${
-        clickBook
-          ? "xl:w-6xl md:w-full max-md:w-full bg-[url('/image/womanStudying.svg')]"
-          : "w-5"
-      }`}
+      className={`absolute left-0 z-10  w-5  bg-[210%_0%]  bg-no-repeat bg-gray-900 rounded-e-lg  transition-all ease-in duration-500 
+        ${
+          clickBook
+            ? "xl:w-6xl md:w-full max-md:w-full bg-[url('/image/womanStudying.svg')]"
+            : "w-5"
+        } ${window.innerWidth > 500 ? "h-[70%]" : "h-full"}`}
     >
       <AnimacaoBook clickBook={clickBook} />
       <section className="w-full flex justify-end mt-10">

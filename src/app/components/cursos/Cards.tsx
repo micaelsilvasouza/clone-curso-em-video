@@ -12,7 +12,7 @@ interface ArrayProp {
 }
 
 interface CardProp {
-  key: number;
+  key: number | string;
   card: ArrayProp;
 }
 

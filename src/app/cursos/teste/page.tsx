@@ -44,12 +44,27 @@ export default function Curso() {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum perferendis ea repudiandae impedit saepe eius molestias, pariatur voluptate minima dolore quis quisquam delectus, ipsum voluptas nihil quasi laborum iste molestiae?",
     },
+    {
+      img: "slag.png",
+      alt: "Imagem do slag.png",
+      title: "Nome da aula da vez",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum perferendis ea repudiandae impedit saepe eius molestias, pariatur voluptate minima dolore quis quisquam delectus, ipsum voluptas nihil quasi laborum iste molestiae?",
+    },
+    {
+      img: "slag.png",
+      alt: "Imagem da slag.png",
+      title: "Aula 01 – Introdução",
+      description:
+        "Neste módulo você verá o que é o curso, estrutura e como começar.",
+    },
   ];
   return (
     <article className="relative overflow-x-hidden">
       <Navbar logo="logoBlue.png" styleNavbar="mx-5  md:py-10" />
+      <MenuTextCursos />
       {/* Área do vídeo do Curso */}
-      <AnimacaoCards />;
+      <AnimacaoCards />
       <section className="flex justify-center">
         <div className="bg-gray-950/90 h-130 w-full max-w-[1300px] text-white md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
           <h2 className="text-2xl">Vídeo</h2>
@@ -69,7 +84,6 @@ export default function Curso() {
         </div>
 
         <section className="flex w-full relative overflow-hidden">
-          <MenuTextCursos />
           <div className="max-w-[1200px] mx-auto relative">
             {/* Timeline do curso ou Linha tempo*/}
             <div className="timeLine absolute md:left-20 max-md:left-8 top-0 bottom-0 w-0.5 bg-gray-950 mt-30"></div>
