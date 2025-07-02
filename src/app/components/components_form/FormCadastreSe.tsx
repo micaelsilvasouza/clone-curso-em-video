@@ -78,17 +78,8 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
           if (data.error) {
             setMessageType("erro");
           } else {
-            // Ativa a ANIMAÇÃO do botão cadastrar
-            setAnimationBtn(true);
-            if (data.message) {
-              // vai esperar 3 segundo para efetua o cadastro
-              setTimeout(() => {
-                setMessageType("sucesso");
-                router.push("/login");
-              }, 3000);
-            } else {
-              return;
-            }
+            setMessageType("sucesso")
+            router.push("/login")
           }
 
           setNotification(true);
