@@ -93,7 +93,7 @@ export default async function ClassVideo({
          </section>
         </section>
       </div>
-      <VideoDescription description={video_description}/>
+      <VideoDescription description={video.description}/>
      </main>
   );
 }
