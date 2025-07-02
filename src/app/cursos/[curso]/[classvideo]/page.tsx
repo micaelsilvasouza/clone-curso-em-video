@@ -4,7 +4,7 @@ import IframeVideo from "@/app/components/iframe_video";
 import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos";
 import Navbar from "@/app/components/layout/navbar";
 import Link from "next/link";
-//import VideoDescription from "@/app/components/video_description";
+import VideoDescription from "@/app/components/video_description";
 
 //export const revalidate = 60 //revalidar os dados a cada 60 segundos
 
@@ -93,6 +93,7 @@ export default async function ClassVideo({
          </section>
         </section>
       </div>
+      <VideoDescription description={video_description}/>
      </main>
   );
 }
