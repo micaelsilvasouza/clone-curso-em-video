@@ -3,7 +3,7 @@
 
 export default function VideoDescription({description}:{description: string}){
     //separando e removendo dados vazios
-    const split = description.split("\n")//.filter(paragraph=>paragraph != "" && !/^\s+$/.test(paragraph))
+    const split = description.split("\n").filter(paragraph=>paragraph != "" && !/^\s+$/.test(paragraph))
 
     //criando estrutura
     /*const struct = split.map(paragraph=>{
