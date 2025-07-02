@@ -3,10 +3,10 @@ const expurl = /https?:\/\/[^\s]+/g
 
 export default function VideoDescription({description}:{description: string}){
     //separando e removendo dados vazios
-    let split = description.split("\n").filter(paragraph=>paragraph != "" && !/^\s+$/.test(paragraph))
+    const split = description.split("\n").filter(paragraph=>paragraph != "" && !/^\s+$/.test(paragraph))
 
     //criando estrutura
-    let struct = split.map(paragraph=>{
+    const struct = split.map(paragraph=>{
         if(expurl.test(paragraph)){ //apenas url
             return ["link"]
         }else{
