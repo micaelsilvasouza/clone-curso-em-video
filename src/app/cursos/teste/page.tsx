@@ -51,13 +51,6 @@ export default function Curso() {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum perferendis ea repudiandae impedit saepe eius molestias, pariatur voluptate minima dolore quis quisquam delectus, ipsum voluptas nihil quasi laborum iste molestiae?",
     },
-    {
-      img: "slag.png",
-      alt: "Imagem da slag.png",
-      title: "Aula 01 – Introdução",
-      description:
-        "Neste módulo você verá o que é o curso, estrutura e como começar.",
-    },
   ];
   return (
     <article className="relative overflow-x-hidden">
