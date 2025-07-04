@@ -15,6 +15,11 @@ type cardProps = {
 };
 
 export default function Cards({ cardAPI }: cardProps) {
+  // pega só o trecho antes do primeiro hífen
+  const getTitle = (line: string): string => {
+    const match = line.match(/^(.*?)\s*-/);
+    return match ? match[1].trim() : line.trim(); // se não houver hífen, devolve a linha toda
+  };
   return (
     <section className="relative">
       {/* Checkpoint da timeline (bolinha lateral) */}
@@ -27,24 +32,19 @@ export default function Cards({ cardAPI }: cardProps) {
           <Image
             src={cardAPI.image}
             alt={cardAPI.title}
-            width={200}
-            height={200}
+            width={800}
+            height={800}
             className="flex flex-1 cursor-pointer object-cover"
           />
         </div>
 
         {/* Descrição */}
         <div className="flex flex-1 flex-col items-center max-md:pl-5 justify-center relative">
-          <h2 className="text-xl my-5 w-full">{cardAPI.title}</h2>
+          <h2 className="text-xl my-5 w-full">{getTitle(cardAPI.title)}</h2>
 
           <p className="w-full text-gray-300 text-sm max-sm:line-clamp-3 line-clamp-3">
             <VideoDescription description={cardAPI.description} />
           </p>
-        </div>
-
-        {/* Botão play */}
-        <div className="cursor-pointer flex justify-center items-center md:pr-10">
-          <MdSmartDisplay size={30} className="cursor-pointer" />
         </div>
       </article>
     </section>
