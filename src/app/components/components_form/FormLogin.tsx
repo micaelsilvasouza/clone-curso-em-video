@@ -22,18 +22,17 @@ import Btn_Google from "./btn-google/Btn_Google";
 
 //funções de cookie
 import { saveToken } from "@/actions/actions_cookies";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 export default function FormLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [notification, setNotification] = useState(false);
-  const [islodding, setIslodding] = useState(false);
+  const [notification, setNotification] = useState(false)
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState<"sucesso" | "erro" | "aviso">(
     "sucesso"
   );
   const [animationBtn, setAnimationBtn] = useState(false);
-  console.log(animationBtn);
 
   const router = useRouter();
 
@@ -55,7 +54,8 @@ export default function FormLogin() {
     }
 
     if (!notification) {
-      setIslodding(true);
+      //Ativa a ANIMAÇÃO 
+      setAnimationBtn(true)
       fetch("https://backend-cursoemvideo.onrender.com/user/login", {
         method: "post",
         headers: { "Content-type": "application/json" },
@@ -66,12 +66,10 @@ export default function FormLogin() {
       })
         .then((res) => res.json())
         .then((data) => {
-          setIslodding(false);
+          setAnimationBtn(false)
           if (data.error) {
             setMessageType("erro");
           } else {
-            // Ativa a ANIMAÇÃO do botão entrar
-            setAnimationBtn(true);
             if (data.message) {
               // vai esperar 3 segundo para efetua o LOGIN
               setTimeout(() => {
@@ -87,7 +85,6 @@ export default function FormLogin() {
           setMessage(data.message);
         })
         .catch(() => {
-          setIslodding(false);
           setMessage("Falha ao buscar os dados do aluno!");
           setNotification(true);
           setMessageType("erro");
@@ -97,11 +94,6 @@ export default function FormLogin() {
 
   return (
     <>
-      <div
-        className={`bg-[#00000035] fixed top-0 left-0 w-full h-full z-100 ${
-          islodding ? "flex" : "hidden"
-        } items-center justify-center`}
-      ></div>
       <form className={``}>
         {
           <NotificacaoFlutuante
@@ -181,8 +173,17 @@ export default function FormLogin() {
             <span className="px-3 text-sm font-semibold text-gray-500">ou</span>
             <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
           </div>
-          <div className="pb-5">
-            <Btn_Google textBTN="Entrar com o Google" />
+          <div className="pb-5 w-fit m-auto">
+            <GoogleOAuthProvider 
+              clientId="593215396622-f6615g28imqq6m9c4943rvg5e11nmv6q.apps.googleusercontent.com"
+            >
+              <Btn_Google 
+                //textBTN="Entrar com o Google" 
+                setMessage={setMessage}  
+                setNotification={setNotification}
+                setMessageType={setMessageType}
+              />
+            </GoogleOAuthProvider>
           </div>
         </section>
       </form>

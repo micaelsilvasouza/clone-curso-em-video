@@ -20,9 +20,8 @@ export default function ButtonForm({
   useGSAP(() => {
     gsap.to("#brilho", {
       x: "200%",
-      duration: 10,
+      duration: 3,
       repeat: -1,
-      repeatDelay: 1,
       ease: "power2.out",
       onRepeat: () => {
         gsap.set("#brilho", { x: "-100%" });
@@ -45,7 +44,7 @@ export default function ButtonForm({
         id={animation ? "brilho" : ""}
         className={`${
           animation
-            ? "absolute inset-0 opacity-30 bg-gradient-to-r from-blue-900 to-transparent transform -translate-x-full"
+            ? "absolute inset-0 opacity-30 bg-gradient-to-r from-transparent via-white to-transparent transform -translate-x-full"
             : ""
         }`}
       ></span>

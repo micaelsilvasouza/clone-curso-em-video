@@ -3,9 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import IframeVideo from "@/app/components/iframe_video";
 // Importação dos componentes
 import Navbar from "@/app/components/layout/navbar";
-import MenuTextCursos from "@/app/components/cursos/menu_text_cursos";
-import AnimacaoCards from "@/app/components/cursos/animation/AnimacaoCards";
-import Cards from "@/app/components/cursos/Cards";
+
 
 // Importação das Fontes
 import { Asap } from "next/font/google";
@@ -126,7 +124,5 @@ export default async function ClassVideo({
             </section>
           </div>
         </section>
-      </article>
-    </main>
   );
 }

@@ -1,7 +1,6 @@
 // Componentes
 import Img_custon from "../components/img_custon";
 import FormCadastreSe from "../components/components_form/FormCadastreSe";
-import Btn_Google from "../components/components_form/btn-google/Btn_Google";
 // import Navbar from "../components/layout/navbar";
 
 // Lib NextJS
@@ -26,16 +25,6 @@ export default function Cadastre_se() {
         </section>
         {/* Inputs + Botão do Formulário */}
         <FormCadastreSe stylesForm="flex flex-col gap-3" />
-        <section>
-          <div className="flex items-center justify-center my-6">
-            <div className="h-px flex-1 bg-gradient-to-r from-black to-white/50" />
-            <span className="px-3 text-sm font-semibold text-gray-500">ou</span>
-            <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
-          </div>
-          <div className="pb-5">
-            <Btn_Google textBTN="Registrar pelo Google" />
-          </div>
-        </section>
         {/* Texto de emissão dos certificados */}
         <section className="my-5">
           <p className="text-gray-800 text-base font-[400] w-[90%] text-justify my-0 mx-auto">

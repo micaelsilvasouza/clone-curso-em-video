@@ -10,7 +10,9 @@ import Button from "./ButtonForm";
 import NotificacaoFlutuante from "../notification/NotificacaoFlutuante";
 
 import Link from "next/link";
-import LoadingCircleSpinner from "../search_custon/LoadingCircleSpinner";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import Btn_Google from "./btn-google/Btn_Google";
+
 
 export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [animationBtn, setAnimationBtn] = useState(false);
@@ -21,7 +23,6 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
   const [notification, setNotification] = useState(false);
-  const [islodding, setIslodding] = useState(false);
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState<"sucesso" | "erro" | "aviso">(
     "sucesso"
@@ -60,7 +61,7 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
     }
 
     if (notification === false) {
-      setIslodding(true);
+      setAnimationBtn(true);
       fetch("https://backend-cursoemvideo.onrender.com/user/register", {
         method: "post",
         headers: { "Content-type": "application/json" },
@@ -72,29 +73,20 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
       })
         .then((res) => res.json())
         .then((data) => {
-          setIslodding(false);
+          setAnimationBtn(false);
           //caso ocorra erro no cadastramento
           if (data.error) {
             setMessageType("erro");
           } else {
-            // Ativa a ANIMAÇÃO do botão cadastrar
-            setAnimationBtn(true);
-            if (data.message) {
-              // vai esperar 3 segundo para efetua o cadastro
-              setTimeout(() => {
-                setMessageType("sucesso");
-                router.push("/login");
-              }, 3000);
-            } else {
-              return;
-            }
+            setMessageType("sucesso")
+            router.push("/login")
           }
 
           setNotification(true);
           setMessage(data.message);
         })
         .catch(() => {
-          setIslodding(false);
+          setAnimationBtn(false);
           setNotification(true);
           setMessage("Ocorreu um erro ao buscar os aluno");
           setMessageType("erro");
@@ -104,13 +96,6 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
 
   return (
     <>
-      <div
-        className={`bg-[#00000035] fixed top-0 left-0 w-full h-full z-100 ${
-          islodding ? "flex" : "hidden"
-        } items-center justify-center`}
-      >
-        <LoadingCircleSpinner />
-      </div>
       <form className={stylesForm}>
         <NotificacaoFlutuante
           mensagem={message}
@@ -176,6 +161,23 @@ export default function FormCadastreSe({ stylesForm }: { stylesForm: string }) {
             </Link>
           </span>
         </div>
+        <section>
+          <div className="flex items-center justify-center my-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-black to-white/50" />
+            <span className="px-3 text-sm font-semibold text-gray-500">ou</span>
+            <div className="h-px flex-1 bg-gradient-to-l from-black to-white/50" />
+          </div>
+          <div className="pb-5 w-fit m-auto">
+            <GoogleOAuthProvider clientId="593215396622-f6615g28imqq6m9c4943rvg5e11nmv6q.apps.googleusercontent.com">
+              <Btn_Google 
+                //textBTN="Entrar com o Google" 
+                setMessage={setMessage}  
+                setNotification={setNotification}
+                setMessageType={setMessageType}
+              />
+            </GoogleOAuthProvider>
+          </div>
+        </section>
       </form>
     </>
   );
