@@ -84,8 +84,8 @@ export default function Curso() {
             {/* Cards das aulas restantes */}
             <section className="md:ml-32 max-md:ml-10 ">
               {/* mapeando array de cursos */}
-              {array.map((card, index) => (
-                <Cards card={card} key={index} />
+              {array.map((card, key) => (
+                <div key={key}>{/* <Cards card={card} /> */}</div>
               ))}
             </section>
           </div>

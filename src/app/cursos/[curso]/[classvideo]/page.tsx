@@ -3,11 +3,20 @@ import { notFound, redirect } from "next/navigation";
 import IframeVideo from "@/app/components/iframe_video";
 // Importação dos componentes
 import Navbar from "@/app/components/layout/navbar";
-
+import MenuTextCursos from "@/app/components/cursos/menu_text_cursos";
+import AnimacaoCards from "@/app/components/cursos/animation/AnimacaoCards";
+import Cards from "@/app/components/cursos/Cards";
 
 // Importação das Fontes
 import { Asap } from "next/font/google";
 const asap = Asap({ subsets: ["latin"], weight: ["600"] });
+
+type cardAPI = {
+  video: string;
+  description: string;
+  image: string;
+  title: string;
+};
 
 export const revalidate = 60; //revalidar os dados a cada 60 segundos
 
@@ -48,6 +57,22 @@ export default async function ClassVideo({
 
   const course = await datacurso.json(); //video
 
+  const titleFormatados = course.title
+    .replace(
+      /^(.*?):/,
+      " <span className={`${asap.className} text-blue-500`}>$1:</span>"
+    )
+    .replace(
+      /Módulo\s\d+/,
+      (modulo: string) =>
+        `<span className={${asap.className} text-blue-500}>${modulo}</span>`
+    )
+    .replace(
+      /\[\d+\sHORAS\]/,
+      (horas: string) =>
+        `<span className={${asap.className} text-blue-500}>${horas}</span>`
+    );
+
   // 1) regex só para URLs http(s)
   const urlRegex = /https?:\/\/[^\s"']+/gi;
 
@@ -57,10 +82,10 @@ export default async function ClassVideo({
   const urls = [];
   const textoLimpo = [];
 
-  videos.map((v) => {
-    urls.push([...v.description.matchAll(urlRegex)].map((m) => m[0])); // pega só o https://…
+  videos.map((card: cardAPI) => {
+    urls.push([...card.description.matchAll(urlRegex)].map((m) => m[0])); // pega só o https://…
     textoLimpo.push(
-      v.description
+      card.description
         .replace(tagLinkRegex, "$1") // tira URLs http(s), deixa só o miolo
         .replace(/\s+/g, " ")
         .trim()
@@ -78,7 +103,6 @@ export default async function ClassVideo({
   ) {
     notFound();
   }
-
   return (
     <main className="relative overflow-x-hidden">
       <Navbar logo="logoBlue.png" styleNavbar="mx-5  md:py-10" />
@@ -96,16 +120,8 @@ export default async function ClassVideo({
         <div>
           <h1
             className={`md:text-3xl max-md:text-2xl text-gray-900/80  text-center pb-10 mx-10`}
-          >
-            {course.title}
-            {video.title}
-            Curso de{" "}
-            <span className={`${asap.className} text-blue-500`}>
-              HTML5
-            </span> &{" "}
-            <span className={`${asap.className} text-blue-500`}>CSS3</span>-{" "}
-            <span className={`${asap.className} text-blue-500`}>Módulo 1</span>
-          </h1>
+            dangerouslySetInnerHTML={{ __html: course.title }}
+          />
         </div>
 
         <section className="flex w-full relative overflow-hidden">
@@ -116,13 +132,15 @@ export default async function ClassVideo({
             {/* Cards das aulas restantes */}
             <section className="md:ml-32 max-md:ml-10 ">
               {/* mapeando array de cursos */}
-              {videos.map((video, index) => (
+              {videos.map((card: cardAPI, index: number) => (
                 <div key={index}>
-                  <Cards card={video} itemKey={video.id ?? index} />
+                  <Cards cardAPI={card} />
                 </div>
               ))}
             </section>
           </div>
         </section>
+      </article>
+    </main>
   );
 }
