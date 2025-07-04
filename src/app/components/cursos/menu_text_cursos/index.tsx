@@ -1,19 +1,30 @@
 "use client";
 
 // Lib React
-import { useEffect, useState } from "react";
-
-// Lib React icons
-import { GiBookCover } from "react-icons/gi";
+import { useEffect } from "react";
 
 // Componente
 import X_fechar from "../X_fechar";
 import AnimacaoBook from "../animation/AnimacaoBook";
 import TextBook from "../TextBook";
 
-export default function MenuTextCursos() {
-  const [clickBook, setClickBook] = useState(false);
+type PropMenuTextCursos = {
+  clickBook: boolean;
+  setClickBook: React.Dispatch<React.SetStateAction<boolean>>;
+  VideoDescription: cardAPI[];
+};
 
+type cardAPI = {
+  description: string;
+  image: string;
+  title: string;
+};
+
+export default function MenuTextCursos({
+  clickBook,
+  setClickBook,
+  VideoDescription,
+}: PropMenuTextCursos) {
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       const elemento = document.getElementById("info");
@@ -28,7 +39,7 @@ export default function MenuTextCursos() {
     return () => {
       document.removeEventListener("click", handleClick);
     };
-  }, [clickBook]);
+  }, [setClickBook, clickBook]);
 
   return (
     <section
@@ -38,24 +49,12 @@ export default function MenuTextCursos() {
           clickBook
             ? "xl:w-6xl md:w-full max-md:w-full bg-[url('/image/womanStudying.svg')]"
             : "w-5"
-        } ${window.innerWidth > 500 ? "h-[70%]" : "h-full"}`}
+        } ${window.innerWidth > 500 ? "h-[25%]" : ""}`}
     >
       <AnimacaoBook clickBook={clickBook} />
       <section className="w-full flex justify-end mt-10">
         <X_fechar setAtivo={setClickBook} clickBook={clickBook} />
       </section>
-      <section className="w-15 h-full relative">
-        <section className="top-0 right-0 absolute z-10 -translate-y-15">
-          <GiBookCover
-            size={30}
-            className={`text-blue-500 cursor-pointer ${
-              clickBook ? "hidden" : "visited"
-            }`}
-            onClick={() => setClickBook(!clickBook)}
-          />
-        </section>
-      </section>
-
       <TextBook clickBook={clickBook} />
     </section>
   );
