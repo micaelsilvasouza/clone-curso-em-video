@@ -50,6 +50,25 @@ export default async function ClassVideo({
 
   const course = await datacurso.json(); //video
 
+  // 1) regex só para URLs http(s)
+  const urlRegex = /https?:\/\/[^\s"']+/gi;
+
+  // 2) regex que remove URLs http(s) e mantém o texto entre elas
+  const tagLinkRegex = /https?:\/\/[^\s"']+/gi;
+
+  const urls = [];
+  const textoLimpo = [];
+
+  videos.map((v) => {
+    urls.push([...v.description.matchAll(urlRegex)].map((m) => m[0])); // pega só o https://…
+    textoLimpo.push(
+      v.description
+        .replace(tagLinkRegex, "$1") // tira URLs http(s), deixa só o miolo
+        .replace(/\s+/g, " ")
+        .trim()
+    );
+  });
+
   if (
     videos == undefined ||
     videos == null ||

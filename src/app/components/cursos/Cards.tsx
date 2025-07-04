@@ -1,50 +1,75 @@
 // Componentes
 import Image from "next/image";
-
-// Lib react icons
 import { MdSmartDisplay } from "react-icons/md";
 
-interface ArrayProp {
-  image: string;
-  alt: string;
-  title: string;
-  description: string;
-}
+export default function Cards({ card, itemKey }) {
+  //    ┌── protocolo (opcional) ──┐┌─ www. (opc.) ┐┌── domínio ──┐┌ caminho opcional ┐
+  const linkRegex =
+    /(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/gi;
+  // pegar o caminho da url sem http ou https .com .br
+  const caminhoURL = /[a-zA-Z0-9.-]+(?:\/[^\s]*)?/;
+  // Extrai links
+  const urls = [...card.description.matchAll(linkRegex) && ...card.description.matchAll(caminhoURL)].map((m) => m[0])
 
-interface CardProp {
-  itemKey: string | number;
-  card: ArrayProp;
-}
+  // Remove links do texto
+  const textoLimpo = card.description
+    .replace(linkRegex, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 
-export default function Cards({ card, itemKey }: CardProp) {
+  urls.map((url) => {
+    const match = url.match(caminhoURL);
+    const remove = url.replace(match);
+    return match ? remove : "";
+  });
+
   return (
     <section className="relative">
-      {/* Checkpoint da timeline (exemplo de bolinha) */}
+      {/* Checkpoint da timeline (bolinha lateral) */}
       <div className="absolute md:-left-[55px] max-md:-left-3 top-25 w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow"></div>
-      {itemKey}
-      {/* Card de elemento */}
-      <article className="cardCurso will-change-opacity will-change-scroll bg-gray-800 text-white mx-2 flex gap-5 my-3 rounded-xl max-md:pb-10  max-md:flex-col">
-        {/* Sessão da image(slug)*/}
+
+      {/* Card */}
+      <article className="cardCurso bg-gray-800 text-white mx-2 flex gap-5 my-3 rounded-xl max-md:pb-10 max-md:flex-col">
+        {/* Imagem */}
         <div className="flex flex-1 items-center justify-around rounded-2xl relative">
           <Image
-            src={`${card.image}`}
+            src={card.image}
             alt={card.title}
             width={300}
             height={300}
-            className="flex flex-1 cursor-pointer"
+            className="flex flex-1 cursor-pointer object-cover"
           />
-          {/* <div className="absolute inset-0 backdrop-blur-sm"></div> */}
         </div>
 
-        {/* Sessão da descrição do card */}
+        {/* Descrição */}
         <div className="flex flex-1 flex-col items-center max-md:pl-5 justify-center relative">
           <h2 className="text-xl my-5 w-full">{card.title}</h2>
-          <p className="w-full max-sm:line-clamp-3 text-gray-300 text-sm">
-            {card.description}
+
+          <p className="w-full text-gray-300 text-sm max-sm:line-clamp-3">
+            {textoLimpo}
           </p>
-          {/* <div className="absolute inset-0 backdrop-blur-sm"></div> */}
+
+          {/* Lista de links (opcional) */}
+          {urls.length > 0 && (
+            <ul className="text-xs text-blue-400 mt-2 list-disc ml-4">
+              {urls.map((link, i) => (
+                <li key={i}>
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
-        <div className="cursor-pointer flex justify-center items-center md:pr-10  ">
+
+        {/* Botão play */}
+        <div className="cursor-pointer flex justify-center items-center md:pr-10">
           <MdSmartDisplay size={30} className="cursor-pointer" />
         </div>
       </article>
