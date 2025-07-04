@@ -6,10 +6,7 @@ import Navbar from "@/app/components/layout/navbar";
 import MenuTextCursos from "@/app/components/cursos/menu_text_cursos";
 import AnimacaoCards from "@/app/components/cursos/animation/AnimacaoCards";
 import Cards from "@/app/components/cursos/Cards";
-
-// Importação das Fontes
-import { Asap } from "next/font/google";
-const asap = Asap({ subsets: ["latin"], weight: ["600"] });
+import H1Custon from "@/app/components/cursos/h1Custon";
 
 type cardAPI = {
   video: string;
@@ -57,22 +54,6 @@ export default async function ClassVideo({
 
   const course = await datacurso.json(); //video
 
-  const titleFormatados = course.title
-    .replace(
-      /^(.*?):/,
-      " <span className={`${asap.className} text-blue-500`}>$1:</span>"
-    )
-    .replace(
-      /Módulo\s\d+/,
-      (modulo: string) =>
-        `<span className={${asap.className} text-blue-500}>${modulo}</span>`
-    )
-    .replace(
-      /\[\d+\sHORAS\]/,
-      (horas: string) =>
-        `<span className={${asap.className} text-blue-500}>${horas}</span>`
-    );
-
   // 1) regex só para URLs http(s)
   const urlRegex = /https?:\/\/[^\s"']+/gi;
 
@@ -118,10 +99,7 @@ export default async function ClassVideo({
       </section>
       <article className="flex flex-col mt-10">
         <div>
-          <h1
-            className={`md:text-3xl max-md:text-2xl text-gray-900/80  text-center pb-10 mx-10`}
-            dangerouslySetInnerHTML={{ __html: course.title }}
-          />
+          <H1Custon title={course.title} />
         </div>
 
         <section className="flex w-full relative overflow-hidden">
