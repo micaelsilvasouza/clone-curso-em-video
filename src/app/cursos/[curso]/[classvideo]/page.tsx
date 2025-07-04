@@ -54,25 +54,6 @@ export default async function ClassVideo({
 
   const course = await datacurso.json(); //video
 
-  // 1) regex só para URLs http(s)
-  const urlRegex = /https?:\/\/[^\s"']+/gi;
-
-  // 2) regex que remove URLs http(s) e mantém o texto entre elas
-  const tagLinkRegex = /https?:\/\/[^\s"']+/gi;
-
-  const urls = [];
-  const textoLimpo = [];
-
-  videos.map((card: cardAPI) => {
-    urls.push([...card.description.matchAll(urlRegex)].map((m) => m[0])); // pega só o https://…
-    textoLimpo.push(
-      card.description
-        .replace(tagLinkRegex, "$1") // tira URLs http(s), deixa só o miolo
-        .replace(/\s+/g, " ")
-        .trim()
-    );
-  });
-
   if (
     videos == undefined ||
     videos == null ||
@@ -87,12 +68,11 @@ export default async function ClassVideo({
   return (
     <main className="relative overflow-x-hidden">
       <Navbar logo="logoBlue.png" styleNavbar="mx-5  md:py-10" />
-      <MenuTextCursos />
       {/* Área do vídeo do Curso */}
       <AnimacaoCards />
       <section className="flex justify-center">
-        <div className="bg-gray-950/90 h-130 w-full max-w-[1300px] text-white md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
-          <div className="aspect-video w-full max-w-[800px] my-5 mx-auto shadow-lg">
+        <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
+          <div className="aspect-video w-full max-w-[1000px] my-5 mx-auto shadow-lg">
             <IframeVideo src={video.video} />
           </div>
         </div>
@@ -101,6 +81,7 @@ export default async function ClassVideo({
         <div>
           <H1Custon title={course.title} />
         </div>
+        <MenuTextCursos />
 
         <section className="flex w-full relative overflow-hidden">
           <div className="max-w-[1200px] mx-auto relative">
