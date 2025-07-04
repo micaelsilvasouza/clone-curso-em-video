@@ -26,6 +26,7 @@ interface ProprNavBar {
   styleBotao_1?: string;
   styleBotao_2?: string;
   corIcone?: string;
+  styleNavbar?: string;
 }
 
 export default function Navbar({
@@ -36,6 +37,7 @@ export default function Navbar({
   styleBotao_1,
   styleBotao_2,
   corIcone = "text-blue-700",
+  styleNavbar,
 }: ProprNavBar) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -94,7 +96,7 @@ export default function Navbar({
   });
 
   return (
-    <nav>
+    <nav className={`${styleNavbar}`}>
       {/* NavBar Desktop */}
       {!isOpen && (
         <div className={` flex items-center justify-between max-md:hidden `}>

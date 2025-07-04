@@ -1,0 +1,62 @@
+"use client";
+
+// Lib React
+import { useEffect, useState } from "react";
+
+// Lib React icons
+import { GiBookCover } from "react-icons/gi";
+
+// Componente
+import X_fechar from "../X_fechar";
+import AnimacaoBook from "../animation/AnimacaoBook";
+import TextBook from "../TextBook";
+
+export default function MenuTextCursos() {
+  const [clickBook, setClickBook] = useState(false);
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      const elemento = document.getElementById("info");
+
+      if (clickBook && elemento && !elemento.contains(event.target as Node)) {
+        setClickBook(!clickBook);
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [clickBook]);
+
+  return (
+    <section
+      id="info"
+      className={`absolute left-0 z-10  w-5  bg-[210%_0%]  bg-no-repeat bg-gray-900 rounded-e-lg  transition-all ease-in duration-500 
+        ${
+          clickBook
+            ? "xl:w-6xl md:w-full max-md:w-full bg-[url('/image/womanStudying.svg')]"
+            : "w-5"
+        } ${window.innerWidth > 500 ? "h-[70%]" : "h-full"}`}
+    >
+      <AnimacaoBook clickBook={clickBook} />
+      <section className="w-full flex justify-end mt-10">
+        <X_fechar setAtivo={setClickBook} clickBook={clickBook} />
+      </section>
+      <section className="w-15 h-full relative">
+        <section className="top-0 right-0 absolute z-10 -translate-y-15">
+          <GiBookCover
+            size={30}
+            className={`text-blue-500 cursor-pointer ${
+              clickBook ? "hidden" : "visited"
+            }`}
+            onClick={() => setClickBook(!clickBook)}
+          />
+        </section>
+      </section>
+
+      <TextBook clickBook={clickBook} />
+    </section>
+  );
+}
