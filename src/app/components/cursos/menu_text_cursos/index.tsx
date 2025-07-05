@@ -31,9 +31,6 @@ export default function MenuTextCursos({
 
   if (!aberto) return null; // nada a renderizar se fechado
 
-  /* 2️⃣ classes responsivas só com Tailwind:
-        md:w-full lg:w-[50%] ...            */
-
   return (
     <section
       id="info"
