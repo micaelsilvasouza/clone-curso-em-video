@@ -1,5 +1,4 @@
-//type Paragraph = string | Paragraph[]
-//const expurl = /https?:\/\/[^\s]+/g
+import Link from "next/link";
 
 export default function VideoDescription({
   description,
@@ -38,9 +37,17 @@ export default function VideoDescription({
 }
 
 function TextWithLinks({paragraph}: {paragraph:string}){
+  const exp = /(https?:\/\/[^\s]+)/g //regexp para urls
+  const separe = paragraph.split(exp) //separa as url dos textos normais
   return (
     <>
-      <span>{paragraph}</span>
+      {separe.map(item =>{
+        if(exp.test(item)){
+            return <Link href={item}>{item}</Link>
+        }else{
+            return <span>{item}</span>
+        }
+      }}
     </>
   )
 }
