@@ -37,10 +37,15 @@ export default function MenuTextCursos({
   return (
     <section
       id="info"
-      className="absolute left-0 z-10 bg-gray-900 rounded-e-lg 
-                 transition-all duration-1000 ease-in
-                 md:w-full lg:w-[90%] h-[20%]
-                 bg-[url('/image/womanStudying.svg')] bg-no-repeat bg-[210%_0%]"
+      className={`absolute left-0 z-10 bg-gray-900 rounded-e-lg
+        transition-all duration-1000 ease-in
+        md:w-full lg:w-[90%] h-[20%]
+        bg-[url('/image/womanStudying.svg')] bg-no-repeat bg-[210%_0%]
+        ${
+          aberto
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
     >
       <AnimacaoBook clickBook={aberto} />
       <section className="flex justify-end mt-10">
