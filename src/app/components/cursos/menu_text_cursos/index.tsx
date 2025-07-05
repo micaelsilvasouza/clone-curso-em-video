@@ -8,54 +8,45 @@ import X_fechar from "../X_fechar";
 import AnimacaoBook from "../animation/AnimacaoBook";
 import TextBook from "../TextBook";
 
-type PropMenuTextCursos = {
-  clickBook: boolean;
-  setClickBook: React.Dispatch<React.SetStateAction<boolean>>;
-  VideoDescription: cardAPI[];
-};
-
-type cardAPI = {
-  description: string;
-  image: string;
-  title: string;
+type MenuTextCursosProps = {
+  aberto: boolean;
+  fechar: () => void;
 };
 
 export default function MenuTextCursos({
-  clickBook,
-  setClickBook,
-  VideoDescription,
-}: PropMenuTextCursos) {
+  aberto,
+  fechar,
+}: MenuTextCursosProps) {
+  // 1️⃣ fecha ao clicar fora
   useEffect(() => {
-    const handleClick = (event: MouseEvent) => {
-      const elemento = document.getElementById("info");
+    if (!aberto) return; // só escuta se estiver aberto
 
-      if (clickBook && elemento && !elemento.contains(event.target as Node)) {
-        setClickBook(!clickBook);
-      }
-    };
-
+    function handleClick(event: MouseEvent) {
+      const el = document.getElementById("info");
+      if (el && !el.contains(event.target as Node)) fechar();
+    }
     document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, [aberto, fechar]);
 
-    return () => {
-      document.removeEventListener("click", handleClick);
-    };
-  }, [setClickBook, clickBook]);
+  if (!aberto) return null; // nada a renderizar se fechado
+
+  /* 2️⃣ classes responsivas só com Tailwind:
+        md:w-full lg:w-[50%] ...            */
 
   return (
     <section
       id="info"
-      className={`absolute left-0 z-10  w-5  bg-[210%_0%]  bg-no-repeat bg-gray-900 rounded-e-lg  transition-all ease-in duration-500 
-        ${
-          clickBook
-            ? "xl:w-6xl md:w-full max-md:w-full bg-[url('/image/womanStudying.svg')]"
-            : "w-5"
-        } ${window.innerWidth > 500 ? "h-[25%]" : ""}`}
+      className="absolute left-0 z-10 bg-gray-900 rounded-e-lg 
+                 transition-all duration-1000 ease-in
+                 md:w-full lg:w-[90%] h-[20%]
+                 bg-[url('/image/womanStudying.svg')] bg-no-repeat bg-[210%_0%]"
     >
-      <AnimacaoBook clickBook={clickBook} />
-      <section className="w-full flex justify-end mt-10">
-        <X_fechar setAtivo={setClickBook} clickBook={clickBook} />
+      <AnimacaoBook clickBook={aberto} />
+      <section className="flex justify-end mt-10">
+        <X_fechar fecharMenu={fechar} />
       </section>
-      <TextBook clickBook={clickBook} />
+      <TextBook clickBook={aberto} />
     </section>
   );
 }

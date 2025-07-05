@@ -1,11 +1,11 @@
-type cardAPI = {
-  description: string;
-  image: string;
-  title: string;
-};
+// type cardAPI = {
+//   description: string;
+//   image: string;
+//   title: string;
+// };
 
 type cardProps = {
-  cardAPI: cardAPI[];
+  // cardAPI: cardAPI[];
   clickBook: boolean;
 };
 

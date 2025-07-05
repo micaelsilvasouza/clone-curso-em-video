@@ -21,7 +21,8 @@ type cardProps = {
 };
 
 export default function Cards({ cardAPI }: cardProps) {
-  const [clickBook, setClickBook] = useState(false);
+  // guarda o índice do card aberto (ou null se nenhum)
+  const [indiceAberto, setIndiceAberto] = useState<number | null>(null);
 
   // pega só o trecho antes do primeiro hífen
   const getTitle = (line: string): string => {
@@ -34,13 +35,14 @@ export default function Cards({ cardAPI }: cardProps) {
       <div className="absolute md:-left-[55px] max-md:-left-3 top-25 w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow"></div>
 
       {/* mapeando array de cursos */}
-      {cardAPI.map((card, index: number) => (
-        <div key={index}>
-          <MenuTextCursos
-            clickBook={clickBook}
-            setClickBook={setClickBook}
-            VideoDescription={cardAPI}
-          />
+      {cardAPI.map((card, indexCard: number) => (
+        <div key={indexCard}>
+          {indiceAberto === indexCard && (
+            <MenuTextCursos
+              aberto={indiceAberto === indexCard}
+              fechar={() => setIndiceAberto(null)}
+            />
+          )}
           {/* cardAPI */}
           <article className="cardAPICurso bg-gray-800 text-white mx-2 flex  gap-5 my-3 rounded-xl max-md:pb-10 max-md:flex-col">
             {/* Imagem */}
@@ -67,9 +69,13 @@ export default function Cards({ cardAPI }: cardProps) {
                 <GiBookCover
                   size={30}
                   className={`text-blue-500 cursor-pointer ${
-                    clickBook ? "hidden" : "visited"
+                    indiceAberto === indexCard ? "hidden" : "visited"
                   }`}
-                  onClick={() => setClickBook(!clickBook)}
+                  onClick={() =>
+                    setIndiceAberto(
+                      indiceAberto === indexCard ? null : indexCard
+                    )
+                  }
                 />
               </section>
             </section>
