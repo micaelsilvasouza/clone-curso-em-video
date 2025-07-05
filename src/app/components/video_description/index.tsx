@@ -42,9 +42,7 @@ function TextWithLinks({paragraph}: {paragraph:string}){
   console.log(separe)
   return (
     <div>
-      {separe.map((item: string, key={index}) => {
-        return <span key={index}>{item}<span/>
-      }}
+      {separe}
     </div>
   )
 }
