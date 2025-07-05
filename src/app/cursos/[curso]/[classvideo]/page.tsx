@@ -6,6 +6,7 @@ import Navbar from "@/app/components/layout/navbar";
 import AnimacaoCards from "@/app/components/cursos/animation/AnimacaoCards";
 import Cards from "@/app/components/cursos/Cards";
 import H1Custon from "@/app/components/cursos/h1Custon";
+import VideoDescription from "@/app/components/video_description";
 
 export const revalidate = 60; //revalidar os dados a cada 60 segundos
 
@@ -70,11 +71,13 @@ export default async function ClassVideo({
           </div>
         </div>
       </section>
+      <div>
+        <H1Custon title={course.title} />
+      </div>
+      <section className="flex items-center justify-center">
+        <VideoDescription description={video.description} />
+      </section>
       <article className="flex flex-col mt-10">
-        <div>
-          <H1Custon title={course.title} />
-        </div>
-
         <section className="flex w-full  overflow-hidden relative">
           <div className="max-w-[1200px] mx-auto relative">
             {/* Timeline do curso ou Linha tempo*/}
