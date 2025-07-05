@@ -38,10 +38,10 @@ export default function VideoDescription({
 
 function TextWithLinks({paragraph}: {paragraph:string}){
   const exp = /(https?:\/\/[^\s]+)/g //regexp para urls
-  const separe = paragraph.split(exp) //separa as url dos textos normais
+  const separe = paragraph.split(" ") //separa as url dos textos normais
   return (
     <>
-      {separe.map(item =>{
+      {separe.map((item: string) => {
         if(exp.test(item)){
             return <Link href={item}>{item}</Link>
         }else{
