@@ -41,11 +41,11 @@ function TextWithLinks({paragraph}: {paragraph:string}){
   const separe = paragraph.split(" ") //separa as url dos textos normais
   console.log(separe)
   return (
-    <>
+    <div>
       {separe.map((item: string, key={index}) => {
         return <span key={index}>{item}<span/>
       }}
-    </>
+    </div>
   )
 }
 
