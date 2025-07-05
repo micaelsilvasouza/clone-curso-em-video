@@ -1,4 +1,15 @@
-export default function TextBook({ clickBook }: { clickBook: boolean }) {
+// type cardAPI = {
+//   description: string;
+//   image: string;
+//   title: string;
+// };
+
+type cardProps = {
+  // cardAPI: cardAPI[];
+  clickBook: boolean;
+};
+
+export default function TextBook({ clickBook }: cardProps) {
   return (
     <section
       className={`animationText items-center justify-center flex-col gap-5 text-gray-300 text-base w-5/6 absolute rounded-2xl top-40 left-0 md:mx-10 max-md:mx-5 
