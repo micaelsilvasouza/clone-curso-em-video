@@ -39,15 +39,18 @@ export default function VideoDescription({
 function TextWithLinks({paragraph}: {paragraph:string}){
   const exp = /(https?:\/\/[^\s]+)/g //regexp para urls
   const separe = paragraph.split(" ") //separa as url dos textos normais
+  console.log(separe)
   return (
     <>
-      {separe.map((item: string) => {
-        if(exp.test(item)){
-            return <Link href={item}>{item}</Link>
-        }else{
-            return <span>{item}</span>
-        }
+      {separe.map((item: string, key={index}) => {
+        return <span key={index}>{item}<span/>
       }}
     </>
   )
 }
+
+/*if(exp.test(item)){
+    return <Link href={item}>{item}</Link>
+}else{
+    return <span>{item}</span>
+}*/
