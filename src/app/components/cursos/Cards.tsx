@@ -60,8 +60,8 @@ export default function Cards({ cardAPI }: cardProps) {
             <div className="flex flex-1 flex-col items-center max-md:pl-5 justify-center">
               <h2 className="text-xl my-5 w-full">{getTitle(card.title)}</h2>
 
-              <div className="w-full text-gray-300 text-sm max-sm:line-clamp-3 line-clamp-3">
-                <VideoDescription description={card.description.slice(0,200)} />
+              <div className="w-full text-gray-300 text-sm">
+                <VideoDescription description={card.description.slice(0,200)+"..."} />
               </div>
             </div>
             <section className="w-30 h-50 flex justify-center items-center">
