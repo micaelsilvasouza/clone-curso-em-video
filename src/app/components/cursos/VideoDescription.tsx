@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 export default function VideoDescription({
@@ -39,6 +40,7 @@ export default function VideoDescription({
 function TextWithLinks({paragraph}: {paragraph:string}){
   const exp = /(https?:\/\/[^\s]+)/g //regexp para urls
   const separe = paragraph.split(exp) //separa as url dos textos normais
+
   return (
     <>
       {separe.map((item, index)=>{

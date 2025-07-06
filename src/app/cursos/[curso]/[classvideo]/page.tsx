@@ -1,11 +1,13 @@
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
-import IframeVideo from "@/app/components/iframe_video";
-// Importação dos componentes
-import Navbar from "@/app/components/layout/navbar";
-import AnimacaoCards from "@/app/components/cursos/animation/AnimacaoCards";
-import Cards from "@/app/components/cursos/Cards";
+import IframeVideo from "@/app/components/cursos/IframeVideo";
+import NavbarCursos from "@/app/components/cursos/NavbarCursos";
+import ButtonAula from "@/app/components/cursos/ButtonAula";
+import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
 import H1Custon from "@/app/components/cursos/h1Custon";
+
+import { FiBook } from "react-icons/fi";
+import VideoDescription from "@/app/components/cursos/VideoDescription";
 
 export const revalidate = 60; //revalidar os dados a cada 60 segundos
 
@@ -16,76 +18,85 @@ export default async function ClassVideo({
 }) {
   const { classvideo, curso } = await params;
 
-  const datavideo = await fetch(
-    //buscando video
-    `https://backend-cursoemvideo.onrender.com/video/${classvideo}`
-  );
+  let video, videos;
 
-  const datavideos = await fetch(
-    //buscando videos do curso
-    `https://backend-cursoemvideo.onrender.com/videos/${curso}`
-  );
+  try {
+    const resVideo = await fetch(
+      `https://backend-cursoemvideo.onrender.com/video/${classvideo}`
+    );
+    const resVideos = await fetch(
+      `https://backend-cursoemvideo.onrender.com/videos/${curso}`
+    );
+    const resCurso = await fetch(
+      `https://backend-cursoemvideo.onrender.com/course/${curso}`
+    );
 
-  const datacurso = await fetch(
-    //buscando curso
-    `https://backend-cursoemvideo.onrender.com/course/${curso}`
-  );
+    if (!resVideo.ok || !resVideos.ok || !resCurso.ok) {
+      redirect("/error/fetch-error");
+    }
 
-  if (
-    datavideo.status != 200 ||
-    datavideos.status != 200 ||
-    datacurso.status != 200
-  ) {
+    video = await resVideo.json();
+    videos = await resVideos.json();
+
+    if (!video || !video.video) {
+      redirect("/error/video-not-found");
+    }
+  } catch (error) {
+    console.error("Erro ao buscar dados:", error);
     redirect("/error/fetch-error");
-    return;
   }
 
-  const videos = await datavideos.json(); //videos do curso
-
-  const video = await datavideo.json(); //video
-
-  const course = await datacurso.json(); //video
-
-  if (
-    videos == undefined ||
-    videos == null ||
-    videos.length == 0 ||
-    video == null ||
-    video == undefined ||
-    curso == undefined ||
-    curso == null
-  ) {
-    notFound();
-  }
+  console.log("video aqui", video.title);
+  console.log("videos aqui", videos);
 
   return (
     <main className="relative overflow-x-hidden">
-      <Navbar logo="logoBlue.png" styleNavbar="mx-5  md:py-10" />
-      {/* Área do vídeo do Curso */}
-      <AnimacaoCards />
-      <section className="flex justify-center">
-        <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
-          <div className="aspect-video w-full max-w-[1000px] my-5 mx-auto shadow-lg">
-            <IframeVideo src={video.video} />
+      {/* Navbar dos cursos */}
+      <NavbarCursos curso={curso} videos={videos} video={video} />
+      <section className="relative">
+        <MenuClassVideos
+          courseslug={videos.slug}
+          coursetitle={videos.title}
+          videos={videos}
+          type="horizontal"
+        />
+        <section>
+          <H1Custon title={video.title} />
+        </section>
+        {/* Área do vídeo do Curso */}
+        <section className="flex justify-center">
+          <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
+            <div className="aspect-video w-full max-w-[1000px] my-5 mx-auto shadow-lg">
+              <IframeVideo src={video.video} />
+            </div>
           </div>
+        </section>
+      </section>
+      <section className="flex gap-5">
+        <ButtonAula
+          text="Aula anterior"
+          iconeLeft={"ativa"}
+          curso={curso}
+          video={video}
+          videos={videos}
+        />
+        <ButtonAula
+          text="Clique aqui para marca como concluído"
+          iconeRight={"ativa"}
+          curso={curso}
+          videos={videos}
+          video={video}
+        />
+      </section>
+      <section>
+        <div>
+          <FiBook />
+          <h2>Material de apoio</h2>
+        </div>
+        <div>
+          <VideoDescription description={video.description} withLinks={true} />
         </div>
       </section>
-      <article className="flex flex-col mt-10">
-        <div>
-          <H1Custon title={course.title} />
-        </div>
-
-        <section className="flex w-full  overflow-hidden relative">
-          <div className="max-w-[1200px] mx-auto relative">
-            {/* Timeline do curso ou Linha tempo*/}
-            <div className="timeLine absolute md:left-20 max-md:left-8 top-0 bottom-0 w-0.5 bg-gray-950 mt-30"></div>
-          </div>
-          {/* Cards das aulas restantes */}
-          <section className="md:ml-32 max-md:ml-10">
-            <Cards cardAPI={videos} />
-          </section>
-        </section>
-      </article>
     </main>
   );
 }

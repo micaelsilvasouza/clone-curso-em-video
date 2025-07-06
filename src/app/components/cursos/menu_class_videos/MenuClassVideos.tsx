@@ -95,7 +95,6 @@ export default function MenuClassVideos({
       <section
         className={`
               absolute
-              md:relative
               duration-800
               min-h-[100dvh]
               ${isopening ? "w-[90dvw] md:w-[50dvw]" : "w-0"}
