@@ -3,28 +3,17 @@ import { Asap } from "next/font/google";
 const asap = Asap({ subsets: ["latin"], weight: ["600"] });
 
 export default function H1Custon({ title }: { title: string }) {
-  const partes: string[] = [];
-
-  // 1. Pegar primeira parte - (Segurança da informação)
-  const matchTitulo = title.match(/^(.*?):/);
-  if (matchTitulo) {
-    partes.push(matchTitulo[0]); // já inclui os dois pontos
-    title = title.replace(matchTitulo[0], "").trim(); // Vai limpar Segurança da informação de title
-    partes.push(title);
-  }
+  const exp =
+    /-\s+@cursoemvideo|@cursoemvideo|-\s+curso em vídeo|-\s+Curso de Algoritmos/i;
+  const match = exp.exec(title); //executa busca | null caso não encontre
+  const index = match ? match.index : -1; //indice de começo do padrão | -1 caso não possua
+  const newtitle = index == -1 ? title : title.slice(0, index).trim(); //novo testo depois da filtragem
 
   return (
     <h1
-      className={`md:text-3xl max-md:text-2xl text-gray-900/80  text-center pb-10 mx-10`}
+      className={`md:text-3xl max-md:text-2xl text-gray-900/80 z-20  text-center pb-10 mx-10 ${asap.className}`}
     >
-      {partes.map((partes, index: number) => (
-        <span
-          key={index}
-          className={`${asap.className} ${index === 0 ? "text-blue-500" : ""}`}
-        >
-          {partes}{" "}
-        </span>
-      ))}
+      {newtitle}
     </h1>
   );
 }
