@@ -1,6 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import BannerCourse from "@/app/components/banner_course";
-import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos";
+import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
 
 export default async function Page({
   params,
@@ -10,15 +10,15 @@ export default async function Page({
   //buscando dados do curso
   const { curso } = await params;
   let data = await fetch(
-      `https://backend-cursoemvideo.onrender.com/course/${curso}`
+    `https://backend-cursoemvideo.onrender.com/course/${curso}`
   );
 
   //Validando busca
-  if(data.status != 200){
-      redirect("/error/fetch-error")
-      return
+  if (data.status != 200) {
+    redirect("/error/fetch-error");
+    return;
   }
-  
+
   const course = await data.json();
 
   //verificando se o curso está cadastrado
@@ -32,12 +32,12 @@ export default async function Page({
   );
 
   //Validando busca
-  if(data.status != 200){
-      redirect("/error/fetch-error")
-      return
+  if (data.status != 200) {
+    redirect("/error/fetch-error");
+    return;
   }
-  
-  const videos = await data.json()
+
+  const videos = await data.json();
 
   //ordenando os videos de acordo com a propriedade order
   videos.sort((a: { order: number }, b: { order: number }) => {
@@ -64,11 +64,11 @@ export default async function Page({
           {course.description}
         </p>
       </section>
-      <MenuClassVideos 
-        type="vertical" 
-        videos={videos} 
-        courseslug={course.slug} 
-        coursetitle={course.title} 
+      <MenuClassVideos
+        type="vertical"
+        videos={videos}
+        courseslug={course.slug}
+        coursetitle={course.title}
       />
     </main>
   );

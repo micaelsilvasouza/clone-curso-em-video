@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 
-import IframeVideo from "@/app/components/iframe_video";
-import MenuClassVideos from "@/app/components/menu_class_videos/MenuClassVideos";
+import IframeVideo from "@/app/components/cursos/IframeVideo";
+import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
 import Navbar from "@/app/components/layout/navbar";
 import Link from "next/link";
 

@@ -1,12 +1,8 @@
 import { notFound, redirect } from "next/navigation";
 
-import IframeVideo from "@/app/components/iframe_video";
+import IframeVideo from "@/app/components/cursos/IframeVideo";
 // Importação dos componentes
-import Navbar from "@/app/components/layout/navbar";
 import AnimacaoCards from "@/app/components/cursos/animation/AnimacaoCards";
-import Cards from "@/app/components/cursos/Cards";
-import H1Custon from "@/app/components/cursos/h1Custon";
-import VideoDescription from "@/app/components/video_description";
 
 export const revalidate = 60; //revalidar os dados a cada 60 segundos
 
@@ -61,7 +57,6 @@ export default async function ClassVideo({
 
   return (
     <main className="relative overflow-x-hidden">
-      <Navbar logo="logoBlue.png" styleNavbar="mx-5  md:py-10" />
       {/* Área do vídeo do Curso */}
       <AnimacaoCards />
       <section className="flex justify-center">
@@ -71,24 +66,6 @@ export default async function ClassVideo({
           </div>
         </div>
       </section>
-      <div>
-        <H1Custon title={course.title} />
-      </div>
-      <section className="flex items-center justify-center">
-        <VideoDescription description={video.description} />
-      </section>
-      <article className="flex flex-col mt-10">
-        <section className="flex w-full  overflow-hidden relative">
-          <div className="max-w-[1200px] mx-auto relative">
-            {/* Timeline do curso ou Linha tempo*/}
-            <div className="timeLine absolute md:left-20 max-md:left-8 top-0 bottom-0 w-0.5 bg-gray-950 mt-30"></div>
-          </div>
-          {/* Cards das aulas restantes */}
-          <section className="md:ml-32 max-md:ml-10">
-            <Cards cardAPI={videos} />
-          </section>
-        </section>
-      </article>
     </main>
   );
 }
