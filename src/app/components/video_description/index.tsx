@@ -1,5 +1,7 @@
 //import Link from "next/link";
 
+import Link from "next/link";
+
 export default function VideoDescription({
   description,
   withLinks = false
@@ -39,11 +41,16 @@ export default function VideoDescription({
 function TextWithLinks({paragraph}: {paragraph:string}){
   const exp = /(https?:\/\/[^\s]+)/g //regexp para urls
   const separe = paragraph.split(exp) //separa as url dos textos normais
-  console.log(separe)
   return (
-    <div>
-      {separe}
-    </div>
+    <>
+      {separe.map((item, index)=>{
+        if(exp.test(item)){
+          return <Link key={index} href={item} target="_blank">{item}</Link>
+        }else{
+          return item
+        }
+      })}
+    </>
   )
 }
 
