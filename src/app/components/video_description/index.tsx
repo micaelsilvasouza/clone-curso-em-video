@@ -1,5 +1,3 @@
-//import Link from "next/link";
-
 import Link from "next/link";
 
 export default function VideoDescription({
@@ -25,7 +23,7 @@ export default function VideoDescription({
       </div>
     );
   }else{
-    return ( //retorna com os links normais
+    return ( //retorna sem os links normais
       <div>
         {split.map((paragraph: string, index) => (
           <p key={index} className="p-2">
@@ -45,7 +43,14 @@ function TextWithLinks({paragraph}: {paragraph:string}){
     <>
       {separe.map((item, index)=>{
         if(exp.test(item)){
-          return <Link key={index} href={item} target="_blank">{item}</Link>
+          return <Link 
+                    className="text-blue-600 hover:underline"
+                    key={index} 
+                    href={item} 
+                    target="_blank"
+                  >
+                    {item}
+                  </Link>
         }else{
           return item
         }
@@ -53,9 +58,3 @@ function TextWithLinks({paragraph}: {paragraph:string}){
     </>
   )
 }
-
-/*if(exp.test(item)){
-    return <Link href={item}>{item}</Link>
-}else{
-    return <span>{item}</span>
-}*/

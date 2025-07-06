@@ -61,7 +61,7 @@ export default function Cards({ cardAPI }: cardProps) {
               <h2 className="text-xl my-5 w-full">{getTitle(card.title)}</h2>
 
               <div className="w-full text-gray-300 text-sm">
-                <VideoDescription description={card.description.slice(0,200)+"..."} withLinks={true}/>
+                <VideoDescription description={card.description.slice(0,200)+"..."} withLinks={false}/>
               </div>
             </div>
             <section className="w-30 h-50 flex justify-center items-center">
