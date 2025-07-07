@@ -62,7 +62,7 @@ export default async function ClassVideo({
         />
         {/* Área do vídeo do Curso */}
         <section className="flex flex-col justify-center">
-          <div className="bg-red-500 w-full mx-auto">
+          <div className=" w-full mx-auto">
             <H1Custon title={video.title} />
           </div>
           <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-1">

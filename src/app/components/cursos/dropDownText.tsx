@@ -40,8 +40,8 @@ export function DropDownText({ video }: DropDownTextProp) {
       <div
         id="container"
         className={`${
-          handleDropdown ? "h-dvh overflow-auto" : "line-clamp-5"
-        } h-55 overflow-hidden leading-8  transition-all ease-in`}
+          handleDropdown ? "overflow-auto" : "line-clamp-5 h-55 "
+        }  overflow-hidden leading-8  `}
       >
         <VideoDescription description={video.description} withLinks={true} />
       </div>
