@@ -29,23 +29,27 @@ export default function NavbarCursos({
     return <div>Carregando informações do curso...</div>;
   }
   return (
-    <header className="flex items-center justify-around">
+    <header className="flex items-center justify-around pb-5">
       <Img_custon img="logoBlue.png" alt="Logo do Curso em Vídeo" width={150} />
       <nav>
         <section className="flex gap-5">
           <ButtonAula
             text="Aula anterior"
-            iconeLeft={"ativa"}
+            btnPrev={"ativa"}
             curso={curso}
             video={video}
             videos={videos}
+            styleButton="bg-transparent text-blue-1010 py-2 px-5 text-sm cursor-pointer"
+            styleIcone="text-blue-1010"
           />
           <ButtonAula
             text="Clique aqui para marca como concluído"
-            iconeRight={"ativa"}
+            btnCheckout={"ativa"}
             curso={curso}
             videos={videos}
             video={video}
+            styleButton="bg-transparent text-blue-1010 py-2 px-5 text-sm cursor-pointer"
+            styleIcone="text-blue-1010"
           />
         </section>
       </nav>
