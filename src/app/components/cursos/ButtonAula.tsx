@@ -91,15 +91,12 @@ export default function ButtonAula({
           href={preveiw}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
+          className={`flex items-center justify-center gap-3 border border-blue-1010  rounded-sm  ${styleButton} `}
         >
-          <button
-            className={`flex items-center justify-center gap-3 border border-blue-1010  rounded-sm ${styleButton} `}
-          >
-            <span ref={iconeOne}>
-              <IoIosArrowBack className={`${styleIcone} size-6 `} />
-            </span>
-            {text}
-          </button>
+          <span ref={iconeOne}>
+            <IoIosArrowBack className={`${styleIcone} size-6 `} />
+          </span>
+          {text}
         </Link>
       )}
       {btnPlaylist === "ativa" && (
@@ -107,15 +104,12 @@ export default function ButtonAula({
           href={`/cursos/${curso}`}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
+          className={`flex items-center justify-center gap-3 border border-blue-1010  rounded-sm ${styleButton}`}
         >
-          <button
-            className={`flex items-center justify-center gap-3 border border-blue-1010  rounded-sm ${styleButton}`}
-          >
-            <span ref={iconeOne}>
-              <FiBook className={`${styleIcone} size-6`} />
-            </span>
-            {text}
-          </button>
+          <span ref={iconeOne}>
+            <FiBook className={`${styleIcone} size-6`} />
+          </span>
+          {text}
         </Link>
       )}
       {btnCheckout === "ativa" && (
@@ -123,15 +117,12 @@ export default function ButtonAula({
           href={next}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
+          className={`flex items-center justify-center gap-3 border border-blue-1010  rounded-sm ${styleButton}`}
         >
-          <button
-            className={`flex items-center justify-center gap-3 border border-blue-1010  rounded-sm ${styleButton}`}
-          >
-            {text}
-            <span ref={iconeTwo}>
-              <FaCheck className={`${styleIcone} size-6`} />
-            </span>
-          </button>
+          {text}
+          <span ref={iconeTwo}>
+            <FaCheck className={`${styleIcone} size-6`} />
+          </span>
         </Link>
       )}
     </>

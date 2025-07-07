@@ -5,9 +5,12 @@ import NavbarCursos from "@/app/components/cursos/NavbarCursos";
 import ButtonAula from "@/app/components/cursos/ButtonAula";
 import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
 import H1Custon from "@/app/components/cursos/h1Custon";
+import VideoDescription from "@/app/components/cursos/VideoDescription";
+
+import gsap from "gsap";
 
 import { FiBook } from "react-icons/fi";
-import VideoDescription from "@/app/components/cursos/VideoDescription";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 export const revalidate = 60; //revalidar os dados a cada 60 segundos
 
@@ -72,14 +75,14 @@ export default async function ClassVideo({
           </div>
         </section>
       </section>
-      <section className="flex items-center justify-cente gap-5">
+      <section className="w-full justify-center items-center justify-cente flex max-md:flex-col-reverse gap-5">
         <ButtonAula
           text="Aula anterior"
           btnPrev={"ativa"}
           curso={curso}
           video={video}
           videos={videos}
-          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer"
+          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
           styleIcone="text-white"
         />
         <ButtonAula
@@ -88,7 +91,7 @@ export default async function ClassVideo({
           curso={curso}
           video={video}
           videos={videos}
-          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer"
+          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
           styleIcone="text-white"
         />
         <ButtonAula
@@ -97,7 +100,7 @@ export default async function ClassVideo({
           curso={curso}
           videos={videos}
           video={video}
-          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer"
+          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
           styleIcone="text-white"
         />
       </section>
@@ -109,6 +112,12 @@ export default async function ClassVideo({
         </div>
         <div>
           <VideoDescription description={video.description} withLinks={true} />
+          <section className="cursor-pointer" onClick={}>
+            <RiArrowDownSLine
+              size={30}
+              className=" flex justify-end w-full animate-bounce"
+            />
+          </section>
         </div>
       </section>
       <Aviso />
