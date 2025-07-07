@@ -50,7 +50,7 @@ export default async function ClassVideo({
   console.log("videos aqui", videos);
 
   return (
-    <main className="relative overflow-x-hidden">
+    <main className="relative overflow-x-hidden pl-10 pr-5 py-5">
       {/* Navbar dos cursos */}
       <NavbarCursos curso={curso} videos={videos} video={video} />
       <section className="relative">
@@ -60,11 +60,11 @@ export default async function ClassVideo({
           videos={videos}
           type="horizontal"
         />
-        <section>
-          <H1Custon title={video.title} />
-        </section>
         {/* Área do vídeo do Curso */}
-        <section className="flex justify-center">
+        <section className="flex flex-col justify-center">
+          <div className="bg-red-500 w-full mx-auto">
+            <H1Custon title={video.title} />
+          </div>
           <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
             <div className="aspect-video w-full max-w-[1000px] my-5 mx-auto shadow-lg">
               <IframeVideo src={video.video} />
@@ -72,31 +72,79 @@ export default async function ClassVideo({
           </div>
         </section>
       </section>
-      <section className="flex gap-5">
+      <section className="flex items-center justify-cente gap-5">
         <ButtonAula
           text="Aula anterior"
-          iconeLeft={"ativa"}
+          btnPrev={"ativa"}
           curso={curso}
           video={video}
           videos={videos}
+          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer"
+          styleIcone="text-white"
+        />
+        <ButtonAula
+          text="Voltar para o módulo"
+          btnPlaylist={"ativa"}
+          curso={curso}
+          video={video}
+          videos={videos}
+          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer"
+          styleIcone="text-white"
         />
         <ButtonAula
           text="Clique aqui para marca como concluído"
-          iconeRight={"ativa"}
+          btnCheckout={"ativa"}
           curso={curso}
           videos={videos}
           video={video}
+          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer"
+          styleIcone="text-white"
         />
       </section>
-      <section>
-        <div>
-          <FiBook />
-          <h2>Material de apoio</h2>
+      {/* Área Material de Apoio */}
+      <section className="border border-blue-500 py-5 px-10  my-10 rounded-3xl lg:max-w-7xl md:max-w-5xl mx-auto ">
+        <div className="flex items-center gap-2 py-5">
+          <FiBook size={30} className="text-blue-500" />
+          <h2 className="text-2xl font-medium">Material de Apoio</h2>
         </div>
         <div>
           <VideoDescription description={video.description} withLinks={true} />
         </div>
       </section>
+      <Aviso />
     </main>
+  );
+}
+
+function Aviso() {
+  return (
+    <section className="flex flex-col gap-5 max-w-4xl mx-auto">
+      <p>
+        <span className="text-red-500 font-bold">ATENÇÃO:</span> O botão de
+        concluir aula só fica clicável depois que toda a aula é assistida Para
+        avançar no andamento dos cursos você precisa sempre:
+      </p>
+      <p>
+        <strong className="font-semibold">
+          1&#41; Ver o vídeo até o final
+        </strong>
+      </p>
+      <p>
+        2&#41; Clicar no botão de &quot;
+        <span className="font-semibold">
+          CLIQUE AQUI PARA MARCAR COMO CONCLUÍDO
+        </span>
+        &quot; das aulas, capitulos, módulos e cursos após ver o vídeo ou antes
+        de
+        <span className="font-semibold">avançar</span> para{" "}
+        <span className="font-semibold">aula seguinte</span>. Assistindo ao
+        vídeo até o final e{" "}
+        <span className="font-semibold">clicando no botão de concluído</span>{" "}
+        ele{" "}
+        <span className="font-semibold">
+          deve conseguir avançar sem problemas.
+        </span>
+      </p>
+    </section>
   );
 }

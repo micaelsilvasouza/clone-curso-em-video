@@ -1,13 +1,14 @@
 "use client";
 
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import Link from "next/link";
 
 import { IoIosArrowBack } from "react-icons/io";
 import { FaCheck } from "react-icons/fa6";
 import { notFound } from "next/navigation";
+
+import { FiBook } from "react-icons/fi";
 
 type VideosApiProp = {
   slug: string;
@@ -24,28 +25,28 @@ type VideoApiProp = {
 type ButtonAulaProp = {
   text: string;
   curso: string;
+  styleIcone?: string;
+  styleButton?: string;
   video: VideoApiProp;
   videos: VideosApiProp[];
-  iconeLeft?: "ativa";
-  iconeRight?: "ativa";
+  btnPrev?: "ativa";
+  btnPlaylist?: "ativa";
+  btnCheckout?: "ativa";
 };
 
 export default function ButtonAula({
   text,
-  iconeLeft,
-  iconeRight,
+  btnPrev,
+  btnCheckout,
   video,
   videos,
   curso,
+  styleButton,
+  styleIcone,
+  btnPlaylist,
 }: ButtonAulaProp) {
   const iconeOne = useRef<HTMLSpanElement>(null);
   const iconeTwo = useRef<HTMLSpanElement>(null);
-
-  useGSAP(() => {
-    gsap.to(iconeOne.current, {
-      x: 100,
-    });
-  }, []);
 
   if (
     videos == undefined ||
@@ -68,24 +69,67 @@ export default function ButtonAula({
 
   const next = `/cursos/${curso}/${videos.at(videoindex + 1)?.slug}`;
 
+  const handlePointerDown = (e: React.PointerEvent) => {
+    gsap.to(e.currentTarget, {
+      scale: 0.97,
+      duration: 0.15,
+      ease: "power1.out",
+    });
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    gsap.to(e.currentTarget, {
+      scale: 1,
+      duration: 0.25,
+      ease: "power2.out",
+    });
+  };
   return (
     <>
-      {iconeLeft === "ativa" && (
-        <Link href={preveiw}>
-          <button className="flex items-center justify-center gap-3 border border-blue-1010  px-5 rounded-sm">
+      {btnPrev === "ativa" && (
+        <Link
+          href={preveiw}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+        >
+          <button
+            className={`flex items-center justify-center gap-3 border border-blue-1010  rounded-sm ${styleButton} `}
+          >
             <span ref={iconeOne}>
-              <IoIosArrowBack className="text-blue-1010" />
+              <IoIosArrowBack className={`${styleIcone} size-6 `} />
             </span>
             {text}
           </button>
         </Link>
       )}
-      {iconeRight === "ativa" && (
-        <Link href={next}>
-          <button className="flex items-center justify-center gap-3 border border-blue-1010  px-5 rounded-sm w-70 ">
+      {btnPlaylist === "ativa" && (
+        <Link
+          href={`/cursos/${curso}`}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+        >
+          <button
+            className={`flex items-center justify-center gap-3 border border-blue-1010  rounded-sm ${styleButton}`}
+          >
+            <span ref={iconeOne}>
+              <FiBook className={`${styleIcone} size-6`} />
+            </span>
+            {text}
+          </button>
+        </Link>
+      )}
+      {btnCheckout === "ativa" && (
+        <Link
+          href={next}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+        >
+          <button
+            className={`flex items-center justify-center gap-3 border border-blue-1010  rounded-sm ${styleButton}`}
+          >
             {text}
             <span ref={iconeTwo}>
-              <FaCheck className="text-blue-1010" />
+              <FaCheck className={`${styleIcone} size-6`} />
             </span>
           </button>
         </Link>

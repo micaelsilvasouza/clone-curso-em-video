@@ -11,7 +11,7 @@ export default function H1Custon({ title }: { title: string }) {
 
   return (
     <h1
-      className={`md:text-3xl max-md:text-2xl text-gray-900/80 z-20  text-center pb-10 mx-10 ${asap.className}`}
+      className={`md:text-3xl max-md:text-2xl text-gray-900/80 z-20  pb-10 mx-10 ${asap.className}`}
     >
       {newtitle}
     </h1>
