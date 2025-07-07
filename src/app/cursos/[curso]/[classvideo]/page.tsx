@@ -5,12 +5,9 @@ import NavbarCursos from "@/app/components/cursos/NavbarCursos";
 import ButtonAula from "@/app/components/cursos/ButtonAula";
 import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
 import H1Custon from "@/app/components/cursos/h1Custon";
-import VideoDescription from "@/app/components/cursos/VideoDescription";
-
-import gsap from "gsap";
+import { DropDownText } from "@/app/components/cursos/dropDownText";
 
 import { FiBook } from "react-icons/fi";
-import { RiArrowDownSLine } from "react-icons/ri";
 
 export const revalidate = 60; //revalidar os dados a cada 60 segundos
 
@@ -110,15 +107,8 @@ export default async function ClassVideo({
           <FiBook size={30} className="text-blue-500" />
           <h2 className="text-2xl font-medium">Material de Apoio</h2>
         </div>
-        <div>
-          <VideoDescription description={video.description} withLinks={true} />
-          <section className="cursor-pointer" onClick={}>
-            <RiArrowDownSLine
-              size={30}
-              className=" flex justify-end w-full animate-bounce"
-            />
-          </section>
-        </div>
+        {/* Dropdown */}
+        <DropDownText video={video} />
       </section>
       <Aviso />
     </main>
