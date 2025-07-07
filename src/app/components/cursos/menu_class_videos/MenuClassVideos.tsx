@@ -97,7 +97,7 @@ export default function MenuClassVideos({
               absolute
               duration-800
               min-h-[100dvh]
-              ${isopening ? "w-[90dvw] md:w-[50dvw]" : "w-0"}
+              ${isopening ? "w-[90dvw] md:w-[50dvw]" : "w-10"}
             `}
       >
         <section

@@ -50,7 +50,7 @@ export default async function ClassVideo({
   console.log("videos aqui", videos);
 
   return (
-    <main className="relative overflow-x-hidden pl-10 pr-5 py-5">
+    <main className="relative overflow-x-hidden py-5">
       {/* Navbar dos cursos */}
       <NavbarCursos curso={curso} videos={videos} video={video} />
       <section className="relative">
@@ -60,57 +60,59 @@ export default async function ClassVideo({
           videos={videos}
           type="horizontal"
         />
-        {/* Área do vídeo do Curso */}
-        <section className="flex flex-col justify-center">
-          <div className=" w-full mx-auto">
-            <H1Custon title={video.title} />
-          </div>
-          <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
-            <div className="aspect-video w-full max-w-[1000px] my-5 mx-auto shadow-lg">
-              <IframeVideo src={video.video} />
+        <article className="p-5">
+          {/* Área do vídeo do Curso */}
+          <section className="flex flex-col justify-center">
+            <div className=" w-full mx-auto">
+              <H1Custon title={video.title} />
             </div>
-          </div>
-        </section>
+            <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
+              <div className="aspect-video w-full max-w-[1000px] my-5 mx-auto shadow-lg">
+                <IframeVideo src={video.video} />
+              </div>
+            </div>
+          </section>
+          <section className="w-full justify-center items-center justify-cente flex max-md:flex-col-reverse gap-5">
+            <ButtonAula
+              text="Aula anterior"
+              btnPrev={"ativa"}
+              curso={curso}
+              video={video}
+              videos={videos}
+              styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
+              styleIcone="text-white"
+            />
+            <ButtonAula
+              text="Voltar para o módulo"
+              btnPlaylist={"ativa"}
+              curso={curso}
+              video={video}
+              videos={videos}
+              styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
+              styleIcone="text-white"
+            />
+            <ButtonAula
+              text="Clique aqui para marca como concluído"
+              btnCheckout={"ativa"}
+              curso={curso}
+              videos={videos}
+              video={video}
+              styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
+              styleIcone="text-white"
+            />
+          </section>
+          {/* Área Material de Apoio */}
+          <section className="border border-blue-500 shadow-lg py-5 px-10  my-10 rounded-3xl lg:max-w-7xl md:max-w-5xl mx-auto ">
+            <div className="flex items-center gap-2 py-5">
+              <FiBook size={30} className="text-blue-500" />
+              <h2 className="text-2xl font-medium">Material de Apoio</h2>
+            </div>
+            {/* Dropdown */}
+            <DropDownText video={video} />
+          </section>
+          <Aviso />
+        </article>
       </section>
-      <section className="w-full justify-center items-center justify-cente flex max-md:flex-col-reverse gap-5">
-        <ButtonAula
-          text="Aula anterior"
-          btnPrev={"ativa"}
-          curso={curso}
-          video={video}
-          videos={videos}
-          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
-          styleIcone="text-white"
-        />
-        <ButtonAula
-          text="Voltar para o módulo"
-          btnPlaylist={"ativa"}
-          curso={curso}
-          video={video}
-          videos={videos}
-          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
-          styleIcone="text-white"
-        />
-        <ButtonAula
-          text="Clique aqui para marca como concluído"
-          btnCheckout={"ativa"}
-          curso={curso}
-          videos={videos}
-          video={video}
-          styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
-          styleIcone="text-white"
-        />
-      </section>
-      {/* Área Material de Apoio */}
-      <section className="border border-blue-500 py-5 px-10  my-10 rounded-3xl lg:max-w-7xl md:max-w-5xl mx-auto ">
-        <div className="flex items-center gap-2 py-5">
-          <FiBook size={30} className="text-blue-500" />
-          <h2 className="text-2xl font-medium">Material de Apoio</h2>
-        </div>
-        {/* Dropdown */}
-        <DropDownText video={video} />
-      </section>
-      <Aviso />
     </main>
   );
 }
