@@ -60,26 +60,31 @@ export default async function ClassVideo({
           videos={videos}
           type="horizontal"
         />
-        <article className="p-5">
+        <article className="md:p-5 max-md:p-2">
           {/* Área do vídeo do Curso */}
           <section className="flex flex-col justify-center">
             <div className=" w-full mx-auto">
               <H1Custon title={video.title} />
             </div>
-            <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-1">
-              <div className="aspect-video w-full max-w-[1000px] my-5 mx-auto shadow-lg">
-                <IframeVideo src={video.video} />
+            <div>
+              <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-auto ">
+                <div
+                  className="aspect-video w-full max-w-[1050px] my-5 
+                md:ml-6 md:pl-2 max-md:pl-2 md:pr-6 "
+                >
+                  <IframeVideo src={video.video} />
+                </div>
               </div>
             </div>
           </section>
-          <section className="w-full justify-center items-center justify-cente flex max-md:flex-col-reverse gap-5">
+          <section className=" justify-center items-center justify-cente flex max-md:flex-col-reverse gap-5">
             <ButtonAula
               text="Aula anterior"
               btnPrev={"ativa"}
               curso={curso}
               video={video}
               videos={videos}
-              styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
+              styleButton="bg-blue-1010 text-white"
               styleIcone="text-white"
             />
             <ButtonAula
@@ -88,7 +93,7 @@ export default async function ClassVideo({
               curso={curso}
               video={video}
               videos={videos}
-              styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
+              styleButton="bg-blue-1010 text-white"
               styleIcone="text-white"
             />
             <ButtonAula
@@ -97,18 +102,22 @@ export default async function ClassVideo({
               curso={curso}
               videos={videos}
               video={video}
-              styleButton="bg-blue-1010 text-white py-2 px-5 text-sm cursor-pointer max-md:w-full"
+              styleButton="bg-blue-1010 text-white"
               styleIcone="text-white"
             />
           </section>
           {/* Área Material de Apoio */}
-          <section className="border border-blue-500 shadow-lg py-5 px-10  my-10 rounded-3xl lg:max-w-7xl md:max-w-5xl mx-auto ">
-            <div className="flex items-center gap-2 py-5">
-              <FiBook size={30} className="text-blue-500" />
-              <h2 className="text-2xl font-medium">Material de Apoio</h2>
+          <section className="md:mx-6 max-md:ml-2">
+            <div className="border border-blue-500 shadow-lg py-5 md:px-10 max-md:px-5  my-10 md:rounded-3xl max-md:rounded-xl lg:max-w-7xl md:max-w-5xl mx-auto ">
+              <div className="flex items-center gap-2 py-5">
+                <FiBook size={30} className="text-blue-500" />
+                <h2 className="md:text-2xl max-md:text-[20px] font-medium">
+                  Material de Apoio
+                </h2>
+              </div>
+              {/* Dropdown */}
+              <DropDownText video={video} />
             </div>
-            {/* Dropdown */}
-            <DropDownText video={video} />
           </section>
           <Aviso />
         </article>

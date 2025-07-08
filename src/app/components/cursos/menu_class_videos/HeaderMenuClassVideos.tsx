@@ -49,7 +49,7 @@ export default function HeaderMenuClassVideos({
 
       {type == "horizontal" && (
         <span
-          className="cursor-pointer text-white bg-blue-1010 p-2 rounded-full absolute top-10 -right-10"
+          className="cursor-pointer text-white bg-blue-1010 p-2 rounded-full absolute top-10 -right-5 border border-white"
           onClick={() => {
             setIsOpening(!isopening);
           }}

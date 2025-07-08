@@ -97,11 +97,11 @@ export default function MenuClassVideos({
               absolute
               duration-800
               min-h-[100dvh]
-              ${isopening ? "w-[90dvw] md:w-[50dvw]" : "w-10"}
+              ${isopening ? "w-[90dvw] md:w-[50dvw]" : "md:w-6 max-md:w-2"}
             `}
       >
         <section
-          className={`flex flex-col absolute top-0 right-0 w-[90dvw] md:w-[50dvw] h-full bg-white rounded-xl`}
+          className={`flex flex-col absolute top-0 right-0 w-[100dvw] md:w-[50dvw] h-full bg-white rounded-xl`}
         >
           <HeaderMenuClassVideos
             type={type}
