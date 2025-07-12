@@ -8,7 +8,6 @@ import { LinkClassVideo } from "./LinkClassVideo";
 import HeaderMenuClassVideos from "./HeaderMenuClassVideos";
 
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import MenuHamburgue from "../../layout/navbar/mobile/MenuHamburgue";
 interface PropsVideoClass {
   title: string;
   slug: string;
@@ -38,12 +37,12 @@ export default function MenuClassVideos({
 
   const [largura, setLargura] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  // ser o largura da tela for maior ou igual a 768px vai fechar o navBar
-  if (largura >= 768 && isOpen === true) {
-    setIsOpen(!isOpen);
-  }
+
   useEffect(() => {
+    // ser o largura da tela for maior ou igual a 768px vai fechar o navBar
+    if (largura >= 768 && isOpen === true) {
+      setIsOpen(!isOpen);
+    }
     // Função que pega a largura atual da tela
     const atualizarLargura = () => {
       setLargura(window.innerWidth);
@@ -52,15 +51,6 @@ export default function MenuClassVideos({
     atualizarLargura();
     // evento para ficar monitorando a tela
     window.addEventListener("resize", atualizarLargura);
-
-    // Impede rolagem do body quando o menu estiver aberto
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
-
-    // Atualiza o estado de scroll
-    const mudancaDoScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", mudancaDoScroll);
 
     // Detecta clique fora do menu (navbarLinks)
     const handleBodyClick = (event: MouseEvent) => {
@@ -80,11 +70,8 @@ export default function MenuClassVideos({
     // Cleanup: remove os listeners
     return () => {
       window.removeEventListener("resize", atualizarLargura);
-      document.body.removeEventListener("click", handleBodyClick);
-      window.removeEventListener("scroll", mudancaDoScroll);
-      document.body.style.overflow = "auto";
     };
-  }, [isOpen]);
+  }, [largura, isOpen]);
 
   if (type == "vertical") {
     return (
@@ -155,6 +142,7 @@ export default function MenuClassVideos({
             min-h-[100dvh]
             z-10
             ${isopening ? "w-[90dvw] md:w-[50dvw]" : "w-0"}
+            ${largura > 768 ? "w-4" : "w-0"}
           `}
       >
         <section
@@ -178,13 +166,6 @@ export default function MenuClassVideos({
             ))}
           </section>
         </section>
-        <MenuHamburgue
-          isOpen={isopening}
-          setIsOpen={setIsOpening}
-          isScrolled={isScrolled}
-          stylesBar="bg-black"
-          isCourse="yes"
-        />
       </section>
     )
   );

@@ -26,9 +26,9 @@ export default function NavbarCursos({
   video,
 }: NavbarCursosProp) {
   return (
-    <header className="flex pb-5 gap-2 max-md:ml-2 max-w-5xl mx-auto">
+    <header className="flex pb-5 gap-2 max-md:ml-2 ">
       <nav className="flex flex-col w-full">
-        <section className=" bg-blue-950 h-20">
+        <section className=" bg-blue-950/50 h-20">
           <MenuClassVideos
             courseslug={videos[0]?.slug || ""}
             coursetitle={videos[0]?.title || ""}
@@ -36,7 +36,7 @@ export default function NavbarCursos({
             type="horizontal"
           />
         </section>
-        <section className="flex gap-2 max-md:px-2 mx-auto w-full">
+        <section className="flex gap-2 max-md:px-2 w-full max-w-5xl mx-auto">
           <ButtonAula
             text="Aula anterior"
             btnPrev={"ativa"}
