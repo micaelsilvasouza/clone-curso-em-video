@@ -3,7 +3,6 @@ import { redirect } from "next/navigation";
 import IframeVideo from "@/app/components/cursos/IframeVideo";
 import NavbarCursos from "@/app/components/cursos/NavbarCursos";
 import ButtonAula from "@/app/components/cursos/ButtonAula";
-import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
 import H1Custon from "@/app/components/cursos/h1Custon";
 import { DropDownText } from "@/app/components/cursos/dropDownText";
 
@@ -46,45 +45,31 @@ export default async function ClassVideo({
     redirect("/error/fetch-error");
   }
 
-  console.log("video aqui", video.title);
-  console.log("videos aqui", videos);
-
   return (
-    <main className="relative overflow-x-hidden py-5">
-      {/* Navbar dos cursos */}
-      <NavbarCursos curso={curso} videos={videos} video={video} />
-      <section className="relative">
-        <MenuClassVideos
-          courseslug={videos.slug}
-          coursetitle={videos.title}
-          videos={videos}
-          type="horizontal"
-        />
+    <main className=" overflow-x-hidden pb-5">
+      <section>
+        {/* Navbar dos cursos */}
+        <NavbarCursos curso={curso} videos={videos} video={video} />
+      </section>
+      <section className="relative max-md:ml-2 max-w-5xl mx-auto">
         <article className="md:p-5 max-md:p-2">
           {/* Área do vídeo do Curso */}
-          <section className="flex flex-col justify-center">
+          <section className="flex flex-col justify-center mx-auto">
             <div className=" w-full mx-auto">
               <H1Custon title={video.title} />
             </div>
-            <div>
-              <div className=" w-full max-w-[1300px] md:rounded-2xl flex flex-col items-center justify-center md:mx-auto ">
-                <div
-                  className="aspect-video w-full max-w-[1050px] my-5 
-                md:ml-6 md:pl-2 max-md:pl-2 md:pr-6 "
-                >
-                  <IframeVideo src={video.video} />
-                </div>
-              </div>
+            <div className=" w-full  md:rounded-2xl flex flex-col items-center justify-center md:mx-auto aspect-video max-w-[1050px] my-5">
+              <IframeVideo src={video.video} />
             </div>
           </section>
-          <section className=" justify-center items-center justify-cente flex max-md:flex-col-reverse gap-5">
+          <section className=" mx-auto flex  flex-2 items-center justify-center md:gap-10 max-md:gap-3 max-md:flex-col flex-row-reverse md:max-w-4/5">
             <ButtonAula
-              text="Aula anterior"
-              btnPrev={"ativa"}
+              text="Marca como concluído"
+              btnCheckout={"ativa"}
               curso={curso}
-              video={video}
               videos={videos}
-              styleButton="bg-blue-1010 text-white"
+              video={video}
+              styleButton="bg-blue-1010 text-white max-md:w-[90%]"
               styleIcone="text-white"
             />
             <ButtonAula
@@ -93,21 +78,21 @@ export default async function ClassVideo({
               curso={curso}
               video={video}
               videos={videos}
-              styleButton="bg-blue-1010 text-white"
-              styleIcone="text-white"
+              styleButton="text-blue-500 w-full max-md:w-[90%]"
+              styleIcone="text-blue-500"
             />
             <ButtonAula
-              text="Clique aqui para marca como concluído"
-              btnCheckout={"ativa"}
+              text="Aula anterior"
+              btnPrev={"ativa"}
               curso={curso}
-              videos={videos}
               video={video}
-              styleButton="bg-blue-1010 text-white"
+              videos={videos}
+              styleButton="bg-blue-1010 text-white max-md:w-[90%]"
               styleIcone="text-white"
             />
           </section>
           {/* Área Material de Apoio */}
-          <section className="md:mx-6 max-md:ml-2">
+          <section>
             <div className="border border-blue-500 shadow-lg py-5 md:px-10 max-md:px-5  my-10 md:rounded-3xl max-md:rounded-xl lg:max-w-7xl md:max-w-5xl mx-auto ">
               <div className="flex items-center gap-2 py-5">
                 <FiBook size={30} className="text-blue-500" />
@@ -128,7 +113,7 @@ export default async function ClassVideo({
 
 function Aviso() {
   return (
-    <section className="flex flex-col gap-5 max-w-4xl mx-auto">
+    <section className="flex flex-col gap-5">
       <p>
         <span className="text-red-500 font-bold">ATENÇÃO:</span> O botão de
         concluir aula só fica clicável depois que toda a aula é assistida Para

@@ -32,6 +32,7 @@ type ButtonAulaProp = {
   btnPrev?: "ativa";
   btnPlaylist?: "ativa";
   btnCheckout?: "ativa";
+  iconeReverse?: true;
 };
 
 export default function ButtonAula({
@@ -44,9 +45,10 @@ export default function ButtonAula({
   styleButton,
   styleIcone,
   btnPlaylist,
+  iconeReverse,
 }: ButtonAulaProp) {
   const iconeOne = useRef<HTMLSpanElement>(null);
-  const iconeTwo = useRef<HTMLSpanElement>(null);
+  const textBTN = useRef<HTMLParagraphElement>(null);
 
   if (
     videos == undefined ||
@@ -75,6 +77,23 @@ export default function ButtonAula({
       duration: 0.15,
       ease: "power1.out",
     });
+
+    gsap.to(textBTN.current, {
+      opacity: 0,
+    });
+
+    gsap.fromTo(
+      iconeOne.current,
+      { opacity: 0 },
+      {
+        position: "absolute",
+        marginLeft: 0,
+        opacity: 1,
+        color: "red",
+        ease: "bounce",
+        duration: 0.5,
+      }
+    );
   };
 
   const handlePointerUp = (e: React.PointerEvent) => {
@@ -90,59 +109,50 @@ export default function ButtonAula({
       ativa: btnPrev === "ativa",
       href: preveiw,
       IconeAntes: IoIosArrowBack,
-      IconeDepois: null,
       iconeRef: iconeOne,
     },
     {
       ativa: btnPlaylist === "ativa",
       href: `/cursos/${curso}`,
       IconeAntes: FiBook,
-      IconeDepois: null,
       iconeRef: iconeOne,
     },
     {
       ativa: btnCheckout === "ativa",
       href: next,
-      IconeAntes: null,
-      IconeDepois: FaCheck,
-      iconeRef: iconeTwo,
+      IconeAntes: FaCheck,
+      iconeRef: iconeOne,
     },
   ];
+
   return (
     <>
       {buttonConfig
         .filter(({ ativa }) => ativa)
-        .map(({ href, IconeAntes, IconeDepois, iconeRef }, index) => (
+        .map(({ href, IconeAntes, iconeRef }, index) => (
           <Link
             key={index}
             href={href}
             onPointerDown={handlePointerDown}
             onPointerUp={handlePointerUp}
             className={`flex items-center justify-center 
-              max-md:ml-4 max-md:mr-2 py-2 md:px-5
-          max-md:w-[90%] md:full
-          text-sm cursor-pointer gap-3 border border-blue-1010  rounded-sm  ${styleButton} `}
+              py-2 md:px-5 max-md:px-2 
+           md:full flex-1 gap-2
+          text-sm cursor-pointer ${
+            iconeReverse ? "flex-row-reverse" : ""
+          } md:flex-col h-20  border border-black/5 relative  rounded-sm ${styleButton}`}
           >
             {/* Ícone antes do texto, se existir */}
             {IconeAntes && (
               <>
-                <span ref={iconeRef}>
+                <span ref={iconeRef} className="max-md:ml-3">
                   <IconeAntes
-                    className={`${styleIcone}  max-md:text-end max-md:ml-7 size-6 `}
+                    className={`${styleIcone}  max-md:text-end  size-6`}
                   />
                 </span>
-                <p className="flex-1 text-center">{text}</p>
-              </>
-            )}
-            {/* Ícone depois do texto, se existir */}
-            {IconeDepois && (
-              <>
-                <p className="flex-1 text-center">{text}</p>
-                <span ref={iconeRef}>
-                  <IconeDepois
-                    className={`${styleIcone}  max-md:text-end max-md:mr-7 size-6 `}
-                  />
-                </span>
+                <p className="flex-1 text-center " ref={textBTN}>
+                  {text}
+                </p>
               </>
             )}
           </Link>
