@@ -1,14 +1,13 @@
 "use client";
 
 //hooks react
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //componentes
 import { LinkClassVideo } from "./LinkClassVideo";
 import HeaderMenuClassVideos from "./HeaderMenuClassVideos";
 
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-
 interface PropsVideoClass {
   title: string;
   slug: string;
@@ -19,6 +18,7 @@ interface PropsMenuClassVideos {
   videos: PropsVideoClass[];
   courseslug: string;
   coursetitle: string;
+  open?: boolean;
 }
 
 export default function MenuClassVideos({
@@ -26,10 +26,54 @@ export default function MenuClassVideos({
   videos,
   courseslug,
   coursetitle,
+  open = false,
 }: PropsMenuClassVideos) {
   const [isopening, setIsOpening] = useState(false);
+  useEffect(() => {
+    if (open) {
+      setIsOpening(open);
+    }
+  }, [open]);
+
+  const [largura, setLargura] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // ser o largura da tela for maior ou igual a 768px vai fechar o navBar
+    if (largura >= 768 && isOpen === true) {
+      setIsOpen(!isOpen);
+    }
+    // Função que pega a largura atual da tela
+    const atualizarLargura = () => {
+      setLargura(window.innerWidth);
+    };
+    // Chamar uma vez ao montar
+    atualizarLargura();
+    // evento para ficar monitorando a tela
+    window.addEventListener("resize", atualizarLargura);
+
+    // Detecta clique fora do menu (navbarLinks)
+    const handleBodyClick = (event: MouseEvent) => {
+      const navbarLinks = document.getElementById("navbarLinks");
+
+      if (
+        isOpen &&
+        navbarLinks &&
+        !navbarLinks.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.body.addEventListener("click", handleBodyClick);
+
+    // Cleanup: remove os listeners
+    return () => {
+      window.removeEventListener("resize", atualizarLargura);
+    };
+  }, [largura, isOpen]);
+
   if (type == "vertical") {
-    console.log("vertical");
     return (
       <section
         className={`
@@ -89,16 +133,17 @@ export default function MenuClassVideos({
     );
   }
 
-  if (type == "horizontal") {
-    console.log("horizontal");
-    return (
+  return (
+    type === "horizontal" && (
       <section
         className={`
-              absolute
-              duration-800
-              min-h-[100dvh]
-              ${isopening ? "w-[90dvw] md:w-[50dvw]" : "md:w-6 max-md:w-2"}
-            `}
+            absolute
+            duration-800
+            min-h-[100dvh]
+            z-10
+            ${isopening ? "w-[90dvw] md:w-[50dvw]" : "w-0"}
+            ${largura > 768 ? "w-4" : "w-0"}
+          `}
       >
         <section
           className={`flex flex-col absolute top-0 right-0 w-[100dvw] md:w-[50dvw] h-full bg-white rounded-xl`}
@@ -122,6 +167,6 @@ export default function MenuClassVideos({
           </section>
         </section>
       </section>
-    );
-  }
+    )
+  );
 }

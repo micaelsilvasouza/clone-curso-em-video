@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   FaAngleDown,
   FaAngleUp,
@@ -21,7 +22,23 @@ export default function HeaderMenuClassVideos({
   isopening,
   setIsOpening,
 }: PropsHeaderMenuClassVideos) {
-  console.log(typeof FaAngleRight);
+  const [largura, setLargura] = useState(0);
+  useEffect(() => {
+    // Função que pega a largura atual da tela
+    const atualizarLargura = () => {
+      setLargura(window.innerWidth);
+    };
+
+    // Chamar uma vez ao montar
+    atualizarLargura();
+    // evento para ficar monitorando a tela
+    window.addEventListener("resize", atualizarLargura);
+
+    return () => {
+      window.removeEventListener("resize", atualizarLargura);
+    };
+  }, [largura]);
+
   return (
     <section
       className={`bg-blue-1010 text-white font-bold relative 
@@ -49,7 +66,8 @@ export default function HeaderMenuClassVideos({
 
       {type == "horizontal" && (
         <span
-          className="cursor-pointer text-white bg-blue-1010 p-2 rounded-full absolute top-10 -right-5 border border-white"
+          className={`cursor-pointer text-white bg-blue-1010 p-2 rounded-full absolute top-10 -right-5 border border-white
+             ${isopening ? "" : `opacity-100 pointer-events-auto`}`}
           onClick={() => {
             setIsOpening(!isopening);
           }}

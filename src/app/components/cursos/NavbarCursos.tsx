@@ -1,5 +1,5 @@
-import Img_custon from "../img_custon";
 import ButtonAula from "./ButtonAula";
+import MenuClassVideos from "./menu_class_videos/MenuClassVideos";
 
 type NavbarCursosProp = {
   curso: string;
@@ -25,31 +25,36 @@ export default function NavbarCursos({
   videos,
   video,
 }: NavbarCursosProp) {
-  if (!video || !videos || videos.length === 0 || !curso) {
-    return <div>Carregando informações do curso...</div>;
-  }
   return (
-    <header className="flex items-center justify-around pb-5">
-      <Img_custon img="logoBlue.png" alt="Logo do Curso em Vídeo" width={150} />
-      <nav>
-        <section className="flex gap-5">
+    <header className="flex pb-5 gap-2 max-md:ml-2 ">
+      <nav className="flex flex-col w-full">
+        <section className=" bg-blue-950/50 h-20">
+          <MenuClassVideos
+            courseslug={videos[0]?.slug || ""}
+            coursetitle={videos[0]?.title || ""}
+            videos={videos}
+            type="horizontal"
+          />
+        </section>
+        <section className="flex gap-2 max-md:px-2 w-full max-w-5xl mx-auto">
           <ButtonAula
             text="Aula anterior"
             btnPrev={"ativa"}
             curso={curso}
             video={video}
             videos={videos}
-            styleButton="bg-transparent text-blue-1010 py-2 px-5 text-sm cursor-pointer"
+            styleButton="bg-transparent text-blue-1010"
             styleIcone="text-blue-1010"
           />
           <ButtonAula
-            text="Clique aqui para marca como concluído"
+            text="Marca como concluído"
             btnCheckout={"ativa"}
             curso={curso}
             videos={videos}
             video={video}
-            styleButton="bg-transparent text-blue-1010 py-2 px-5 text-sm cursor-pointer"
+            styleButton="bg-transparent text-blue-1010"
             styleIcone="text-blue-1010"
+            iconeReverse={true}
           />
         </section>
       </nav>

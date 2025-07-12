@@ -3,6 +3,7 @@ type PropHamburguer = {
   isScrolled: boolean;
   stylesBar?: string;
   setIsOpen: (param: boolean) => void;
+  isCourse?: "yes";
 };
 
 export default function MenuHamburgue({
@@ -10,11 +11,14 @@ export default function MenuHamburgue({
   isScrolled,
   stylesBar = "bg-blue-950",
   setIsOpen,
+  isCourse,
 }: PropHamburguer) {
   return (
     <>
       <button
-        className={`fixed right-0 mr-3 w-6 h-6 z-20 cursor-pointer md:hidden ${
+        className={`fixed ${
+          isCourse ? "left-10 top-10" : ""
+        }  mr-3 w-6 h-6 z-20 cursor-pointer md:hidden ${
           isOpen ? " mx-20 opacity-0 pointer-events-none" : "-translate-x-full"
         } transition-all duration-300 ${
           isScrolled ? " transition-all duration-300 hidden" : "block"
