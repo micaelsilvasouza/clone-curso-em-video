@@ -36,13 +36,12 @@ export default function MenuClassVideos({
   }, [open]);
 
   const [largura, setLargura] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     // ser o largura da tela for maior ou igual a 768px vai fechar o navBar
-    if (largura >= 768 && isOpen === true) {
-      setIsOpen(!isOpen);
-    }
+    // if (largura >= 768 && isopening === true) {
+    //   setIsOpening(!isopening);
+    // }
     // Função que pega a largura atual da tela
     const atualizarLargura = () => {
       setLargura(window.innerWidth);
@@ -54,14 +53,14 @@ export default function MenuClassVideos({
 
     // Detecta clique fora do menu (navbarLinks)
     const handleBodyClick = (event: MouseEvent) => {
-      const navbarLinks = document.getElementById("navbarLinks");
+      const navbarLinks = document.getElementById("menu");
 
       if (
-        isOpen &&
+        isopening &&
         navbarLinks &&
         !navbarLinks.contains(event.target as Node)
       ) {
-        setIsOpen(false);
+        setIsOpening(false);
       }
     };
 
@@ -71,7 +70,7 @@ export default function MenuClassVideos({
     return () => {
       window.removeEventListener("resize", atualizarLargura);
     };
-  }, [largura, isOpen]);
+  }, [largura, isopening]);
 
   if (type == "vertical") {
     return (
@@ -135,38 +134,51 @@ export default function MenuClassVideos({
 
   return (
     type === "horizontal" && (
-      <section
-        className={`
-            absolute
-            duration-800
-            min-h-[100dvh]
-            z-10
-            ${isopening ? "w-[90dvw] md:w-[50dvw]" : "w-0"}
-            ${largura > 768 ? "w-4" : "w-0"}
-          `}
+      <article
+        id="menu"
+        className={`${
+          isopening ? "w-300" : "w-5  border-r border-black/10"
+        }  relative ease-in transition-all max-w-200`}
       >
         <section
-          className={`flex flex-col absolute top-0 right-0 w-[100dvw] md:w-[50dvw] h-full bg-white rounded-xl`}
+          className={`
+              absolute
+              duration-800
+              h-dvh
+              z-10
+
+              bg-white
+
+              ${isopening ? "w-[100%]" : "w-5  border-r border-black/10"}
+              ${largura > 768 ? "w-2" : "w-2"}
+            `}
         >
-          <HeaderMenuClassVideos
-            type={type}
-            course={coursetitle}
-            quantity={videos.length}
-            isopening={isopening}
-            setIsOpening={setIsOpening}
-          />
-          <section className={`py-10 overflow-y-scroll`}>
-            {videos.map((video: PropsVideoClass) => (
-              <LinkClassVideo
-                key={video.slug}
-                title={video.title}
-                slug={video.slug}
-                course={courseslug}
-              />
-            ))}
+          <section className={`flex flex-col`}>
+            <HeaderMenuClassVideos
+              type={type}
+              course={coursetitle}
+              quantity={videos.length}
+              isopening={isopening}
+              setIsOpening={setIsOpening}
+            />
+            <section
+              className={` ${
+                isopening ? " overflow-y-scroll" : "overflow-hidden"
+              }  h-dvh`}
+            >
+              {videos.map((video: PropsVideoClass) => (
+                <LinkClassVideo
+                  key={video.slug}
+                  title={video.title}
+                  slug={video.slug}
+                  course={courseslug}
+                  isopening={isopening}
+                />
+              ))}
+            </section>
           </section>
         </section>
-      </section>
+      </article>
     )
   );
 }
