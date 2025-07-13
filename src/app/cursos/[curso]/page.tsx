@@ -2,7 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { getDataWidhToken } from "@/actions/actions_cookies";
 import BannerCourse from "@/app/components/banner_course";
 import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
-import PorcentCourse from "@/app/components/porcent_couse";
+import PorcentCourse from "@/app/components/cursos/porcent_couse";
 import UserCouserPainel from "@/app/components/cursos/UserCoursePainel"
 
 export default async function Page({
@@ -80,9 +80,7 @@ export default async function Page({
 
       
         { user && userCourse ? 
-        <section>
-          <PorcentCourse porcent={userCourse.porcent}/>
-        </section> 
+        <PorcentCourse porcent={userCourse.porcent} steps={videos.length}/>
         :
         <UserCouserPainel userid={user.id} courseid={course.id}/>
       }
