@@ -135,38 +135,44 @@ export default function MenuClassVideos({
 
   return (
     type === "horizontal" && (
-      <section
-        className={`
-            absolute
-            duration-800
-            min-h-[100dvh]
-            z-10
-            ${isopening ? "w-[90dvw] md:w-[50dvw]" : "w-0"}
-            ${largura > 768 ? "w-4" : "w-0"}
-          `}
+      <article
+        className={`${
+          isopening ? "w-300" : "w-10"
+        } h-dvh  relative ease-in transition-all bg-amber-900`}
       >
         <section
-          className={`flex flex-col absolute top-0 right-0 w-[100dvw] md:w-[50dvw] h-full bg-white rounded-xl`}
+          className={`
+              absolute
+              duration-800
+              min-h-[100dvh]
+              z-10
+              ${isopening ? "w-[100%]" : "w-0"}
+              ${largura > 768 ? "w-4" : "w-0"}
+            `}
         >
-          <HeaderMenuClassVideos
-            type={type}
-            course={coursetitle}
-            quantity={videos.length}
-            isopening={isopening}
-            setIsOpening={setIsOpening}
-          />
-          <section className={`py-10 overflow-y-scroll`}>
-            {videos.map((video: PropsVideoClass) => (
-              <LinkClassVideo
-                key={video.slug}
-                title={video.title}
-                slug={video.slug}
-                course={courseslug}
-              />
-            ))}
+          <section
+            className={`flex flex-col absolute top-0 right-0 w-[100dvw] md:w-[50dvw] h-full bg-white rounded-xl`}
+          >
+            <HeaderMenuClassVideos
+              type={type}
+              course={coursetitle}
+              quantity={videos.length}
+              isopening={isopening}
+              setIsOpening={setIsOpening}
+            />
+            <section className={`py-10 overflow-y-scroll`}>
+              {videos.map((video: PropsVideoClass) => (
+                <LinkClassVideo
+                  key={video.slug}
+                  title={video.title}
+                  slug={video.slug}
+                  course={courseslug}
+                />
+              ))}
+            </section>
           </section>
         </section>
-      </section>
+      </article>
     )
   );
 }

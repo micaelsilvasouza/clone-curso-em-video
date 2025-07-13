@@ -1,5 +1,4 @@
 import ButtonAula from "./ButtonAula";
-import MenuClassVideos from "./menu_class_videos/MenuClassVideos";
 
 type NavbarCursosProp = {
   curso: string;
@@ -28,14 +27,7 @@ export default function NavbarCursos({
   return (
     <header className="flex pb-5 gap-2 max-md:ml-2 ">
       <nav className="flex flex-col w-full">
-        <section className=" bg-blue-950/50 h-20">
-          <MenuClassVideos
-            courseslug={videos[0]?.slug || ""}
-            coursetitle={videos[0]?.title || ""}
-            videos={videos}
-            type="horizontal"
-          />
-        </section>
+        <section className=" bg-blue-950/50 h-20"></section>
         <section className="flex gap-2 max-md:px-2 w-full max-w-5xl mx-auto">
           <ButtonAula
             text="Aula anterior"
