@@ -137,10 +137,10 @@ export default function ButtonAula({
             onPointerUp={handlePointerUp}
             className={`flex items-center justify-center 
               py-2 md:px-5 max-md:px-2 
-           md:full flex-1 gap-2
+           md:full flex-1 gap-2 h-15
           text-sm cursor-pointer ${
             iconeReverse ? "flex-row-reverse" : ""
-          } md:flex-col h-20  border border-black/5 relative  rounded-sm ${styleButton}`}
+          } md:flex-col   border border-black/5 relative  rounded-sm ${styleButton}`}
           >
             {/* Ícone antes do texto, se existir */}
             {IconeAntes && (
