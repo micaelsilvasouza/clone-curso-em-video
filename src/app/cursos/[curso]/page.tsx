@@ -1,6 +1,8 @@
 import { notFound, redirect } from "next/navigation";
+import {getDataWidhToken} from "@/actions/actions_cookies"
 import BannerCourse from "@/app/components/banner_course";
 import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
+import PorcentCourse from "@/app/components/porcent_couse";
 
 export default async function Page({
   params,
@@ -52,6 +54,23 @@ export default async function Page({
     return -1;
   });
 
+  //busando o usuário
+  const user = await getDataWidhToken()
+
+  //verificando se usuário possui o curso
+  let userCourse: {porcent: number} | undefined
+  if(user){
+    const data = await fetch("https://backend-cursoemvideo.onrender.com/user/course",{
+      method: "post",
+      headers: {"Content-type": "application/json"},
+      body: JSON.stringify({userid: user.id, courseid: course.id})
+    })
+
+    userCourse = (await data.json()).courses
+  }
+
+  console.log(userCourse)
+
   return (
     <main>
       <BannerCourse
@@ -59,6 +78,20 @@ export default async function Page({
         image={course.image}
         slug={course.slug}
       />
+
+      
+        { user && userCourse ? 
+        <section>
+          <PorcentCourse porcent={userCourse.porcent}/>
+        </section> 
+        :
+        <section>
+          <div><span>Não escrito</span></div>
+          <div><span>GRATIS</span></div>
+          <div><span>COMECE AGORA</span></div>
+        </section>
+}
+      
       <section className="pt-[30px]">
         <p className="p-5 text-xl text-indigo-900 w-8/10 max-w-180 m-auto">
           {course.description}
