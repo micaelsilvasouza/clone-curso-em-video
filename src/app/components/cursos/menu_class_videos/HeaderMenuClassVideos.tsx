@@ -41,17 +41,19 @@ export default function HeaderMenuClassVideos({
 
   return (
     <section
-      className={`bg-blue-1010 text-white font-bold relative 
-            ${
-              type == "vertical"
-                ? "text-lg p-10 rounded-t-xl"
-                : "p-2 text-base rounded-tr-xl"
-            }`}
+      className={`bg-blue-1010 text-white font-bold relative  h-50
+            ${type == "vertical" ? "text-lg p-10" : "p-2 text-base"}`}
     >
-      <p className="px-10 py-2">
-        <LuBook className="inline align-middle" /> {course}
-      </p>
-      <p className="px-10 py-2">0% Completo | 0 / {quantity} steps</p>
+      <div
+        className={`${
+          isopening ? "opacity-100 duration-1000" : "opacity-0 duration-100"
+        } transition-all ease-in`}
+      >
+        <p className="px-10 py-2">
+          <LuBook className="inline align-middle" /> {course}
+        </p>
+        <p className="px-10 py-2">0% Completo | 0 / {quantity} steps</p>
+      </div>
 
       {type == "vertical" && (
         <span

@@ -47,19 +47,19 @@ export default async function ClassVideo({
   }
 
   return (
-    <main className=" overflow-x-hidden  flex flex-col">
-      <section className="bg-red-400 ">
+    <main className="  flex flex-col">
+      <section>
         {/* Navbar dos cursos */}
         <NavbarCursos curso={curso} videos={videos} video={video} />
       </section>
-      <section className="bg-green-400 flex">
+      <section className="flex">
         <MenuClassVideos
           courseslug={videos[0]?.slug || ""}
           coursetitle={videos[0]?.title || ""}
           videos={videos}
           type="horizontal"
         />
-        <section className="relative max-md:ml-2 max-w-5xl mx-auto bg-violet-400">
+        <section className="relative max-md:ml-2 max-w-5xl mx-auto">
           <article className="md:p-5 max-md:p-2">
             {/* Área do vídeo do Curso */}
             <section className="flex flex-col justify-center mx-auto">

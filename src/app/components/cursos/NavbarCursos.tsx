@@ -25,7 +25,7 @@ export default function NavbarCursos({
   video,
 }: NavbarCursosProp) {
   return (
-    <header className="flex pb-5 gap-2 max-md:ml-2 ">
+    <header className="flex gap-2 max-md:ml-2 ">
       <nav className="flex flex-col w-full">
         <section className=" bg-blue-950/50 h-20"></section>
         <section className="flex gap-2 max-md:px-2 w-full max-w-5xl mx-auto">
