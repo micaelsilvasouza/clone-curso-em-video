@@ -10,7 +10,9 @@ export async function middleware(request: NextRequest) {
     })
 
     //validando token
-    if((await validatetoken.json()).valid){
+    const validate = await validatetoken.json()
+
+    if(validate.valid){
       return NextResponse.next()
     }else{
       return NextResponse.redirect(new URL('/login', request.url))  
@@ -23,5 +25,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/minha-conta"
+  matcher: ["/minha-conta/:path*","/cursos/:curso/:classvideo"]
 }
