@@ -82,7 +82,7 @@ export default async function Page({
         { user && userCourse ? 
         <PorcentCourse porcent={userCourse.porcent} steps={videos.length}/>
         :
-        <UserCouserPainel userid={user.id} courseid={course.id}/>
+        <UserCouserPainel userid={user ? user.id : undefined} courseid={course.id}/>
       }
       
       <section className="pt-[30px]">
