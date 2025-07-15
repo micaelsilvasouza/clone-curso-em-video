@@ -46,7 +46,9 @@ export default function HeaderMenuClassVideos({
     >
       <div
         className={`${
-          isopening ? "opacity-100 duration-1000" : "opacity-0 duration-100"
+          isopening
+            ? "opacity-100 duration-1000"
+            : `${type == "horizontal" ? "opacity-0" : ""}`
         } transition-all ease-in`}
       >
         <p className="px-10 py-2">

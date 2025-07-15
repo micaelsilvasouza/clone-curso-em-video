@@ -107,6 +107,7 @@ export default function MenuClassVideos({
               title={video.title}
               slug={video.slug}
               course={courseslug}
+              isopening={isopening}
             />
           ))}
         </section>

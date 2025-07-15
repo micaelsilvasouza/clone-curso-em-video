@@ -4,7 +4,7 @@ export interface PropsLinkClassVideo {
   title: string;
   slug: string;
   course: string;
-  isopening?: boolean;
+  isopening: boolean;
 }
 
 export function LinkClassVideo({
