@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { FaCheck } from "react-icons/fa";
 
 export interface PropsLinkClassVideo {
   title: string;
   slug: string;
   course: string;
+  video_watched: boolean; //Determina se o video foi assistido
   isopening: boolean;
 }
 
@@ -11,6 +13,7 @@ export function LinkClassVideo({
   title,
   slug,
   course,
+  video_watched,
   isopening,
 }: PropsLinkClassVideo) {
   return (
@@ -19,8 +22,13 @@ export function LinkClassVideo({
         isopening ? "opacity-100 " : "opacity-0 border-r border-black/10"
       } flex items-center gap-5 p-5 border-b-1 border-gray-300 `}
     >
-      <span className="shrink-0 size-3 border-3 border-gray-300 rounded-full">
-        {/* Parte circular */}
+      <span className={`shrink-0 size-7 border-5 ${video_watched ? "border-blue-800" : "border-gray-300"} rounded-full flex items-center justify-center`}>
+        {video_watched ? 
+          <FaCheck className="text-blue-800 text-sm"/> 
+          : 
+          <span></span>
+        }
+        
       </span>
       <Link href={`/cursos/${course}/${slug}`} className="hover:underline">
         {title}

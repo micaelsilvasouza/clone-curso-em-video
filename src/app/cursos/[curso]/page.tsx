@@ -83,7 +83,7 @@ export default async function Page({
         <PorcentCourse porcent={userCourse.porcent} steps={videos.length}/>
         :
         <UserCouserPainel userid={user ? user.id : undefined} courseid={course.id}/>
-      }
+        }
       
       <section className="pt-[30px]">
         <p className="p-5 text-xl text-indigo-900 w-8/10 max-w-180 m-auto">
@@ -93,6 +93,7 @@ export default async function Page({
       <MenuClassVideos
         type="vertical"
         videos={videos}
+        porcent={userCourse ? userCourse.porcent : undefined}
         courseslug={course.slug}
         coursetitle={course.title}
       />

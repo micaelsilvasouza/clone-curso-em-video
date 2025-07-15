@@ -11,6 +11,7 @@ interface PropsHeaderMenuClassVideos {
   type: "vertical" | "horizontal";
   course: string;
   quantity: number;
+  porcent: number | undefined;
   isopening: boolean;
   setIsOpening: (value: boolean) => void;
 }
@@ -19,10 +20,12 @@ export default function HeaderMenuClassVideos({
   type,
   course,
   quantity,
+  porcent,
   isopening,
   setIsOpening,
 }: PropsHeaderMenuClassVideos) {
   const [largura, setLargura] = useState(0);
+
   useEffect(() => {
     // Função que pega a largura atual da tela
     const atualizarLargura = () => {
@@ -39,6 +42,9 @@ export default function HeaderMenuClassVideos({
     };
   }, [largura]);
 
+  const porcentformat = porcent ? Math.floor(porcent * 100)+"%" : "0%"
+  const competeSteps = porcent ? quantity * porcent : 0
+
   return (
     <section
       className={`bg-blue-1010 text-white font-bold relative  h-50
@@ -54,7 +60,7 @@ export default function HeaderMenuClassVideos({
         <p className="px-10 py-2">
           <LuBook className="inline align-middle" /> {course}
         </p>
-        <p className="px-10 py-2">0% Completo | 0 / {quantity} steps</p>
+        <p className="px-10 py-2">{porcentformat} Completo | {competeSteps} / {quantity} steps</p>
       </div>
 
       {type == "vertical" && (
