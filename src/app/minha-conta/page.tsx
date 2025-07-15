@@ -7,7 +7,7 @@ import { LuShoppingBasket } from "react-icons/lu";
 import { FaRegAddressCard } from "react-icons/fa";
 
 import Link from "next/link";
-import {getDataWidhToken} from "@/actions/actions_cookies"
+import {getDataWidhToken, deleteToken} from "@/actions/actions_cookies"
 
 export default async function MyAccount() {
   const data = await getDataWidhToken()
@@ -16,7 +16,10 @@ export default async function MyAccount() {
   return (
     <main className="bg-[#F2FAFC]">
       <BannerRotaHeader nomeRota="Minha conta" />
-      <p className="p-10 text-center text-xl">Olá <strong>{name}</strong>, seja bem vindo à pagina principal da sua conta.</p>
+      <div className="p-10 text-center text-xl">
+        <p>Olá <strong>{name}</strong>, seja bem vindo à pagina principal da sua conta.</p>
+        <Link href={"/login"} onClick={deleteToken}>Logout</Link>
+      </div>
       <div
         className="
       grid md:grid-cols-2 lg:grid-cols-3

@@ -11,7 +11,6 @@ export async function saveToken(token:string){
     date.setTime(date.getTime() + sevendays)
 
     cookie.set("token", token, {expires: date})
-
 }
 
 export async function getDataWidhToken() {
@@ -28,4 +27,9 @@ export async function getDataWidhToken() {
     })).json()
 
     return data.decoded
+}
+
+export async function deleteToken() {
+    const cookie = await cookies()
+    cookie.delete("token")
 }
