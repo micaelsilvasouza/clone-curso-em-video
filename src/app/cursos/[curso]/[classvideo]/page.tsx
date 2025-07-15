@@ -56,6 +56,7 @@ export default async function ClassVideo({
         <MenuClassVideos
           courseslug={videos[0]?.slug || ""}
           coursetitle={videos[0]?.title || ""}
+          porcent={0}
           videos={videos}
           type="horizontal"
         />

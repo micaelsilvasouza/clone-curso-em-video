@@ -30,7 +30,10 @@ export function LinkClassVideo({
         }
         
       </span>
-      <Link href={`/cursos/${course}/${slug}`} className="hover:underline">
+      <Link 
+        href={video_watched ? `/cursos/${course}/${slug}`: "#"} 
+        className={video_watched ? "hover:underline" : "text-gray-500 cursor-not-allowed"}
+      >
         {title}
       </Link>
     </div>
