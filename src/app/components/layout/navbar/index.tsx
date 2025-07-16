@@ -8,7 +8,7 @@ import XdoMenuAberto from "./mobile/XdoMenuAberto";
 import Links from "./Links";
 import { BotaoCuston } from "./BotaoCuston";
 import { Dropdown } from "./Dropdown";
-// import X_fechar from "../../x_fechamento/X_fechar";
+import X_fechar from "../../x_fechamento/X_fechar";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -149,9 +149,9 @@ export default function Navbar({
           <div
             id="navbarLinks"
             className={`opacity-100 p-4 w-80 h-dvh items-start flex
-              flex-col justify-around absolute top-0 left-0 gap-7 z-10
-              transition-transform duration-3000 ease-in-out text-base font-base 
-              ${styleLinks}`}
+            flex-col justify-around absolute top-0 left-0 gap-7 z-10
+            transition-transform duration-3000 ease-in-out text-base font-base 
+            ${styleLinks}`}
             style={{ backgroundColor: "var(--bg-header-open)" }}
           >
             <Link href="/">
@@ -181,6 +181,8 @@ export default function Navbar({
             />
           </div>
         )}
+        <X_fechar isOpen={isOpen} setIsOpen={setIsOpen} />
+
         {/* Menu Mobile */}
         <MenuHamburgue
           isOpen={isOpen}
@@ -188,8 +190,6 @@ export default function Navbar({
           setIsOpen={setIsOpen}
           stylesBar={styleHamburguer}
         />
-        {/* <X_fechar fecharMenu={isOpen} /> */}
-        <XdoMenuAberto isScrolled={isScrolled} isOpen={isOpen} />
       </div>
       {/* Botão para direcionar o scrol para cima */}
       <BotaoScroll isScrolled={isScrolled} />
