@@ -3,6 +3,7 @@ import AreaCurso from "@/app/components/cursos/navbar";
 
 import { getDataWidhToken } from "@/actions/actions_cookies"
 
+
 export const revalidate = 60; //revalidar os dados a cada 60 segundos
 
 export default async function ClassVideo({

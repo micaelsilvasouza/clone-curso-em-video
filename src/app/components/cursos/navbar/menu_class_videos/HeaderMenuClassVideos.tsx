@@ -27,7 +27,6 @@ export default function HeaderMenuClassVideos({
   setIsOpening,
 }: PropsHeaderMenuClassVideos) {
   const [largura, setLargura] = useState(0);
-
   useEffect(() => {
     // Função que pega a largura atual da tela
     const atualizarLargura = () => {
@@ -62,6 +61,9 @@ export default function HeaderMenuClassVideos({
         <p className="px-10 py-2">
           <LuBook className="inline align-middle" /> {course}
         </p>
+
+        <p className="px-10 py-2">0% Completo | 0 / {quantity} steps</p>
+
         <p className="px-10 py-2">{porcentformat} Completo | {competeSteps} / {quantity} steps</p>
       </div>
 

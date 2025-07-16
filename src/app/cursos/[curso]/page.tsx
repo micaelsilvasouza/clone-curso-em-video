@@ -3,7 +3,7 @@ import { getDataWidhToken } from "@/actions/actions_cookies";
 import BannerCourse from "@/app/components/banner_course";
 import MenuClassVideos from "@/app/components/cursos/navbar/menu_class_videos/MenuClassVideos";
 import PorcentCourse from "@/app/components/cursos/porcent_couse";
-import UserCouserPainel from "@/app/components/cursos/UserCoursePainel"
+import UserCouserPainel from "@/app/components/cursos/UserCoursePainel";
 
 export default async function Page({
   params,
@@ -55,9 +55,9 @@ export default async function Page({
     return -1;
   });
 
-  //busando o usuário
+
   const user = await getDataWidhToken()
- 
+
   //verificando se usuário possui o curso
   let userCourse: { porcent: number; id: string | undefined } | undefined;
   if (user) {
@@ -89,7 +89,6 @@ export default async function Page({
           courseid={course.id}
         />
       )}
-      
       <section className="pt-[30px]">
         <p className="p-5 text-xl text-indigo-900 w-8/10 max-w-180 m-auto">
           {course.description}
