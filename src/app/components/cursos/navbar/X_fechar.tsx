@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Xfechamento from "./animation/Xfechamento";
+import Xfechamento from "../animation/Xfechamento";
 
 interface Props {
   fecharMenu: () => void; // deixa explícito
