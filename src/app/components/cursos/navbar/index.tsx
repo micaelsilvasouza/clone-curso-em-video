@@ -52,6 +52,7 @@ export default function AreaCurso({ curso, video, videos }: AreaCursoProp) {
           courseslug={videos[0]?.slug || ""}
           coursetitle={videos[0]?.title || ""}
           videos={videos}
+          porcent={0}
           type="horizontal"
           clickHamburguer={clickHamburguer}
         />
