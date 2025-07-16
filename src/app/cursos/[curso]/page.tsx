@@ -55,8 +55,8 @@ export default async function Page({
     return -1;
   });
 
-  //busando o usuário
-  const user = await getDataWidhToken();
+
+  const user = await getDataWidhToken()
 
   //verificando se usuário possui o curso
   let userCourse: { porcent: number; id: string | undefined } | undefined;
@@ -89,7 +89,6 @@ export default async function Page({
           courseid={course.id}
         />
       )}
-
       <section className="pt-[30px]">
         <p className="p-5 text-xl text-indigo-900 w-8/10 max-w-180 m-auto">
           {course.description}
@@ -98,6 +97,7 @@ export default async function Page({
       <MenuClassVideos
         type="vertical"
         videos={videos}
+        porcent={userCourse ? userCourse.porcent : undefined}
         courseslug={course.slug}
         coursetitle={course.title}
       />

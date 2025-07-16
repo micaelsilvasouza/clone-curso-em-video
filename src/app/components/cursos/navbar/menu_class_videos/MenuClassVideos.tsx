@@ -16,6 +16,9 @@ interface PropsVideoClass {
 interface PropsMenuClassVideos {
   type: "vertical" | "horizontal";
   videos: PropsVideoClass[];
+
+  porcent: number | undefined //valor de porcentagem do curso
+
   courseslug: string;
   coursetitle: string;
   clickHamburguer?: boolean;
@@ -24,6 +27,9 @@ interface PropsMenuClassVideos {
 export default function MenuClassVideos({
   type,
   videos,
+
+  porcent, //valor de porcentagem do curso
+
   courseslug,
   coursetitle,
   clickHamburguer = false,
@@ -87,6 +93,9 @@ export default function MenuClassVideos({
           type={type}
           course={coursetitle}
           quantity={videos.length}
+
+          porcent={porcent} //valor de porcentagem do curso
+
           isopening={isopening}
           setIsOpening={setIsOpening}
         />
@@ -101,11 +110,21 @@ export default function MenuClassVideos({
                         : "h-0 overflow-hidden"
                     }`}
         >
+
           {videos.map((video: PropsVideoClass) => (
             <LinkClassVideo
               key={video.slug}
               title={video.title}
               slug={video.slug}
+
+          {videos.map((video: PropsVideoClass, index) => (
+            <LinkClassVideo
+              key={index}
+              title={video.title}
+              slug={video.slug}
+              video_watched={porcent ? index < (videos.length * porcent) : false}
+              liberated={porcent ? index <= (videos.length * porcent): false}
+
               course={courseslug}
               isopening={isopening}
             />
@@ -138,6 +157,7 @@ export default function MenuClassVideos({
       <article
         id="menu"
         className={`${
+
           isopening ? "w-300" : "w-0  border-r border-black/10"
         }  relative ease-in transition-all max-w-200`}
       >
@@ -159,6 +179,7 @@ export default function MenuClassVideos({
               type={type}
               course={coursetitle}
               quantity={videos.length}
+              porcent={porcent}
               isopening={isopening}
               setIsOpening={setIsOpening}
               clickHamburguer={clickHamburguer}
@@ -167,6 +188,7 @@ export default function MenuClassVideos({
               className={` ${
                 isopening ? " overflow-y-scroll" : "overflow-hidden"
               }  h-dvh`}
+
             >
               {videos.map((video: PropsVideoClass) => (
                 <LinkClassVideo
@@ -174,6 +196,17 @@ export default function MenuClassVideos({
                   title={video.title}
                   slug={video.slug}
                   course={courseslug}
+
+            > 
+              {videos.map((video: PropsVideoClass, index) => (
+                <LinkClassVideo
+                  key={index}
+                  title={video.title}
+                  slug={video.slug}
+                  course={courseslug}
+                  video_watched={porcent ? index < (videos.length * porcent) : false}
+                  liberated={porcent ? index <= (videos.length * porcent) : false}
+
                   isopening={isopening}
                 />
               ))}
