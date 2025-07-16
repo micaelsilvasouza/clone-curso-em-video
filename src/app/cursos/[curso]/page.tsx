@@ -1,9 +1,9 @@
 import { notFound, redirect } from "next/navigation";
 import { getDataWidhToken } from "@/actions/actions_cookies";
 import BannerCourse from "@/app/components/banner_course";
-import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
+import MenuClassVideos from "@/app/components/cursos/navbar/menu_class_videos/MenuClassVideos";
 import PorcentCourse from "@/app/components/cursos/porcent_couse";
-import UserCouserPainel from "@/app/components/cursos/UserCoursePainel"
+import UserCouserPainel from "@/app/components/cursos/UserCoursePainel";
 
 export default async function Page({
   params,
@@ -56,18 +56,21 @@ export default async function Page({
   });
 
   //busando o usuário
-  const user = await getDataWidhToken()
+  const user = await getDataWidhToken();
 
   //verificando se usuário possui o curso
-  let userCourse: {porcent: number, id: string | undefined} | undefined
-  if(user){
-    const data = await fetch("https://backend-cursoemvideo.onrender.com/user/course",{
-      method: "post",
-      headers: {"Content-type": "application/json"},
-      body: JSON.stringify({userid: user.id, courseid: course.id})
-    })
+  let userCourse: { porcent: number; id: string | undefined } | undefined;
+  if (user) {
+    const data = await fetch(
+      "https://backend-cursoemvideo.onrender.com/user/course",
+      {
+        method: "post",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ userid: user.id, courseid: course.id }),
+      }
+    );
 
-    userCourse = (await data.json()).courses
+    userCourse = (await data.json()).courses;
   }
 
   return (
@@ -78,13 +81,15 @@ export default async function Page({
         slug={course.slug}
       />
 
-      
-        { user && userCourse ? 
-        <PorcentCourse porcent={userCourse.porcent} steps={videos.length}/>
-        :
-        <UserCouserPainel userid={user ? user.id : undefined} courseid={course.id}/>
-      }
-      
+      {user && userCourse ? (
+        <PorcentCourse porcent={userCourse.porcent} steps={videos.length} />
+      ) : (
+        <UserCouserPainel
+          userid={user ? user.id : undefined}
+          courseid={course.id}
+        />
+      )}
+
       <section className="pt-[30px]">
         <p className="p-5 text-xl text-indigo-900 w-8/10 max-w-180 m-auto">
           {course.description}

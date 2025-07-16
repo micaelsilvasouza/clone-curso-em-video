@@ -12,6 +12,7 @@ interface PropsHeaderMenuClassVideos {
   course: string;
   quantity: number;
   isopening: boolean;
+  clickHamburguer?: boolean;
   setIsOpening: (value: boolean) => void;
 }
 
@@ -20,6 +21,7 @@ export default function HeaderMenuClassVideos({
   course,
   quantity,
   isopening,
+  clickHamburguer,
   setIsOpening,
 }: PropsHeaderMenuClassVideos) {
   const [largura, setLargura] = useState(0);
@@ -77,7 +79,7 @@ export default function HeaderMenuClassVideos({
           }}
         >
           {isopening ? (
-            <FaAngleLeft className="text-xl" />
+            `${clickHamburguer ? "" : <FaAngleLeft className="text-xl" />}`
           ) : (
             <FaAngleRight className="text-xl" />
           )}

@@ -17,6 +17,7 @@ export function CursosClientComponent({ courses }: { courses: Courses[] }) {
   const [clickSearch, setClickSearch] = useState(false);
   const [busca, setBusca] = useState("");
   const [filtrados, setFiltrados] = useState<Courses[]>([]);
+  console.log(busca);
 
   // Atualiza os cursos filtrados conforme digita
   useEffect(() => {

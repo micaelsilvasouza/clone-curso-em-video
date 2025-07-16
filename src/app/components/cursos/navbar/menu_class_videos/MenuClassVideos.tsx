@@ -18,7 +18,7 @@ interface PropsMenuClassVideos {
   videos: PropsVideoClass[];
   courseslug: string;
   coursetitle: string;
-  open?: boolean;
+  clickHamburguer?: boolean;
 }
 
 export default function MenuClassVideos({
@@ -26,14 +26,14 @@ export default function MenuClassVideos({
   videos,
   courseslug,
   coursetitle,
-  open = false,
+  clickHamburguer = false,
 }: PropsMenuClassVideos) {
   const [isopening, setIsOpening] = useState(false);
   useEffect(() => {
-    if (open) {
-      setIsOpening(open);
+    if (clickHamburguer) {
+      setIsOpening(clickHamburguer);
     }
-  }, [open]);
+  }, [isopening, clickHamburguer]);
 
   const [largura, setLargura] = useState(0);
 
@@ -138,7 +138,7 @@ export default function MenuClassVideos({
       <article
         id="menu"
         className={`${
-          isopening ? "w-300" : "w-5  border-r border-black/10"
+          isopening ? "w-300" : "w-0  border-r border-black/10"
         }  relative ease-in transition-all max-w-200`}
       >
         <section
@@ -161,6 +161,7 @@ export default function MenuClassVideos({
               quantity={videos.length}
               isopening={isopening}
               setIsOpening={setIsOpening}
+              clickHamburguer={clickHamburguer}
             />
             <section
               className={` ${
