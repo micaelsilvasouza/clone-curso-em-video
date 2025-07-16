@@ -19,7 +19,7 @@ interface PropsMenuClassVideos {
   porcent: number | undefined //valor de porcentagem do curso
   courseslug: string;
   coursetitle: string;
-  open?: boolean;
+  clickHamburguer?: boolean;
 }
 
 export default function MenuClassVideos({
@@ -28,14 +28,14 @@ export default function MenuClassVideos({
   porcent, //valor de porcentagem do curso
   courseslug,
   coursetitle,
-  open = false,
+  clickHamburguer = false,
 }: PropsMenuClassVideos) {
   const [isopening, setIsOpening] = useState(false);
   useEffect(() => {
-    if (open) {
-      setIsOpening(open);
+    if (clickHamburguer) {
+      setIsOpening(clickHamburguer);
     }
-  }, [open]);
+  }, [isopening, clickHamburguer]);
 
   const [largura, setLargura] = useState(0);
 
@@ -167,6 +167,7 @@ export default function MenuClassVideos({
               porcent={porcent}
               isopening={isopening}
               setIsOpening={setIsOpening}
+              clickHamburguer={clickHamburguer}
             />
             <section
               className={` ${
