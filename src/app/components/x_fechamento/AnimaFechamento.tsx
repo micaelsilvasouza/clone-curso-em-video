@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useEffect } from "react";
 
-export default function Xfechamento({ aberto }: { aberto: boolean }) {
+export default function AnimaFechamento({ aberto }: { aberto: boolean }) {
   const tl = useRef<gsap.core.Timeline | null>(null); // timeline persistente
 
   useGSAP(() => {

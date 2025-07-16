@@ -8,6 +8,7 @@ import XdoMenuAberto from "./mobile/XdoMenuAberto";
 import Links from "./Links";
 import { BotaoCuston } from "./BotaoCuston";
 import { Dropdown } from "./Dropdown";
+import X_fechar from "../../x_fechamento/X_fechar";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -187,6 +188,7 @@ export default function Navbar({
           setIsOpen={setIsOpen}
           stylesBar={styleHamburguer}
         />
+        <X_fechar fecharMenu={isOpen} />
         <XdoMenuAberto isScrolled={isScrolled} isOpen={isOpen} />
       </div>
       {/* Botão para direcionar o scrol para cima */}

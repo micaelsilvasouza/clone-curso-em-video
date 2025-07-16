@@ -65,7 +65,7 @@ export default function App() {
       <section className="flex flex-col h-full bg-[url('https://filipe520.github.io/api-cursoEmVideo/img-cursoEmVideo/pagina_home/fundo08.jpg')] bg-[80%_0%] bg-cover bg-no-repeat bg-fixed px-6 pt-10">
         <Navbar
           logo="logoWhite.png"
-          styleHamburguer="bg-white"
+          styleHamburguer="bg-white "
           styleLinks="text-white"
           styleBotao_1="bg-white"
           corIcone="text-white"
