@@ -123,7 +123,7 @@ export default function MenuClassVideos({
               title={video.title}
               slug={video.slug}
               video_watched={porcent ? index < (videos.length * porcent) : false}
-              liberated={porcent ? index <= (videos.length * porcent): false}
+              liberated={porcent ? index <= (videos.length * porcent) : index == 0}
 
               course={courseslug}
               isopening={isopening}
