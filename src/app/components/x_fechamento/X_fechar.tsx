@@ -2,12 +2,10 @@
 
 import { useState } from "react";
 
-import Xfechamento from "./animation/Xfechamento";
-import Xfechamento from "../animation/Xfechamento";
-
+import AnimaFechamento from "./AnimaFechamento";
 
 interface Props {
-  fecharMenu: () => void; // deixa explícito
+  fecharMenu: boolean;
 }
 
 export default function X_fechar({ fecharMenu }: Props) {
@@ -15,7 +13,7 @@ export default function X_fechar({ fecharMenu }: Props) {
 
   function handleClick() {
     setAtivo((prev) => !prev); // alterna animação do X
-    fecharMenu(); // fecha o menu principal
+    // fecharMenu(); // fecha o menu principal
   }
 
   return (
@@ -24,7 +22,7 @@ export default function X_fechar({ fecharMenu }: Props) {
       onClick={handleClick}
     >
       {/* passa o estado 'ativo' para a animação */}
-      <Xfechamento aberto={ativo} />
+      <AnimaFechamento aberto={ativo} />
 
       <article className="relative container">
         <div className="w-0.5 h-10 bg-blue-500 absolute right-10 transform rotate-45 translate-y-0 bar-01"></div>

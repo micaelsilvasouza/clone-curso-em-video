@@ -43,8 +43,8 @@ export default function HeaderMenuClassVideos({
     };
   }, [largura]);
 
-  const porcentformat = porcent ? Math.floor(porcent * 100)+"%" : "0%"
-  const competeSteps = porcent ? quantity * porcent : 0
+  const porcentformat = porcent ? Math.floor(porcent * 100) + "%" : "0%";
+  const competeSteps = porcent ? quantity * porcent : 0;
 
   return (
     <section
@@ -62,9 +62,9 @@ export default function HeaderMenuClassVideos({
           <LuBook className="inline align-middle" /> {course}
         </p>
 
-        <p className="px-10 py-2">0% Completo | 0 / {quantity} steps</p>
-
-        <p className="px-10 py-2">{porcentformat} Completo | {competeSteps} / {quantity} steps</p>
+        <p className="px-10 py-2">
+          {porcentformat} Completo | {competeSteps} / {quantity} steps
+        </p>
       </div>
 
       {type == "vertical" && (

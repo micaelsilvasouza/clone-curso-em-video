@@ -17,7 +17,7 @@ interface PropsMenuClassVideos {
   type: "vertical" | "horizontal";
   videos: PropsVideoClass[];
 
-  porcent: number | undefined //valor de porcentagem do curso
+  porcent: number | undefined; //valor de porcentagem do curso
 
   courseslug: string;
   coursetitle: string;
@@ -93,9 +93,7 @@ export default function MenuClassVideos({
           type={type}
           course={coursetitle}
           quantity={videos.length}
-
           porcent={porcent} //valor de porcentagem do curso
-
           isopening={isopening}
           setIsOpening={setIsOpening}
         <section/>
@@ -110,18 +108,12 @@ export default function MenuClassVideos({
                         : "h-0 overflow-hidden"
                     }`}
         >
-
-          {videos.map((video: PropsVideoClass) => (
-            <LinkClassVideo
-              key={video.slug}
-              title={video.title}
-              slug={video.slug}
-
           {videos.map((video: PropsVideoClass, index) => (
             <LinkClassVideo
               key={index}
               title={video.title}
               slug={video.slug}
+
               video_watched={porcent ? index < (videos.length * porcent) : false}
               liberated={porcent ? index <= (videos.length * porcent) : index == 0}
 
@@ -157,7 +149,6 @@ export default function MenuClassVideos({
       <article
         id="menu"
         className={`${
-
           isopening ? "w-300" : "w-0  border-r border-black/10"
         }  relative ease-in transition-all max-w-200`}
       >
@@ -188,25 +179,17 @@ export default function MenuClassVideos({
               className={` ${
                 isopening ? " overflow-y-scroll" : "overflow-hidden"
               }  h-dvh`}
-
             >
-              {videos.map((video: PropsVideoClass) => (
-                <LinkClassVideo
-                  key={video.slug}
-                  title={video.title}
-                  slug={video.slug}
-                  course={courseslug}
-
-            > 
               {videos.map((video: PropsVideoClass, index) => (
                 <LinkClassVideo
                   key={index}
                   title={video.title}
                   slug={video.slug}
                   course={courseslug}
-                  video_watched={porcent ? index < (videos.length * porcent) : false}
-                  liberated={porcent ? index <= (videos.length * porcent) : false}
-
+                  video_watched={
+                    porcent ? index < videos.length * porcent : false
+                  }
+                  liberated={porcent ? index <= videos.length * porcent : false}
                   isopening={isopening}
                 />
               ))}
