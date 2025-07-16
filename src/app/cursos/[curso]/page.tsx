@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { getDataWidhToken } from "@/actions/actions_cookies";
 import BannerCourse from "@/app/components/banner_course";
-import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
+import MenuClassVideos from "@/app/components/cursos/navbar/menu_class_videos/MenuClassVideos";
 import PorcentCourse from "@/app/components/cursos/porcent_couse";
 import UserCouserPainel from "@/app/components/cursos/UserCoursePainel"
 
