@@ -96,7 +96,7 @@ export default function MenuClassVideos({
           porcent={porcent} //valor de porcentagem do curso
           isopening={isopening}
           setIsOpening={setIsOpening}
-        />
+        <section/>
 
         <section
           className={`
@@ -113,8 +113,10 @@ export default function MenuClassVideos({
               key={index}
               title={video.title}
               slug={video.slug}
-              video_watched={porcent ? index < videos.length * porcent : false}
-              liberated={porcent ? index <= videos.length * porcent : false}
+
+              video_watched={porcent ? index < (videos.length * porcent) : false}
+              liberated={porcent ? index <= (videos.length * porcent) : index == 0}
+
               course={courseslug}
               isopening={isopening}
             />
