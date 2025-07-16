@@ -1,36 +1,30 @@
-// "use client";
+import AnimaFechamento from "./AnimaFechamento";
 
-// import { useState } from "react";
+interface Props {
+  setIsOpen: (param: boolean) => void;
+  isOpen: boolean;
+}
 
-// import AnimaFechamento from "./AnimaFechamento";
+export default function X_fechar({ setIsOpen, isOpen }: Props) {
+  // function handleClick() {
+  //   setAtivo((prev) => !prev); // alterna animação do X
+  //   fecharMenu(); // fecha o menu principal
+  // }
 
-// interface Props {
-//   SetFecharMenu: () => void;
-//   isOpen: boolean;
-// }
+  return (
+    <section
+      className="w-30 h-22 flex justify-end cursor-pointer  z-10 ml-15"
+      onClick={() => setIsOpen(isOpen)}
+    >
+      {/* passa o estado 'ativo' para a animação */}
+      <AnimaFechamento aberto={!isOpen} />
 
-// export default function X_fechar({ fecharMenu, isOpen }: Props) {
-//   const [ativo, setAtivo] = useState(false); // controla o X animado
-
-//   function handleClick() {
-//     setAtivo((prev) => !prev); // alterna animação do X
-//     fecharMenu(); // fecha o menu principal
-//   }
-
-//   return (
-//     <section
-//       className="w-30 h-22 flex justify-end cursor-pointer"
-//       onClick={handleClick}
-//     >
-//       {/* passa o estado 'ativo' para a animação */}
-//       <AnimaFechamento aberto={ativo} />
-
-//       <article className="relative container">
-//         <div className="w-0.5 h-10 bg-blue-500 absolute right-10 transform rotate-45 translate-y-0 bar-01"></div>
-//         <div className="w-0.5 h-10 bg-blue-500 absolute right-20 transform -rotate-45 translate-y-0 bar-02"></div>
-//         <div className="w-0.5 h-10 bg-blue-500 absolute right-10 top-10 transform -rotate-45 bar-03"></div>
-//         <div className="w-0.5 h-10 bg-blue-500 absolute right-20 top-10 transform rotate-45 bar-04"></div>
-//       </article>
-//     </section>
-//   );
-// }
+      <article className="relative container">
+        <div className="w-0.5 h-6 bg-blue-500 absolute right-13 transform rotate-45 translate-y-0 bar-01"></div>
+        <div className="w-0.5 h-6 bg-blue-500 absolute right-20 transform -rotate-45 translate-y-0 bar-02"></div>
+        <div className="w-0.5 h-6 bg-blue-500 absolute right-13 top-7 transform -rotate-45 bar-03"></div>
+        <div className="w-0.5 h-6 bg-blue-500 absolute right-20 top-7 transform rotate-45 bar-04"></div>
+      </article>
+    </section>
+  );
+}
