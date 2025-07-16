@@ -98,7 +98,7 @@ export default function MenuClassVideos({
 
           isopening={isopening}
           setIsOpening={setIsOpening}
-        />
+        <section/>
 
         <section
           className={`
