@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 
 import IframeVideo from "@/app/components/cursos/IframeVideo";
-import MenuClassVideos from "@/app/components/cursos/menu_class_videos/MenuClassVideos";
+import MenuClassVideos from "@/app/components/cursos/navbar/menu_class_videos/MenuClassVideos";
 import Navbar from "@/app/components/layout/navbar";
 import Link from "next/link";
 
@@ -77,7 +77,6 @@ export default async function ClassVideo({
         <MenuClassVideos
           type="horizontal"
           videos={videos}
-          porcent={0}
           courseslug={course.slug}
           coursetitle={course.title}
         />
