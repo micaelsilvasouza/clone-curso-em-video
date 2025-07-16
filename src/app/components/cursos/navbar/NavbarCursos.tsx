@@ -3,7 +3,7 @@
 import ButtonAula from "../ButtonAula";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
-import PorcentCourse from "../porcent_couse";
+// import PorcentCourse from "../porcent_couse";
 
 type NavbarCursosProp = {
   curso: string;
@@ -63,7 +63,7 @@ export default function NavbarCursos({
         className=" grid  col-start-3 col-end-4 row-start-1 row-end-3 grid-cols-[1fr_30px] cursor-pointer bg-indigo-700 items-center justify-items-center"
         onClick={() => setOpenUser(!openUser)}
       >
-        <div className="w-13 h-13 bg-gradient-to-l from-gray-300 to-white rounded-full items-center flex justify-center"></div>
+        <div className="w-13 h-13 bg-gradient-to-l from-gray-300 to-black rounded-full items-center flex justify-center"></div>
         <div>
           <IoIosArrowDown
             size={25}
