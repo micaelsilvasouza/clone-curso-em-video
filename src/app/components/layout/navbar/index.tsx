@@ -4,7 +4,6 @@
 import Img_custon from "@/app/components/img_custon";
 import BotaoScroll from "./BotaoScroll";
 import MenuHamburgue from "./mobile/MenuHamburgue";
-import XdoMenuAberto from "./mobile/XdoMenuAberto";
 import Links from "./Links";
 import { BotaoCuston } from "./BotaoCuston";
 import { Dropdown } from "./Dropdown";
