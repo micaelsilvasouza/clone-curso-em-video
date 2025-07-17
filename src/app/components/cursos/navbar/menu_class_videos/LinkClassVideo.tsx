@@ -29,13 +29,13 @@ export function LinkClassVideo({
         isopening ? "opacity-100 " : "opacity-0 border-r border-black/10"
       } flex items-center gap-5 p-5 border-b-1 border-gray-300 `}
     >
-      <span className="shrink-0 size-3 border-3 border-gray-300 rounded-full">
+      <span className="shrink-0 size-3 border-3 border-gray-300 rounded-full ">
         {/* Parte circular */}
       </span>
       <Link href={`/cursos/${course}/${slug}`} className="hover:underline" />
 
       <span
-        className={`shrink-0 size-8 border-5 ${
+        className={`shrink-0 size-8 border-5  ${
           video_watched || liberated ? "border-blue-800" : "border-gray-300"
         } rounded-full flex items-center justify-center`}
       >

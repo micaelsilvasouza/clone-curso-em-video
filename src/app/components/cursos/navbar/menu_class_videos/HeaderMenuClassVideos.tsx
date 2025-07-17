@@ -49,7 +49,7 @@ export default function HeaderMenuClassVideos({
   return (
     <section
       className={`bg-blue-1010 text-white font-bold relative  h-50
-            ${type == "vertical" ? "text-lg p-10" : "p-2 text-base"}`}
+            ${type == "vertical" ? "text-lg p-10" : "p-0 text-base"}`}
     >
       <div
         className={`${
@@ -80,7 +80,7 @@ export default function HeaderMenuClassVideos({
 
       {type == "horizontal" && (
         <span
-          className={`cursor-pointer text-white bg-blue-1010 p-2 rounded-full absolute top-10 -right-5 border border-white
+          className={`cursor-pointer text-white bg-blue-1010 p-2 rounded-full absolute top-10 md:-right-5 max-md:opacity-0 max-md:pointer-events-none border border-white
              ${isopening ? "" : `opacity-100 pointer-events-auto`}`}
           onClick={() => {
             setIsOpening(!isopening);

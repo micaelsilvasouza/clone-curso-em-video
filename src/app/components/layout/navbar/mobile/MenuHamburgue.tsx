@@ -1,6 +1,6 @@
 type PropHamburguer = {
   isOpen: boolean;
-  isScrolled: boolean;
+  isScrolled?: boolean;
   stylesBar?: string;
   setIsOpen: (param: boolean) => void;
   isCourse?: "yes";
