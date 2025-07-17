@@ -46,8 +46,10 @@ export default function AreaCurso({ curso, video, videos }: AreaCursoProp) {
         <NavbarCursos curso={curso} video={video} videos={videos} />
       </div>
       {/* Terceira área da DIV - Menu Aulas*/}
-      <div className="bg-red-900  col-start-1 col-end-4 row-start-2 row-end-4 md:relative flex ">
-        <div className="bg-amber-950 md:relative">
+      <div className="bg-red-900  col-start-1 col-end-4 row-start-2 row-end-4 md:relative flex gap-5">
+        <div
+          className={`bg-amber-950 md:relative  overflow-hidden   h-dvh md:pr-5`}
+        >
           {/* Menu das aulas */}
           <MenuClassVideos
             courseslug={videos[0]?.slug || ""}
