@@ -149,8 +149,8 @@ export default function MenuClassVideos({
       <article
         id="menu"
         className={`${
-          isopening ? "w-300" : "w-0  border-r border-black/10"
-        }  relative ease-in transition-all max-w-200`}
+          isopening ? "md:w-150 w-full" : "md:w-5  border-r border-black/10"
+        }  ease-in transition-all max-w-200`}
       >
         <section
           className={`
@@ -161,8 +161,8 @@ export default function MenuClassVideos({
 
               bg-white
 
-              ${isopening ? "w-[100%]" : "w-5  border-r border-black/10"}
-              ${largura > 768 ? "w-2" : "w-2"}
+              ${isopening ? "w-full" : "md:w-5 w-0  border-r border-black/10"}
+              ${largura > 768 ? "w-5" : "md:w-5 w-0"}
             `}
         >
           <section className={`flex flex-col`}>
